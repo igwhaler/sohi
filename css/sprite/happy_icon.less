@@ -11,7 +11,6 @@ The large array-like variables contain all information about a single icon
 At the bottom of this section, we provide information about the spritesheet itself
 @spritesheet: width height image @spritesheet-sprites;
 */
-
 @1-name: '1';
 @1-x: 0px;
 @1-y: 101px;
@@ -34,21 +33,10 @@ At the bottom of this section, we provide information about the spritesheet itse
 @2-total-height: 125px;
 @2-image: '../../images/sprite_2/happy_sprite.png';
 @2: 0px 0px 0px 0px 429px 91px 429px 125px '../../images/sprite_2/happy_sprite.png' '2';
-@3-name: '3';
-@3-x: 35px;
-@3-y: 101px;
-@3-offset-x: -35px;
-@3-offset-y: -101px;
-@3-width: 21px;
-@3-height: 14px;
-@3-total-width: 429px;
-@3-total-height: 125px;
-@3-image: '../../images/sprite_2/happy_sprite.png';
-@3: 35px 101px -35px -101px 21px 14px 429px 125px '../../images/sprite_2/happy_sprite.png' '3';
 @spritesheet-width: 429px;
 @spritesheet-height: 125px;
 @spritesheet-image: '../../images/sprite_2/happy_sprite.png';
-@spritesheet-sprites: @1 @2 @3;
+@spritesheet-sprites: @1 @2;
 @spritesheet: 429px 125px '../../images/sprite_2/happy_sprite.png' @spritesheet-sprites;
 
 /*
@@ -76,34 +64,32 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 // HTML
 <i class="icon icon-home"></i>
 */
-
 .sprite-width(@sprite) {
-    width: extract(@sprite, 5);
+  width: extract(@sprite, 5);
 }
 
 .sprite-height(@sprite) {
-    height: extract(@sprite, 6);
+  height: extract(@sprite, 6);
 }
 
 .sprite-position(@sprite) {
-    @sprite-offset-x: extract(@sprite, 3);
-    @sprite-offset-y: extract(@sprite, 4);
-    background-position: @sprite-offset-x @sprite-offset-y;
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
 }
 
 .sprite-image(@sprite) {
-    @sprite-image: extract(@sprite, 9);
-    @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
-    background-image: url(@sprite-image-bare);
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
 }
 
 .sprite(@sprite) {
-    .sprite-image(@sprite);
-    .sprite-position(@sprite);
-    .sprite-width(@sprite);
-    .sprite-height(@sprite);
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
 }
-
 
 /*
 The `.sprites` mixin generates identical output to the CSS template
@@ -114,15 +100,11 @@ This must be run when you have at least 2 sprites.
 
 .sprites(@spritesheet-sprites);
 */
-
-.sprites(@sprites, @i: 1) when (@i <=length(@sprites)) {
-    @sprite: extract(@sprites, @i);
-    @sprite-name: e(extract(@sprite, 10));
-    .@ {
-        sprite-name
-    }
-    {
-        .sprite(@sprite);
-    }
-    .sprites(@sprites, @i + 1);
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
 }
