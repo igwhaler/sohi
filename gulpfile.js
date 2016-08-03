@@ -32,10 +32,10 @@ gulp.task('sprite', function() {
 /*监听文件修改，自动编译*/
 var watch = require("gulp-watch");
 gulp.task("watch", function() {
-    gulp.watch('images/slice_2/*.png', function() {
+    gulp.watch('images/slice_2/*', function() {
         gulp.run('sprite');
     });
-    gulp.watch(['css/mian/*.less', 'css/sprite/*.less'], function() {
+    gulp.watch('css/main/*.less', function() {
         gulp.run('less');
     });
 });
