@@ -29,6 +29,15 @@ gulp.task('sprite', function() {
         .pipe(gulp.dest(""));
 });
 
+/*检查js语法，压缩js*/
+var uglify = require("gulp-uglify");
+gulp.task("uglify", function () {
+  gulp.src("js/main/*.js")
+  .pipe(uglify())
+  .pipe(rename({ suffix: ".min" }))
+  .pipe(gulp.dest("js/min/"))
+});
+
 /*监听文件修改，自动编译*/
 var watch = require("gulp-watch");
 gulp.task("watch", function() {
@@ -37,5 +46,8 @@ gulp.task("watch", function() {
     });
     gulp.watch('css/main/*.less', function() {
         gulp.run('less');
+    });
+    gulp.watch('js/main/*.js', function () {
+        gulp.run('uglify');
     });
 });
