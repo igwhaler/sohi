@@ -1,0 +1,31 @@
+@import "../modules/base.less";
+
+/* 引入sprite样式*/
+
+@import "../sprite/happy_icon.less";
+
+/* 设置当前页sprite样式 */
+
+.icon-1 {
+    .sprite(@1);
+}
+
+.icon-2 {
+    .sprite(@2);
+}
+
+
+/* Sprite End */
+
+.header {
+    width: 100px;
+    height: 100px;
+    background-color: @color_base;
+    .border_radius(10px);
+    border: 10px solid yellow;
+    box-shadow: 10px 10px 10px black;
+}
+
+.sprite {
+    margin-top: 100px;
+}
