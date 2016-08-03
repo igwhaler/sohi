@@ -15,6 +15,17 @@ gulp.task("less", function () {
       .pipe(gulp.dest("css/min/"))
 });
 
+/*自动合成雪碧图*/
+var spriter = require("gulp-spriter");
+gulp.task("sprite", function () {
+  gulp.src("css/min/happy.min.css")
+  .pipe(spriter({
+    sprite: "one.png",
+    slice: "images/slice/",
+    outpath: "images/sprite/"
+  }))
+  .pipe(gulp.dest("css/min/"));
+});
 
 /*监听文件修改，自动编译*/
 var watch = require("gulp-watch");
@@ -23,3 +34,5 @@ gulp.task("watch", function () {
     gulp.run('less');
   });
 });
+
+
