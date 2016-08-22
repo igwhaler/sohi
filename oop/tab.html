@@ -111,7 +111,39 @@
 
     <!-- 面向对象写法 -->
     <script type="text/javascript">
+        window.onload = function () {
+            function Tab() {
+                var iList = document.getElementById("item-list"),
+                    aItem = iList.getElementsByTagName("a"),
+                    cList = document.getElementById("content-list"),
+                    aCont = cList.getElementsByTagName("div"),
+                    len = aItem.length,
+                    that = this;
+                    that.init(aItem, aCont, len, that.change);
+            };
 
+            Tab.prototype.init = function (sel, cont, len, callback) {
+                for (var i = 0; i < len ; i++) {
+                    sel[i].index = i;
+                    sel[i].onclick = function () {
+                        var _that = this,
+                            _index = this.index;
+                        (callback && typeof(callback) === "function") && callback(sel, cont, len, _that, _index);
+                    }
+                };
+            };
+
+            Tab.prototype.change = function (sel, cont, len, that, index) {
+                for(var i = 0; i < len; i++) {
+                    sel[i].className = "";
+                    cont[i].style.display = "none";
+                };
+                that.className = "active";
+                cont[index].style.display = "block";
+            };
+
+            var tab1 = new Tab();
+        };
     </script>
 </body>
 </html>
