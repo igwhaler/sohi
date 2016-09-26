@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>tab</title>
     <style type="text/css">
-        .w-item {
-            overflow: hidden;
-        }
-        .w-item a {
-            float: left;
-            width: 100px;
-            border: 2px solid #fff;
-            border-radius: 4px;
-            text-align: center;
-            line-height: 40px;
-            font-size: 20px;
-        }
-        .w-item a.active {
-            border-color: red;
-        }
-        .w-content {
-            display: inline-block;
-            border-radius: 4px;
-            border: 2px solid red;
-            overflow: hidden;
-        }
+    .w-item {
+        overflow: hidden;
+    }
 
-        .w-content div {
-            float: left;
-            width: 308px;
-            height: 200px;
-        }
-        .w-content div:nth-child(1) {
-            background-color: yellow;
-        }
-        .w-content div:nth-child(2) {
-            background-color: green;
-            display: none;
-        }
-        .w-content div:nth-child(3) {
-            background-color: pink;
-            display: none;
-        }
+    .w-item a {
+        float: left;
+        width: 100px;
+        border: 2px solid #fff;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+    }
+
+    .w-item a.active {
+        border-color: red;
+    }
+
+    .w-content {
+        display: inline-block;
+        border-radius: 4px;
+        border: 2px solid red;
+        overflow: hidden;
+    }
+
+    .w-content div {
+        float: left;
+        width: 308px;
+        height: 200px;
+    }
+
+    .w-content div:nth-child(1) {
+        background-color: yellow;
+    }
+
+    .w-content div:nth-child(2) {
+        background-color: green;
+        display: none;
+    }
+
+    .w-content div:nth-child(3) {
+        background-color: pink;
+        display: none;
+    }
     </style>
 </head>
+
 <body>
     <div class="w-tab">
         <div id="item-list" class="w-item">
@@ -57,10 +65,9 @@
             <div>333333</div>
         </div>
     </div>
-
     <!-- 点击选项卡的一般写法 -->
     <script type="text/javascript">
-        window.onload = function () {
+        window.onload = function() {
             var iList = document.getElementById("item-list"),
                 aItem = iList.getElementsByTagName("a"),
                 cList = document.getElementById("content-list"),
@@ -79,9 +86,9 @@
                     callback： 回调函数；
             */
             function init(sel, cont, len, callback) {
-                for (var i = 0; i < len ; i++) {
+                for (var i = 0; i < len; i++) {
                     sel[i].index = i;
-                    sel[i].onclick = function () {
+                    sel[i].onclick = function() {
                         var _that = this,
                             _index = this.index;
                         (callback && typeof(callback) === "function") && callback(sel, cont, len, _that, _index);
@@ -99,7 +106,7 @@
                     index: target的索引值；
             */
             function change(sel, cont, len, that, index) {
-                for(var i = 0; i < len; i++) {
+                for (var i = 0; i < len; i++) {
                     sel[i].className = "";
                     cont[i].style.display = "none";
                 };
@@ -108,24 +115,23 @@
             };
         };
     </script>
-
     <!-- 面向对象写法 -->
     <script type="text/javascript">
-        window.onload = function () {
+        window.onload = function() {
             function Tab() {
-                var iList = document.getElementById("item-list"),
-                    aItem = iList.getElementsByTagName("a"),
-                    cList = document.getElementById("content-list"),
-                    aCont = cList.getElementsByTagName("div"),
-                    len = aItem.length,
-                    that = this;
-                    that.init(aItem, aCont, len, that.change);
+                this.iList = document.getElementById("item-list");
+                this.aItem = this.iList.getElementsByTagName("a");
+                this.cList = document.getElementById("content-list");
+                this.aCont = this.cList.getElementsByTagName("div");
+                this.len = this.aItem.length;
+                var that = this;
+                this.init(this.aItem, this.aCont, this.len, this.change);
             };
 
-            Tab.prototype.init = function (sel, cont, len, callback) {
-                for (var i = 0; i < len ; i++) {
+            Tab.prototype.init = function(sel, cont, len, callback) {
+                for (var i = 0; i < len; i++) {
                     sel[i].index = i;
-                    sel[i].onclick = function () {
+                    sel[i].onclick = function() {
                         var _that = this,
                             _index = this.index;
                         (callback && typeof(callback) === "function") && callback(sel, cont, len, _that, _index);
@@ -133,8 +139,8 @@
                 };
             };
 
-            Tab.prototype.change = function (sel, cont, len, that, index) {
-                for(var i = 0; i < len; i++) {
+            Tab.prototype.change = function(sel, cont, len, that, index) {
+                for (var i = 0; i < len; i++) {
                     sel[i].className = "";
                     cont[i].style.display = "none";
                 };
@@ -146,4 +152,5 @@
         };
     </script>
 </body>
+
 </html>

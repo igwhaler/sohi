@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UE</title>
+    <style type="text/css">
+        body>div {
+            width: 300px;
+            margin: 50px;
+        }
+
+        .mouse {
+            height: 300px;
+            background-color: tan;
+        }
+
+
+        .scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scrollbar::-webkit-scrollbar-thumb {
+            background: #aaa;
+            min-height: 150px;
+            min-width: 150px;
+            border-radius: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-track-piece {
+            background-color: #eee;
+        }
+
+        .scrollbar {
+            width: 100px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid red;
+            border-right: none;
+            border-radius: 4px;
+            overflow-y: auto;
+        }
+
+        .scrollbar div {
+            height: 400px;
+            background-color: red;
+        }
+
+        .define_check {
+            font-size: 14spx;
+        }
+
+        input[type="checkbox"] + label::before {
+            content: "\a0";
+            display: inline-block;
+            vertical-align: .1em;
+            width: .8em;
+            height: .8em;
+
+            margin-right: .2em;
+            border-radius: .2em;
+            background-color: silver;
+            text-indent: .15em;
+            line-height: .65;
+        }
+        input[type="checkbox"]:checked + label::before {
+            content: "\2713";
+            background-color: yellowgreen;
+        }
+
+        .weaken_bg_shadow {
+            /* height: 200px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -150px;
+            border: 1px solid red;
+            background-color: tan;
+            border-radius: 10px;
+            box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .4); */
+        }
+
+        .scroll_tip {
+
+        }
+
+        .scroll_tip ul {
+            height: 300px;
+            border: 1px solid green;
+            border-radius: 4px;
+            overflow-y: auto;
+            background-image:
+                              radial-gradient(at top, rgba(0, 255, 0, .4), transparent 70%);
+            background-repeat: no-repeat;
+            background-size: 100% 15px;
+            /* background-attachment: local, scroll; */
+        }
+        .scroll_tip li {
+            height: 40px;
+            border: 1px solid red;
+        }
+
+        .scroll_tip ul::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scroll_tip ul::-webkit-scrollbar-thumb {
+            background: red;
+            max-height: 150px;
+            border-radius: 10px;
+        }
+
+        .scroll_tip ul::-webkit-scrollbar-track-piece {
+            background-color: green;
+        }
+
+        .o_resize {
+
+        }
+        .o_resize textarea {
+            width: 200px;
+            resize: vertical;
+        }
+
+        .img_slider {
+            position: relative;
+            width: 500px;
+        }
+        .img_slider>div {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            -webkit-filter:  sepia(1)  saturate(4)  hue-rotate(335deg);
+            overflow: hidden;
+            resize: horizontal;
+            max-width: 500px;
+        }
+
+        .img_slider>div::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 12px;
+            height: 12px;
+            cursor: ew-resize;
+            background: linear-gradient( -45deg, black 50%, transparent 0 );
+        }
+        .img_slider img {
+            width: 500px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="mouse"></div>
+
+    <div class="scrollbar">
+        <div>
+            阿打算打算打算事实上事实上事实上事实上事实上是是是是的顶顶顶顶顶的顶顶顶顶顶
+        </div>
+    </div>
+
+    <div class="define_check">
+        <input type="checkbox" name="beauty" id="awesome">
+        <label for="awesome"></label>
+    </div>
+
+    <div class="weaken_bg_shadow"></div>
+
+    <div class="scroll_tip">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+
+    <div class="o_resize">
+        <textarea></textarea>
+    </div>
+
+    <div class="img_slider">
+        <div><img src="img/4.jpg" alt="1"></div>
+        <img src="img/4.jpg">
+    </div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shape</title>
+    <style type="text/css">
+        body>div {
+            margin: 50px;
+            width: 300px;
+            height: 200px;
+        }
+
+        .fit_ellipse {
+            background-color: rebeccapurple;
+            border-radius: 100px/50%;
+        }
+
+        .half_ellipse {
+            background-color: lightpink;
+            border-radius:  50% / 100% 100% 0 0;
+        }
+
+        .quarter_ellipse {
+            background-color: hsl(208, 100%, 75%);
+            background-image: linear-gradient(0, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1.0)), url("img/noise.png");
+            border-radius: 100% 0 0 0;
+        }
+        .quarter_ellipse:hover {
+            background-color: hsl(208, 100%, 83%);
+        }
+
+        .rhomboid {
+            background-color: purple;
+            transform: skewX(-45deg);
+            line-height: 200px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .rhomboid_child {
+            transform: skewX(45deg);
+        }
+
+        .rhomboid:hover {
+            background-color: yellow;
+        }
+
+        .rhomboid_o {
+            position: relative;
+            line-height: 200px;
+            text-align: center;
+            background-color: red;
+        }
+        .rhomboid_o:before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
+            left: 10px;
+            border-radius: 10px;
+            background-color: greenyellow;
+        }
+
+        .rhombus_img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            /* transform: rotate(-45deg); */
+            -webkit-clip-path: polygon(50% 0, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0 50%, 20% 20%);
+            overflow: hidden;
+            transition: 1s -webkit-clip-path;
+        }
+        .rhombus_img>img {
+            max-width: 100%;
+            /* transform: rotate(45deg) scale(1.42); */
+        }
+        .rhombus_img:hover {
+            -webkit-clip-path: polygon(50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%, 0 0);
+        }
+
+        .test {
+            cursor: pointer;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            font-weight: bold;
+            color: hsl(208, 50%, 40%);
+            text-shadow: rgba(255,255,255,.5) 0 1px 0;
+            border-radius: 20% / 50%;
+            background-color: hsl(208, 100%, 75%);
+            box-shadow: inset rgba(255,254,255,0.6) 0 0.3em .3em,
+                        inset rgba(0,0,0,0.15) 0 -0.1em .3em,
+     /* inner shadow */ hsl(208, 50%, 55%) 0 3px 10px,
+                        hsl(208, 50%, 40%) 0 0.3em 1px,
+     /* color border */ rgba(0,0,0,0.2) 0 .5em 5px;
+            background-image: linear-gradient(0, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1.0)),
+                              url("img/noise.png");
+            transition: background-color 0.3s;
+        }
+        .test a {
+            font-size: inherit;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .test:hover {
+            background-color: hsl(208, 100%, 83%);
+        }
+        .test:active {
+            transform: translateY(0.3em);
+            box-shadow: inset rgba(255,254,255,0.6) 0 0.3em .3em,
+                        inset rgba(0,0,0,0.15) 0 -0.1em .3em,
+     /* inner shadow */ hsl(208, 50%, 55%) 0 0px 10px,
+                        hsl(208, 50%, 40%) 0 0em 1px,
+     /* color border */ rgba(0,0,0,0.2) 0 0em 5px;
+        }
+
+        .cut {
+            background-color: yellow;
+            background-image: linear-gradient(135deg, red 20px, transparent 0),
+                              linear-gradient(45deg, red 20px, transparent 0),
+                              linear-gradient(-135deg, red 20px, transparent 0),
+                              linear-gradient(-45deg, red 20px, transparent 0);
+        }
+
+        .radial_cut {
+            background-color: red;
+            background-image: radial-gradient(circle at top 10px left 100px, #fff 10%, transparent 0)
+        }
+
+        .trapezoid {
+            background-color: purple;
+            transform: perspective(10px) rotateX(-1deg);
+        }
+
+        .trapezoid_o {
+            position: relative;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        .trapezoid_o:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: red;
+            z-index: -1;
+            transform: perspective(100px) rotateX(8deg) scaleY(1.4);
+            transform-origin: bottom;
+        }
+
+        @keyframes spin {
+            to{
+                transform: rotate(0.5turn);
+            }
+        }
+
+        @keyframes bg {
+            50% {
+                background-color: #665;
+            }
+        }
+
+        .pie {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            background-image: linear-gradient(to right, transparent 50%, #665 0);
+            animation-delay: -80s;
+        }
+        .pie:before{
+            content: "";
+            display: block;
+            height: 100%;
+            margin-left: 50%;
+            background-color: inherit;
+            border-radius: 0 100% 100% 0/0 50% 50% 0;
+            transform: rotate(0);
+            transform-origin: left;
+            animation: spin 50s linear infinite,
+                       bg 100s step-end infinite;
+            animation-play-state: paused;
+            animation-delay: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="fit_ellipse"></div>
+
+    <div class="half_ellipse"></div>
+
+    <div class="quarter_ellipse"></div>
+
+    <div class="rhomboid">
+        <div class="rhomboid_child">12312</div>
+    </div>
+
+    <div class="rhomboid_o">123</div>
+
+    <div class="rhombus_img">
+        <img src="img/3.jpg">
+    </div>
+
+    <div class="test">
+        <a href="javascript:;">点击</a>
+    </div>
+
+    <div class="cut"></div>
+
+    <div class="radial_cut"></div>
+
+    <div class="trapezoid">啊实打实大师大啊啊啊啊啊是时代大厦的飒飒大师大师大师的</div>
+
+    <div class="trapezoid_o">啊实打实大师大啊啊啊啊啊</div>
+
+    <div class="pie"></div>
+</body>
+</html>

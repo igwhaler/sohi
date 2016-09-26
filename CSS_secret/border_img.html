@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Border-Img</title>
+    <style type="text/css">
+        body>div {
+            margin: 50px;
+        }
+        .border_img {
+            padding: 25px;
+            border: 50px solid transparent;
+            background:linear-gradient(mediumpurple, mediumpurple) padding-box, url('img/1.jpg') border-box 0 / cover;
+            /* background-size: cover;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box; */
+        }
+
+        .border_img div {
+            width: 500px;
+            height: 250px;
+            /* background-color: white; */
+        }
+
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 10px;
+            /* box-shadow: 0 0 0 10px green; */
+            /* border: 10px solid green; */
+            outline: 10px solid green;
+            box-shadow: 0 0 0 10px green;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="test"></div>
+
+    <div class="border_img">
+        <div>按时打算打算打撒啊啊啊实打实大师大师大师答案是打算打</div>
+    </div>
+</body>
+</html>
