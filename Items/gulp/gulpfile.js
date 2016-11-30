@@ -8,24 +8,25 @@ var less = require("gulp-less"), //编译less
 
 
 gulp.task("less", function() {
-    gulp.src("css/main/*.less")
+    gulp.src(["src/less/**/*.less", "src/less/*.less", "!src/less/**/*-sprite.less"])
         .pipe(less())
         .pipe(rename({ suffix: ".min" }))
         .pipe(mincss())
-        .pipe(gulp.dest("css/min/"))
+        .pipe(gulp.dest("build/css/"))
 });
 
 /*自动合成雪碧图*/
 var spriter = require("gulp.spritesmith");
 gulp.task('sprite', function() {
-    gulp.src('images/slice_2/*.png') //需要合并的图片地址
-        .pipe(spriter({
-            imgName: 'images/sprite_2/happy_sprite.png', //保存合并后图片的地址
-            cssName: 'css/sprite/happy_icon.less', //保存合并后对于css样式的地址
-            padding: 10, //合并时两个图片的间距
-            //algorithm: 'binary-tree', //注释1
-            //cssTemplate: "css/min/handlebarsStr.css" //注释2
-        }))
+    gulp.src('src/images/happy/*.png') //需要合并的图片地址
+        .pipe(spriter(
+                {
+                    imgName: 'build/images/happy/happy.png', //保存合并后图片的地址
+                    cssName: 'src/less/happy/happy-sprite.less', //保存合并后对于css样式的地址
+                    cssFormat: "less",
+                    padding: 10 //合并时两个图片的间距
+                }
+            ))
         .pipe(gulp.dest(""));
 });
 
