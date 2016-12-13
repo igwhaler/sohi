@@ -7,7 +7,7 @@ var less = require("gulp-less"), //编译less
     mincss = require("gulp-minify-css"); //压缩css
 
 gulp.task("less", function() {
-    gulp.src(["src/less/**/*.less", "src/less/*.less", "!src/less/**/*-sprite.less"])
+    gulp.src(["src/less/**/*.less", "src/less/*.less", "!src/less/**/*-sprite.less", "!src/less/modules/*.less"])
         .pipe(less())
         .pipe(rename({ suffix: ".min" }))
         .pipe(mincss())
