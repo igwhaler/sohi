@@ -183,5 +183,49 @@
             document.getElementById("div7")
         )
     </script> -->
+
+    <script type="text/babel">
+        var ChangeOpacity = React.createClass({
+            getInitialState: function () {
+                return {
+                    opacity: 1
+                }
+            },
+
+            <!-- componentDidMount: function () {
+                    this.timer = setInterval(function () {
+                        var opacity = this.state.opacity;
+                        opacity -= 0.05;
+                        if(this.state.opacity < 0) {
+                            this.setState({opacity: 1});
+                        }
+                        this.setState({opacity: this.state.opacity});
+                    }.bind(this), 50);
+            }, -->
+            componentDidMount: function () {
+                this.timer = setInterval(function () {
+                  var opacity = this.state.opacity;
+                  opacity -= .05;
+                  if (opacity < 0.1) {
+                    opacity = 1.0;
+                  }
+                  this.setState({
+                    opacity: opacity
+                  });
+                }.bind(this), 100);
+            },
+
+            render: function () {
+                return (
+                    <div className="box1" style={{opacity: this.state.opacity, color: "green", fontSize: "40px"}}>123</div>
+                )
+            }
+        });
+
+        ReactDOM.render(
+            <ChangeOpacity />,
+            document.getElementById("div7")
+        );
+    </script>
 </body>
 </html>
