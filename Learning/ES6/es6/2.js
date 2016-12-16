@@ -56,3 +56,4 @@ function fn() {
 }
 
 $("div").show();
+document.getElementById("div");

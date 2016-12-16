@@ -1,35 +1,15 @@
-var Hello = React.createClass({
-    getInitiailState: function () {
-
-    }
-});
-
-var Hi = React.createClass({
-    getInitiailState: function () {
+var A = React.createClass({
+    getInitialState: function () {
         return {
-            name: "fs"
+            a: 1
         };
-    },
-
-    componentDidMount: function () {
-
     },
 
     render: function () {
         return (
-            <div>{this.state.name}</div>
-        )
+            <div>
+
+            </div>
+        );
     }
-
 });
-
-var a = 1;
-function  fn() {
-    $("div").on("click", function () {
-        console.log(a);
-    });
-
-    document.getElementById("div1").addEventListener("click", function () {
-        console.log(1);
-    }, false);
-}
