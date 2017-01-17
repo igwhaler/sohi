@@ -55,5 +55,5 @@ function fn() {
     var a = 1;
 }
 
-$("div").show();
-document.getElementById("div");
+//$("div").show();
+//document.getElementById("div");

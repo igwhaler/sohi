@@ -13,22 +13,48 @@
     console.log(typeof b);
 }*/
 
-{
-    var _a$b = {
-            a: 123,
-            b: 456
-        },
-        a = _a$b.a,
-        b = _a$b.b;
-
+/*{
+    let a;
+    let {a, b} = {
+        a: 123,
+        b:456
+    };
 
     console.log(a);
     console.log(b);
-    //var a = 1;
-    //var c = "123";
-    //console.log(d);
-    var d = 123;
-    document.getElementById("div");
+}*/
+
+{
+    var obj1 = {
+        name: "fs",
+        age: 24,
+        friends: {
+            f1: {
+                name: 1
+            },
+            f2: {
+                name: 2
+            }
+        }
+    };
+
+    /*let {name, age, friends: {f1, f2}} = obj1;
+    console.log(name);
+    console.log(age)
+    console.log(friends);*/
+
+    var obj2 = {};
+    var name = obj1.name,
+        age = obj1.age,
+        friends = obj1.friends;
+
+    console.log(friends);
+    var a = 123;
 }
 
-console.log(123);
+function fn() {
+    var a = 1;
+}
+
+//$("div").show();
+//document.getElementById("div");
