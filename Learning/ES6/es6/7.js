@@ -30,8 +30,14 @@ var timer = new Timer();
 setTimeout(() => {console.log(timer.s1)}, 3100);
 setTimeout(() => {console.log(timer.s2)}, 3100);*/
 
-let obj = {a: 1};
+/*let obj = {a: 1};
 function show() {
   console.log(this.a);
-}
+}*/
 //obj::show();
+
+function factorial(n) {
+  if(n === 1) return 1;
+  return n*factorial(n-1)
+};
+console.log(factorial(5));
