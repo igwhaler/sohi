@@ -52,10 +52,15 @@ for( let key of arr.keys() ) {
 arr.includes(2);
 */
 
-function doSomething(x, y) {
+/*function doSomething(x, y) {
     y = y || "naruto";
     console.log(x, y);
 }
 
 doSomething(1);
-doSomething(1, false);
+doSomething(1, false);*/
+
+function doSome() {
+    var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+    var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+}
