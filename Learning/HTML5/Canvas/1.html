@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+</head>
+<body>
+    <canvas id="example1" width="100px" height="100px">A Canvas</canvas>
+    <!-- <script>
+        var oCanvas = document.getElementById('example1');
+        if(oCanvas.getContext) {
+            var context = oCanvas.getContext("2d");
+            var imgURL = oCanvas.toDataURL("img/png");
+
+            var oImg = document.createElement("img");
+            oImg.src = imgURL;
+            document.body.appendChild(oImg);
+        }
+    </script> -->
+
+    <script>
+        var oCanvas = document.getElementById('example1');
+        if(oCanvas.getContext()) {
+            var context = oCanvas.getContext("2d");
+            context.fillStyle = "red";
+            context.fillRect
+        }
+    </script>
+</body>
+</html>
