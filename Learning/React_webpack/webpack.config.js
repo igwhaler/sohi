@@ -1,16 +1,19 @@
 var path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/js/1.js'),
+  entry: {
+    bundle_ep1: './src/js/example/ep1.js',
+    bundle_ep2: './src/js/example/ep2.js'
+  },
   output: {
-    path: path.resolve(__dirname, './build/js/'),
-    filename: "bundle1.js"
+    path: './build/js/example/',
+    filename: "[name].js"
   },
   module: {
     loaders: [
         {
             test: /\.(jsx|js)$/,
-            loader: "babel"
+            loader: "babel-loader"
         }
     ]
   }
