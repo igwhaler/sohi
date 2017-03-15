@@ -2,6 +2,7 @@ var webpack = require("webpack");
 var path = require('path');
 
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -15,24 +16,38 @@ module.exports = {
     filename: "[name].bundle.js"
   },
   module: {
-    loaders: [
+    rules: [
         {
             test: /\.(jsx|js)$/,
-            loader: "babel-loader"
+            use: "babel-loader"
         },
         {
           test: /\.less$/,
-          loader: "style-loader!css-loader!less-loader"
+          //use: ["style-loader", "css-loader", "less-loader"]
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: ["css-loader", "less-loader"],
+            publicPath: "./build/css"
+          })
         }
     ]
   },
   plugins: [
+    //压缩js
     new webpack.optimize.UglifyJsPlugin(),
+    //提取公共js
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       filename: "vendor.js",
       miniChunks: Infinity
-    }),
+    }),/*
+    //分离css
+    new ExtractTextPlugin({
+      filename: "../css/",
+      disable: false,
+      allChunks: true
+    }),*/
+    //生成模板
     new HtmlWebpackPlugin({
       template: "./templates/tpl1.html",
       filename: "../../html/result_tpl1.html",
