@@ -1,4 +1,7 @@
+import "../../less/ep1.less";
 import $ from "../lib/jquery.min.js";
 
 let oBody = $("body");
-console.log(oBody.css("background-coloe", "red"));
+oBody.css({
+    backgroundColor: 'tan'
+});
