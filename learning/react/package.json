@@ -4,9 +4,9 @@
   "description": "react and webapack",
   "main": "index.js",
   "scripts": {
-    "build:prod": "cross-env NODE_ENV=production webpack -p --progress --colors",
-    "build:dev" "cross-env NODE_ENV=development webpack --progress --colors --watch"
-    "watch": "webpack -p --progress --colors --watch",
+    "build:prod": "webpack --env=production -p --progress --colors",
+    "build:dev": "webpack --env=development --progress --colors",
+    "watch": "webpack -p --progress --colors --watch"
   },
   "keywords": [
     "react",

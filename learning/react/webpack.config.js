@@ -5,6 +5,8 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = function(env) {
+    let environment = env === "production" ? '/build/' : '/dev/';
+
     return {
         entry: {
             ep1: './src/js/example/ep1.js',
@@ -12,7 +14,7 @@ module.exports = function(env) {
             vendor: ["jquery", "react", "react-dom"]
         },
         output: {
-            path: __dirname + '/build/',
+            path: path.join(__dirname + environment),
             filename: "js/[name].bundle.js"
         },
 
@@ -33,7 +35,7 @@ module.exports = function(env) {
         plugins: [
             //压缩js
             new webpack.optimize.UglifyJsPlugin({
-              compress: process.env.NODE_ENV === 'production'
+              compress: env === 'production'
             }),
 
             //提取公共js
