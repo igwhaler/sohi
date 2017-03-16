@@ -9,7 +9,7 @@ module.exports = function(env) {
 
     return {
         entry: {
-            ep1: './src/js/example/ep1.js',
+            ep1: ['./src/js/example/ep1.js', './src/jsx/ep1.jsx'],
             ep2: './src/js/example/ep2.js',
             vendor: ["jquery", "react", "react-dom"]
         },
@@ -19,23 +19,28 @@ module.exports = function(env) {
         },
 
         module: {
-            rules: [{
+            rules: [
+              {
                 test: /\.(jsx|js)$/,
-                use: "babel-loader"
-            }, {
+                exclude: '/node_modules/',
+                use: ["babel-loader"]
+              },
+              {
                 test: /\.less$/,
                 //use: ["style-loader", "css-loader", "less-loader"]
+                exclude: '/node_modules/',
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: ["css-loader", "less-loader"]
                 })
-            }]
+              }
+            ]
         },
 
         plugins: [
             //压缩js
             new webpack.optimize.UglifyJsPlugin({
-              compress: env === 'production'
+                compress: env === 'production'
             }),
 
             //提取公共js
