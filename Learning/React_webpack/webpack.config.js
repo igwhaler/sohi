@@ -26,8 +26,7 @@ module.exports = {
           //use: ["style-loader", "css-loader", "less-loader"]
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: ["css-loader", "less-loader"],
-            //publicPath: "./build/css/"
+            use: ["css-loader", "less-loader"]
           })
         }
     ]
@@ -40,7 +39,8 @@ module.exports = {
     //提取公共js
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
-      filename: "vendor.js",
+      filename: "js/vendor.js",
+      //输出文件【注意：这里的根路径是module.exports.output.path】
       miniChunks: Infinity
     }),
 
@@ -78,5 +78,3 @@ module.exports = {
     }
   }
 };
-
-console.log(__dirname);
