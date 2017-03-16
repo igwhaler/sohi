@@ -4,7 +4,8 @@
   "description": "react and webapack",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --progress --colors"
+    "build": "webpack -p --progress --colors",
+    "watch": "webpack -p --progress --colors --watch"
   },
   "keywords": [
     "react",
