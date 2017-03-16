@@ -1,5 +1,5 @@
 import "../../less/ep1.less";
-import $ from "../lib/jquery.min.js";
+import $ from "jquery";
 
 let oBody = $("body");
 oBody.css({
