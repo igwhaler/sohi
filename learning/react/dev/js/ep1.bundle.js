@@ -11,7 +11,7 @@ function(e, t, n) {
         };
     }
     n(7);
-    var l = n(1), u = a(l), o = (0, u.default)("body");
+    var i = n(1), l = a(i), o = (0, l.default)("body");
     o.css({
         backgroundColor: "tan"
     });
@@ -24,7 +24,7 @@ function(e, t, n) {
             default: e
         };
     }
-    var l = n(0), u = a(l), o = n(2), i = a(o), d = n(1), r = a(d), s = u.default.createClass({
+    var i = n(0), l = a(i), o = n(2), r = a(o), u = n(1), s = a(u), d = l.default.createClass({
         displayName: "ComponentItem",
         getInitialState: function() {
             return {
@@ -45,10 +45,10 @@ function(e, t, n) {
         },
         render: function() {
             var e = [ this.props, this.state ], t = e[0], n = e[1];
-            return u.default.createElement("div", {
+            return l.default.createElement("div", {
                 className: "box1",
                 onClick: this.handleClick
-            }, "你好,", t.question, " ", u.default.createElement("span", null, "我", n.like ? "是" : "不是", t.name, "!"), " ");
+            }, "你好,", t.question, " ", l.default.createElement("span", null, "我", n.like ? "是" : "不是", t.name, "!"), " ");
         },
         handleClick: function() {
             var e = [ this.props, this.state ], t = e[0], n = e[1];
@@ -56,10 +56,10 @@ function(e, t, n) {
                 like: !n.like
             }), t.handles(t.name);
         }
-    }), c = [ "asd", "fgh", "jkl" ], f = 123, p = u.default.createClass({
+    }), c = [ "asd", "fgh", "jkl" ], f = 123, p = l.default.createClass({
         displayName: "ComponentArr",
         propTypes: {
-            title: u.default.PropTypes.string.isRequired
+            title: l.default.PropTypes.string.isRequired
         },
         getDefaultProps: function() {
             return {
@@ -74,7 +74,7 @@ function(e, t, n) {
         },
         componentDidMount: function() {
             var e = this;
-            r.default.ajax({
+            s.default.ajax({
                 url: "//licaishi.sina.com.cn/admin2/api/leftMenu",
                 type: "get",
                 dataType: "jsonp",
@@ -96,18 +96,18 @@ function(e, t, n) {
         },
         render: function() {
             var e = this, t = [ this.props, this.state ], n = t[0], a = t[1];
-            return u.default.createElement("div", {
+            return l.default.createElement("div", {
                 onClick: this.handleClick
             }, c.map(function(t) {
-                return u.default.createElement(s, {
+                return l.default.createElement(d, {
                     question: n.question,
                     name: t,
                     handles: e.inputFocus
                 });
-            }), u.default.createElement("input", {
+            }), l.default.createElement("input", {
                 type: "text",
                 ref: "myTextInput"
-            }), u.default.createElement(m, {
+            }), l.default.createElement(m, {
                 data: a.data,
                 loading: a.loading
             }));
@@ -115,34 +115,36 @@ function(e, t, n) {
         inputFocus: function(e) {
             this.refs.myTextInput.value = e, this.refs.myTextInput.focus();
         }
-    }), m = u.default.createClass({
+    }), m = l.default.createClass({
         displayName: "ComponentTest",
         render: function() {
             var e = this.props, t = e.data;
-            return u.default.createElement("div", null, e.loading ? u.default.createElement("h2", null, u.default.createElement(h, null)) : u.default.createElement("h2", null, t && 0 === t.code ? u.default.createElement(g, {
+            return l.default.createElement("div", null, e.loading ? l.default.createElement("h2", null, l.default.createElement(g, null)) : l.default.createElement("h2", null, t && 0 === t.code ? l.default.createElement(h, {
                 data: t
-            }) : u.default.createElement(E, null)));
+            }) : l.default.createElement(b, null)));
         }
-    }), h = u.default.createClass({
+    }), g = l.default.createClass({
         displayName: "Loadinng",
         render: function() {
-            return u.default.createElement("div", null, "loading");
+            return l.default.createElement("div", null, "loading");
         }
-    }), g = u.default.createClass({
+    }), h = l.default.createClass({
         displayName: "LoadSuccess",
         render: function() {
             var e = this.props, t = e.data;
-            return u.default.createElement("div", null, t.msg);
+            return l.default.createElement("div", null, t.msg);
         }
-    }), E = u.default.createClass({
+    }), b = l.default.createClass({
         displayName: "LoadFail",
         render: function() {
-            return u.default.createElement("div", null, "加载失败");
+            return l.default.createElement("div", null, "加载失败");
         }
     });
-    i.default.render(u.default.createElement("div", {
+    r.default.render(l.default.createElement("div", {
         className: "container"
-    }, u.default.createElement(p, {
+    }, l.default.createElement("i", {
+        className: "icon icon-logo"
+    }), l.default.createElement(p, {
         question: "我是谁？",
         title: f
     })), document.body);
@@ -150,7 +152,9 @@ function(e, t, n) {
 , /* 6 */
 , /* 7 */
 /***/
-function(e, t) {}, /* 8 */
+function(e, t) {
+    throw new Error("Module build failed: ModuleParseError: Module parse failed: D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\dev\\images\\sprite\\sprite.png Unexpected character '�' (1:0)\nYou may need an appropriate loader to handle this file type.\n(Source code omitted for this binary file)\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\webpack\\lib\\NormalModule.js:208:34\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\webpack\\lib\\NormalModule.js:162:10\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\loader-runner\\lib\\LoaderRunner.js:370:3\n    at iterateNormalLoaders (D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\loader-runner\\lib\\LoaderRunner.js:211:10)\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\loader-runner\\lib\\LoaderRunner.js:202:4\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:62:14\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)");
+}, /* 8 */
 , /* 9 */
 , /* 10 */
 /***/

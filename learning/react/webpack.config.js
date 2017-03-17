@@ -3,7 +3,9 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const SpritesmithPlugin = require('webpack-spritesmith');
+//var url = require("url-loader?limit=10000!./file.png");
 
 module.exports = function(env) {
     let environment = env === "production" ? '/build/' : '/dev/';
@@ -40,6 +42,21 @@ module.exports = function(env) {
         },
 
         plugins: [
+            //雪碧图
+            new SpritesmithPlugin({
+                src: {
+                    cwd: path.join(__dirname, 'src/images/ico'),
+                    glob: '*.png'
+                },
+                target: {
+                    image: path.join(__dirname, environment +　'images/sprite/sprite.png'),
+                    css: path.join(__dirname, 'src/less/sprite/sprite.less')
+                },
+                apiOptions: {
+                    cssImageRef: "../../.." + environment +　'images/sprite/sprite.png'
+                }
+            }),
+
             //压缩js
             new UglifyJSPlugin({
                 beautify: !isProd,

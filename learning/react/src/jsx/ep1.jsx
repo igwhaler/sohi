@@ -156,6 +156,7 @@ let LoadFail = React.createClass({
 
 ReactDOM.render(
     <div className="container">
+        <i className="icon icon-logo"></i>
         <ComponentArr question="我是谁？" title={num1}/>
     </div>,
     document.body

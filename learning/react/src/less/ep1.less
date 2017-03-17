@@ -1,4 +1,16 @@
+@import "sprite/sprite.less";
+@import "ep2.less";
+.width() {
+    width: 200px;
+}
+
 @baseFontSize: 30px;
+.icon-logo{
+    display: inline-block;
+    height: 100px;
+    .width();
+    .sprite(@logo);
+}
 .box1 {
     padding: 10px;/*px*/
     margin-bottom: 20px;
