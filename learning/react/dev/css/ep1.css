@@ -1,5 +1,6 @@
 .box1 {
   padding: 10px;
+  /*px*/
   margin-bottom: 20px;
   border-radius: 2px;
   background-color: darkred;
@@ -7,5 +8,5 @@
 }
 .box1 span {
   color: #fff;
-  font-size: 12px;
+  font-size: 30px;
 }

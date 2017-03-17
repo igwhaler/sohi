@@ -1,11 +1,13 @@
-var webpack = require("webpack");
-var path = require('path');
+const webpack = require("webpack");
+const path = require('path');
 
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = function(env) {
     let environment = env === "production" ? '/build/' : '/dev/';
+    let isProd = env === 'production' ? true : false;
 
     return {
         entry: {
@@ -23,7 +25,7 @@ module.exports = function(env) {
               {
                 test: /\.(jsx|js)$/,
                 exclude: '/node_modules/',
-                use: ["babel-loader"]
+                use: "babel-loader?cacheDirectory"
               },
               {
                 test: /\.less$/,
@@ -31,7 +33,7 @@ module.exports = function(env) {
                 exclude: '/node_modules/',
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader", "less-loader"]
+                    use: ["css-loader?minimize=false", "less-loader"]
                 })
               }
             ]
@@ -39,8 +41,15 @@ module.exports = function(env) {
 
         plugins: [
             //压缩js
-            new webpack.optimize.UglifyJsPlugin({
-                compress: env === 'production'
+            new UglifyJSPlugin({
+                beautify: !isProd,
+                comments: true,
+                compress: {
+                    warnings: false,
+                    drop_console: isProd,
+                    collapse_vars: isProd,
+                    reduce_vars: isProd,
+                }
             }),
 
             //提取公共js

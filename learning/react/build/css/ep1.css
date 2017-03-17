@@ -1,1 +1,12 @@
-.box1{padding:10px;margin-bottom:20px;border-radius:2px;background-color:darkred;text-align:center}.box1 span{color:#fff;font-size:12px}
+.box1 {
+  padding: 10px;
+  /*px*/
+  margin-bottom: 20px;
+  border-radius: 2px;
+  background-color: darkred;
+  text-align: center;
+}
+.box1 span {
+  color: #fff;
+  font-size: 30px;
+}

@@ -1,1 +1,159 @@
-webpackJsonp([0],[,,,function(e,t,a){"use strict";a(7);var n=a(1);var l=r(n);function r(e){return e&&e.__esModule?e:{default:e}}var u=(0,l.default)("body");u.css({backgroundColor:"tan"})},function(e,t,a){"use strict";var n=a(0);var l=d(n);var r=a(2);var u=d(r);var i=a(1);var o=d(i);function d(e){return e&&e.__esModule?e:{default:e}}var s=l.default.createClass({displayName:"ComponentItem",getInitialState:function e(){return{like:true}},componentWillMount:function e(){console.log("WillMount")},componentDidMount:function e(){console.log("DidMount")},componentWillUpdate:function e(t,a){console.log(t,a,1)},componentDidUpdate:function e(t,a){console.log(t,a,2)},render:function e(){var t=[this.props,this.state],a=t[0],n=t[1];return l.default.createElement("div",{className:"box1",onClick:this.handleClick},"你好,",a.question," ",l.default.createElement("span",null,"我",n.like?"是":"不是",a.name,"!")," ")},handleClick:function e(){var t=[this.props,this.state],a=t[0],n=t[1];this.setState({like:!n.like});a.handles(a.name)}});var c=["asd","fgh","jkl"];var f=123;var p=l.default.createClass({displayName:"ComponentArr",propTypes:{title:l.default.PropTypes.string.isRequired},getDefaultProps:function e(){return{age:24}},getInitialState:function e(){return{data:null,loading:true}},componentDidMount:function e(){var t=this;o.default.ajax({url:"//licaishi.sina.com.cn/admin2/api/leftMenu",type:"get",dataType:"jsonp",data:{}}).done(function(e){console.log(e);if(e&&e.code===0){t.setState({data:e,loading:false})}else{t.setState({data:e,loading:false})}}).fail(function(){t.setState({data:null,loading:false})})},render:function e(){var t=this;var a=[this.props,this.state],n=a[0],r=a[1];return l.default.createElement("div",{onClick:this.handleClick},c.map(function(e){return l.default.createElement(s,{question:n.question,name:e,handles:t.inputFocus})}),l.default.createElement("input",{type:"text",ref:"myTextInput"}),l.default.createElement(m,{data:r.data,loading:r.loading}))},inputFocus:function e(t){this.refs.myTextInput.value=t;this.refs.myTextInput.focus()}});var m=l.default.createClass({displayName:"ComponentTest",render:function e(){var t=this.props;var a=t.data;return l.default.createElement("div",null,t.loading?l.default.createElement("h2",null,l.default.createElement(v,null)):l.default.createElement("h2",null,a&&a.code===0?l.default.createElement(h,{data:a}):l.default.createElement(g,null)))}});var v=l.default.createClass({displayName:"Loadinng",render:function e(){return l.default.createElement("div",null,"loading")}});var h=l.default.createClass({displayName:"LoadSuccess",render:function e(){var t=this.props;var a=t.data;return l.default.createElement("div",null,a.msg)}});var g=l.default.createClass({displayName:"LoadFail",render:function e(){return l.default.createElement("div",null,"加载失败")}});u.default.render(l.default.createElement("div",{className:"container"},l.default.createElement(p,{question:"我是谁？",title:f})),document.body)},,,function(e,t){},,,function(e,t,a){a(3);e.exports=a(4)}],[10]);
+webpackJsonp([ 0 ], [ /* 0 */
+, /* 1 */
+, /* 2 */
+, /* 3 */
+/***/
+function(e, t, n) {
+    "use strict";
+    function a(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        };
+    }
+    n(7);
+    var l = n(1), u = a(l), o = (0, u.default)("body");
+    o.css({
+        backgroundColor: "tan"
+    });
+}, /* 4 */
+/***/
+function(e, t, n) {
+    "use strict";
+    function a(e) {
+        return e && e.__esModule ? e : {
+            default: e
+        };
+    }
+    var l = n(0), u = a(l), o = n(2), i = a(o), d = n(1), r = a(d), s = u.default.createClass({
+        displayName: "ComponentItem",
+        getInitialState: function() {
+            return {
+                like: !0
+            };
+        },
+        componentWillMount: function() {
+            console.log("WillMount");
+        },
+        componentDidMount: function() {
+            console.log("DidMount");
+        },
+        componentWillUpdate: function(e, t) {
+            console.log(e, t, 1);
+        },
+        componentDidUpdate: function(e, t) {
+            console.log(e, t, 2);
+        },
+        render: function() {
+            var e = [ this.props, this.state ], t = e[0], n = e[1];
+            return u.default.createElement("div", {
+                className: "box1",
+                onClick: this.handleClick
+            }, "你好,", t.question, " ", u.default.createElement("span", null, "我", n.like ? "是" : "不是", t.name, "!"), " ");
+        },
+        handleClick: function() {
+            var e = [ this.props, this.state ], t = e[0], n = e[1];
+            this.setState({
+                like: !n.like
+            }), t.handles(t.name);
+        }
+    }), c = [ "asd", "fgh", "jkl" ], f = 123, p = u.default.createClass({
+        displayName: "ComponentArr",
+        propTypes: {
+            title: u.default.PropTypes.string.isRequired
+        },
+        getDefaultProps: function() {
+            return {
+                age: 24
+            };
+        },
+        getInitialState: function() {
+            return {
+                data: null,
+                loading: !0
+            };
+        },
+        componentDidMount: function() {
+            var e = this;
+            r.default.ajax({
+                url: "//licaishi.sina.com.cn/admin2/api/leftMenu",
+                type: "get",
+                dataType: "jsonp",
+                data: {}
+            }).done(function(t) {
+                console.log(t), t && 0 === t.code ? e.setState({
+                    data: t,
+                    loading: !1
+                }) : e.setState({
+                    data: t,
+                    loading: !1
+                });
+            }).fail(function() {
+                e.setState({
+                    data: null,
+                    loading: !1
+                });
+            });
+        },
+        render: function() {
+            var e = this, t = [ this.props, this.state ], n = t[0], a = t[1];
+            return u.default.createElement("div", {
+                onClick: this.handleClick
+            }, c.map(function(t) {
+                return u.default.createElement(s, {
+                    question: n.question,
+                    name: t,
+                    handles: e.inputFocus
+                });
+            }), u.default.createElement("input", {
+                type: "text",
+                ref: "myTextInput"
+            }), u.default.createElement(m, {
+                data: a.data,
+                loading: a.loading
+            }));
+        },
+        inputFocus: function(e) {
+            this.refs.myTextInput.value = e, this.refs.myTextInput.focus();
+        }
+    }), m = u.default.createClass({
+        displayName: "ComponentTest",
+        render: function() {
+            var e = this.props, t = e.data;
+            return u.default.createElement("div", null, e.loading ? u.default.createElement("h2", null, u.default.createElement(h, null)) : u.default.createElement("h2", null, t && 0 === t.code ? u.default.createElement(g, {
+                data: t
+            }) : u.default.createElement(E, null)));
+        }
+    }), h = u.default.createClass({
+        displayName: "Loadinng",
+        render: function() {
+            return u.default.createElement("div", null, "loading");
+        }
+    }), g = u.default.createClass({
+        displayName: "LoadSuccess",
+        render: function() {
+            var e = this.props, t = e.data;
+            return u.default.createElement("div", null, t.msg);
+        }
+    }), E = u.default.createClass({
+        displayName: "LoadFail",
+        render: function() {
+            return u.default.createElement("div", null, "加载失败");
+        }
+    });
+    i.default.render(u.default.createElement("div", {
+        className: "container"
+    }, u.default.createElement(p, {
+        question: "我是谁？",
+        title: f
+    })), document.body);
+}, /* 5 */
+, /* 6 */
+, /* 7 */
+/***/
+function(e, t) {}, /* 8 */
+, /* 9 */
+, /* 10 */
+/***/
+function(e, t, n) {
+    n(3), e.exports = n(4);
+} ], [ 10 ]);
