@@ -37,6 +37,10 @@ module.exports = function(env) {
                     fallback: "style-loader",
                     use: ["css-loader?minimize=false", "less-loader"]
                 })
+              },
+              {
+                test: /\.(png|jpg)$/,
+                use: 'url-loader?limit=2000'
               }
             ]
         },

@@ -11,8 +11,8 @@ function(e, t, n) {
         };
     }
     n(7);
-    var i = n(1), l = a(i), o = (0, l.default)("body");
-    o.css({
+    var l = n(1), o = a(l), u = (0, o.default)("body");
+    u.css({
         backgroundColor: "tan"
     });
 }, /* 4 */
@@ -24,7 +24,7 @@ function(e, t, n) {
             default: e
         };
     }
-    var i = n(0), l = a(i), o = n(2), r = a(o), u = n(1), s = a(u), d = l.default.createClass({
+    var l = n(0), o = a(l), u = n(2), i = a(u), d = n(1), r = a(d), s = o.default.createClass({
         displayName: "ComponentItem",
         getInitialState: function() {
             return {
@@ -45,10 +45,10 @@ function(e, t, n) {
         },
         render: function() {
             var e = [ this.props, this.state ], t = e[0], n = e[1];
-            return l.default.createElement("div", {
+            return o.default.createElement("div", {
                 className: "box1",
                 onClick: this.handleClick
-            }, "你好,", t.question, " ", l.default.createElement("span", null, "我", n.like ? "是" : "不是", t.name, "!"), " ");
+            }, "你好,", t.question, " ", o.default.createElement("span", null, "我", n.like ? "是" : "不是", t.name, "!"), " ");
         },
         handleClick: function() {
             var e = [ this.props, this.state ], t = e[0], n = e[1];
@@ -56,10 +56,10 @@ function(e, t, n) {
                 like: !n.like
             }), t.handles(t.name);
         }
-    }), c = [ "asd", "fgh", "jkl" ], f = 123, p = l.default.createClass({
+    }), c = [ "asd", "fgh", "jkl" ], f = 123, p = o.default.createClass({
         displayName: "ComponentArr",
         propTypes: {
-            title: l.default.PropTypes.string.isRequired
+            title: o.default.PropTypes.string.isRequired
         },
         getDefaultProps: function() {
             return {
@@ -74,16 +74,13 @@ function(e, t, n) {
         },
         componentDidMount: function() {
             var e = this;
-            s.default.ajax({
+            r.default.ajax({
                 url: "//licaishi.sina.com.cn/admin2/api/leftMenu",
                 type: "get",
                 dataType: "jsonp",
                 data: {}
             }).done(function(t) {
-                console.log(t), t && 0 === t.code ? e.setState({
-                    data: t,
-                    loading: !1
-                }) : e.setState({
+                console.log(t), t && t.code, e.setState({
                     data: t,
                     loading: !1
                 });
@@ -96,18 +93,18 @@ function(e, t, n) {
         },
         render: function() {
             var e = this, t = [ this.props, this.state ], n = t[0], a = t[1];
-            return l.default.createElement("div", {
+            return o.default.createElement("div", {
                 onClick: this.handleClick
             }, c.map(function(t) {
-                return l.default.createElement(d, {
+                return o.default.createElement(s, {
                     question: n.question,
                     name: t,
                     handles: e.inputFocus
                 });
-            }), l.default.createElement("input", {
+            }), o.default.createElement("input", {
                 type: "text",
                 ref: "myTextInput"
-            }), l.default.createElement(m, {
+            }), o.default.createElement(m, {
                 data: a.data,
                 loading: a.loading
             }));
@@ -115,36 +112,36 @@ function(e, t, n) {
         inputFocus: function(e) {
             this.refs.myTextInput.value = e, this.refs.myTextInput.focus();
         }
-    }), m = l.default.createClass({
+    }), m = o.default.createClass({
         displayName: "ComponentTest",
         render: function() {
             var e = this.props, t = e.data;
-            return l.default.createElement("div", null, e.loading ? l.default.createElement("h2", null, l.default.createElement(g, null)) : l.default.createElement("h2", null, t && 0 === t.code ? l.default.createElement(h, {
+            return o.default.createElement("div", null, e.loading ? o.default.createElement("h2", null, o.default.createElement(h, null)) : o.default.createElement("h2", null, t && 0 === t.code ? o.default.createElement(g, {
                 data: t
-            }) : l.default.createElement(b, null)));
+            }) : o.default.createElement(E, null)));
         }
-    }), g = l.default.createClass({
+    }), h = o.default.createClass({
         displayName: "Loadinng",
         render: function() {
-            return l.default.createElement("div", null, "loading");
+            return o.default.createElement("div", null, "loading");
         }
-    }), h = l.default.createClass({
+    }), g = o.default.createClass({
         displayName: "LoadSuccess",
         render: function() {
             var e = this.props, t = e.data;
-            return l.default.createElement("div", null, t.msg);
+            return o.default.createElement("div", null, t.msg);
         }
-    }), b = l.default.createClass({
+    }), E = o.default.createClass({
         displayName: "LoadFail",
         render: function() {
-            return l.default.createElement("div", null, "加载失败");
+            return o.default.createElement("div", null, "加载失败");
         }
     });
-    r.default.render(l.default.createElement("div", {
+    i.default.render(o.default.createElement("div", {
         className: "container"
-    }, l.default.createElement("i", {
+    }, o.default.createElement("i", {
         className: "icon icon-logo"
-    }), l.default.createElement(p, {
+    }), o.default.createElement(p, {
         question: "我是谁？",
         title: f
     })), document.body);
@@ -152,9 +149,7 @@ function(e, t, n) {
 , /* 6 */
 , /* 7 */
 /***/
-function(e, t) {
-    throw new Error("Module build failed: ModuleParseError: Module parse failed: D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\dev\\images\\sprite\\sprite.png Unexpected character '�' (1:0)\nYou may need an appropriate loader to handle this file type.\n(Source code omitted for this binary file)\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\webpack\\lib\\NormalModule.js:208:34\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\webpack\\lib\\NormalModule.js:162:10\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\loader-runner\\lib\\LoaderRunner.js:370:3\n    at iterateNormalLoaders (D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\loader-runner\\lib\\LoaderRunner.js:211:10)\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\loader-runner\\lib\\LoaderRunner.js:202:4\n    at D:\\BigFisher\\GitHub\\BigFishGuo.github.io\\learning\\react\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:62:14\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)");
-}, /* 8 */
+function(e, t) {}, /* 8 */
 , /* 9 */
 , /* 10 */
 /***/

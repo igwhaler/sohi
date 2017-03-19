@@ -52,6 +52,10 @@ body {
   display: inline-block;
   height: 100px;
   width: 200px;
+  background-image: url(d85c79139908ef73bb44df55f4bc0cc0.png);
+  background-position: 0px 0px;
+  width: 120px;
+  height: 120px;
 }
 .box1 {
   padding: 10px;
