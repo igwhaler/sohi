@@ -1,3 +1,6 @@
+.icon {
+  display: inline-block;
+}
 /*
 LESS variables are information about icon's compiled state, stored under its original file name
 
@@ -49,10 +52,7 @@ body {
   background-color: darkred;
 }
 .icon-logo {
-  display: inline-block;
-  height: 100px;
-  width: 200px;
-  background-image: url(d85c79139908ef73bb44df55f4bc0cc0.png);
+  background-image: url(../images/sprite.png);
   background-position: 0px 0px;
   width: 120px;
   height: 120px;

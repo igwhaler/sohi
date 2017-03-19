@@ -5,10 +5,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
-//var url = require("url-loader?limit=10000!./file.png");
 
 module.exports = function(env) {
-    let environment = env === "production" ? '/build/' : '/dev/';
+    let environment = env === "production" ? '/build/js' : '/dev/js';
     let isProd = env === 'production' ? true : false;
 
     return {
@@ -18,7 +17,7 @@ module.exports = function(env) {
             vendor: ["jquery", "react", "react-dom"]
         },
         output: {
-            path: path.join(__dirname + environment),
+            path: path.join(__dirname, environment),
             filename: "js/[name].bundle.js"
         },
 
@@ -40,7 +39,8 @@ module.exports = function(env) {
               },
               {
                 test: /\.(png|jpg)$/,
-                use: 'url-loader?limit=2000'
+                use: 'url-loader?limit=2000&name=../images/[name].[ext]'
+                //输出文件【注意：这里的根路径是module.exports.output.path】
               }
             ]
         },
@@ -53,11 +53,11 @@ module.exports = function(env) {
                     glob: '*.png'
                 },
                 target: {
-                    image: path.join(__dirname, environment +　'images/sprite/sprite.png'),
-                    css: path.join(__dirname, 'src/less/sprite/sprite.less')
+                    image: path.join(__dirname, 'src/images/sprite.png'),
+                    css: path.join(__dirname, 'src/less/core/sprite.less')
                 },
                 apiOptions: {
-                    cssImageRef: "../../.." + environment +　'images/sprite/sprite.png'
+                    cssImageRef: '../../images/sprite.png'
                 }
             }),
 
@@ -76,14 +76,14 @@ module.exports = function(env) {
             //提取公共js
             new webpack.optimize.CommonsChunkPlugin({
                 name: "vendor",
-                filename: "js/vendor.js",
+                filename: "vendor.js",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 miniChunks: Infinity
             }),
 
             //分离css
             new ExtractTextPlugin({
-                filename: "css/[name].css",
+                filename: "../css/[name].css",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 disable: false,
                 allChunks: true
@@ -92,14 +92,14 @@ module.exports = function(env) {
             //生成模板
             new HtmlWebpackPlugin({
                 template: "./pages/ep1.html",
-                filename: "html/ep1.html",
+                filename: "../html/ep1.html",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "ep1"]
             }),
             new HtmlWebpackPlugin({
                 template: "./pages/ep2.html",
-                filename: "html/ep2.html",
+                filename: "../html/ep2.html",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "ep2"]
