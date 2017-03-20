@@ -6,7 +6,7 @@
   "scripts": {
     "build:prod": "webpack --env=production --progress --colors",
     "build:dev" : "webpack --env=development --progress --colors",
-    "start": "webpack --watch"
+    "start"     : "webpack --env=development --progress --colors --watch"
   },
   "keywords": [
     "react",

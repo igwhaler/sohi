@@ -14,7 +14,7 @@ module.exports = function(env) {
         entry: {
             ep1: ['./src/js/example/ep1.js', './src/jsx/ep1.jsx'],
             ep2: './src/js/example/ep2.js',
-            vendor: ["jquery", "react", "react-dom"]
+            vendor: ["jquery", "react", "react-dom", "core"]
         },
         output: {
             path: environment,
@@ -138,7 +138,8 @@ module.exports = function(env) {
             alias: {
                 "jquery": path.join(__dirname, "node_modules/jquery/dist/jquery.min.js"),
                 "react": path.join(__dirname, "node_modules/react/dist/react.min.js"),
-                "react-dom": path.join(__dirname, "node_modules/react-dom/dist/react-dom.min.js")
+                "react-dom": path.join(__dirname, "node_modules/react-dom/dist/react-dom.min.js"),
+                "core": path.join(__dirname, "src/less/core.less")
             }
         }
     };

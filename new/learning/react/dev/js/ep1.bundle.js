@@ -2,6 +2,7 @@ webpackJsonp([ 0 ], [ /* 0 */
 , /* 1 */
 , /* 2 */
 , /* 3 */
+, /* 4 */
 /***/
 function(e, t, n) {
     "use strict";
@@ -10,10 +11,10 @@ function(e, t, n) {
             default: e
         };
     }
-    n(7), n(8), (0, a(n(1)).default)("body").css({
+    n(3), n(8), (0, a(n(1)).default)("body").css({
         backgroundColor: "tan"
     });
-}, /* 4 */
+}, /* 5 */
 /***/
 function(e, t, n) {
     "use strict";
@@ -22,7 +23,7 @@ function(e, t, n) {
             default: e
         };
     }
-    var l = n(0), i = a(l), o = n(2), u = a(o), s = n(1), d = a(s), c = n(10), r = n(9), f = i.default.createClass({
+    var l = n(0), i = a(l), o = n(2), u = a(o), s = n(1), d = a(s), r = n(10), c = n(9), f = i.default.createClass({
         displayName: "ComponentItem",
         getInitialState: function() {
             return {
@@ -140,7 +141,7 @@ function(e, t, n) {
     u.default.render(i.default.createElement("div", {
         className: "container"
     }, i.default.createElement("img", {
-        src: r,
+        src: c,
         style: {
             display: "block",
             width: "100%"
@@ -150,16 +151,14 @@ function(e, t, n) {
     }), i.default.createElement("i", {
         className: "icon icon-delete"
     }), i.default.createElement("img", {
-        src: c
+        src: r
     }), i.default.createElement(p, {
         question: "我是谁？",
         title: 123
     })), document.body);
-}, /* 5 */
-, /* 6 */
+}, /* 6 */
 , /* 7 */
-/***/
-function(e, t) {}, /* 8 */
+, /* 8 */
 /***/
 function(e, t) {}, /* 9 */
 /***/
@@ -174,5 +173,5 @@ function(e, t) {
 , /* 13 */
 /***/
 function(e, t, n) {
-    n(3), e.exports = n(4);
+    n(4), e.exports = n(5);
 } ], [ 13 ]);

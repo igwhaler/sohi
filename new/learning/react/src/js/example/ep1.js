@@ -1,4 +1,4 @@
-import "../../less/core/core";
+import "../../less/core";
 import "../../less/ep1";
 import $ from "jquery";
 

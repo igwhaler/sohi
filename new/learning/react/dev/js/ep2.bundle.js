@@ -3,9 +3,9 @@ webpackJsonp([ 1 ], {
     12: /***/
     function(n, o, c) {
         "use strict";
-        c(5), console.log(12);
+        c(6), console.log(12);
     },
     /***/
-    5: /***/
+    6: /***/
     function(n, o) {}
 }, [ 12 ]);
