@@ -33,10 +33,21 @@ At the bottom of this section, we provide information about the spritesheet itse
 @logo-total-height: 120px;
 @logo-image: '../../images/sprite.png';
 @logo: 0px 0px 0px 0px 120px 120px 174px 120px '../../images/sprite.png' 'logo';
+@warn-name: 'warn';
+@warn-x: 120px;
+@warn-y: 54px;
+@warn-offset-x: -120px;
+@warn-offset-y: -54px;
+@warn-width: 28px;
+@warn-height: 34px;
+@warn-total-width: 174px;
+@warn-total-height: 120px;
+@warn-image: '../../images/sprite.png';
+@warn: 120px 54px -120px -54px 28px 34px 174px 120px '../../images/sprite.png' 'warn';
 @spritesheet-width: 174px;
 @spritesheet-height: 120px;
 @spritesheet-image: '../../images/sprite.png';
-@spritesheet-sprites: @delete @logo;
+@spritesheet-sprites: @delete @logo @warn;
 @spritesheet: 174px 120px '../../images/sprite.png' @spritesheet-sprites;
 
 /*

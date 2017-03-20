@@ -7,7 +7,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = function(env) {
-    let environment = env === "production" ? '/build/js' : '/dev/js';
+    let environment = env === "production" ? './build/js/' : './dev/js/';
     let isProd = env === 'production' ? true : false;
 
     return {
@@ -17,30 +17,57 @@ module.exports = function(env) {
             vendor: ["jquery", "react", "react-dom"]
         },
         output: {
-            path: path.join(__dirname, environment),
-            filename: "js/[name].bundle.js"
+            path: environment,
+            filename: "[name].bundle.js"
         },
 
         module: {
             rules: [
               {
                 test: /\.(jsx|js)$/,
-                exclude: '/node_modules/',
+                exclude: './node_modules/',
                 use: "babel-loader?cacheDirectory"
               },
               {
                 test: /\.less$/,
                 //use: ["style-loader", "css-loader", "less-loader"]
-                exclude: '/node_modules/',
+                exclude: './node_modules/',
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader?minimize=false", "less-loader"]
+                    use: [`css-loader?minimize=${isProd}`, "less-loader"]
                 })
               },
               {
-                test: /\.(png|jpg)$/,
-                use: 'url-loader?limit=2000&name=../images/[name].[ext]'
-                //输出文件【注意：这里的根路径是module.exports.output.path】
+                test: /\.(png|jpg|gif|jpeg)$/,
+                exclude: './node_modules/',
+                use: [
+                    'url-loader?limit=2000&name=../images/[name].[ext]',
+                    //输出文件【注意：这里的路径是相对样式文件css的路径】
+                    {
+                        loader: 'img-loader',
+                        options: {
+                          enabled: isProd,
+                          optipng: true, // disabled
+                          gifsicle: {
+                            interlaced: false
+                          },
+                          mozjpeg: {
+                            progressive: true,
+                            arithmetic: false
+                          },
+                          pngquant: {
+                            floyd: 0.5,
+                            speed: 2
+                          },
+                          svgo: {
+                            plugins: [
+                              { removeTitle: true },
+                              { convertPathData: false }
+                            ]
+                          }
+                        }
+                    }
+                ]
               }
             ]
         },
@@ -64,12 +91,12 @@ module.exports = function(env) {
             //压缩js
             new UglifyJSPlugin({
                 beautify: !isProd,
-                comments: true,
+                comments: !isProd,
                 compress: {
                     warnings: false,
                     drop_console: isProd,
-                    collapse_vars: isProd,
-                    reduce_vars: isProd,
+                    collapse_vars: true,
+                    reduce_vars: false,
                 }
             }),
 

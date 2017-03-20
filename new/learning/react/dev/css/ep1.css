@@ -69,3 +69,6 @@ body {
   color: #fff;
   font-size: 30px;
 }
+.wrap-loading {
+  background: url(../images/yes.png) 0 0 no-repeat;
+}

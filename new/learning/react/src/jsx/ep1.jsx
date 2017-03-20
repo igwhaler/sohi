@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
 
+const oImg = require("../images/yes.png");
+const oBg = require("../images/bg.jpg");
+
 let ComponentItem = React.createClass({
     getInitialState() {
         return {
@@ -116,7 +119,7 @@ let ComponentTest = React.createClass({
     render() {
         let props = this.props;
         let data = props.data
-        return <div>
+        return <div className="wrap-loading">
             {
                 props.loading
                 ?<h2><Loadinng /></h2>
@@ -156,7 +159,10 @@ let LoadFail = React.createClass({
 
 ReactDOM.render(
     <div className="container">
+        <img src={oBg} style={{display: "block", width: "100%"}}/>
         <i className="icon icon-logo"></i>
+        <i className="icon icon-delete"></i>
+        <img src={oImg}/>
         <ComponentArr question="我是谁？" title={num1}/>
     </div>,
     document.body

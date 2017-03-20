@@ -10,9 +10,7 @@ function(e, t, n) {
             default: e
         };
     }
-    n(7);
-    var l = n(1), o = a(l), u = (0, o.default)("body");
-    u.css({
+    n(7), n(8), (0, a(n(1)).default)("body").css({
         backgroundColor: "tan"
     });
 }, /* 4 */
@@ -24,7 +22,7 @@ function(e, t, n) {
             default: e
         };
     }
-    var l = n(0), o = a(l), u = n(2), i = a(u), d = n(1), r = a(d), s = o.default.createClass({
+    var l = n(0), i = a(l), o = n(2), u = a(o), s = n(1), d = a(s), c = n(9), r = n(14), f = i.default.createClass({
         displayName: "ComponentItem",
         getInitialState: function() {
             return {
@@ -45,10 +43,10 @@ function(e, t, n) {
         },
         render: function() {
             var e = [ this.props, this.state ], t = e[0], n = e[1];
-            return o.default.createElement("div", {
+            return i.default.createElement("div", {
                 className: "box1",
                 onClick: this.handleClick
-            }, "你好,", t.question, " ", o.default.createElement("span", null, "我", n.like ? "是" : "不是", t.name, "!"), " ");
+            }, "你好,", t.question, " ", i.default.createElement("span", null, "我", n.like ? "是" : "不是", t.name, "!"), " ");
         },
         handleClick: function() {
             var e = [ this.props, this.state ], t = e[0], n = e[1];
@@ -56,10 +54,10 @@ function(e, t, n) {
                 like: !n.like
             }), t.handles(t.name);
         }
-    }), c = [ "asd", "fgh", "jkl" ], f = 123, p = o.default.createClass({
+    }), m = [ "asd", "fgh", "jkl" ], p = i.default.createClass({
         displayName: "ComponentArr",
         propTypes: {
-            title: o.default.PropTypes.string.isRequired
+            title: i.default.PropTypes.string.isRequired
         },
         getDefaultProps: function() {
             return {
@@ -74,7 +72,7 @@ function(e, t, n) {
         },
         componentDidMount: function() {
             var e = this;
-            r.default.ajax({
+            d.default.ajax({
                 url: "//licaishi.sina.com.cn/admin2/api/leftMenu",
                 type: "get",
                 dataType: "jsonp",
@@ -93,18 +91,18 @@ function(e, t, n) {
         },
         render: function() {
             var e = this, t = [ this.props, this.state ], n = t[0], a = t[1];
-            return o.default.createElement("div", {
+            return i.default.createElement("div", {
                 onClick: this.handleClick
-            }, c.map(function(t) {
-                return o.default.createElement(s, {
+            }, m.map(function(t) {
+                return i.default.createElement(f, {
                     question: n.question,
                     name: t,
                     handles: e.inputFocus
                 });
-            }), o.default.createElement("input", {
+            }), i.default.createElement("input", {
                 type: "text",
                 ref: "myTextInput"
-            }), o.default.createElement(m, {
+            }), i.default.createElement(g, {
                 data: a.data,
                 loading: a.loading
             }));
@@ -112,47 +110,70 @@ function(e, t, n) {
         inputFocus: function(e) {
             this.refs.myTextInput.value = e, this.refs.myTextInput.focus();
         }
-    }), m = o.default.createClass({
+    }), g = i.default.createClass({
         displayName: "ComponentTest",
         render: function() {
             var e = this.props, t = e.data;
-            return o.default.createElement("div", null, e.loading ? o.default.createElement("h2", null, o.default.createElement(h, null)) : o.default.createElement("h2", null, t && 0 === t.code ? o.default.createElement(g, {
+            return i.default.createElement("div", {
+                className: "wrap-loading"
+            }, e.loading ? i.default.createElement("h2", null, i.default.createElement(h, null)) : i.default.createElement("h2", null, t && 0 === t.code ? i.default.createElement(E, {
                 data: t
-            }) : o.default.createElement(E, null)));
+            }) : i.default.createElement(y, null)));
         }
-    }), h = o.default.createClass({
+    }), h = i.default.createClass({
         displayName: "Loadinng",
         render: function() {
-            return o.default.createElement("div", null, "loading");
+            return i.default.createElement("div", null, "loading");
         }
-    }), g = o.default.createClass({
+    }), E = i.default.createClass({
         displayName: "LoadSuccess",
         render: function() {
             var e = this.props, t = e.data;
-            return o.default.createElement("div", null, t.msg);
+            return i.default.createElement("div", null, t.msg);
         }
-    }), E = o.default.createClass({
+    }), y = i.default.createClass({
         displayName: "LoadFail",
         render: function() {
-            return o.default.createElement("div", null, "加载失败");
+            return i.default.createElement("div", null, "加载失败");
         }
     });
-    i.default.render(o.default.createElement("div", {
+    u.default.render(i.default.createElement("div", {
         className: "container"
-    }, o.default.createElement("i", {
+    }, i.default.createElement("img", {
+        src: r,
+        style: {
+            display: "block",
+            width: "100%"
+        }
+    }), i.default.createElement("i", {
         className: "icon icon-logo"
-    }), o.default.createElement(p, {
+    }), i.default.createElement("i", {
+        className: "icon icon-delete"
+    }), i.default.createElement("img", {
+        src: c
+    }), i.default.createElement(p, {
         question: "我是谁？",
-        title: f
+        title: 123
     })), document.body);
 }, /* 5 */
 , /* 6 */
 , /* 7 */
 /***/
 function(e, t) {}, /* 8 */
-, /* 9 */
-, /* 10 */
+/***/
+function(e, t) {}, /* 9 */
+/***/
+function(e, t, n) {
+    e.exports = n.p + "../images/yes.png";
+}, /* 10 */
+, /* 11 */
+, /* 12 */
 /***/
 function(e, t, n) {
     n(3), e.exports = n(4);
-} ], [ 10 ]);
+}, /* 13 */
+, /* 14 */
+/***/
+function(e, t, n) {
+    e.exports = n.p + "../images/bg.jpg";
+} ], [ 12 ]);
