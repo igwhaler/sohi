@@ -22,7 +22,7 @@ function(e, t, n) {
             default: e
         };
     }
-    var l = n(0), i = a(l), o = n(2), u = a(o), s = n(1), d = a(s), c = n(9), r = n(14), f = i.default.createClass({
+    var l = n(0), i = a(l), o = n(2), u = a(o), s = n(1), d = a(s), c = n(10), r = n(9), f = i.default.createClass({
         displayName: "ComponentItem",
         getInitialState: function() {
             return {
@@ -163,17 +163,16 @@ function(e, t) {}, /* 8 */
 /***/
 function(e, t) {}, /* 9 */
 /***/
-function(e, t, n) {
-    e.exports = n.p + "../images/yes.png";
+function(e, t) {
+    e.exports = "../images/bg.jpg";
 }, /* 10 */
-, /* 11 */
+/***/
+function(e, t) {
+    e.exports = "../images/yes.png";
+}, /* 11 */
 , /* 12 */
+, /* 13 */
 /***/
 function(e, t, n) {
     n(3), e.exports = n(4);
-}, /* 13 */
-, /* 14 */
-/***/
-function(e, t, n) {
-    e.exports = n.p + "../images/bg.jpg";
-} ], [ 12 ]);
+} ], [ 13 ]);

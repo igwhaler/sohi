@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:prod": "webpack --env=production --progress --colors",
-    "build:dev": "webpack --env=development --progress --colors --watch",
+    "build:dev" : "webpack --env=development --progress --colors",
     "start": "webpack --watch"
   },
   "keywords": [

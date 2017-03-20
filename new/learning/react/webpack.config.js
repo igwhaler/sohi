@@ -7,7 +7,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = function(env) {
-    let environment = env === "production" ? './build/js/' : './dev/js/';
+    let environment = env === "production" ? './build/' : './dev/';
     let isProd = env === 'production' ? true : false;
 
     return {
@@ -18,7 +18,7 @@ module.exports = function(env) {
         },
         output: {
             path: environment,
-            filename: "[name].bundle.js"
+            filename: "js/[name].bundle.js"
         },
 
         module: {
@@ -41,7 +41,7 @@ module.exports = function(env) {
                 test: /\.(png|jpg|gif|jpeg)$/,
                 exclude: './node_modules/',
                 use: [
-                    'url-loader?limit=2000&name=../images/[name].[ext]',
+                    'url-loader?limit=2000&name=images/[name].[ext]&publicPath=../',
                     //输出文件【注意：这里的路径是相对样式文件css的路径】
                     {
                         loader: 'img-loader',
@@ -103,14 +103,14 @@ module.exports = function(env) {
             //提取公共js
             new webpack.optimize.CommonsChunkPlugin({
                 name: "vendor",
-                filename: "vendor.js",
+                filename: "js/vendor.js",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 miniChunks: Infinity
             }),
 
             //分离css
             new ExtractTextPlugin({
-                filename: "../css/[name].css",
+                filename: "css/[name].css",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 disable: false,
                 allChunks: true
@@ -119,14 +119,14 @@ module.exports = function(env) {
             //生成模板
             new HtmlWebpackPlugin({
                 template: "./pages/ep1.html",
-                filename: "../html/ep1.html",
+                filename: "html/ep1.html",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "ep1"]
             }),
             new HtmlWebpackPlugin({
                 template: "./pages/ep2.html",
-                filename: "../html/ep2.html",
+                filename: "html/ep2.html",
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "ep2"]
