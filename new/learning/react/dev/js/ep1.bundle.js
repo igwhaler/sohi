@@ -12,9 +12,7 @@ function(e, t, n) {
             default: e
         };
     }
-    n(2), n(11);
-    var l = n(3), i = a(l), o = (0, i.default)("body");
-    o.css({
+    n(2), n(11), (0, a(n(3)).default)("body").css({
         backgroundColor: "tan"
     });
 }, /* 6 */
@@ -58,7 +56,7 @@ function(e, t, n) {
                 like: !n.like
             }), t.handles(t.name);
         }
-    }), m = [ "asd", "fgh", "jkl" ], p = 123, g = i.default.createClass({
+    }), m = [ "asd", "fgh", "jkl" ], p = i.default.createClass({
         displayName: "ComponentArr",
         propTypes: {
             title: i.default.PropTypes.string.isRequired
@@ -106,7 +104,7 @@ function(e, t, n) {
             }), i.default.createElement("input", {
                 type: "text",
                 ref: "myTextInput"
-            }), i.default.createElement(h, {
+            }), i.default.createElement(g, {
                 data: a.data,
                 loading: a.loading
             }));
@@ -114,28 +112,28 @@ function(e, t, n) {
         inputFocus: function(e) {
             this.refs.myTextInput.value = e, this.refs.myTextInput.focus();
         }
-    }), h = i.default.createClass({
+    }), g = i.default.createClass({
         displayName: "ComponentTest",
         render: function() {
             var e = this.props, t = e.data;
             return i.default.createElement("div", {
                 className: "wrap-loading"
-            }, e.loading ? i.default.createElement("h2", null, i.default.createElement(E, null)) : i.default.createElement("h2", null, t && 0 === t.code ? i.default.createElement(y, {
+            }, e.loading ? i.default.createElement("h2", null, i.default.createElement(h, null)) : i.default.createElement("h2", null, t && 0 === t.code ? i.default.createElement(E, {
                 data: t
-            }) : i.default.createElement(v, null)));
+            }) : i.default.createElement(y, null)));
         }
-    }), E = i.default.createClass({
+    }), h = i.default.createClass({
         displayName: "Loadinng",
         render: function() {
             return i.default.createElement("div", null, "loading");
         }
-    }), y = i.default.createClass({
+    }), E = i.default.createClass({
         displayName: "LoadSuccess",
         render: function() {
             var e = this.props, t = e.data;
             return i.default.createElement("div", null, t.msg);
         }
-    }), v = i.default.createClass({
+    }), y = i.default.createClass({
         displayName: "LoadFail",
         render: function() {
             return i.default.createElement("div", null, "加载失败");
@@ -155,9 +153,9 @@ function(e, t, n) {
         className: "icon icon-delete"
     }), i.default.createElement("img", {
         src: r
-    }), i.default.createElement(g, {
+    }), i.default.createElement(p, {
         question: "我是谁？",
-        title: p
+        title: 123
     })), document.body);
 }, /* 7 */
 , /* 8 */

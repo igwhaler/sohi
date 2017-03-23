@@ -1,7 +1,7 @@
 import "../less/core.less";
 import React from "react";
 import ReactDOM from "react-dom";
-import {Router, Route, Link} from 'react-router-dom';
+import {Router, Route, Link, history} from 'react-router';
 
 const One = React.createClass({
     render() {
@@ -21,16 +21,15 @@ const Three = React.createClass({
 
 const App = React.createClass({
     render() {
+        var _this = this;
         return (
             <div>
                 <ul>
-                    <li><Link to="/one">One</Link></li>
-                    <li><Link to="/two">Two</Link></li>
-                    <li><Link to="/three">Three</Link></li>
+                    <li><Link to="/one">On</Link></li>
+                    <li><Link to="/two">Tw</Link></li>
+                    <li><Link to="/three">Thre</Link></li>
                 </ul>
-                {
-                    this.props.children
-                }
+                {_this.props.children}
             </div>
         )
     }
@@ -39,9 +38,9 @@ const App = React.createClass({
 ReactDOM.render(
     <Router>
         <Route path="/" component={App}>
-            <Route path="one" componet={One} />
+            <Route path="one" component={One} />
             <Route path="two" component={Two} />
-            <Route path="three" componet={Three} />
+            <Route path="three" component={Three} />
         </Route>
     </Router>,
     document.body

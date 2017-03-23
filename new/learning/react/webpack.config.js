@@ -156,7 +156,7 @@ module.exports = function(env) {
                 "react": path.join(__dirname, "node_modules/react/dist/react.min.js"),
                 "react-dom": path.join(__dirname, "node_modules/react-dom/dist/react-dom.min.js"),
                 "react-router": path.join(__dirname, "node_modules/react-router/umd/react-router.min.js"),
-                "react-router-dom": path.join(__dirname, "node_modules/react-router-dom/umd/react-router-dom.min.js")
+                "react-router-dom": path.join(__dirname, "node_modules/react-router-dom/umd/react-router-dom.min.js"),
                 "core": path.join(__dirname, "src/less/core.less")
             }
         }

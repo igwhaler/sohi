@@ -46,7 +46,7 @@ This must be run when you have at least 2 sprites.
 .sprites(@spritesheet-sprites);
 */
 body {
-  background-color: darkred;
+  background-color: tan;
 }
 .icon-logo {
   background-image: url(../images/sprite.png);
