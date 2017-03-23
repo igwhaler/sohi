@@ -14,6 +14,8 @@ module.exports = function(env) {
         entry: {
             ep1: ['./src/js/example/ep1.js', './src/jsx/ep1.jsx'],
             ep2: './src/js/example/ep2.js',
+            reactRouter1: ['./src/jsx/reactRouter1.jsx'],
+            reactRouter2: ['./src/jsx/reactRouter2.jsx'],
             vendor: ["jquery", "react", "react-dom", "core"]
         },
         output: {
@@ -130,6 +132,20 @@ module.exports = function(env) {
                 //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "ep2"]
+            }),
+            new HtmlWebpackPlugin({
+                template: "./pages/react-router-1.html",
+                filename: "html/react-router-1.html",
+                //输出文件【注意：这里的根路径是module.exports.output.path】
+                inject: "body",
+                chunks: ["vendor", "reactRouter1"]
+            }),
+            new HtmlWebpackPlugin({
+                template: "./pages/react-router-2.html",
+                filename: "html/react-router-2.html",
+                //输出文件【注意：这里的根路径是module.exports.output.path】
+                inject: "body",
+                chunks: ["vendor", "reactRouter2"]
             })
         ],
 
@@ -139,6 +155,8 @@ module.exports = function(env) {
                 "jquery": path.join(__dirname, "node_modules/jquery/dist/jquery.min.js"),
                 "react": path.join(__dirname, "node_modules/react/dist/react.min.js"),
                 "react-dom": path.join(__dirname, "node_modules/react-dom/dist/react-dom.min.js"),
+                "react-router": path.join(__dirname, "node_modules/react-router/umd/react-router.min.js"),
+                "react-router-dom": path.join(__dirname, "node_modules/react-router-dom/umd/react-router-dom.min.js")
                 "core": path.join(__dirname, "src/less/core.less")
             }
         }

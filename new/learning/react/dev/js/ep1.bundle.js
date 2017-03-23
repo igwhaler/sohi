@@ -3,6 +3,7 @@ webpackJsonp([ 0 ], [ /* 0 */
 , /* 2 */
 , /* 3 */
 , /* 4 */
+, /* 5 */
 /***/
 function(e, t, n) {
     "use strict";
@@ -11,10 +12,12 @@ function(e, t, n) {
             default: e
         };
     }
-    n(3), n(8), (0, a(n(1)).default)("body").css({
+    n(2), n(11);
+    var l = n(3), i = a(l), o = (0, i.default)("body");
+    o.css({
         backgroundColor: "tan"
     });
-}, /* 5 */
+}, /* 6 */
 /***/
 function(e, t, n) {
     "use strict";
@@ -23,7 +26,7 @@ function(e, t, n) {
             default: e
         };
     }
-    var l = n(0), i = a(l), o = n(2), u = a(o), s = n(1), d = a(s), r = n(10), c = n(9), f = i.default.createClass({
+    var l = n(0), i = a(l), o = n(1), u = a(o), s = n(3), d = a(s), r = n(13), c = n(12), f = i.default.createClass({
         displayName: "ComponentItem",
         getInitialState: function() {
             return {
@@ -55,7 +58,7 @@ function(e, t, n) {
                 like: !n.like
             }), t.handles(t.name);
         }
-    }), m = [ "asd", "fgh", "jkl" ], p = i.default.createClass({
+    }), m = [ "asd", "fgh", "jkl" ], p = 123, g = i.default.createClass({
         displayName: "ComponentArr",
         propTypes: {
             title: i.default.PropTypes.string.isRequired
@@ -103,7 +106,7 @@ function(e, t, n) {
             }), i.default.createElement("input", {
                 type: "text",
                 ref: "myTextInput"
-            }), i.default.createElement(g, {
+            }), i.default.createElement(h, {
                 data: a.data,
                 loading: a.loading
             }));
@@ -111,28 +114,28 @@ function(e, t, n) {
         inputFocus: function(e) {
             this.refs.myTextInput.value = e, this.refs.myTextInput.focus();
         }
-    }), g = i.default.createClass({
+    }), h = i.default.createClass({
         displayName: "ComponentTest",
         render: function() {
             var e = this.props, t = e.data;
             return i.default.createElement("div", {
                 className: "wrap-loading"
-            }, e.loading ? i.default.createElement("h2", null, i.default.createElement(h, null)) : i.default.createElement("h2", null, t && 0 === t.code ? i.default.createElement(E, {
+            }, e.loading ? i.default.createElement("h2", null, i.default.createElement(E, null)) : i.default.createElement("h2", null, t && 0 === t.code ? i.default.createElement(y, {
                 data: t
-            }) : i.default.createElement(y, null)));
+            }) : i.default.createElement(v, null)));
         }
-    }), h = i.default.createClass({
+    }), E = i.default.createClass({
         displayName: "Loadinng",
         render: function() {
             return i.default.createElement("div", null, "loading");
         }
-    }), E = i.default.createClass({
+    }), y = i.default.createClass({
         displayName: "LoadSuccess",
         render: function() {
             var e = this.props, t = e.data;
             return i.default.createElement("div", null, t.msg);
         }
-    }), y = i.default.createClass({
+    }), v = i.default.createClass({
         displayName: "LoadFail",
         render: function() {
             return i.default.createElement("div", null, "加载失败");
@@ -152,26 +155,28 @@ function(e, t, n) {
         className: "icon icon-delete"
     }), i.default.createElement("img", {
         src: r
-    }), i.default.createElement(p, {
+    }), i.default.createElement(g, {
         question: "我是谁？",
-        title: 123
+        title: p
     })), document.body);
-}, /* 6 */
-, /* 7 */
+}, /* 7 */
 , /* 8 */
+, /* 9 */
+, /* 10 */
+, /* 11 */
 /***/
-function(e, t) {}, /* 9 */
+function(e, t) {}, /* 12 */
 /***/
 function(e, t) {
     e.exports = "../images/bg.jpg";
-}, /* 10 */
+}, /* 13 */
 /***/
 function(e, t) {
     e.exports = "../images/yes.png";
-}, /* 11 */
-, /* 12 */
-, /* 13 */
+}, /* 14 */
+, /* 15 */
+, /* 16 */
 /***/
 function(e, t, n) {
-    n(4), e.exports = n(5);
-} ], [ 13 ]);
+    n(5), e.exports = n(6);
+} ], [ 16 ]);
