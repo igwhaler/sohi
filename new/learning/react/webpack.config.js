@@ -16,6 +16,9 @@ module.exports = function(env) {
             ep2: './src/js/example/ep2.js',
             reactRouter1: ['./src/jsx/reactRouter1.jsx'],
             reactRouter2: ['./src/jsx/reactRouter2.jsx'],
+            reactRouterBasic: ['./src/jsx/reactRouterBasic.jsx'],
+            reactRouterURLParamenters: ['./src/jsx/reactRouterURLParamenters.jsx'],
+            reactRouterRedirect: ['./src/jsx/reactRouterRedirect.jsx'],
             vendor: ["jquery", "react", "react-dom", "core"]
         },
         output: {
@@ -129,23 +132,38 @@ module.exports = function(env) {
             new HtmlWebpackPlugin({
                 template: "./pages/ep2.html",
                 filename: "html/ep2.html",
-                //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "ep2"]
             }),
             new HtmlWebpackPlugin({
                 template: "./pages/react-router-1.html",
                 filename: "html/react-router-1.html",
-                //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "reactRouter1"]
             }),
             new HtmlWebpackPlugin({
                 template: "./pages/react-router-2.html",
                 filename: "html/react-router-2.html",
-                //输出文件【注意：这里的根路径是module.exports.output.path】
                 inject: "body",
                 chunks: ["vendor", "reactRouter2"]
+            }),
+            new HtmlWebpackPlugin({
+                template: "./pages/reactRouter-Basic.html",
+                filename: "html/reactRouter-Basic.html",
+                inject: "body",
+                chunks: ["vendor", "reactRouterBasic"]
+            }),
+            new HtmlWebpackPlugin({
+                template: "./pages/reactRouter-URL-Paramenters.html",
+                filename: "html/reactRouter-URL-Paramenters.html",
+                inject: "body",
+                chunks: ["vendor", "reactRouterURLParamenters"]
+            }),
+            new HtmlWebpackPlugin({
+                template: "./pages/reactRouter-Redirect.html",
+                filename: "html/reactRouter-Redirect.html",
+                inject: "body",
+                chunks: ["vendor", "reactRouterURLParamenters"]
             })
         ],
 

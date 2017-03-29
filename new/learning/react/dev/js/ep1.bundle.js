@@ -4,6 +4,7 @@ webpackJsonp([ 0 ], [ /* 0 */
 , /* 3 */
 , /* 4 */
 , /* 5 */
+, /* 6 */
 /***/
 function(e, t, n) {
     "use strict";
@@ -12,10 +13,10 @@ function(e, t, n) {
             default: e
         };
     }
-    n(2), n(11), (0, a(n(3)).default)("body").css({
+    n(5), n(14), (0, a(n(4)).default)("body").css({
         backgroundColor: "tan"
     });
-}, /* 6 */
+}, /* 7 */
 /***/
 function(e, t, n) {
     "use strict";
@@ -24,7 +25,7 @@ function(e, t, n) {
             default: e
         };
     }
-    var l = n(0), i = a(l), o = n(1), u = a(o), s = n(3), d = a(s), r = n(13), c = n(12), f = i.default.createClass({
+    var l = n(0), i = a(l), o = n(1), u = a(o), s = n(4), d = a(s), r = n(16), c = n(15), f = i.default.createClass({
         displayName: "ComponentItem",
         getInitialState: function() {
             return {
@@ -157,24 +158,26 @@ function(e, t, n) {
         question: "我是谁？",
         title: 123
     })), document.body);
-}, /* 7 */
-, /* 8 */
+}, /* 8 */
 , /* 9 */
 , /* 10 */
 , /* 11 */
+, /* 12 */
+, /* 13 */
+, /* 14 */
 /***/
-function(e, t) {}, /* 12 */
+function(e, t) {}, /* 15 */
 /***/
 function(e, t) {
     e.exports = "../images/bg.jpg";
-}, /* 13 */
+}, /* 16 */
 /***/
 function(e, t) {
     e.exports = "../images/yes.png";
-}, /* 14 */
-, /* 15 */
-, /* 16 */
+}, /* 17 */
+, /* 18 */
+, /* 19 */
 /***/
 function(e, t, n) {
-    n(5), e.exports = n(6);
-} ], [ 16 ]);
+    n(6), e.exports = n(7);
+} ], [ 19 ]);

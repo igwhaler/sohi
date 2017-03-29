@@ -1,4 +1,30 @@
-webpackJsonp([ 4 ], {
+webpackJsonp([ 1 ], {
+    /***/
+    12: /***/
+    function(e, t, n) {
+        "use strict";
+        function o(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            };
+        }
+        var r = n(0), i = o(r), a = n(1), u = o(a), c = n(2), s = function() {
+            return i.default.createElement(c.BrowserRouter, null, i.default.createElement("div", null, i.default.createElement("ul", null, i.default.createElement("li", null, i.default.createElement(c.Link, {
+                to: "/a"
+            }, "A")), i.default.createElement("li", null, i.default.createElement(c.Link, {
+                to: "/b"
+            }, "B")), i.default.createElement("li", null, i.default.createElement(c.Link, {
+                to: "/c"
+            }, "C"))), i.default.createElement("div", null, i.default.createElement(c.Route, {
+                path: "/:id",
+                component: l
+            }))));
+        }, l = function(e) {
+            var t = e.match;
+            return i.default.createElement("div", null, i.default.createElement("h2", null, "ID: ", t.params.id));
+        };
+        u.default.render(i.default.createElement(s, null), document.body);
+    },
     /***/
     2: /***/
     function(e, t, n) {
@@ -33,10 +59,10 @@ webpackJsonp([ 4 ], {
                         };
                     }
                     t.__esModule = !0, t.withRouter = t.matchPath = t.Switch = t.StaticRouter = t.Router = t.Route = t.Redirect = t.Prompt = t.NavLink = t.MemoryRouter = t.Link = t.HashRouter = t.BrowserRouter = void 0;
-                    var r = n(16), i = o(r), a = n(17), u = o(a), c = n(9), s = o(c), l = n(18), f = o(l), p = n(19), d = o(p), h = n(20), y = o(h), v = n(21), m = o(v), b = n(22), g = o(b), w = n(23), P = o(w), _ = n(24), O = o(_), x = n(25), T = o(x), E = n(26), R = o(E), j = n(27), S = o(j);
+                    var r = n(16), i = o(r), a = n(17), u = o(a), c = n(9), s = o(c), l = n(18), f = o(l), p = n(19), d = o(p), h = n(20), y = o(h), v = n(21), m = o(v), b = n(22), g = o(b), w = n(23), P = o(w), _ = n(24), O = o(_), x = n(25), T = o(x), j = n(26), E = o(j), R = n(27), S = o(R);
                     t.BrowserRouter = i.default, t.HashRouter = u.default, t.Link = s.default, t.MemoryRouter = f.default, 
                     t.NavLink = d.default, t.Prompt = y.default, t.Redirect = m.default, t.Route = g.default, 
-                    t.Router = P.default, t.StaticRouter = O.default, t.Switch = T.default, t.matchPath = R.default, 
+                    t.Router = P.default, t.StaticRouter = O.default, t.Switch = T.default, t.matchPath = E.default, 
                     t.withRouter = S.default;
                 }, function(e, t, n) {
                     function o(e) {
@@ -747,13 +773,13 @@ webpackJsonp([ 4 ], {
                         }, O = function() {
                             return Math.random().toString(36).substr(2, w);
                         }, x = (0, h.default)(), T = function(e) {
-                            i(D, e), D.length = n.length, x.notifyListeners(D.location, D.action);
-                        }, E = function(e) {
+                            i($, e), $.length = n.length, x.notifyListeners($.location, $.action);
+                        }, j = function(e) {
                             (0, y.isExtraneousPopstateEvent)(e) || S(_(e.state));
-                        }, R = function() {
+                        }, E = function() {
                             S(_(b()));
-                        }, j = !1, S = function(t) {
-                            if (j) j = !1, T(); else {
+                        }, R = !1, S = function(t) {
+                            if (R) R = !1, T(); else {
                                 var n = "POP";
                                 x.confirmTransitionTo(t, n, e, function(e) {
                                     e ? T({
@@ -763,25 +789,25 @@ webpackJsonp([ 4 ], {
                                 });
                             }
                         }, M = function(e) {
-                            var t = D.location, n = C.indexOf(t.key);
+                            var t = $.location, n = C.indexOf(t.key);
                             n === -1 && (n = 0);
                             var o = C.indexOf(e.key);
                             o === -1 && (o = 0);
                             var r = n - o;
-                            r && (j = !0, H(r));
-                        }, k = _(b()), C = [ k.key ], L = function(e) {
+                            r && (R = !0, H(r));
+                        }, k = _(b()), C = [ k.key ], A = function(e) {
                             return P + (0, p.createPath)(e);
-                        }, A = function(t, i) {
+                        }, L = function(t, i) {
                             (0, c.default)(!("object" === (void 0 === t ? "undefined" : r(t)) && void 0 !== t.state && void 0 !== i), "You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");
-                            var a = "PUSH", u = (0, f.createLocation)(t, i, O(), D.location);
+                            var a = "PUSH", u = (0, f.createLocation)(t, i, O(), $.location);
                             x.confirmTransitionTo(u, a, e, function(e) {
                                 if (e) {
-                                    var t = L(u), r = u.key, i = u.state;
+                                    var t = A(u), r = u.key, i = u.state;
                                     if (o) if (n.pushState({
                                         key: r,
                                         state: i
                                     }, null, t), s) window.location.href = t; else {
-                                        var l = C.indexOf(D.location.key), f = C.slice(0, l === -1 ? 0 : l + 1);
+                                        var l = C.indexOf($.location.key), f = C.slice(0, l === -1 ? 0 : l + 1);
                                         f.push(u.key), C = f, T({
                                             action: a,
                                             location: u
@@ -792,15 +818,15 @@ webpackJsonp([ 4 ], {
                             });
                         }, q = function(t, i) {
                             (0, c.default)(!("object" === (void 0 === t ? "undefined" : r(t)) && void 0 !== t.state && void 0 !== i), "You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");
-                            var a = "REPLACE", u = (0, f.createLocation)(t, i, O(), D.location);
+                            var a = "REPLACE", u = (0, f.createLocation)(t, i, O(), $.location);
                             x.confirmTransitionTo(u, a, e, function(e) {
                                 if (e) {
-                                    var t = L(u), r = u.key, i = u.state;
+                                    var t = A(u), r = u.key, i = u.state;
                                     if (o) if (n.replaceState({
                                         key: r,
                                         state: i
                                     }, null, t), s) window.location.replace(t); else {
-                                        var l = C.indexOf(D.location.key);
+                                        var l = C.indexOf($.location.key);
                                         l !== -1 && (C[l] = u.key), T({
                                             action: a,
                                             location: u
@@ -816,32 +842,32 @@ webpackJsonp([ 4 ], {
                         }, I = function() {
                             return H(1);
                         }, B = 0, W = function(e) {
-                            B += e, 1 === B ? ((0, y.addEventListener)(window, v, E), a && (0, y.addEventListener)(window, m, R)) : 0 === B && ((0, 
-                            y.removeEventListener)(window, v, E), a && (0, y.removeEventListener)(window, m, R));
+                            B += e, 1 === B ? ((0, y.addEventListener)(window, v, j), a && (0, y.addEventListener)(window, m, E)) : 0 === B && ((0, 
+                            y.removeEventListener)(window, v, j), a && (0, y.removeEventListener)(window, m, E));
                         }, Y = !1, N = function() {
                             var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0], t = x.setPrompt(e);
                             return Y || (W(1), Y = !0), function() {
                                 return Y && (Y = !1, W(-1)), t();
                             };
-                        }, $ = function(e) {
+                        }, D = function(e) {
                             var t = x.appendListener(e);
                             return W(1), function() {
                                 W(-1), t();
                             };
-                        }, D = {
+                        }, $ = {
                             length: n.length,
                             action: "POP",
                             location: k,
-                            createHref: L,
-                            push: A,
+                            createHref: A,
+                            push: L,
                             replace: q,
                             go: H,
                             goBack: U,
                             goForward: I,
                             block: N,
-                            listen: $
+                            listen: D
                         };
-                        return D;
+                        return $;
                     };
                     t.default = g;
                 }, function(e, t, n) {
@@ -891,16 +917,16 @@ webpackJsonp([ 4 ], {
                             return e && (t = (0, l.stripPrefix)(t, e)), (0, l.parsePath)(t);
                         }, x = (0, p.default)(), T = function(e) {
                             r(K, e), K.length = n.length, x.notifyListeners(K.location, K.action);
-                        }, E = !1, R = null, j = function() {
+                        }, j = !1, E = null, R = function() {
                             var e = v(), t = P(e);
                             if (e !== t) b(t); else {
                                 var n = O(), o = K.location;
-                                if (!E && (0, s.locationsAreEqual)(o, n)) return;
-                                if (R === (0, l.createPath)(n)) return;
-                                R = null, S(n);
+                                if (!j && (0, s.locationsAreEqual)(o, n)) return;
+                                if (E === (0, l.createPath)(n)) return;
+                                E = null, S(n);
                             }
                         }, S = function(e) {
-                            if (E) E = !1, T(); else {
+                            if (j) j = !1, T(); else {
                                 var t = "POP";
                                 x.confirmTransitionTo(e, t, u, function(n) {
                                     n ? T({
@@ -910,15 +936,15 @@ webpackJsonp([ 4 ], {
                                 });
                             }
                         }, M = function(e) {
-                            var t = K.location, n = A.lastIndexOf((0, l.createPath)(t));
+                            var t = K.location, n = L.lastIndexOf((0, l.createPath)(t));
                             n === -1 && (n = 0);
-                            var o = A.lastIndexOf((0, l.createPath)(e));
+                            var o = L.lastIndexOf((0, l.createPath)(e));
                             o === -1 && (o = 0);
                             var r = n - o;
-                            r && (E = !0, I(r));
+                            r && (j = !0, I(r));
                         }, k = v(), C = P(k);
                         k !== C && b(C);
-                        var L = O(), A = [ (0, l.createPath)(L) ], q = function(t) {
+                        var A = O(), L = [ (0, l.createPath)(A) ], q = function(t) {
                             return "#" + P(e + (0, l.createPath)(t));
                         }, H = function(t, n) {
                             (0, a.default)(void 0 === n, "Hash history cannot push state; it is ignored");
@@ -927,9 +953,9 @@ webpackJsonp([ 4 ], {
                                 if (t) {
                                     var n = (0, l.createPath)(r), i = P(e + n);
                                     if (v() !== i) {
-                                        R = n, m(i);
-                                        var u = A.lastIndexOf((0, l.createPath)(K.location)), c = A.slice(0, u === -1 ? 0 : u + 1);
-                                        c.push(n), A = c, T({
+                                        E = n, m(i);
+                                        var u = L.lastIndexOf((0, l.createPath)(K.location)), c = L.slice(0, u === -1 ? 0 : u + 1);
+                                        c.push(n), L = c, T({
                                             action: o,
                                             location: r
                                         });
@@ -943,9 +969,9 @@ webpackJsonp([ 4 ], {
                             x.confirmTransitionTo(r, o, u, function(t) {
                                 if (t) {
                                     var n = (0, l.createPath)(r), i = P(e + n);
-                                    v() !== i && (R = n, b(i));
-                                    var a = A.indexOf((0, l.createPath)(K.location));
-                                    a !== -1 && (A[a] = n), T({
+                                    v() !== i && (E = n, b(i));
+                                    var a = L.indexOf((0, l.createPath)(K.location));
+                                    a !== -1 && (L[a] = n), T({
                                         action: o,
                                         location: r
                                     });
@@ -959,11 +985,11 @@ webpackJsonp([ 4 ], {
                         }, W = function() {
                             return I(1);
                         }, Y = 0, N = function(e) {
-                            Y += e, 1 === Y ? (0, d.addEventListener)(window, h, j) : 0 === Y && (0, d.removeEventListener)(window, h, j);
-                        }, $ = !1, D = function() {
+                            Y += e, 1 === Y ? (0, d.addEventListener)(window, h, R) : 0 === Y && (0, d.removeEventListener)(window, h, R);
+                        }, D = !1, $ = function() {
                             var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0], t = x.setPrompt(e);
-                            return $ || (N(1), $ = !0), function() {
-                                return $ && ($ = !1, N(-1)), t();
+                            return D || (N(1), D = !0), function() {
+                                return D && (D = !1, N(-1)), t();
                             };
                         }, F = function(e) {
                             var t = x.appendListener(e);
@@ -973,14 +999,14 @@ webpackJsonp([ 4 ], {
                         }, K = {
                             length: n.length,
                             action: "POP",
-                            location: L,
+                            location: A,
                             createHref: q,
                             push: H,
                             replace: U,
                             go: I,
                             goBack: B,
                             goForward: W,
-                            block: D,
+                            block: $,
                             listen: F
                         };
                         return K;
@@ -1475,13 +1501,13 @@ webpackJsonp([ 4 ], {
                             return O(-1);
                         }, T = function() {
                             return O(1);
-                        }, E = function(e) {
+                        }, j = function(e) {
                             var t = S.index + e;
                             return t >= 0 && t < S.entries.length;
-                        }, R = function() {
+                        }, E = function() {
                             var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
                             return y.setPrompt(e);
-                        }, j = function(e) {
+                        }, R = function(e) {
                             return y.appendListener(e);
                         }, S = {
                             length: g.length,
@@ -1495,9 +1521,9 @@ webpackJsonp([ 4 ], {
                             go: O,
                             goBack: x,
                             goForward: T,
-                            canGo: E,
-                            block: R,
-                            listen: j
+                            canGo: j,
+                            block: E,
+                            listen: R
                         };
                         return S;
                     };
@@ -1724,61 +1750,8 @@ webpackJsonp([ 4 ], {
         }).call(t, n(3)(e));
     },
     /***/
-    21: /***/
+    24: /***/
     function(e, t, n) {
-        e.exports = n(9);
-    },
-    /***/
-    9: /***/
-    function(e, t, n) {
-        "use strict";
-        function o(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            };
-        }
-        var r = n(0), i = o(r), a = n(1), u = o(a), c = n(2), s = function() {
-            return i.default.createElement("div", null, i.default.createElement("h1", null, "Home"));
-        }, l = function() {
-            return i.default.createElement("div", null, i.default.createElement("h1", null, "one"));
-        }, f = function(e) {
-            var t = e.match;
-            return i.default.createElement("div", null, i.default.createElement("h1", null, "Two"), i.default.createElement("ul", null, i.default.createElement("li", null, i.default.createElement(c.Link, {
-                to: t.url + "/two_1"
-            }, "哈哈")), i.default.createElement("li", null, i.default.createElement(c.Link, {
-                to: t.url + "/two_2"
-            }, "呵呵"))), i.default.createElement("div", null, i.default.createElement(c.Route, {
-                path: t.url + "/:twoItem",
-                component: p
-            }), i.default.createElement(c.Route, {
-                exact: !0,
-                path: t.url,
-                render: function() {
-                    return i.default.createElement("h3", null, "123123");
-                }
-            })));
-        }, p = function(e) {
-            var t = e.match;
-            return i.default.createElement("div", null, i.default.createElement("h2", null, t.params.twoItem));
-        }, d = function() {
-            return i.default.createElement(c.BrowserRouter, null, i.default.createElement("div", null, i.default.createElement("ul", null, i.default.createElement("li", null, i.default.createElement(c.Link, {
-                to: "/"
-            }, "Home")), i.default.createElement("li", null, i.default.createElement(c.Link, {
-                to: "/one"
-            }, "One")), i.default.createElement("li", null, i.default.createElement(c.Link, {
-                to: "/two"
-            }, "Two"))), i.default.createElement("div", null, i.default.createElement(c.Route, {
-                exact: !0,
-                path: "/",
-                component: s
-            }), i.default.createElement(c.Route, {
-                path: "/one",
-                component: l
-            }), i.default.createElement(c.Route, {
-                path: "/two",
-                component: f
-            }))));
-        };
-        u.default.render(i.default.createElement(d, null), document.body);
+        e.exports = n(12);
     }
-}, [ 21 ]);
+}, [ 24 ]);
