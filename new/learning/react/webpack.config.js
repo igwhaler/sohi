@@ -8,7 +8,7 @@ const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = function(env) {
     let environment = env === "production" ? './build/' : './dev/';
-    let isProd = env === 'production' ? true : false;
+    let isProd = env === 'production';
 
     return {
         entry: {
@@ -19,7 +19,7 @@ module.exports = function(env) {
             reactRouter3: ['./src/jsx/reactRouter3.jsx', "babel-polyfill"],
             reactRouterBasic: ['./src/jsx/components/reactRouterBasic.jsx'],
             reactRouterURLParamenters: ['./src/jsx/components/reactRouterURLParamenters.jsx'],
-            vendor: ["jquery", "react", "react-dom","react-router-dom", "babel-polyfill", "core"]
+            vendor: ["jquery", "react", "react-dom","react-router", "babel-polyfill", "core"]
         },
         output: {
             path: environment,
@@ -78,6 +78,9 @@ module.exports = function(env) {
         },
 
         plugins: [
+            new webpack.DefinePlugin({
+              'process.env.NODE_ENV': JSON.stringify('production')
+            }),
             //雪碧图
             new SpritesmithPlugin({
                 src: {
@@ -95,8 +98,8 @@ module.exports = function(env) {
 
             //压缩js
             new UglifyJSPlugin({
-                beautify: !isProd,
-                comments: !isProd,
+                beautify: false,
+                comments: false,
                 compress: {
                     warnings: false,
                     drop_console: isProd,
@@ -170,11 +173,6 @@ module.exports = function(env) {
         resolve: {
             extensions: [" ", ".js", "jsx", ".ces6", ".css", ".less", "png", "jpg", "jpeg"],
             alias: {
-                "jquery": path.join(__dirname, "node_modules/jquery/dist/jquery.min.js"),
-                "react": path.join(__dirname, "node_modules/react/dist/react.min.js"),
-                "react-dom": path.join(__dirname, "node_modules/react-dom/dist/react-dom.min.js"),
-                "react-router": path.join(__dirname, "node_modules/react-router/umd/react-router.min.js"),
-                "react-router-dom": path.join(__dirname, "node_modules/react-router-dom/umd/react-router-dom.min.js"),
                 "global": path.join(__dirname, "src/js/lib/global.js"),
                 "core": path.join(__dirname, "src/less/core.less")
             }

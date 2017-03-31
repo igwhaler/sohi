@@ -77,7 +77,7 @@ class Login extends React.Component {
         redirectToReferrer: false
     }
 
-    login = () => {
+    login() {
         fakeAuth.authenticate(() => {
             this.state({
                 redirectToReferrer: true
@@ -105,15 +105,3 @@ class Login extends React.Component {
 }
 
 export default AuthExample*/
-
-import React from "react";
-
-const AuthExample = () => <div>123</div>;
-
-const {...rest} = {a: 1, b: 2}
-console.log(rest);
-
-const arr = Array.from({0: "a", 1: "b", length: 2});
-console.log(arr);
-
-export default AuthExample;
