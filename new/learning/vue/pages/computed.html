@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <p>{{message}}</p>
+        <p>{{reverseMessage}}</p>
+        <p>{{methidMessage()}}</p>
+    </div>
+
+    <script>
+        var vm1 = new Vue({
+            el: "#app1",
+            data: {
+                message: "hello"
+            },
+            computed: {
+                reverseMessage: function () {
+                    var oReverse = this.message.split("").reverse().join("");
+                    return oReverse;
+                }
+            },
+            methods: {
+                methidMessage: function() {
+                    var oReverse = this.message.split("").reverse().join("");
+                    return oReverse;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

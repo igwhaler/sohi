@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: tan;
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app1" :class="box" @click="clickHnadle">123</div>
+
+    <script>
+        var app1 = new Vue({
+            el: "#app1",
+            data: {
+                box: "box1"
+            },
+            methods: {
+                clickHnadle: function() {
+                    console.log(this);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
