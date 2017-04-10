@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>class&style</title>
+    <style>
+    .box1 {
+        margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+        background-color: darkred;
+        transition: 0.5s ease-in-out;
+    }
+
+    .active {
+        width: 200px;
+        background-color: tan;
+    }
+
+    .hehe {
+        background-color: seagreen;
+    }
+
+    .haha {
+        border-radius: 50%;
+    }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app1" class="box1" v-bind:class="classObject" v-on:click="changeBoxBg"></div>
+    <div id="app2" class="box1" v-bind:class="[heheClass, hahaClass]"></div>
+
+    <div id="app3" v-bind:style='{color: "red", fontSize: "30px", backgroundColor: "tan", transition: "0.3s"}'>{{message}}</div>
+    <div id="app4" v-bind:style="styleObject">{{message}}</div>
+    <script>
+    var vm1 = new Vue({
+        el: "#app1",
+        data: {
+            classObject: {
+                active: false,
+                haha: true
+            }
+        },
+        methods: {
+            changeBoxBg: function() {
+                console.log(123);
+                this.classObject.active = !this.classObject.active;
+            }
+        }
+    });
+
+    var vm2 = new Vue({
+        el: "#app2",
+        data: {
+            heheClass: "hehe",
+            hahaClass: "haha"
+        }
+    })
+
+    var vm3 = new Vue({
+        el: "#app3",
+        data: {
+            message: "哈哈哈"
+        }
+    })
+
+    var vm4 = new Vue({
+        el: "#app4",
+        data: {
+            message: "呵呵呵",
+            styleObject: {
+                color: "red",
+                fontSize: "30px",
+                backgroundColor: "tan"
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

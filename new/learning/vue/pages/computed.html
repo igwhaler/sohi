@@ -12,6 +12,18 @@
         <p>{{methidMessage()}}</p>
     </div>
 
+    <div id="app2">
+        {{fullName}}
+    </div>
+
+    <div id="app3">
+        <div class="question">
+            <p>Ask a question</p>
+            <input type="text" v-model="question">
+        </div>
+        <p>{{answer}}</p>
+    </div>
+
     <script>
         var vm1 = new Vue({
             el: "#app1",
@@ -28,6 +40,56 @@
                 methidMessage: function() {
                     var oReverse = this.message.split("").reverse().join("");
                     return oReverse;
+                }
+            }
+            })
+
+        var vm2 = new Vue({
+            el: "#app2",
+            data: {
+                firstName: "123",
+                lastName: "456"
+            },
+            watch: {
+                /*firstName: function (val) {
+                    this.fullName = val + " " + this.lastName;
+                },
+                lastName: function (val) {
+                    this.fullName= this.firstName + " " + val;
+                },*/
+                fullName: function (val) {
+                    console.log(val);
+                    console.log(123);
+                }
+            },
+            computed: {
+                fullName: {
+                    get: function () {
+                        console.log(0);
+                        return this.firstName + " " + this.lastName;
+                    },
+                    set: function () {
+                        console.log(123);
+                    }
+                }
+            }
+        })
+
+        var vm3 = new Vue({
+            el: "#app3",
+            data: {
+                question: "",
+                answer: "I can give you a answer untill you ask a question!"
+            },
+            watch: {
+                question: function (newVal) {
+                    this.answer = "Waiting for you to stop typing...";
+                    this.getAnswer(newVal)
+                }
+            },
+            methods: {
+                getAnswer: function (val) {
+                    console.log(val);
                 }
             }
         })

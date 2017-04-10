@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <h1 v-if="ok">123</h1>
+        <h1 v-else>456</h1>
+    </div>
+
+    <div id="app2">
+        <template v-if='loginType === "username"'>
+            <label>用户名: </label><input type="text" placeholder="请输入用户名" key="name">
+        </template>
+        <template v-else>
+            <label>邮   箱: </label><input type="text" placeholder="请输入邮箱" key="email">
+        </template>
+        <br/>
+        <input type="button" value="切换登录类型" v-on:click="changeLoginType">
+    </div>
+
+    <div id="app3">
+        <h1 v-show="ok">123</h1>
+    </div>
+
+    <script>
+        var vm1 = new Vue({
+            el: "#app1",
+            data: {
+                ok: false
+            },
+        })
+
+        var vm2 = new Vue({
+            el: "#app2",
+            data: {
+                loginType: "username"
+            },
+            methods: {
+                changeLoginType: function () {
+                    this.loginType  === "username" ? this.loginType = "" : this.loginType = "username";
+                }
+            }
+        })
+
+        var vm3 = new Vue({
+            el: "#app3",
+            data: {
+                ok: true
+            }
+        })
+    </script>
+</body>
+</html>
