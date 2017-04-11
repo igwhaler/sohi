@@ -33,6 +33,19 @@
             <todo-item v-for="(value, index) in todos" v-if="value != 1" v-bind:key="value" v-bind:title="value" v-on:remove="todos.splice(index, 1)"></todo-item>
         </ul>
     </div>
+
+    <div id="app4">
+        <ul>
+            <li v-for="value in evenNumber">{{value}}</li>
+        </ul>
+    </div>
+
+    <div id="app5">
+        <ul>
+            <li v-for="value in even(numberList)">{{value}}</li>
+        </ul>
+    </div>
+
     <script>
     var vm1 = new Vue({
         el: "#app1",
@@ -66,7 +79,6 @@
     for (let [key, value] of Object.entries(obj1)) {
         console.log(key, value);
     }
-
     var vm3 = new Vue({
         el: "#app3",
         data: {
@@ -80,6 +92,35 @@
             },
             deleteItem: function() {
 
+            }
+        }
+    })
+
+    var vm4 = new Vue({
+        el: "#app4",
+        data: {
+            numberList: [1, 2, 3, 4, 5, 6]
+        },
+        computed: {
+            evenNumber: function() {
+                return this.numberList.filter(function(value) {
+                    return value%2 === 0;
+                })
+            }
+        }
+
+    });
+
+    var app5 = new Vue({
+        el: "#app5",
+        data: {
+            numberList: [1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        methods: {
+            even: function(arr) {
+                return arr.filter((value) =>{
+                    return value%2 === 0;
+                })
             }
         }
     })
