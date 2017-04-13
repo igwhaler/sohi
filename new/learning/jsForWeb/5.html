@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5</title>
+</head>
+<body>
+    <script>
+        function SpecialArray() {
+            var arr = new Array();
+            arr.push.apply(arr, arguments);
+            console.log(this);
+            arr.toPipedString = function () {
+                console.log(this);
+                return this.join("|")
+            }
+
+            //return arr;
+        }
+
+        var arr1 = new SpecialArray("a", "b", "c");
+        //console.log(arr1.toPipedString());
+    </script>
+</body>
+</html>

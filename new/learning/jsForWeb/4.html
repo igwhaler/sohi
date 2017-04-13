@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+</head>
+<body>
+    <script>
+        function Person() {}
+
+        Person.prototype = {
+            constructor: Person,
+            friends: ["a", "b"]
+        }
+
+        var p1 = new Person();
+        var p2 = new Person();
+        p1.friends.push("c");
+
+        //console.log(p2.friends);
+    </script>
+
+    <script>
+    function Animal(name) {
+        this.name = name;
+        this.friends = [];
+    }
+
+    Animal.prototype = {
+        constructor: Animal,
+        show: function () {
+            console.log(this.friends);
+        }
+    }
+
+    var a1 = new Animal("cat");
+    var a2 = new Animal("dog");
+
+    a1.friends.push("a");
+    a1.show();
+    a2.show();
+    </script>
+</body>
+</html>

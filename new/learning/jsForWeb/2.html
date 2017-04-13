@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            border: 10px solid gray;
+            background-color: tan;
+            overflow: auto;
+        }
+        .box2 {
+            width: 600px;
+            height: 200px;
+            padding: 100px;
+            background-color: darkred;
+        }
+        .boxS {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        [name="fs"] {
+            background-color: tan;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxS" name="fs"></div>
+    <!-- <span>1232</span> -->
+    <div class="box1" id="div1">
+        <div class="box2"></div>
+    </div>
+    <!-- <script>
+        function createPerson(name, age) {
+            var person = new Object();
+            person.name = name;
+            person.age = age;
+            person.say = function () {
+                console.log(name + "(" + age + "岁)说: Hello world");
+            }
+            return person;
+        }
+
+        var p1 = createPerson("Naruto", 24);
+    </script> -->
+
+    <!-- <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.say = function () {
+                console.log(name + "(" + age + "岁)说: Hello world");
+            }
+        }
+
+        var oP1 = new Person("Naruto", 24)
+
+        var obj1 = new Object();
+        Person.call(obj1, "haha", 21);
+        obj1.say();
+    </script> -->
+
+    <!-- <script>
+        function Animal() {}
+        Animal.prototype.name = "db";
+        Animal.prototype.age = 24;
+        Animal.prototype.say = function () {
+            console.log("Hello world!");
+        }
+        var a1 = new Animal();
+        a1.name = "hehe";
+
+        function definePrototypeProperty(obj, key) {
+            return !obj.hasOwnProperty(key) && (key in obj);
+        }
+
+        console.log(definePrototypeProperty(a1, "name"));
+    </script> -->
+
+    <script>
+        function Person() {}
+        /*Person.prototype.sayHi = function () {
+            console.log("Hi");
+        }*/
+        Person.prototype = {
+            constructor: Person,
+            sayHi: function () {
+                console.log("Hi");
+            }
+        }
+        var p1 = new Person();
+        p1.sayHi()
+    </script>
+</body>
+</html>

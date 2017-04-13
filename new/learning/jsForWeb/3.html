@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <style>
+        .box1 {
+            height: 0;
+            padding-bottom: 100%;
+            background-color: red;
+            line-height: 20px;
+        }
+
+        .box2 {
+            overflow: hidden;
+            background-color: green;
+        }
+        .box2::after {
+            content: "";
+            display: block;
+            margin-top: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+
+    <script>
+        var arrFn = [];
+        !function () {
+            for(var i = 0; i < 5; i++) {
+                arrFn[i] = function() {
+                    console.info(i);
+                }
+            }
+        }()
+        !function() {
+            var i = 9;
+            arrFn[2]();
+        }()
+    </script>
+
+    <script>
+        function show() {
+            var a = 0;
+            return function () {
+                console.log(a);
+            }
+        }
+        var a = 2;
+        !function() {
+            a = 1;
+            var fn1 = show();
+            fn1();
+        }()
+    </script>
+
+    <script>
+        function arrSum(arr, n) {
+            var sum = 0;
+            for(var i = 0; i < n; i++) {
+                sum += arr[i];
+            }
+            return sum
+        }
+        //O(n);
+        //O(1);
+    </script>
+</body>
+</html>
