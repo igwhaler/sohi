@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+    <script src="../js/vue.js"></script>
+
+    <script>
+        Vue.component("app-layout", {
+            template: `<div class="container">
+                        <header>
+                            <slot name="header"></slot>
+                        </header>
+                        <main>
+                            <slot></slot>
+                        </main>
+                        <footer>
+                            <slot name="footer"></slot>
+                        </footer>
+                    </div>`
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app1">
+        <h1>我是父件标题</h1>
+        <my-component>
+            <p>哈哈</p>
+        </my-component>
+    </div>
+
+    <div id="app2">
+        <app-layout>
+            <h1 slot="header">头部</h1>
+            <p>主体1</p>
+            <p>主体2</p>
+            <div slot="footer">页脚</div>
+        </app-layout>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app1",
+            components: {
+                "my-component": {
+                    template: `<div>
+                                <h2> 我是子件标题</h2>
+                                <slot> 我是替代内容</slot>
+                              </div>`
+                }
+            }
+        })
+    </script>
+
+    <script>
+        new Vue({
+            el: "#app2"
+        })
+    </script>
+</body>
+
+</html>

@@ -6,6 +6,99 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
+    <div id="app1">
+        <input type="text" v-model="message">
+        <textarea name="1" id="123" cols="30" rows="10" v-model="message"></textarea>
+        <p style="white-space: pre;">{{message}}</p>
+    </div>
 
+    <div id="app2">
+        <label for="checkbox"><input type="checkbox" id="checkbox" v-model="checked">{{checked}}</label>
+    </div>
+
+    <div id="app3">
+        <label for="jack" name="1"><input type="checkbox" id="jack" v-model="checkedList" value="Jack">Jack</label>
+        <label for="mike" name="1"><input type="checkbox" id="mike" v-model="checkedList" value="Mike">Mike</label>
+        <label for="keke" name="1"><input type="checkbox" id="keke" v-model="checkedList" value="Keke">Keke</label>
+        <div>{{checkedList}}</div>
+    </div>
+
+    <div id="app4">
+        <label for="one"><input type="radio" id="one" v-model="picked" value="One">One</label>
+        <label for="two"><input type="radio" id="two" v-model="picked" value="Two">Two</label>
+        <span>{{picked}}</span>
+    </div>
+
+    <div id="app5">
+        <select name="1" id="1" v-model="selected">
+            <option value="">请选择</option>
+            <option>123</option>
+            <option>456</option>
+        </select>
+        <p>{{selected}}</p>
+    </div>
+
+    <div id="app6">
+        <select v-model="selected">
+            <option disabled value="">select</option>
+            <option v-for="item in list" v-bind:value="item.text">{{item.text}}</option>
+        </select>
+        <p>{{selected}}</p>
+    </div>
+
+    <script>
+        var vm1 = new Vue({
+            el: "#app1",
+            data: {
+                message: "123123"
+            }
+        })
+
+        var vm2 = new Vue({
+            el: "#app2",
+            data: {
+                checked: false
+            }
+        })
+
+        var vm3 = new Vue({
+            el: "#app3",
+            data: {
+                checkedList: []
+            }
+        })
+
+        var vm4 = new Vue({
+            el: "#app4",
+            data: {
+                picked: ""
+            }
+        })
+
+        var vm5 = new Vue({
+            el: "#app5",
+            data: {
+                selected: ""
+            }
+        })
+
+        var vm6 = new Vue({
+            el: "#app6",
+            data: {
+                selected: "",
+                list: [
+                    {
+                        text: 1
+                    },
+                    {
+                        text: 2
+                    },
+                    {
+                        text: 3
+                    }
+                ]
+            }
+        })
+    </script>
 </body>
 </html>

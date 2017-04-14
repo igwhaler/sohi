@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+    <style>
+        .active {
+            color: tan;
+        }
+    </style>
+
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <p>{{total}}</p>
+        <my-component v-on:greet="inGreet"></my-component>
+        <my-component v-on:greet="inGreet"></my-component>
+    </div>
+
+    <div id="tabMenu">
+        <ul>
+            <li v-for="item in tabList" v-bind:class=[classObject.tabActive] v-bind:data-name="item" v-on:click="changeTab($event, currentView)">{{item}}</li>
+        </ul>
+        <component v-bind:is="currentView" v-bind:class="[classObject.tabActive]"></component>
+    </div>
+
+    <script>
+        Vue.component("my-component", {
+            template: `<span v-on:click='greet'>{{num}}</span>`,
+            data: function () {
+                return {
+                    num: 0
+                }
+            },
+            methods: {
+                greet: function() {
+                    this.num++;
+                    this.$emit("greet");
+                }
+            }
+        })
+
+        var app1 = new Vue({
+            el: "#app1",
+            data: {
+                total: 0
+            },
+            methods: {
+                inGreet: function() {
+                    console.log(123);
+                    this.total++
+                }
+            }
+        })
+    </script>
+
+    <script>
+        new Vue({
+            el: "#tabMenu",
+            data: {
+                currentView: "dog",
+                tabList: ["home", "dog", "perfect"],
+                classObject: {
+                    tabActive: "active"
+                }
+            },
+            methods: {
+                changeTab: function(e, currentView) {
+                    console.log(e.target.getAttribute("data-name"));
+                    this.currentView = e.target.getAttribute("data-name");
+                },
+                changeActiveClasss: function() {
+
+                }
+            },
+            components: {
+                home: {
+                    template: '<h1>Home</h1>'
+                },
+                dog: {
+                    template: '<h2>Dog</h2>'
+                },
+                perfect: {
+                    template: '<h3>Perfect</h3>'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
