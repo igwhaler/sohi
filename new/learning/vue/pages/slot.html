@@ -27,7 +27,7 @@
     <div id="app1">
         <h1>我是父件标题</h1>
         <my-component>
-            <p>哈哈</p>
+            <!-- <p>哈哈</p> -->
         </my-component>
     </div>
 
@@ -38,6 +38,15 @@
             <p>主体2</p>
             <div slot="footer">页脚</div>
         </app-layout>
+    </div>
+
+    <div class="parent" id="app3">
+        <child>
+            <template scope="props">
+                <span>from parent</span>
+                <span>{{props.text}}</span>
+            </template>
+        </child>
     </div>
 
     <script>
@@ -57,6 +66,17 @@
     <script>
         new Vue({
             el: "#app2"
+        })
+    </script>
+
+    <script>
+        new Vue({
+            el: "#app3",
+            components: {
+                child: {
+                    template: '<div class="child"><slot text="from child"></slot></div>'
+                }
+            }
         })
     </script>
 </body>
