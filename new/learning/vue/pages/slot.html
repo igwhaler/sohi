@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <title>slot</title>
     <script src="../js/vue.js"></script>
-
     <script>
-        Vue.component("app-layout", {
-            template: `<div class="container">
+    Vue.component("app-layout", {
+        template: `<div class="container">
                         <header>
                             <slot name="header"></slot>
                         </header>
@@ -19,7 +18,7 @@
                             <slot name="footer"></slot>
                         </footer>
                     </div>`
-        })
+    })
     </script>
 </head>
 
@@ -30,7 +29,6 @@
             <p>哈哈</p>
         </my-component>
     </div>
-
     <div id="app2">
         <app-layout>
             <h1 slot="header">头部</h1>
@@ -39,25 +37,53 @@
             <div slot="footer">页脚</div>
         </app-layout>
     </div>
-
     <script>
-        new Vue({
-            el: "#app1",
-            components: {
-                "my-component": {
-                    template: `<div>
+    new Vue({
+        el: "#app1",
+        components: {
+            "my-component": {
+                template: `<div>
                                 <h2> 我是子件标题</h2>
                                 <slot> 我是替代内容</slot>
                               </div>`
-                }
             }
-        })
+        }
+    })
     </script>
-
     <script>
-        new Vue({
-            el: "#app2"
-        })
+    new Vue({
+        el: "#app2"
+    })
+    </script>
+    <script>
+        function Foo() {
+            getName = function() {
+                alert(1);
+            };
+            return this;
+        }
+        Foo.getName = function() {
+            alert(2);
+        };
+        Foo.prototype.getName = function() {
+            alert(3);
+        };
+        var getName = function() {
+            alert(4);
+        };
+
+        function getName() {
+            alert(5);
+        }
+
+        //请写出以下输出结果：
+        Foo.getName(); // 2
+        getName(); // 4
+        Foo().getName(); // 1
+        getName(); // 1
+        new Foo.getName(); // 2
+        new Foo().getName(); // 3
+        new new Foo().getName();//3
     </script>
 </body>
 
