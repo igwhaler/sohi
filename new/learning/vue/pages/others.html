@@ -6,6 +6,39 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
+    <div id="app1">
+        <user-profile ref="profile"></user-profile>
+    </div>
 
+    <div id="app2">
+        <my-component></my-component>
+    </div>
+
+    <script>
+        var vm1 = new Vue({
+            el: "#app1",
+            components: {
+                "user-profile": {
+                    data: function() {
+                        return {
+                            message: 123
+                        }
+                    },
+                    template: '<div>{{message}}</div>'
+                }
+            }
+        })
+
+        Vue.component("my-component", function(resolve, reject) {
+            setTimeout(function() {
+                resolve({
+                    template: '<p>123456</p>'
+                })
+            }, 2000)
+        })
+        var vm2 = new Vue({
+            el: "#app2"
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 5s;
+        }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+
+    <style>
+        .slide-fade-enter-active {
+            transition: opacity 0.5s ease;
+        }
+        .slide-fade-leave-active {
+            transition: all 1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .slide-fade-enter, .slide-fade-leave-to {
+            transform: translateX(10px);
+            opacity: 0;
+        }
+    </style>
+
+    <style>
+        .bounce-enter-active {
+            animation: bounce-in 0.5s;
+        }
+        .bounce-leave-active {
+            animation: bounce-out 0.5s;
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes bounce-out {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(0)
+            }
+        }
+    </style>
+
+    <style>
+        .component-fade-enter-active, .component-fade-leave-active {
+            transition: opacity 0.3s;
+        }
+        .component-fade-enter, .component-fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.1/animate.min.css">
+</head>
+
+<body>
+    <div id="app1">
+        <input type="button" value="Toggle" v-on:click="show = !show">
+        <transition name="fade">
+            <p v-if="show">哈哈哈哈哈哈四大四大四大</p>
+        </transition>
+    </div>
+
+    <div id="app2">
+        <input type="button" value="Toggle" v-on:click="show = !show">
+        <transition name="slide-fade">
+            <p v-if="show">呵呵呵</p>
+        </transition>
+    </div>
+
+    <div id="app3">
+        <input type="button" value="Toogle" v-on:click="show = !show">
+        <transition name="bounce">
+            <p v-if="show">Hello</p>
+        </transition>
+    </div>
+
+    <div id="app4">
+        <input type="button" value="Toggle" v-on:click="show = !show">
+        <transition
+            name="custom-classes-transition"
+            enter-active-class="animated bounceInDown"
+            leave-active-class="animated bounce"
+
+            v-on:before-enter="beforeEnter"
+            v-on:after-enter="afterEnter"
+
+            v-on:before-leave="beforeLeave"
+            v-on:after-leave="afterLeave"
+        >
+            <p v-if="show">阿斯达是大势大</p>
+        </transition>
+    </div>
+
+    <div id="app5">
+        <ul>
+            <li v-for="item in tabList" v-bind:data-key="item" v-on:click="changeTab($event)">{{item}}</li>
+        </ul>
+        <transition name="component-fade" mode="out-in">
+            <component v-bind:is="view"></component>
+        </transition>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app1",
+            data: {
+                show: true
+            }
+        })
+    </script>
+
+    <script>
+        var vm2 = new Vue({
+            el: "#app2",
+            data: {
+                show: true
+            }
+        })
+    </script>
+
+    <script>
+        var vm3 = new Vue({
+            el: "#app3",
+            data: {
+                show: true
+            }
+        })
+    </script>
+
+    <script>
+        var vm4 = new Vue({
+            el: "#app4",
+            data: {
+                show: true
+            },
+            methods: {
+                beforeEnter: function(el) {
+                    console.log(el);
+                },
+                afterEnter: function(el) {
+                    console.log(el);
+                },
+                beforeLeave: function(el) {
+                    console.log(el);
+                },
+                afterLeave: function(el) {
+                    console.log(el);
+                }
+            }
+        })
+    </script>
+
+    <script>
+        var vm5 = new Vue({
+            el: "#app5",
+            data: {
+                view: "v-1",
+                tabList: ["v-1", "v-2", "v-3"]
+            },
+            methods: {
+                changeTab: function(e) {
+                    console.log(e.target.dataset);
+                    var key = e.target.dataset.key;
+                    this.view = key;
+                }
+            },
+            components: {
+                "v-1": {
+                    template: '<p>123</p>'
+                },
+                "v-2": {
+                    template: '<p>456</p>'
+                },
+                "v-3": {
+                    template: '<p>789</p>'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
