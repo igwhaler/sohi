@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <h1>动态路由匹配</h1>
+        <div>
+            <router-link to="/user/123123/fs">User</router-link>
+        </div>
+        <router-view></router-view>
+    </div>
+
+    <script>
+        const User = {
+            template: '<p>{{$route.params}}</p>',
+            watch: {
+                "$route": function(newPth, oldPath) {
+                    console.log(newPth, oldPath);
+                }
+            }
+        }
+
+        const router = new VueRouter({
+            routes: [
+                {
+                    path: "/user/:id/:name",
+                    component: User
+                }
+            ]
+        })
+
+        new Vue({
+            router: router
+        }).$mount("#app1")
+    </script>
+</body>
+</html>
