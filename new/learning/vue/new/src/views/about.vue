@@ -20,7 +20,7 @@
     module.exports = {
         data () {
             return {
-                page: 'about'
+                page: 'about1123123'
             }
         }
     }

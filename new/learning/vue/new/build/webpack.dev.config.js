@@ -25,7 +25,12 @@ module.exports = merge(baseWebpackConfig, {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'index.tpl.html',
+            template: './pages/index.tpl.html',
+            inject: true
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'example1.html',
+            template: './pages/example1.tpl.html',
             inject: true
         })
     ]

@@ -7,7 +7,9 @@ function resolve(relPath) {
 }
 
 module.exports = {
-    entry: { app: resolve('../src/main.js') },
+    entry: {
+        app: resolve('../src/main.js')
+    },
     output: {
         filename: 'js/[name].js'
     },
