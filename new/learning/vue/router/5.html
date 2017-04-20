@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <h1>App</h1>
+        <div>
+            <router-link to='/'>Home</router-link>
+            <router-link to="/other">Other</router-link>
+        </div>
+        <template>
+            <router-view class="view one" name="a"></router-view>
+            <router-view class="view two" name="b"></router-view>
+            <router-view class="view three" name="c"></router-view>
+        </template>
+        <template>
+            <router-view></router-view>
+        </template>
+    </div>
+
+    <script>
+        const Head = {template: `<h2>This is Head</h2>`}
+        const Main = {template: `<h2>This is Main</h2>`}
+        const Foot = {template: `<h2>This is Foot</h2>`}
+
+        const Other = {template: `<h2>This is Other</h2>`}
+
+        const router = new VueRouter({
+            routes: [
+                {
+                    path: "/",
+                    components: {
+                        a: Head,
+                        b: Main,
+                        c: Foot
+                    }
+                },
+                {
+                    path: "/other",
+                    component: Other
+                }
+            ]
+        })
+
+        new Vue({
+            el: "#app1",
+            router: router
+        })
+    </script>
+</body>
+</html>

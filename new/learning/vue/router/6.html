@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <h1>App</h1>
+        <div>
+            <router-link to="/a">A</router-link>
+        </div>
+        <router-view></router-view>
+    </div>
+
+    <script>
+        const A = {template: `<h2>This is A</h2>`}
+        const B = {template: `<h2>This is B</h2>`}
+
+        const router = new VueRouter({
+            routes: [
+                {
+                    path: "/a",
+                    redirect: {name: "tB"},
+                    alias: "/c",
+                    component: A
+                },
+                {
+                    path: "/b",
+                    name: "tB",
+                    component: B
+                }
+            ]
+        })
+
+        new Vue({
+            router: router
+        }).$mount("#app1")
+    </script>
+</body>
+</html>
