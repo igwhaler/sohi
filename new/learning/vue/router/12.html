@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <div class="post">
+            <div class="loading" v-if="loading">Loading...</div>
+            <div class="error" v-if="error">Error</div>
+            <div class="content" v-if="post">
+                <h2>12312</h2>
+                <p>123123123</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app1",
+            data() {
+                return {
+                    loading: true,
+                    error: false,
+                    post: false
+                }
+            },
+            created() {
+                this.fetchData();
+            },
+            watch: {
+                "$route": function() {
+                    console.log(123);
+                }
+            },
+            methods: {
+                fetchData () {
+                    this.error = this.post = null;
+                    this.loading = true;
+                    setTimeout(() => {
+                        console.log(this);
+                        this.loading = false;
+                        this.post = true;
+                    }, 3000)
+                    setTimeout(function() {
+                        console.log(this)
+                    }, 3000)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
