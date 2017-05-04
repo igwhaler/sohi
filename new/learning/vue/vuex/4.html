@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vuex.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const store = new Vuex.Store({
+            state: {
+                todos: [
+                    {
+                        id: 1, done: false
+                    },
+                    {
+                        id: 2, done: false
+                    },
+                    {
+                        id: 3, done: true
+                    }
+                ]
+            },
+            getters: {
+                doneTodos: state => {
+                    return state.todos.filter(value => value.done)
+                }
+            }
+        })
+
+        new Vue({
+            el: "#app",
+            store: store,
+            template: `<ul>
+                        <li v-for="item in this.$store.getters.doneTodos">{{item.id}}</li>
+                    </ul>`
+        })
+    </script>
+</body>
+</html>

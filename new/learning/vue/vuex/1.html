@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vuex.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <h1>App</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app1",
+            data: {
+                message: 123123,
+                id: 4567
+            },
+            template: `<div>
+                        <h2>{{message}}</h2>
+                        <my-component v-bind:data-id="id"></my-component>
+                    </div>`,
+            components: {
+                "my-component": {
+                    data: function() {
+                        return {}
+                    },
+                    props: ["dataId"],
+                    template: `<h3 v-bind:data-id="dataId">{{dataId}}</h3>`
+                }
+            }
+        })
+
+        var store = new Vuex.Store({
+            state: {
+                count: 0
+            },
+            mutations: {
+                increment(state) {
+                    state.count++
+                }
+            }
+        })
+    </script>
+</body>
+</html>

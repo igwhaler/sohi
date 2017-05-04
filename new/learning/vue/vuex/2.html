@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vuex.js"></script>
+</head>
+<body class="hehe jiji">
+    <div id="app1">
+        <h1>{{count}}</h1>
+        <div>
+            <input type="button" value="Increment +" @click="increment">
+            <input type="button" value="Decrement -" @click="decrement">
+        </div>
+    </div>
+
+    <div id="app2">
+        <input type="button" value="Increment +" @click="increment">
+    </div>
+
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        const store = new Vuex.Store({
+            state: {
+                count: 0
+            },
+            mutations: {
+                increment: state => state.count++,
+                decrement: state => state.count--
+            }
+        });
+
+        const app1 = new Vue({
+            el: "#app1",
+            /*data: {
+                count: store.state.count
+            },*/
+            computed: {
+                count() {
+                    return store.state.count;
+                },
+                cNow() {
+                    return +new Date;
+                }
+            },
+            methods: {
+                increment() {
+                    store.commit("increment");
+                },
+                decrement() {
+                    store.commit("decrement");
+                },
+                mNow() {
+                    return +new Date;
+                }
+            }
+        })
+
+        const app2 = new Vue({
+            el: "#app2",
+            methods: {
+                increment() {
+                    store.commit("increment");
+                }
+            }
+        })
+    </script>
+
+    <script>
+        var oList = document.getElementById('list');
+        oList.addEventListener("click", function(e) {
+            var _target = e.target;
+            if(_target.nodeName.toLowerCase() == "li") {
+                console.log(_target.innerText);
+            }
+        }, false);
+
+
+        var aLi = oList.getElementsByTagName('li');
+        for(var i = 0; i < aLi.length; i++) {
+            aLi[i].addEventListener("click", function() {
+                console.log(1);
+            })
+        }
+
+    </script>
+</body>
+</html>

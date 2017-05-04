@@ -1,4 +1,4 @@
-// see http://vuejs-templates.github.io/webpack for documentation.
+//vue的wenpack文档: http://vuejs-templates.github.io/webpack
 var path = require('path')
 
 module.exports = {
@@ -13,10 +13,7 @@ module.exports = {
     //gzip压缩
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
-    // Run the build command with an extra argument to
-    // View the bundle analyzer report after build finishes:
-    // `npm run build --report`
-    // Set to `true` or `false` to always turn it on or off
+    //分析 Webpack 生成的包体组成并且以可视化的方式反馈给开发者
     bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: {

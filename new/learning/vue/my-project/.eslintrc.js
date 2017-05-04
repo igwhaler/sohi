@@ -1,7 +1,9 @@
-// http://eslint.org/docs/user-guide/configuring
+// http://eslint.cn/docs/user-guide/configuring
 
 module.exports = {
+  //当前文件所在目录为根目录
   root: true,
+  //指定解析器
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
@@ -9,17 +11,14 @@ module.exports = {
   env: {
     browser: true,
   },
-  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: 'standard',
+  // 代码书写格式： https://github.com/feross/standard/blob/master/docs/RULES-zhcn.md
+  //extends: 'standard',
   // required to lint *.vue files
-  plugins: [
-    'html'
-  ],
-  // add your custom rules here
+  plugins: ['html'],
+  // 定制检查
   'rules': {
-    // allow paren-less arrow functions
+    // 箭头函数参数是否必须带括号
     'arrow-parens': 0,
-    // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
