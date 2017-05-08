@@ -1,10 +1,9 @@
 <template>
-  <div id="app">
+  <div class="wrap">
     <img src="../assets/logo.png">
     <p>
       <router-link to="/index">首页</router-link>
     </p>
-    <router-view></router-view>
   </div>
 </template>
 
@@ -15,7 +14,7 @@ export default {
 </script>
 
 <style>
-#app {
+.wrap {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
