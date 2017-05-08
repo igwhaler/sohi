@@ -8,7 +8,7 @@ import More from '../pages/More'
 Vue.use(VueRouter)
 
 export default new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       name: 'Index',
