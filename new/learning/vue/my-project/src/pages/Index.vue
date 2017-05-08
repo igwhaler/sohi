@@ -1,9 +1,11 @@
 <template>
   <div class="wrap">
     <img src="../assets/logo.png">
-    <p>
-      <router-link to="/index">首页</router-link>
-    </p>
+    <div>
+      <router-link to="/">首页</router-link>
+      <router-link to="/guide">导航</router-link>
+      <router-link to='/more'>更多</router-link>
+    </div>
   </div>
 </template>
 
