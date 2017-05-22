@@ -8,12 +8,12 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    //是否生成 js sourcemaps
+    // 是否生成 js sourcemaps
     productionSourceMap: false,
-    //gzip压缩
+    // gzip压缩
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
-    //分析 Webpack 生成的包体组成并且以可视化的方式反馈给开发者
+    // 分析 Webpack 生成的包体组成并且以可视化的方式反馈给开发者
     bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: {
@@ -23,7 +23,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},
-    //是否生成 css sourcemaps
+    // 是否生成 css sourcemaps
     cssSourceMap: false
   }
 }

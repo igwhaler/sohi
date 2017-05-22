@@ -2,29 +2,30 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Index from '../pages/Index'
-import Guide from '../pages/Guide'
-import More from '../pages/More'
+import Ele from '../pages/Ele'
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       name: 'Index',
       path: '/index',
-      alias: '/',
+      alias: [''],
       component: Index
     },
     {
-      name: 'Guide',
-      path: '/guide',
-      component: Guide
+      name: 'ele',
+      path: '/ele',
+      component: Ele
     },
     {
-      name: 'More',
-      path: '/more',
-      component: More
+      name: 'NotFound',
+      path: '*',
+      component: {
+        template: '<h2>404</h2>'
+      }
     }
   ]
 })
