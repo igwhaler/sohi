@@ -93,5 +93,30 @@
             return -1;
         }
     </script>
+
+    <script>
+        function deepClone(obj) {
+            var aux, _len;
+
+            if(obj instanceof Array) {
+                _len = obj.length;
+                aux = [];
+
+                for(var i = 0; i < _len; i++) {
+                    aux[i] = deepClone(obj[i]);
+                }
+            }else if(obj instanceof Object) {
+                aux = {};
+
+                for(var key in obj) {
+                    aux[key] = deepClone(obj[key])
+                }
+            }else {
+                aux = obj;
+            }
+
+            return aux
+        }
+    </script>
 </body>
 </html>

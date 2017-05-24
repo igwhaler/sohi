@@ -12,7 +12,7 @@ module.exports = {
     browser: true,
   },
   // 代码书写格式： https://github.com/feross/standard/blob/master/docs/RULES-zhcn.md
-  //extends: 'standard',
+  extends: 'standard',
   // required to lint *.vue files
   plugins: ['html'],
   // 定制检查
