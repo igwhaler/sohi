@@ -18,11 +18,10 @@ console.log(a)
 
 a.n++ */
 
-/* var a = 20
-
+var a = 20
 function foo () {
   var a = 10
-  a = a +1
+  a = a + 1
   console.log(a)
 }
 
@@ -32,11 +31,11 @@ function bar () {
 }
 
 foo()
-bar() */
+bar()
 
 console.log(1)
 
-new Promise(resolve => {
+new Promise (resolve => {
   resolve()
 }).then(() => {
   console.log(2)

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>1</title>
+  <meta charset="UTF-8">
+  <title>1</title>
 </head>
 <body>
-    <!-- <script>
+<!-- <script>
         function deepClone(obj) {
             var oClone = null;
             if(obj instanceof Array) {
@@ -36,31 +36,33 @@
         console.log(deepClone(obj1));
     </script> -->
 
-    <script>
-        var obj1 = {
-            a: 1
-        };
+<script>
+  var obj1 = {
+    a: 1
+  };
 
-        Object.defineProperty(obj1, "b", {
-            configurable: false,
-            enumerable: true,
-            get: function() {
-                console.log("get");
-                return 2;
-            },
-            set: function(newValue) {
-                console.log("set");
-            }
-        })
+  Object.defineProperty(obj1, "b", {
+    configurable: false,
+    enumerable: true,
+    get: function () {
+      console.log("get");
+      return 2;
+    },
+    set: function (newValue) {
+      console.log("set");
+    }
+  })
 
-        Object.defineProperties(obj1, {
-            c: {
-                value: 3
-            },
-            d: {
-                value: 4
-            }
-        })
-    </script>
+  Object.defineProperties(obj1, {
+    c: {
+      value: 3
+    },
+    d: {
+      value: 4
+    }
+  })
+  var a = document.getElementById('123123')
+  console.log(a)
+</script>
 </body>
 </html>
