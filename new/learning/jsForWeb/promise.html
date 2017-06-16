@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>promise</title>
+</head>
+<body>
+  <script>
+    var p1 = new Promise(resolve => {
+      resolve(1)
+    })
+    var p2 = new Promise(resolve => {
+      resolve(2)
+    })
+    var p3 = new Promise(resolve => {
+      resolve(3)
+    })
+    Promise.all([p1, p2, p3]).then(op => {
+      console.log(op)
+    })
+    Promise.race([p1, p2, p3]).then(op => {
+      console.log(op)
+    })
+  </script>
+</body>
+</html>

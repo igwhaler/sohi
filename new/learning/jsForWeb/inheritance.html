@@ -8,37 +8,6 @@
 </head>
 <body>
   <script>
-    function getSearchObj () {
-      var obj = {}
-      var oSearch = window.location.search.split('?')[1] // 'a=1&b=2'
-      var arrS = oSearch.split('&') // ['a=1', 'b=2']
-
-      arrS.map((value, key) => {
-        let arr = value.split('=')
-
-        obj[arr[0]] = arr[1]
-      })
-
-      return obj
-    }
-
-    console.log(getSearchObj())
-  </script>
-
-  <script>
-    function fn1 () {
-      var a = 1
-
-      return function () {
-        a++
-        console.log(a)
-      }
-    }
-
-    var bar1 = fn1()
-  </script>
-
-  <script>
     // 原型链式继承
     function Foo () {
       this.name = 'hehe'

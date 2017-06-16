@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>execution-context</title>
-    <p>lcs_admin_publish\assets\js\widget\answer.js</p>
+  <meta charset="UTF-8">
+  <title>execution-context</title>
+  <p>lcs_admin_publish\assets\js\widget\answer.js</p>
 </head>
+
 <body>
-    <!-- <script>
+  <!-- <script>
         function fn1() {
             console.log("fn1_1");
 
@@ -45,8 +47,7 @@
             console.log("global_timer");
         }, 0)
     </script> -->
-
-    <!-- <script>
+  <!-- <script>
         function fn1(a, callback) {
             if(a > 0) {
                 callback && callback(a)
@@ -58,35 +59,35 @@
         });
         console.log(1);
     </script> -->
+  <script>
+  function fib (n) {
+    if (n <= 1) {
+      return 1
+    }
+    return fib(n - 1) + fib(n - 2);
+  }
 
-    <script>
-        function fib(n) {
-            if(n <= 1 ) {
-                return 1
-            }
-            return fib(n-1) + fib(n-2);
-        }
+  function fibTest (n, ac1 = 1, ac2 = 1) {
+    if (n <= 1) {
+      return ac2
+    }
+    return fibTest(n - 1, ac2, ac1 + ac2)
+  }
 
-        function fibTest(n, ac1 = 1, ac2 = 1) {
-            if(n <= 1) {
-                return ac2
-            }
-            return fibTest(n-1, ac2, ac1 + ac2)
-        }
+  /* function factorial(n) {
+      if(n === 1) {
+          return 1;
+      }
+      return n*factorial(n-1)
+  }*/
 
-        /*function factorial(n) {
-            if(n === 1) {
-                return 1;
-            }
-            return n*factorial(n-1)
-        }*/
-
-        function factorial(n, total) {
-            if(n <= 1) {
-                return total;
-            }
-            return factorial(n-1, n*total)
-        }
-    </script>
+  function factorial (n, total) {
+    if (n <= 1) {
+      return total
+    }
+    return factorial(n - 1, n * total)
+  }
+  </script>
 </body>
+
 </html>
