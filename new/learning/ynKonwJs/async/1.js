@@ -35,7 +35,7 @@ bar()
 
 console.log(1)
 
-new Promise (resolve => {
+new Promise(resolve => {
   resolve()
 }).then(() => {
   console.log(2)
