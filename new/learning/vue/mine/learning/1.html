@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="div1">
+    <todo-item v-bind:todo="arr"></todo-item>
+    {{message}}
+    <span v-bind:data-id="id">id</span>
+    <span v-if="state" v-on:click="handle">hehe</span>
+    <div v-for="i in arr">{{i}}</div>
+    <input type="text" v-model="input">
+    <p>{{input}}</p>
+  </div>
+  <script>
+    Vue.component('todo-item', {
+      template: `<h1>{{todo[0]}}</h1>`,
+      props: ['todo']
+    })
+    var app = new Vue({
+      el: "#div1",
+      data: {
+        message: '123',
+        id: 121212,
+        state: true,
+        arr: [1, 2, 3],
+        input: "a"
+      },
+      methods: {
+        handle: function () {
+          console.log(1)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

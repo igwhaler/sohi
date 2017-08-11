@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <style>
+      .active {
+        color: tan;
+      }
+    </style>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="div1">
+      <h1 v-once>{{name}}</h1>
+    </div> -->
+
+    <!-- <div id="div2">
+      <h2>{{message}}</h2>
+      <h2>{{reverseMessage}}</h2>
+    </div> -->
+
+    <!-- <div id="div3">
+      <h1 :class="{active: active}" @click="handle">{{message}}</h1>
+    </div> -->
+
+    <!-- <div id="div4">
+      <span v-for="item in arr" v-if="item">{{item}}</span>
+    </div> -->
+
+    <div id="div5">
+      <h1 @click="show(1, $event)">12312</h1>
+    </div>
+
+    <!-- <script>
+      var obj = {
+        name: 'hehe',
+        age: 24
+      }
+      var vm = new Vue({
+        el: '#div1',
+        data: obj,
+        created () {
+          console.log('created')
+        }
+      })
+      vm.$watch('name', function (newVal, oldVal) {
+        console.log(newVal, oldVal)
+      })
+    </script> -->
+
+    <!-- <script>
+      var vm = new Vue({
+        el: '#div2',
+        data: {
+          message: 'hehe'
+        },
+        computed: {
+          reverseMessage () {
+            return this.message.split('').reverse().join('')
+          }
+        }
+      })
+    </script> -->
+
+    <!-- <script>
+      var vm = new Vue({
+        el: '#div3',
+        data: {
+          message: 123,
+          active: false
+        },
+        methods: {
+          handle: function () {
+            this.active = !this.active
+          }
+        }
+      })
+    </script> -->
+
+    <!-- <script>
+      var vm = new Vue({
+        el: '#div4',
+        data: {
+          arr: [1, 0, 3, 0, 4]
+        }
+      })
+    </script> -->
+
+    <script>
+      var vm = new Vue({
+        el: '#div5',
+        methods: {
+          show (val, event) {
+            console.log(val, event)
+          }
+        }
+      })
+    </script>
+</body>
+
+</html>
