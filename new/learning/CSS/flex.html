@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flex</title>
+  <style>
+    .wrap {
+      background: tan;
+      display: flex;
+      height: 200px;
+    }
+    .wrap div {
+      height: 100px;
+    }
+    .box1 {
+      background-color: darkred;
+      flex-shrink: 0;
+    }
+    .box2 {
+      background-color: seagreen;
+    }
+    .box3 {
+      background-color: yellow;
+      flex-basis: 100%;
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+  </div>
+</body>
+</html>

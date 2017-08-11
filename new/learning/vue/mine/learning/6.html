@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="div1">
+    <ul>
+      <li v-for="i in tabs" v-on:click="change(i)">{{i}}</li>
+    </ul>
+    <keep-alive>
+      <component v-bind:is="active"></component>
+    </keep-alive>
+  </div>
+  <script>
+    var vm1 = new Vue({
+      el: '#div1',
+      data: {
+        tabs: ['One', 'Two', 'Three'],
+        active: 'One'
+      },
+      methods: {
+        change (tab) {
+          this.active = tab
+        }
+      },
+      components: {
+        One: {
+          template: `<h1>one</h1>`
+        },
+        Two: {
+          template: `<h1>two</h1>`
+        },
+        Three: {
+          template: `<h1>three</h1>`
+        }
+      }
+    })
+  </script>
+</body>
+</html>

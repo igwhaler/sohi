@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="div1">
+    <hello></hello>
+    <Tan :f-tip="tip"></Tan>
+  </div>
+
+  <div id="div2">
+    <h1>{{total}}</h1>
+    <my-component v-on:increment="incrementTotal"></my-component>
+  </div>
+
+  <!-- <script>
+    Vue.component('hello', {
+      template: `<h1>hello</h1>`
+    })
+
+    var vm = new Vue({
+      el: '#div1',
+      data: {
+        tip: 'hehe'
+      },
+      components: {
+        Tan: {
+          template: `<h2>{{message}}{{tip}}</h2>`,
+          data () {
+            return {
+              message: 1312312,
+              tip: this.fTip
+            }
+          },
+          props: ['fTip']
+        }
+      }
+    })
+  </script> -->
+
+  <script>
+    var vm = new Vue({
+      el: '#div2',
+      data: {
+        total: 0
+      },
+      methods: {
+        incrementTotal (val) {
+          this.total = val
+        }
+      },
+      components: {
+        MyComponent: {
+          template: `<span v-on:click="handle">Click</span>`,
+          data () {
+            return {
+              num: 0
+            }
+          },
+          methods: {
+            handle () {
+              this.num ++
+              this.$emit('increment', this.num)
+            }
+          }
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>
