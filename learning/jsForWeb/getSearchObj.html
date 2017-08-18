@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>getSearchObj</title>
+</head>
+<body>
+  <script>
+    function getSearchObj () {
+      var obj = {}
+      var oSearch = window.location.search.split('?')[1] // 'a=1&b=2'
+      var arrS = oSearch.split('&') // ['a=1', 'b=2']
+
+      arrS.map((value, key) => {
+        let arr = value.split('=')
+
+        obj[arr[0]] = arr[1]
+      })
+
+      return obj
+    }
+
+    console.log(getSearchObj())
+  </script>
+</body>
+</html>

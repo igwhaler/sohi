@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style type="text/css">
+    .w-item {
+        overflow: hidden;
+    }
+
+    .w-item a {
+        float: left;
+        width: 100px;
+        border: 2px solid #fff;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+    }
+
+    .w-item a.active {
+        border-color: red;
+    }
+
+    .w-content {
+        display: inline-block;
+        border-radius: 4px;
+        border: 2px solid red;
+        overflow: hidden;
+    }
+
+    .w-content div {
+        float: left;
+        width: 308px;
+        height: 200px;
+    }
+
+    .w-content div:nth-child(1) {
+        background-color: yellow;
+    }
+
+    .w-content div:nth-child(2) {
+        background-color: green;
+        display: none;
+    }
+
+    .w-content div:nth-child(3) {
+        background-color: pink;
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="w-tab">
+        <div id="item-list" class="w-item">
+            <a href="#" class="active">111</a>
+            <a href="#">222</a>
+            <a href="#">333</a>
+        </div>
+        <div id="content-list" class="w-content">
+            <div>111111</div>
+            <div>222222</div>
+            <div>333333</div>
+        </div>
+    </div>
+    <!-- 点击选项卡的一般写法 -->
+    <script type="text/javascript">
+        window.onload = function() {
+            var iList = document.getElementById("item-list"),
+                aItem = iList.getElementsByTagName("a"),
+                cList = document.getElementById("content-list"),
+                aCont = cList.getElementsByTagName("div"),
+                len = aItem.length;
+
+            // 此处调用
+            init(aItem, aCont, len, change);
+
+            /*
+                初始化函数
+                参数介绍:
+                    sel: 选择按钮集；
+                    cont: 展示框集；
+                    len： 按钮集长度；
+                    callback： 回调函数；
+            */
+            function init(sel, cont, len, callback) {
+                for (var i = 0; i < len; i++) {
+                    sel[i].index = i;
+                    sel[i].onclick = function() {
+                        var _that = this,
+                            _index = this.index;
+                        (callback && typeof(callback) === "function") && callback(sel, cont, len, _that, _index);
+                    }
+                };
+            };
+
+            /*
+                回调函数
+                参数介绍：
+                    sel: 选择按钮集；
+                    cont: 展示框集；
+                    len： 按钮集长度；
+                    that: target;
+                    index: target的索引值；
+            */
+            function change(sel, cont, len, that, index) {
+                for (var i = 0; i < len; i++) {
+                    sel[i].className = "";
+                    cont[i].style.display = "none";
+                };
+                that.className = "active";
+                aCont[index].style.display = "block";
+            };
+        };
+    </script>
+    <!-- 面向对象写法 -->
+    <script type="text/javascript">
+        window.onload = function() {
+            function Tab() {
+                this.iList = document.getElementById("item-list");
+                this.aItem = this.iList.getElementsByTagName("a");
+                this.cList = document.getElementById("content-list");
+                this.aCont = this.cList.getElementsByTagName("div");
+                this.len = this.aItem.length;
+                var that = this;
+                this.init(this.aItem, this.aCont, this.len, this.change);
+            };
+
+            Tab.prototype.init = function(sel, cont, len, callback) {
+                for (var i = 0; i < len; i++) {
+                    sel[i].index = i;
+                    sel[i].onclick = function() {
+                        var _that = this,
+                            _index = this.index;
+                        (callback && typeof(callback) === "function") && callback(sel, cont, len, _that, _index);
+                    }
+                };
+            };
+
+            Tab.prototype.change = function(sel, cont, len, that, index) {
+                for (var i = 0; i < len; i++) {
+                    sel[i].className = "";
+                    cont[i].style.display = "none";
+                };
+                that.className = "active";
+                cont[index].style.display = "block";
+            };
+
+            var tab1 = new Tab();
+        };
+    </script>
+</body>
+
+</html>

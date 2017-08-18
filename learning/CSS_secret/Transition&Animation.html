@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transition and Animation</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            padding: 0 50px;
+        }
+        body>div {
+            margin: 50px 0;
+        }
+
+        .wrap {
+            height: 400px;
+            width: 100px;
+            background: linear-gradient(180deg, deepskyblue, white);
+            border-bottom: 10px solid seagreen;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .ball {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: red;
+        }
+
+        @keyframes anim {
+            60%, 80%, to {
+                transform: translateY(340px);
+                animation-timing-function: ease-out;
+            }
+            70% {
+                transform: translateY(250px);
+            }
+            90% {
+                transform: translateY(300px);
+            }
+        }
+
+        .ball {
+            animation: anim 2s ease-in;
+        }
+
+
+        @keyframes anim-out {
+            from {
+                transform: scale(0);
+            }
+            80% {
+                transform: scale(1.2);
+            }
+        }
+        .wrap_input {
+            position: relative;
+        }
+
+        .wrap_input input {
+
+        }
+        .wrap_input input:not(focus) + span {
+            transform: scale(0);
+        }
+        .wrap_input input:focus + span {
+            transform: scale(1);
+            animation: anim-out .5s;
+        }
+        .wrap_input span {
+            position: absolute;
+            top: 26px;
+            left: 0;
+            line-height: 1.5em;
+            border-radius: 4px;
+            background-color: tan;
+            transition: .5s transform;
+            transform-origin: 20px -2px;
+        }
+        .wrap_input span::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            border: 6px solid tan;
+            border-color: transparent transparent tan transparent;
+        }
+
+        .loading {
+            width: 100px;
+            height: 100px;
+            background: url("img/loading.png") 0 0 no-repeat;
+            border-radius: 20px;
+            overflow: hidden;
+
+            animation: anim-load 1s infinite steps(8);
+        }
+        @keyframes anim-load {
+            to {
+                background-position: -800px 0;
+            }
+        }
+
+        .font_blink {
+            font-size: 40px;
+            font-weight: bold;
+            color: tan;
+            animation: anim-blink 1s 3 steps(1);
+        }
+        @keyframes anim-blink {
+            50% {
+                color: seagreen;
+            }
+            to {
+                color: tan;
+            }
+        }
+
+        .smooth_transition {
+            width: 200px;
+            height: 360px;
+            border: 2px solid tan;
+            background: url('img/zq.png') 0 0 no-repeat;
+            animation: anim-smooth 5s ease-in infinite alternate;
+            animation-play-state: paused;
+        }
+        .smooth_transition:hover {
+            animation-play-state: running;
+        }
+        @keyframes anim-smooth {
+            to {
+                background-position: 100% 0;
+            }
+        }
+
+        .round {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: tan;
+            overflow: hidden;
+        }
+
+        .round img {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+            border: 1px solid red;
+            border-radius: 50%;
+            animation: anim-round 4s linear infinite;
+            transform-origin: 50% 150px;
+        }
+        @keyframes anim-round {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+    <div class="wrap">
+        <div class="ball"></div>
+    </div>
+
+    <div class="wrap_input">
+        <input type="text" name="1">
+        <span>只能输入字母和数字</span>
+    </div>
+
+    <div class="loading"></div>
+
+    <div class="font_blink">我在闪烁</div>
+
+    <div class="smooth_transition"></div>
+
+    <div class="round">
+        <img src="img/zq.png" alt="">
+    </div>
+<body>
+</body>
+
+</html>
