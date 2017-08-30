@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单例模式</title>
+</head>
+<body>
+  <script>
+    var getSingle = function (fn) {
+      var result
+      return function () {
+        return result || ( result = fn.call(this, arguments) )
+      }
+    }
+
+    var createA = function () {
+      var o = {
+        name: 'a'
+      }
+
+      return o
+    }
+
+    var createSingleA = getSingle(createA)
+
+    var a1 = createSingleA()
+    var a2 = createSingleA()
+
+    console.log(a1 === a2)
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>图片预加载</title>
+  <style>
+    img {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <img data-src="https://shop.io.mi-img.com/app/shop/img?id=shop_6d2493bec719019c2124ff92bd9b7790.jpeg&w=1080&h=1920" src="https://static.home.mi.com/app/shop/pages/m/res/images/loading_v2.png" alt="图片预加载">
+  <script>
+    let preloadImg = {
+      init () {
+        this.getPreloadImg()
+      },
+      // 获取预加载图片的 Img节点
+      getPreloadImg () {
+        // 预加载的图片放在 data-src
+        let imgNode = document.querySelectorAll('img[data-src]')
+
+        if (!imgNode.length) {
+          return
+        }
+
+        Array.from(imgNode).forEach(node => {
+          let src = node.dataset.src
+          this.createImg(node, src)
+        })
+      },
+
+      // 创建 Image对象
+      createImg (dom, src) {
+        var oImg = new Image
+        oImg.src = src
+        oImg.onload = function () {
+          dom.src = src
+        }
+      }
+    }
+    preloadImg.init()
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>装饰者模式</title>
+</head>
+<body>
+  <input type="button" tag="login" value="点我">
+
+  <script>
+    Function.prototype.after = function (fn) {
+      var _self = this
+
+      return function () {
+        var ret = _self.apply(this, arguments)
+        fn.apply(this, arguments)
+
+        return ret
+      }
+    }
+
+    var showLogin = function () {
+      console.log('显示登录')
+    }
+
+    var log = function () {
+      console.log(this.getAttribute('tag'))
+    }
+
+    document.querySelector('input').onclick = showLogin.after(log)
+  </script>
+</body>
+</html>
