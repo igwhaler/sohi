@@ -1,9 +1,13 @@
 var MongoClient = require('mongodb').MongoClient
-var DB_CONN_STR = 'mongodb://localhost:27017/mydb'
+var DB_CONN_STR = 'mongodb://igwhaler:fs1122@ds149800.mlab.com:49800/igwdb'
+// var DB_CONN_STR = 'mongodb://<igwhaler>:<fs1122>@ds149800.mlab.com:49800/igwdb'
 
 MongoClient.connect(DB_CONN_STR, function(err, db) {
-    db.collection('hello').find({a: 1}).toArray(function (error, result) {
+    /*  db.collection('hello').find({name: 'fs'}).toArray(function (error, result) {
         console.log(result)
-    })
-    db.close()
-})
+    })  */
+    if (err) {
+        console.log(err)
+    }
+    // db.close()
+})  
