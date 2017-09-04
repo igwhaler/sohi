@@ -4,8 +4,13 @@ import router from './router'
 import 'normalize.css'
 import 'element-ui/lib/theme-default/index.css'
 
-import {Button} from 'element-ui'
+import {
+  Button,
+  Input
+} from 'element-ui'
+
 Vue.use(Button)
+Vue.use(Input)
 
 Vue.config.productionTip = false
 
