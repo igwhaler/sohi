@@ -1,7 +1,9 @@
 <template>
-  <div class="hello">
-    <img src="../assets/common/logo.png">
-    <h1>{{ msg }}</h1>
+  <div class="wrap-hello">
+    <div class="hello">
+      <img src="../../assets/common/logo.png">
+      <h1>{{ msg }}</h1>
+    </div>
   </div>
 </template>
 
@@ -10,7 +12,7 @@
     name: 'hello',
     data () {
       return {
-        msg: '呵呵哒'
+        msg: 'Hello world!'
       }
     }
   }
