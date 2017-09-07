@@ -19,7 +19,30 @@
     },
     methods: {
       handleClick () {
-        console.log(this.input)
+        let input = this.input
+
+        /* window.fetch('/addData', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: `data=${JSON.stringify({'name': input})}`,
+          credentials: 'same-origin'
+        })
+        .then(res => {
+          return res.json()
+        })
+        .then(result => {
+          console.log(result)
+        }) */
+
+        this.$http({
+          url: '/addData',
+          method: 'POST',
+          body: {name: input}
+        }).then(json => {
+          console.log(json)
+        })
       }
     }
   }
