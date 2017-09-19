@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
+
 import MyImg from './src/js/components/MyImg'
+import Greeting from './src/js/components/Greeting'
 
 export default class App extends React.Component {
   render() {
@@ -9,6 +11,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Text>大鱼锅锅</Text>
         <MyImg />
+        <Greeting text="123" />
       </View>
     );
   }
