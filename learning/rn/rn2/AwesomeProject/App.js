@@ -3,6 +3,7 @@ import { StyleSheet, Text, View} from 'react-native';
 
 import MyImg from './src/js/components/MyImg'
 import Greeting from './src/js/components/Greeting'
+import BlinkApp from './src/js/components/BlinkApp'
 
 export default class App extends React.Component {
   render() {
@@ -12,6 +13,7 @@ export default class App extends React.Component {
         <Text>大鱼锅锅</Text>
         <MyImg />
         <Greeting text="123" />
+        <BlinkApp />
       </View>
     );
   }
