@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {AppRegistry, View, Button} from 'react-native'
 
-import List from '../components/List'
+import List from '../components/dayu/List'
 
 export default class ProfileScreen extends Component {
   static navigationOptions = {
-    title: '呵呵哒'
+    title: '大鱼锅锅'
   }
 
   render() {

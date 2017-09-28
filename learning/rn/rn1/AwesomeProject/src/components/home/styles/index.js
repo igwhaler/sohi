@@ -1,5 +1,5 @@
 import MyImageStyles from './MyImageStyles'
 
-export default {
+export {
   MyImageStyles
 }
