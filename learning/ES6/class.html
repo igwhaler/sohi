@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class</title>
+</head>
+<body>
+  <script>
+    function Point (x, y) {
+      this.x = x
+      this.y = y
+      // console.log(this.__proto__ === Point.prototype)
+    }
+
+    Point.prototype.show = function () {
+      var m = this.x + this.y
+
+      console.log(m)
+    }
+
+    var p1 = new Point(12, 23)
+    // p1.show()
+  </script>
+
+  <script>
+    class Mike {
+      constructor (x, y) {
+        this.x = x
+        this.y = y
+      }
+
+
+
+      show () {
+        console.log(this)
+        let m = this.x + this.y
+        console.log(m)
+      }
+    }
+
+    var m1 = new Mike(1, 2)
+    let {show} = m1
+
+    show()
+  </script>
+</body>
+</html>

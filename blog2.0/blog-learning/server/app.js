@@ -16,6 +16,7 @@ var SALT_WORK_FACTOR = 10
 var dbUrl = 'mongodb://localhost:27017/test'
 // var dbUrl = 'mongodb://mertens:test123@ds037205.mlab.com:37205/mertens-qn'
 var db = mongoose.connect(dbUrl)
+
 db.connection.on("error", function (error) {
     console.log("数据库连接失败：" + error)
 })

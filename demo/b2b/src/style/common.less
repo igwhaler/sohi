@@ -1,0 +1,39 @@
+a {
+  text-decoration: none;
+}
+body {
+  font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+  min-width: 1080px;
+  box-sizing: content-box;
+}
+
+/* 清浮动 */
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.over-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.item-translate {
+  transition: 0.3s ease-out;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 20px rgba(0,0,0,.1);
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 1080px;
+}
+
+
