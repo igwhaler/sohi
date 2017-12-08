@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Index from '@/components/Index'
+import Home from '@/components/home/Home'
 import Hello from '@/components/hello/Hello'
 import Html from '@/components/fe/Html'
 import Others from '@/components/fe/Others'
@@ -9,10 +9,11 @@ import Others from '@/components/fe/Others'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      component: Index,
+      component: Home,
       redirect: '/index',
       children: [
         {

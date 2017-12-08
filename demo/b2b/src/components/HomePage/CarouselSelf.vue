@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-item">
+  <div class="carousel-self">
     <el-carousel class="yp-carousel" trigger="click" height="450px" arrow="always">
       <el-carousel-item v-for="(item, index) in carouselList" :key="index">
         <div class="item">
@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name: 'CarouselItem',
+    name: 'CarouselSelf',
     data () {
       return {
         carouselList: [
@@ -38,7 +38,7 @@
 
 <style lang="less">
   @hoverColor: #845f40;
-  .carousel-item {
+  .carousel-self {
     .item {
       a {}
       img {

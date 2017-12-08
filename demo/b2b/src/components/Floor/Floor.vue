@@ -14,7 +14,7 @@
         </a>
       </div>
       <div class="wrap-floor-item clearfix">
-        <FloorItem class="youpin-floor-item item-translate" v-for="floorItem in item.list" :floor-item="floorItem" />
+        <FloorItem class="youpin-floor-item item-translate" v-for="(floorItem, key) in item.list" :floor-item="floorItem" :key="key"/>
       </div>
     </div>
 

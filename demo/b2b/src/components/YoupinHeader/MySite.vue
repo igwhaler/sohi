@@ -1,7 +1,7 @@
 <template>
   <div class="my-site">
     <div v-if="isLogin" class="is-login">
-      <a href="javascript:;">
+      <a href="/user/cart" target="_blank">
         <img class="pic" src="https://s1.mi-img.com/mfsv2/avatar/fdsc3/p01Z34G5Ku8w/RnSAuSf6pssWy6.jpg" alt="头像">
         <div class="item name">大鱼你你个锅锅</div>
       </a>
@@ -9,16 +9,10 @@
       <div class="drop-menu">
         <ul class="list">
           <li>
-            <a href="#">我的订单</a>
+            <a href="/user/cart" target="_blank">我的购物车</a>
           </li>
           <li>
-            <a href="#">我的资产</a>
-          </li>
-          <li>
-            <a href="#">我的收藏</a>
-          </li>
-          <li>
-            <a href="#">地址管理</a>
+            <a href="/user/orders" target="_blank">我的订单</a>
           </li>
           <li>
             <a href="#">退出登录</a>
@@ -48,6 +42,7 @@
 
 <style lang="less">
   @itemHeight: 40px;
+  @itemLength: 3;
 
   .my-site {
     .is-login {
@@ -76,12 +71,12 @@
       &:hover {
         .drop-menu {
           display: block;
-          height: @itemHeight*5;
+          height: @itemHeight*@itemLength;
           opacity: 1;
         }
       }
       .drop-menu {
-        z-index: 3000;
+        z-index: 2000;
         position: absolute;
         top: 26px;
         right: 10px;

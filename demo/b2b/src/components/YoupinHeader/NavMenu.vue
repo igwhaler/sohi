@@ -1,47 +1,63 @@
 <template>
-  <div class="nav-item">
-
-    <ul class="list clearfix">
-      <li class="item" v-for="(item, index) in navList" @mouseover="handleOver(index)">
-        <a href="#">{{item.name}}</a>
-      </li>
-    </ul>
-
-    <div v-if="navContent.list" class="content clearfix">
-
-      <ul class="content-list">
-        <li v-for="item in navContent.list.slice(0, 9)">
-          <a :href="item.link">
-            <img :src="item.img">
-            <div class="val">{{item.val}}</div>
-          </a>
+  <div class="nav-menu">
+    <div class="container">
+      <ul class="list clearfix">
+        <li class="item" v-for="(item, index) in navList">
+          <a :href="'#' + item.name">{{item.name}}</a>
         </li>
       </ul>
 
-      <div v-if="navContent && navContent.list.length > 9" class="more">
-        <a :href="navContent.moreLink">更多>></a>
-      </div>
+      <!-- 下拉框 -->
+      <!-- <div v-if="navContent.list" class="content clearfix">
+
+        <ul class="content-list">
+          <li v-for="item in navContent.list.slice(0, 9)">
+            <a :href="item.link + '#' + item.val" target="_blank">
+              <img :src="item.img">
+              <div class="val">{{item.val}}</div>
+            </a>
+          </li>
+        </ul>
+
+        <div v-if="navContent && navContent.list.length > 9" class="more">
+          <a :href="navContent.moreLink">更多>></a>
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'NavItem',
+    name: 'NavMenu',
     data () {
       return {
         navContent: [],
 
         navList: [
           {
-            name: '手机',
-            link: '#',
+            name: '首页',
+            link: '/',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
-                  val: '手机',
-                  link: '#'
+                  val: '居家',
+                  link: '/goodlist'
+                }
+              ],
+              moreLink: '#'
+            }
+          },
+          {
+            name: '手机',
+            link: '/goodlist?gid=123',
+            content: {
+              list: [
+                {
+                  img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
+                  val: '居家',
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -49,58 +65,58 @@
           },
           {
             name: '居家',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://shop.io.mi-img.com/app/shop/img?id=shop_7d70b4739a00b28cbe76ce33a81a9e6d.jpeg&w=480&h=480',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://shop.io.mi-img.com/app/shop/img?id=shop_7d70b4739a00b28cbe76ce33a81a9e6d.jpeg&w=480&h=480',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://shop.io.mi-img.com/app/shop/img?id=shop_7d70b4739a00b28cbe76ce33a81a9e6d.jpeg&w=480&h=480',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://shop.io.mi-img.com/app/shop/img?id=shop_7d70b4739a00b28cbe76ce33a81a9e6d.jpeg&w=480&h=480',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://shop.io.mi-img.com/app/shop/img?id=shop_7d70b4739a00b28cbe76ce33a81a9e6d.jpeg&w=480&h=480',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -108,13 +124,13 @@
           },
           {
             name: '服饰',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -122,18 +138,18 @@
           },
           {
             name: '餐厨',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 },
                 {
                   img: 'https://shop.io.mi-img.com/app/shop/img?id=shop_7d70b4739a00b28cbe76ce33a81a9e6d.jpeg&w=480&h=480',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -141,13 +157,13 @@
           },
           {
             name: '影音',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -155,13 +171,13 @@
           },
           {
             name: '家电',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -169,13 +185,13 @@
           },
           {
             name: '饮食',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -183,13 +199,13 @@
           },
           {
             name: '健康',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -197,13 +213,13 @@
           },
           {
             name: '洗护',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -211,13 +227,13 @@
           },
           {
             name: '日杂',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -225,13 +241,13 @@
           },
           {
             name: '智能',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -239,13 +255,13 @@
           },
           {
             name: '箱包',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -253,13 +269,13 @@
           },
           {
             name: '配件',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -267,13 +283,13 @@
           },
           {
             name: '婴童',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -281,13 +297,13 @@
           },
           {
             name: '出行',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -295,13 +311,13 @@
           },
           {
             name: '品牌',
-            link: '#',
+            link: '/goodlist',
             content: {
               list: [
                 {
                   img: 'https://static.home.mi.com/app/shop/img?id=shop_5fa921d3ff04c40c54756518e7f429b3.jpeg&w=600&h=600',
                   val: '手机',
-                  link: '#'
+                  link: '/goodlist'
                 }
               ],
               moreLink: '#'
@@ -321,8 +337,12 @@
 </script>
 
 <style lang="less" scoped>
-  .nav-item {
-    position: relative;
+  .nav-menu {
+    padding-top: 30px;
+    background-color: #fff;
+    .container {
+      position: relative;
+    }
     .list {}
     .item {
       float: left;

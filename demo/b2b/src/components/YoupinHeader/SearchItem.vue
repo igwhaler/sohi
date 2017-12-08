@@ -1,7 +1,7 @@
 <template>
   <div class="search-item clearfix">
     <div class="wrap-log">
-      <a href="#">
+      <a href="/" target="_blank">
         <img src="../../assets/logo.png" alt="LOGO">
       </a>
     </div>

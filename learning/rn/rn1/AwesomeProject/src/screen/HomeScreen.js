@@ -33,7 +33,7 @@ export default class MainScreen extends Component {
     const { navigate } = this.props.navigation
 
     this.setState({navBtnOpacity: 0.8})
-    // navigate('Profile', { name: '大鱼你个锅锅' })
+    navigate('Profile', { name: '大鱼你个锅锅' })
   }
 
   _changeNavigationOut = () => {

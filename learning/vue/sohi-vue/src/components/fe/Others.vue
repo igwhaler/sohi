@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'others',
+    name: 'Others',
     data () {
       return {
         input: ''
@@ -19,22 +19,7 @@
     },
     methods: {
       handleClick () {
-        let input = this.input
-
-        /* window.fetch('/addData', {
-          method: 'post',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          body: `data=${JSON.stringify({'name': input})}`,
-          credentials: 'same-origin'
-        })
-        .then(res => {
-          return res.json()
-        })
-        .then(result => {
-          console.log(result)
-        }) */
+        let {input} = this
 
         this.$http({
           url: '/addData',

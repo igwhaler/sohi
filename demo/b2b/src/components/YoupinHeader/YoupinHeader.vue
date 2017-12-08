@@ -16,25 +16,16 @@
         </header>
       </div>
     </div>
-
-    <div class="container">
-      <SearchItem />
-      <NavItem />
-    </div>
   </div>
 </template>
 
 <script>
   import MySite from './MySite'
-  import SearchItem from './SearchItem'
-  import NavItem from './NavItem'
 
   export default {
     name: 'YoupinHeader',
     components: {
-      MySite,
-      SearchItem,
-      NavItem
+      MySite
     },
     data () {
       return {}

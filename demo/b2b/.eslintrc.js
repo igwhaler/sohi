@@ -17,6 +17,8 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    'eqeqeq': 0,
+    // 'no-unused-vars': ['error', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': true }],
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

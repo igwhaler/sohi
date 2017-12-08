@@ -9,7 +9,7 @@
   import MyHeader from '@/components/common/Header'
 
   export default {
-    name: 'hello',
+    name: 'Index',
     components: {
       MyHeader
     }

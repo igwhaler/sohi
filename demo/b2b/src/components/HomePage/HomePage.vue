@@ -1,31 +1,17 @@
 <template>
-  <div class="wrap-home-youpin">
+  <div class="home-page">
     <YoupinHeader />
-
-    <div class="home-main">
-      <div class="container">
-        <CarouselItem />
-        <AdvertItem />
-        <Floor />
-      </div>
-    </div>
-
+    <router-view />
   </div>
 </template>
 
 <script>
   import YoupinHeader from '../YoupinHeader/YoupinHeader'
-  import CarouselItem from './CarouselItem'
-  import AdvertItem from './AdvertItem'
-  import Floor from '../Floor/Floor'
 
   export default {
     name: 'HomePage',
     components: {
-      YoupinHeader,
-      CarouselItem,
-      AdvertItem,
-      Floor
+      YoupinHeader
     },
     data () {
       return {
