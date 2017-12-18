@@ -12,7 +12,7 @@
     name: 'hello',
     data () {
       return {
-        msg: 'Hello world!'
+        msg: '大鱼你个锅锅'
       }
     }
   }

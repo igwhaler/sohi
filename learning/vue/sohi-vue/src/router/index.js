@@ -14,10 +14,10 @@ export default new Router({
     {
       path: '/',
       component: Home,
-      redirect: '/index',
       children: [
         {
-          path: 'index',
+          path: 'hello',
+          alias: ['', 'index'],
           component: Hello
         },
         {
