@@ -19,6 +19,13 @@ Vue.use(Input)
 
 Vue.config.productionTip = false
 
+// 全局自定义指令
+Vue.directive('focus', {
+  inserted (el) {
+    el.focus()
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

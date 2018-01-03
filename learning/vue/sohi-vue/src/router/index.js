@@ -3,8 +3,9 @@ import Router from 'vue-router'
 
 import Home from '@/components/home/Home'
 import Hello from '@/components/hello/Hello'
-import Html from '@/components/fe/Html'
-import Others from '@/components/fe/Others'
+import Html from '@/components/fe/html/Html'
+import Css from '@/components/fe/css/Css'
+import Others from '@/components/fe/others/Others'
 
 Vue.use(Router)
 
@@ -23,6 +24,10 @@ export default new Router({
         {
           path: 'html',
           component: Html
+        },
+        {
+          path: 'css',
+          component: Css
         },
         {
           path: 'others',

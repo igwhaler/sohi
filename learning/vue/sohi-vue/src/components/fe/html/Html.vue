@@ -30,6 +30,21 @@
         </template>
       </MyInput>
     </div>
+
+    <hr />
+
+    <div>
+      <input type="button" @click="handleTroggle" value="点击">
+      <transition name="fade">
+        <div v-if="isShow">123123123</div>
+      </transition>
+    </div>
+
+    <hr />
+
+    <div>
+      <input type="text" v-focus>
+    </div>
   </div>
 </template>
 
@@ -53,7 +68,9 @@
 
         myInput: {
           value: ''
-        }
+        },
+
+        isShow: false
       }
     },
     methods: {
@@ -65,6 +82,10 @@
         console.log(props.value)
         props.value = 123
         console.log(props.value)
+      },
+
+      handleTroggle () {
+        this.isShow = !this.isShow
       }
     }
   }
