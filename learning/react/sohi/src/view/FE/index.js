@@ -44,7 +44,9 @@ export default class FE extends Component {
         <Button type="primary" onClick={() => this.handleClick()}>爸爸</Button>
 
         <HtmlPart time={date.toLocaleString()} changeMyLove={handleClick.bind(this)}/>
-        <CssPart isShow={isShow} time={date.toLocaleString()} />
+        <CssPart isShow={isShow} time={date.toLocaleString()}>
+          <h2>123123</h2>
+        </CssPart>
       </div>
     );
   }

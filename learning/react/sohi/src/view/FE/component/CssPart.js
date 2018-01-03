@@ -45,6 +45,8 @@ export default class CssPart extends Component {
       }
     ]
 
+    let {children} = this.props
+
     return (
       <div>
         <hr />
@@ -56,6 +58,8 @@ export default class CssPart extends Component {
               return <option key={index} value={item.val}>{item.val}</option>
             })}
           </select>
+
+          {children}
         </div>
       </div>
     )
