@@ -1,0 +1,23 @@
+{
+  "name": "epegg",
+  "version": "1.0.0",
+  "description": "node,koa,node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "ig",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.2.0",
+    "egg-mysql": "^3.0.0",
+    "egg-view-nunjucks": "^2.1.4"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.3.7"
+  }
+}

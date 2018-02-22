@@ -1,35 +1,48 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  LocaleProvider,
-  DatePicker,
-  message
-} from 'antd';
+import './style/myTest.less';
+
 
 export default class MyTest extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      date: ''
-    };
+
+    this.state = {};
   }
 
-  handleChange(date) {
-    message.info('您选择的日期是: ' + date.toString());
-    this.setState({ date });
+  componentWillMount () {
+    console.log('willMount')
+  }
+
+  componentDidMount () {
+    console.log('didMount')
+  }
+
+  componentWillReceiveProps (nextProps, nextState) {
+    console.log('receiveProps', nextProps, nextState)
+  }
+
+  shouldComponentUpdate (nextProps, nextState) {
+    console.log('shouldUpdate', nextProps, nextState)
+
+    return true
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    console.log('willUpdatte', nextProps, nextState)
+  }
+
+  componentDidUpdatte (nextProps, nextState) {
+    console.log('didUpdate', nextProps, nextState)
   }
 
   render () {
+    console.log('render')
+
+    let {name} = this.props;
+
     return (
       <div className="my-test">
-        <Button type="primary">点击</Button>
-
-        <LocaleProvider>
-          <div>
-            <DatePicker onChange={value => this.handleChange(value)} />
-            <div style={{ marginTop: 20 }}>当前日期：{this.state.date.toString()}</div>
-          </div>
-        </LocaleProvider>
+        <p className="name">{name}</p>
       </div>
     );
   }

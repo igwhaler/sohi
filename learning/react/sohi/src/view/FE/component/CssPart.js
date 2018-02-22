@@ -24,7 +24,7 @@ export default class CssPart extends Component {
       value: _val
     })
 
-    console.log(JSON.parse(_val))
+    console.log(this.props.children)
   }
 
   render () {
