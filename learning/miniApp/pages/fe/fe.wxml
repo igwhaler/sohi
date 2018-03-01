@@ -1,0 +1,38 @@
+<view>
+  <view class="wrap-user-info">
+    <view class="user-info">
+      <image class="userinfo-avatar" src="../../assets/homePage/logo.png" background-size="cover"></image>
+      <view class="wrap-userinfo">
+        <view class="userinfo-name">大鱼你个锅锅</view>
+        <view class="userinfo-des">锅锅很懒，啥都没有留下~~</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fe-list">
+    <view class="fe-item">
+      <view class="item">
+        <text class="text">HTML</text>
+        <text class="more">></text>
+      </view>
+    </view>
+    <view class="fe-item">
+      <view class="item">
+        <text class="text">CSS</text>
+        <text class="more">></text>
+      </view>
+    </view>
+    <view class="fe-item">
+      <view class="item">
+        <text class="text">JavaScript</text>
+        <text class="more">></text>
+      </view>
+    </view>
+    <view class="fe-item">
+      <view class="item">
+        <text class="text">杂项</text>
+        <text class="more">></text>
+      </view>
+    </view>
+  </view>
+</view>

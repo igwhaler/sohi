@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="handleShowLog" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view>
+    <button bindtap="handleViewTap">点击</button>
+  </view>
+</view> -->
+
+<view>
+  <view class="home-page">
+    <view class="art-list">
+      <view wx:for="{{artList}}" class="art-item" wx:key="{{index}}">
+        <navigator class="introduce" url="{{'/pages/art/art?id=' + item.id}}">
+          <text class="title">{{item.title}}</text>
+          <view class="content">{{item.content}}</view>
+          <!-- <view class="content">去年今日此门中，人面桃花相映红。</view>
+          <view class="content">人面不知何处去，桃花依旧笑春风。</view> -->
+          <image class="image" src="{{item.image}}" mode="widthFix"></image>
+          <text class="time">{{item.time}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

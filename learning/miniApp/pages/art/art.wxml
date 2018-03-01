@@ -1,0 +1,8 @@
+<view>
+  <view class="art">
+    <text class="title">{{activeArt.title}}</text>
+    <view class="content">{{activeArt.content}}</view>
+    <image class="image" src="{{activeArt.image}}" mode="widthFix"></image>
+    <text class="time">{{activeArt.time}}</text>
+  </view>
+</view>

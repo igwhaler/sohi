@@ -1,0 +1,30 @@
+/*文章详情页*/
+
+.art{
+  padding: 20rpx 30rpx;
+}
+
+.art .title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 20px;
+  color: #878787;
+}
+
+.art .content {
+  line-height: 1.5em;
+  font-size: 16px;
+  color: #333;
+}
+
+.art .image {
+  display: block;
+  margin-top: 10rpx;
+  width: 100%;
+}
+
+.art .time {
+  margin-top: 10rpx;
+  font-size: 14px;
+  color: #878787;
+}

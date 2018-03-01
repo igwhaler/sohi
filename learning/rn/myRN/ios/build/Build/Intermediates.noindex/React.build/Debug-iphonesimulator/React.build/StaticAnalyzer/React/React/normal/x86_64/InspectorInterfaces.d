@@ -1,0 +1,3 @@
+dependencies: \
+  /Users/mine/FE/sohi/learning/rn/myRN/node_modules/react-native/ReactCommon/jschelpers/InspectorInterfaces.cpp \
+  /Users/mine/FE/sohi/learning/rn/myRN/node_modules/react-native/ReactCommon/jschelpers/InspectorInterfaces.h
