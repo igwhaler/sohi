@@ -11,7 +11,8 @@ $(function() {
   var _fullpage = $('#fullpage')
 
   _fullpage.show().fullpage({
-    sectionsColor: ['tan', '#4BBFC3', '#7BAABE', 'yellow'],
+    // sectionsColor: [],
+    verticalCentered: false,
     scrollingSpeed: 600,
     easing: 'ease-in',
   });

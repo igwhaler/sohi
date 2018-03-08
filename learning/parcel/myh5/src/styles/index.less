@@ -1,21 +1,56 @@
 @import './common/common.less';
 @import './fullPage/jquery.fullPage.less';
 
-.icon-fe {
-  .sprite(@fe);
-}
-.icon-index {
-  .sprite(@index);
-}
-.icon-favicon {
-  .sprite(@favicon);
+.icon-logo {
+  .sprite(@logo);
 }
 
-.page-container {
-  text-align: center;
-  p {
-    font-size: 48px; /*px*/
+.page-container {}
+
+.page-item {}
+
+.page0 {
+  position: relative;
+  background-color: #ff3939;
+  background-image: url('../assets/images/bg_1.png');
+  background-size: cover;
+  .logo {
+    padding-top: 146px;
     text-align: center;
+    color: #fef0f0;
+    p {
+      line-height: 100px;
+      font-size: 64px; /*px*/
+    }
+    span {
+      font-size: 32px;
+      color: #fde1e1;
+    }
+    .ath {
+      position: absolute;
+      bottom: 194px;
+      width: 100%;
+      font-size: 24px;
+    }
   }
-  .icon {}
+}
+
+.page1 {
+  position: relative;
+  background-image: url('../assets/images/bg_2.png');
+  background-size: cover;
+  color: #323333;
+  .content {
+    padding: 114px 88px 0 76px;
+    h2 {
+      padding-bottom: 26px;
+      line-height: 1em;
+      font-size: 50px; /*px*/
+      font-weight: 400;
+    }
+    p {
+      font-size: 27px; /*px*/
+      line-height: 40px; /*px*/
+    }
+  }
 }
