@@ -1,0 +1,18 @@
+{
+  "name": "Igwhaler",
+  "version": "1.0.0",
+  "description": "electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "fe"
+  ],
+  "author": "igwhaler",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.8.3"
+  }
+}
