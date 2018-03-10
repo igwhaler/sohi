@@ -263,8 +263,94 @@
 }
 
 .page8 {
+  padding-bottom: 42px;
   background-color: #ff3a40;
   color: #ffffff;
+  .wrap-progress {
+    .g-wrap {
+      overflow: hidden;
+    }
+    .wrap-item {
+      width: 50%;
+    }
+    .w-num {
+      position: relative;
+      height: 30px;
+      margin: 4px 0;
+      width: 50%;
+      text-align: center;
+      .num {
+        position: absolute;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 18px;
+        background-color: #fff;
+        color: #ff3a40;
+        border-radius: 50%;
+      }
+      h4 {
+
+        font-size: 22px;
+      }
+    }
+    .num-right {
+      float: right;
+      .num {
+        left: -15px;
+      }
+      h4 {
+        float: left;
+        margin-left: 32px;
+      }
+    }
+    .num-left {
+      float: left;
+      .num {
+        right: -15px;
+      }
+      h4 {
+        float: right;
+        margin-right: 32px;
+      }
+    }
+    .g-center {
+      text-align: center;
+      .progress {
+        display: inline-block;
+        width: 2px; /*no*/
+        // margin-left: -1px; /*no*/
+        height: 86px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6))
+      }
+    }
+    .g-right {
+      overflow: hidden;
+      .wrap-item {
+        float: right;
+
+      }
+      .item {
+        margin-left: -1px; /*no*/
+        padding-left: 32px;
+        border-left: 2px solid #fff; /*no*/
+      }
+    }
+    .g-left {
+      overflow: hidden;
+      .wrap-item {
+        float: left;
+      }
+      .item {
+        text-align: right;
+        margin-right: -1px; /*no*/
+        padding-right: 32px;
+        border-right: 2px solid #fff; /*no*/
+      }
+    }
+  }
 }
 
 .page9 {
