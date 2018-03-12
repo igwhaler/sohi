@@ -267,10 +267,30 @@
   padding-bottom: 42px;
   background-color: #ff3a40;
   color: #ffffff;
-  .wrap-progress {
-    .g-wrap {
-      overflow: hidden;
+  &.p8-animate {
+    .wrap-progress {
+      .g-right,
+      .g-left {
+        .progress {
+          opacity: 1;
+        }
+        .item.fixed {
+          opacity: 1;
+        }
+      }
+      .g-right {
+        .item.fixed {
+          left: 0px;
+        }
+      }
+      .g-left {
+        .item.fixed {
+          right: 0;
+        }
+      }
     }
+  }
+  .wrap-progress {
     .wrap-item {
       width: 50%;
     }
@@ -317,41 +337,75 @@
         margin-right: 32px;
       }
     }
-    .wrap-item {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-    }
-    .progress {
-      width: 4px; /*no*/
-      background-color: #fff;
-    }
+
     .g-center {
       text-align: center;
       .progress {
         display: inline-block;
+        margin-left: -1px; /*no*/
         width: 2px; /*no*/
         height: 86px;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6))
       }
     }
-    .g-right {
-      overflow: hidden;
+    .g-right,
+    .g-left {
       .wrap-item {
-        float: right;
+        position: relative;
+        display: flex;
+        align-items: stretch;
+      }
+      .progress {
+        width: 4px; /*no*/
+        background-color: #fff;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
       }
       .item {
+        opacity: 0;
+      }
+      .item.fixed {
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.15s ease-in;
+      }
+    }
+    .g-right {
+      .wrap-item {
+        float: right;
+        flex-direction: row;
+      }
+      .progress {
+        margin-left: -1px; /*no*/
+      }
+      .item {
+        float: left;
+        padding-left: 32px;
+      }
+      .item.fixed {
+        left: 100px;
         padding-left: 32px;
       }
     }
     .g-left {
-      overflow: hidden;
       .wrap-item {
         float: left;
+        flex-direction: row-reverse;
+      }
+      .progress {
+        margin-right: -1px; /*no*/
       }
       .item {
+        float: right;
         padding-right: 32px;
         text-align: right;
+      }
+      .item.fixed {
+        right: 100px;
+        padding-right: 32px;
       }
     }
   }

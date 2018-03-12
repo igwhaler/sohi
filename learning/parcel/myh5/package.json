@@ -14,7 +14,9 @@
     "amfe-flexible": "^2.2.1",
     "jquery": "^3.3.1",
     "lib-flexible": "^0.3.2",
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "webpack-zepto": "0.0.1",
+    "zepto": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -39,6 +41,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
+    "exports-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -54,6 +57,7 @@
     "postcss-url": "^7.2.1",
     "px2rem-loader": "^0.1.7",
     "rimraf": "^2.6.0",
+    "script-loader": "^0.7.2",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
