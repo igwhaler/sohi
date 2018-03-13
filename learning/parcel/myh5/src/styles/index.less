@@ -462,7 +462,7 @@
         display: inline-block;
         overflow: hidden;
         .icon {
-          margin-top: -1px;
+          margin-top: -0.5px; /*no*/
         }
       }
       h3 {
@@ -506,11 +506,17 @@
 
     }
     .des-item {
-      padding: 0 46px 0 40px;
+      padding: 0 36px 0 20px;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       background-color: #f4f4f4;
+      text-align: left;
       h3 {
-        padding-top: 86px;
+        //padding-top: 86px;
+
+        text-align: left;
         margin-bottom: 8px;
         font-size: 22px;
         color: #000000;
@@ -583,11 +589,102 @@
 }
 
 .page14 {
-  height: 2174px;
-  background: url("../assets/images/bg_14.png");
-  background-size: cover;
-  background-position: 50% 50%;
+  padding-bottom: 106px;
+  background-color: #1f1e29;
   color: #ffffff;
+  .xy-item {
+    .title {
+      margin-bottom: 4px;
+      font-size: 20px;
+      line-height: 1em;
+    }
+    .en-des {
+      font-size: 14px;
+      line-height: 1em;
+    }
+  }
+  .ssd-item,
+  .wd-item {
+    .wrap-header {
+      margin-right: 60px;
+      padding: 4px 10px 4px 0;
+      border-right: 2px solid #ffffff; /*no*/
+      text-align: right;
+    }
+  }
+
+  .uid-item {
+    margin-top: 100px;
+    text-align: center;
+    .content {
+      margin: 20px auto 0;
+      width: 640px;
+      height: 332px;
+      background: url('../assets/images/bg14-1.png');
+      background-size: cover;
+    }
+  }
+
+  .cd-item {
+    margin-top: 70px;
+    text-align: center;
+    .content {
+      margin: 20px auto 0;
+      width: 349px;
+      height: 48px;
+      background: url('../assets/images/bg14-2.png') 50% 50%;
+      background-size: cover;
+    }
+  }
+
+  .id-item {
+    margin-top: 66px;
+    text-align: center;
+    .content {
+      margin: 45px auto 0;
+      width: 459px;
+      height: 267px;
+      background: url('../assets/images/bg14-3.png') 50% 50%;
+      background-size: cover;
+    }
+  }
+
+  .ssd-item {
+    margin-top: 66px;
+    width: 640px;
+    height: 537px;
+    background: url('../assets/images/bg14-4.png') 50% 50%;
+    background-size: cover;
+  }
+
+  .ebd-item {
+    .wrap-header {
+      margin-left: 60px;
+      padding: 4px 0 4px 10px;
+      border-left: 2px solid #ffffff; /*no*/
+      text-align: left;
+    }
+    .content {
+      margin: 0 auto;
+      margin-top: 46px;
+      width: 446px;
+      height: 590px;
+      background: url('../assets/images/bg14-5.png') 50% 50%;
+      background-size: cover;
+    }
+  }
+
+  .wd-item {
+    margin-top: 140px;
+    .content {
+      margin: 0 auto;
+      margin-top: 44px;
+      width: 558px;
+      height: 246px;
+      background: url('../assets/images/bg14-6.png') 50% 50%;
+      background-size: cover;
+    }
+  }
 }
 
 .page15 {
