@@ -27,8 +27,8 @@
 .page0 {
   position: relative;
   height: 1132px;
-  background-color: #ff3939;
-  background-image: url('../assets/images/bg_1.png');
+  background-color: #e43031;
+  // background-image: url('../assets/images/bg_1.png');
   background-size: contain;
   background-position: 50% 50%;
   .logo {
@@ -48,6 +48,23 @@
       bottom: 150px;
       width: 100%;
       font-size: 18px;
+    }
+  }
+  .zy-logo {
+    display: inline-block;
+    background: url("../assets/images/logo.png");
+    width: 90px;
+    height: 108px;
+    background-size: cover;
+  }
+  .wrap-logo-gif {
+    padding-top: 120px;
+    .logo-gif {
+      display: inline-block;
+      background: url("../assets/images/logo_am.gif");
+      width: 300px;
+      height: 300px;
+      background-size: cover;
     }
   }
 }
@@ -197,6 +214,8 @@
       li {
         float: left;
         margin: 0 10px;
+        height: 52px;
+        overflow: hidden;
         padding-bottom: 90px;
         text-align: left;
       }
@@ -267,6 +286,7 @@
   padding-bottom: 42px;
   background-color: #ff3a40;
   color: #ffffff;
+  overflow: hidden;
   &.p8-animate {
     .wrap-progress {
       .g-right,
@@ -438,6 +458,13 @@
     .item {
       padding-top: 30px;
       text-align: center;
+      .wrap-icon {
+        display: inline-block;
+        overflow: hidden;
+        .icon {
+          margin-top: -1px;
+        }
+      }
       h3 {
         margin-top: 22px;
         margin-bottom: 6px;
@@ -572,7 +599,7 @@
     .wrap-item {
       overflow: hidden;
       &:nth-child(1) {
-        border-bottom: 1px solid #e9e9e9; /*no*/
+        border-bottom: 1px solid #1f1f1f; /*no*/
       }
       .g-item{
         float: left;
@@ -580,7 +607,7 @@
         &:nth-child(2n+1) {
           .item {
             padding-right: 24px;
-            border-right: 1px solid #e9e9e9; /*no*/
+            border-right: 1px solid #1f1f1f; /*no*/
           }
         }
         &:nth-child(2n) {
@@ -598,6 +625,14 @@
       border-top: none;
       text-align: center;
       padding-bottom: 24px;
+      .wrap-icon {
+        width: 60px;
+        height: 49px;
+        overflow: hidden;
+        .icon {
+          margin-top: -1px;
+        }
+      }
       h3 {
         margin-top: 16px;
         margin-bottom: 6px;
