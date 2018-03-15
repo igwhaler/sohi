@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>functional</title>
 </head>
+
 <body>
   <ul id="list">
     <li>1</li>
@@ -17,24 +19,82 @@
     <li>9</li>
     <li>10</li>
   </ul>
-
   <script>
-    function batch (fn) {
-      return function (target, ...args) {
-        if (target.length > 0) {
-          return Array.from(target).map(item => fn.apply(this, [item, ...args]))
-        } else {
-          return fn.apply(this, [target, ...args])
-        }
+  function batch(fn) {
+    return function (target, ...args) {
+      if (target.length > 0) {
+        return Array.from(target).map(item => fn.apply(this, [item, ...args]))
+      } else {
+        return fn.apply(this, [target, ...args])
       }
     }
+  }
 
-    var aList = document.querySelectorAll('ul>li:nth-child(2n+1)')
-    var setColor = batch(function (el, color) {
-      el.style.color = color
+  var aList = document.querySelectorAll('ul>li:nth-child(2n+1)')
+  var setColor = batch(function (el, color) {
+    el.style.color = color
+  })
+
+  setColor(aList, 'red')
+  </script>
+  <script>
+  一、 1、['a1', 'a2', 'a2', 'b1', 'b2', 'b3', 'b4', 'c1']
+
+  2、['a', 'a', 'b']
+
+  3、['a1', 'a2', 'a2']、['b1', 'b2', 'b3', 'b4']、['c1']
+
+  4、 1 + 2 + 3 + 4
+
+
+  二、 1、['a1', 'a2', 'b1', 'b2', 'b4', 'c1']
+
+  2、['a', '1', 'a', '2', 'b', '1', 'b', '2', 'c', '1']
+
+
+  三、 1、['a1', 'a2', 'b1', 'b2', 'b4', 'c1']
+
+  2、[{ a: 1 }, { a: 2 }, { b: 1 }, { b: 2 }, { b: 4 }, { c: 1 }]
+
+
+  var arr = ['a1', 'a2', 'b1', 'b2', 'b4', 'c1', 'c1', 'c1']
+
+  function handle(arr) {
+    var _arr = []
+
+    // 去重 取字母
+    var _rArr = Array.from(new Set(arr.map(item => item.slice(0, 1))))
+
+    // 遍历 去重字母数组
+    _rArr.forEach((val, index) => {
+
+      if (!_arr[index]) {
+        _arr[index] = {
+          count: 0,
+          sum: 0,
+          val: val
+        }
+      }
+
+      // 遍历原数组
+      arr.forEach(item => {
+        if (item.indexOf(val) > -1) {
+          // 存储次数
+          _arr[index].count++
+            // 存储sum
+            _arr[index].sum += item.slice(1) * 1
+        }
+      })
     })
 
-    setColor(aList, 'red')
+    var _maxCount = Math.max(..._arr.map(item => item.count))
+    var _target = _arr.filter(item => item.count == _maxCount)
+
+    return _target.map(item => `${item.val}: ${item.sum}`).join('、')
+  }
+
+  handle(arr)
   </script>
 </body>
+
 </html>
