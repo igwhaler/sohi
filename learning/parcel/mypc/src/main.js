@@ -10,8 +10,8 @@ $(function () {
   var winWidth = $win.width();
 
   function init () {
-    if (winWidth > 750) {
-      window.location.href = '/pc/'
+    if (winWidth <= 750) {
+      window.location.href = '/h5/'
       return
     }
     $wrap.css({display: "block"})
@@ -35,6 +35,4 @@ $(function () {
   $win.on('scroll', function (e) {
     p8Animate();
   }, false)
-
-
 })
