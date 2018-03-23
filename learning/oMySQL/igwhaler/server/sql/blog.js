@@ -1,4 +1,4 @@
-export const selectAll = 'SELECT * FROM websites';
+export const selectAll = 'SELECT id, name, url FROM websites WHERE country = "CN" LIMIT 2 OFFSET 0';
 
 export const insertItem = 'INSERT INTO websites(Id, name, url, alexa, country) VALUES(0, ?, ?, ?, ?)';
 

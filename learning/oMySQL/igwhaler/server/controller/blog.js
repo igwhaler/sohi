@@ -2,16 +2,16 @@ import mysql from 'mysql';
 import blogDB from '../db/blogDB.js';
 import * as blogSQL from '../sql/blog.js'
 
+// 连接数据库
 const connection = mysql.createConnection(blogDB);
-
 connection.connect();
 
 // 查
-/*connection.query(blogSQL.selectAll, (error, results, fields) => {
+connection.query(blogSQL.selectAll, (error, results, fields) => {
   if (error) throw error;
 
   console.log(results);
-});*/
+});
 
 // 增
 /*connection.query(blogSQL.insertItem, ['菜鸟工具', 'https://c.runoob.com','23453', 'CN'], (error, results, fields) => {
@@ -27,8 +27,9 @@ connection.connect();
   console.log(results)
 });*/
 
-connection.query(blogSQL.deleteItem, [7], (err, results) => {
+// 删除
+/*connection.query(blogSQL.deleteItem, [7], (err, results) => {
   if (err) throw err;
 
   console.log(results);
-});
+});*/
