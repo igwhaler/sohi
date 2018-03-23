@@ -8,14 +8,21 @@
   background-color: #ffffff;
 }
 
+.g-header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
 .header {
   margin: 0 auto;
+  padding: 16px 0 12px;
   width: 1100px;
-  background-color: #ffffff;
   overflow: hidden;
   .wrap-logo {
     float: left;
-    padding: 24px 0;
     .logo {
       float: left;
       width: 35px;
@@ -40,11 +47,11 @@
     }
   }
   .menu {
-    float: left;
+    float: right;
     margin-left: 50px;
-    padding: 30px 0 25px;
     .item {
       float: left;
+      transition: all 0.3s;
       &.active {
         a {
           border-bottom-color: #ff3a40;
@@ -79,7 +86,7 @@
     margin: 0 auto;
   }
   .common-content {
-    padding-top: 80px;
+    padding-top: 90px;
     h2 {
       padding-bottom: 10px;
       line-height: 1em;
@@ -98,6 +105,7 @@
   height: 654px;
   background-image: url('../assets/images/bg1-1.png');
   background-size: cover;
+  background-position: 50% 50%;
   color: #000000;
 }
 
@@ -106,6 +114,8 @@
   background-color: #ff3a40;
   color: #fef0f0;
   .wrap-icons {
+    margin: 0 auto;
+    max-width: 1000px;
     .icon-list {
       overflow: hidden;
       li {
@@ -278,13 +288,14 @@
 .page6 {
   background-color: #ff3a40;
   color: #fff;
+  padding-bottom: 100px;
   .common-content {
     h2 {
       font-size: 38px;
     }
   }
   .wrap-list {
-    margin-top: 60px;
+    margin-top: 100px;
     ul {
       margin: 0 auto;
       width: 1190px;
@@ -612,6 +623,7 @@
   height: 1138px;
   background: url('../assets/images/bg_11.png');
   background-size: cover;
+  background-position: 50% 50%;
 }
 
 .page12 {
@@ -621,7 +633,7 @@
   .wrap-list {
     ul {
       margin: 0 auto;
-      margin-top: 60px;
+      margin-top: 100px;
       width: 1100px;
       overflow: hidden;
     }
@@ -667,6 +679,7 @@
   height: 1240px;
   background: url("../assets/images/bg_13.png");
   background-size: cover;
+  background-position: 50% 50%;
 }
 
 .page14 {
@@ -674,13 +687,15 @@
   background-color: #1f1e29;
   color: #ffffff;
   .xy-item {
+    margin: 0 auto;
+    max-width: 1080px;
     .title {
       margin-bottom: 4px;
-      font-size: 38px;
+      font-size: 28px;
       line-height: 1em;
     }
     .en-des {
-      font-size: 24px;
+      font-size: 18px;
       line-height: 1em;
     }
   }

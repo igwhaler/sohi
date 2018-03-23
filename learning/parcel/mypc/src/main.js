@@ -15,6 +15,10 @@ $(function () {
       return
     }
     $wrap.css({display: "block"})
+
+    $('.header .menu').on('click', '.item', function(e) {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
   };
   init()
 
