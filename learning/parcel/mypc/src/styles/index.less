@@ -9,7 +9,7 @@
 }
 
 .g-header {
-  z-index: 10;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@
       float: left;
       width: 35px;
       height: 42px;
-      background: url('../assets/images/logo.png') no-repeat;
+      // background: url('../assets/images/logo.png') no-repeat;
       background-size: cover;
     }
     .des {
@@ -224,63 +224,49 @@
     margin-top: 60px;
     .list {
       margin: 0 auto;
-      overflow: hidden;
       max-width: 1280px;
       li {
+        position: relative;
         float: left;
         width: 160px;
         height: 160px;
         background-size: cover;
         background-position: 50% 50%;
+        &:hover {
+          .modal-item {
+            // display: block;
+            z-index: 10;
+            opacity: 1;
+            transform: scale(1.25);
+          }
+        }
+        img {
+          display: block;
+        }
+        .modal-item {
+          z-index: -1;
+          // display: none;
+          opacity: 0;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: #fff;
+          transition: all 0.3s;
+          .wrap-summary {
+            padding: 0 12px 6px;
+          }
+          .name {
+            margin: 6px 0 4px;
+            font-size: 14px;
+            color: #333333;
+          }
+          .des {
+            font-size: 12px;
+            line-height: 1.5em;
+            color: #888888;
+          }
+        }
       }
-    }
-    .item-1 {
-      background: url('../assets/images/teachers/1.jpg');
-    }
-    .item-2 {
-      background: url('../assets/images/teachers/2.jpg');
-    }
-    .item-3 {
-      background: url('../assets/images/teachers/3.jpg');
-    }
-    .item-4 {
-      background: url('../assets/images/teachers/4.jpg');
-    }
-    .item-5 {
-      background: url('../assets/images/teachers/5.jpg');
-    }
-    .item-6 {
-      background: url('../assets/images/teachers/6.jpg');
-    }
-    .item-7 {
-      background: url('../assets/images/teachers/7.jpg');
-    }
-    .item-8 {
-      background: url('../assets/images/teachers/8.jpg');
-    }
-    .item-9 {
-      background: url('../assets/images/teachers/9.jpg');
-    }
-    .item-10 {
-      background: url('../assets/images/teachers/10.jpg');
-    }
-    .item-11 {
-      background: url('../assets/images/teachers/11.jpg');
-    }
-    .item-12 {
-      background: url('../assets/images/teachers/12.jpg');
-    }
-    .item-13 {
-      background: url('../assets/images/teachers/13.jpg');
-    }
-    .item-14 {
-      background: url('../assets/images/teachers/14.jpg');
-    }
-    .item-15 {
-      background: url('../assets/images/teachers/15.jpg');
-    }
-    .item-16 {
-      background: url('../assets/images/teachers/16.jpg');
     }
   }
 }
