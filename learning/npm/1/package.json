@@ -1,0 +1,17 @@
+{
+  "name": "igutils",
+  "version": "1.0.2",
+  "description": "igwhaler's utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "igwhaler",
+    "js",
+    "fe",
+    "utils"
+  ],
+  "author": "igwhaler",
+  "license": "ISC"
+}

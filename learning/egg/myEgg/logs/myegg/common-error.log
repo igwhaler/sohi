@@ -1,0 +1,416 @@
+2018-04-12 14:26:24,540 ERROR 24777 [-/127.0.0.1/-/6ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24777
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:26:29,684 ERROR 24777 [-/127.0.0.1/-/0ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24777
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:27:20,165 ERROR 24777 [-/127.0.0.1/-/0ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24777
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:27:23,134 ERROR 24777 [-/127.0.0.1/-/0ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24777
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:04,607 ERROR 24984 [-/127.0.0.1/-/6ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24984
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:06,380 ERROR 24984 [-/127.0.0.1/-/1ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24984
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:16,802 ERROR 24984 [-/127.0.0.1/-/1ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24984
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:17,895 ERROR 24984 [-/127.0.0.1/-/0ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 24984
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:36,322 ERROR 25000 [-/127.0.0.1/-/8ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25000
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:37,466 ERROR 25000 [-/127.0.0.1/-/0ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25000
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:38,224 ERROR 25000 [-/127.0.0.1/-/1ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25000
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:50,714 ERROR 25035 [-/127.0.0.1/-/6ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25035
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:53,806 ERROR 25035 [-/127.0.0.1/-/1ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25035
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:55,008 ERROR 25035 [-/127.0.0.1/-/1ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25035
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:31:55,597 ERROR 25035 [-/127.0.0.1/-/0ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25035
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:32:04,818 ERROR 25035 [-/127.0.0.1/-/1ms GET /home] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25035
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:32:08,793 ERROR 25035 [-/127.0.0.1/-/0ms GET /index] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/lib/application.js:252:15)
+    at Object.get cookies [as cookies] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg@2.6.0@egg/app/extend/context.js:18:66)
+    at Object.get [egg-security#CSRF_SECRET] (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:78:33)
+    at Object.ensureCsrfSecret (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/app/extend/context.js:89:13)
+    at csrf (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-security@2.2.2@egg-security/lib/middlewares/csrf.js:14:9)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:34:12
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:42:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@4.0.0@koa-compose/index.js:43:18)
+    at session (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-session@5.8.1@koa-session/index.js:41:13)
+
+pid: 25035
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:59:34,497 ERROR 25760 [-/127.0.0.1/-/8ms GET /news] nodejs.TypeError: ctx.service.news.list is not a function
+    at NewsController.list (/Users/mine/FE/sohi/learning/egg/myEgg/app/controller/news.js:13:45)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/loader/mixin/controller.js:84:20)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-router@7.4.0@koa-router/lib/router.js:346:16
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:36:12
+
+pid: 25760
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:59:47,527 ERROR 25760 [-/127.0.0.1/-/0ms GET /news] nodejs.TypeError: ctx.service.news.list is not a function
+    at NewsController.list (/Users/mine/FE/sohi/learning/egg/myEgg/app/controller/news.js:13:45)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/loader/mixin/controller.js:84:20)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-router@7.4.0@koa-router/lib/router.js:346:16
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:36:12
+
+pid: 25760
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 14:59:52,670 ERROR 25760 [-/127.0.0.1/-/0ms GET /news] nodejs.TypeError: ctx.service.news.list is not a function
+    at NewsController.list (/Users/mine/FE/sohi/learning/egg/myEgg/app/controller/news.js:13:45)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/loader/mixin/controller.js:84:20)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-router@7.4.0@koa-router/lib/router.js:346:16
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:36:12
+
+pid: 25760
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 15:01:20,572 ERROR 25816 [-/127.0.0.1/-/6ms GET /news] nodejs.TypeError: ctx.service.news.list is not a function
+    at NewsController.list (/Users/mine/FE/sohi/learning/egg/myEgg/app/controller/news.js:13:45)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/loader/mixin/controller.js:84:20)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-router@7.4.0@koa-router/lib/router.js:346:16
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:36:12
+
+pid: 25816
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 15:01:21,519 ERROR 25816 [-/127.0.0.1/-/0ms GET /news] nodejs.TypeError: ctx.service.news.list is not a function
+    at NewsController.list (/Users/mine/FE/sohi/learning/egg/myEgg/app/controller/news.js:13:45)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at Object.classControllerMiddleware (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/loader/mixin/controller.js:84:20)
+    at Object.callFn (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/index.js:36:21)
+    at wrappedController (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-core@4.6.0@egg-core/lib/utils/router.js:322:18)
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-router@7.4.0@koa-router/lib/router.js:346:16
+    at dispatch (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_koa-compose@3.2.1@koa-compose/index.js:36:12
+
+pid: 25816
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 15:02:05,034 ERROR 25838 [-/127.0.0.1/-/5027ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}})
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_urllib@2.27.0@urllib/lib/urllib.js:777:15)
+    at ontimeout (timers.js:475:11)
+    at tryOnTimeout (timers.js:310:5)
+    at Timer.listOnTimeout (timers.js:270:5)
+name: 'ConnectionTimeoutError'
+requestId: 1
+data: undefined
+path: '/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22'
+status: -2
+headers: {}
+res: { status: -2, statusCode: -2, headers: {}, size: 0, aborted: false, rt: 5018, keepAliveSocket: false, data: undefined, requestUrls: [ 'https://hacker-news.firebaseio.com/v0/topstories.json' ], timing: null, remoteAddress: '35.201.97.85', remotePort: '' }
+pid: 25838
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 15:02:10,374 ERROR 25838 [-/127.0.0.1/-/5003ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":3,"createSocketErrorCount":0,"closeSocketCount":2,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"hacker-news.firebaseio.com:443:::::::::":1},"requests":{}})
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_urllib@2.27.0@urllib/lib/urllib.js:777:15)
+    at ontimeout (timers.js:475:11)
+    at tryOnTimeout (timers.js:310:5)
+    at Timer.listOnTimeout (timers.js:270:5)
+name: 'ConnectionTimeoutError'
+requestId: 2
+data: undefined
+path: '/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22'
+status: -2
+headers: {}
+res: { status: -2, statusCode: -2, headers: {}, size: 0, aborted: false, rt: 5001, keepAliveSocket: false, data: undefined, requestUrls: [ 'https://hacker-news.firebaseio.com/v0/topstories.json' ], timing: null, remoteAddress: '35.201.97.85', remotePort: '' }
+headerSent: true
+pid: 25838
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 15:02:10,413 ERROR 25838 [-/127.0.0.1/-/5003ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":3,"createSocketErrorCount":0,"closeSocketCount":3,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}})
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_urllib@2.27.0@urllib/lib/urllib.js:777:15)
+    at ontimeout (timers.js:475:11)
+    at tryOnTimeout (timers.js:310:5)
+    at Timer.listOnTimeout (timers.js:270:5)
+name: 'ConnectionTimeoutError'
+requestId: 3
+data: undefined
+path: '/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22'
+status: -2
+headers: {}
+res: { status: -2, statusCode: -2, headers: {}, size: 0, aborted: false, rt: 5003, keepAliveSocket: false, data: undefined, requestUrls: [ 'https://hacker-news.firebaseio.com/v0/topstories.json' ], timing: null, remoteAddress: '35.201.97.85', remotePort: '' }
+pid: 25838
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 15:02:19,424 ERROR 25838 [-/127.0.0.1/-/5005ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":4,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}})
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_urllib@2.27.0@urllib/lib/urllib.js:777:15)
+    at ontimeout (timers.js:475:11)
+    at tryOnTimeout (timers.js:310:5)
+    at Timer.listOnTimeout (timers.js:270:5)
+name: 'ConnectionTimeoutError'
+requestId: 4
+data: undefined
+path: '/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22'
+status: -2
+headers: {}
+res: { status: -2, statusCode: -2, headers: {}, size: 0, aborted: false, rt: 5004, keepAliveSocket: false, data: undefined, requestUrls: [ 'https://hacker-news.firebaseio.com/v0/topstories.json' ], timing: null, remoteAddress: '35.201.97.85', remotePort: '' }
+pid: 25838
+hostname: fangshideMacBook-Pro.local
+
+2018-04-12 15:03:27,836 ERROR 25881 [-/127.0.0.1/-/5031ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}})
+headers: {}
+headers: {}
+    at Timeout._onTimeout (/Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_urllib@2.27.0@urllib/lib/urllib.js:777:15)
+    at ontimeout (timers.js:475:11)
+    at tryOnTimeout (timers.js:310:5)
+    at Timer.listOnTimeout (timers.js:270:5)
+name: 'ConnectionTimeoutError'
+requestId: 1
+data: undefined
+path: '/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22'
+status: -2
+headers: {}
+res: { status: -2, statusCode: -2, headers: {}, size: 0, aborted: false, rt: 5020, keepAliveSocket: false, data: undefined, requestUrls: [ 'https://hacker-news.firebaseio.com/v0/topstories.json' ], timing: null, remoteAddress: '35.201.97.85', remotePort: '' }
+pid: 25881
+hostname: fangshideMacBook-Pro.local
+

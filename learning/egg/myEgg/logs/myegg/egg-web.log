@@ -1,0 +1,443 @@
+2018-04-12 14:25:14,647 INFO 24712 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:25:14,693 INFO 24712 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:25:14,693 INFO 24712 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:25:14,759 INFO 24712 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:25:14,762 INFO 24712 [egg-security] use csrf middleware
+2018-04-12 14:25:14,763 INFO 24712 [egg-security] use methodnoallow middleware
+2018-04-12 14:25:14,764 INFO 24712 [egg-security] use noopen middleware
+2018-04-12 14:25:14,765 INFO 24712 [egg-security] use nosniff middleware
+2018-04-12 14:25:14,765 INFO 24712 [egg-security] use xssProtection middleware
+2018-04-12 14:25:14,766 INFO 24712 [egg-security] use xframe middleware
+2018-04-12 14:25:14,767 INFO 24712 [egg-security] use dta middleware
+2018-04-12 14:25:14,767 INFO 24712 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:25:14,795 INFO 24712 [egg-watcher:app] watcher start success
+2018-04-12 14:26:21,912 INFO 24777 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:26:21,951 INFO 24777 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:26:21,951 INFO 24777 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:26:22,018 INFO 24777 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:26:22,021 INFO 24777 [egg-security] use csrf middleware
+2018-04-12 14:26:22,022 INFO 24777 [egg-security] use methodnoallow middleware
+2018-04-12 14:26:22,022 INFO 24777 [egg-security] use noopen middleware
+2018-04-12 14:26:22,023 INFO 24777 [egg-security] use nosniff middleware
+2018-04-12 14:26:22,024 INFO 24777 [egg-security] use xssProtection middleware
+2018-04-12 14:26:22,024 INFO 24777 [egg-security] use xframe middleware
+2018-04-12 14:26:22,025 INFO 24777 [egg-security] use dta middleware
+2018-04-12 14:26:22,025 INFO 24777 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:26:22,049 INFO 24777 [egg-watcher:app] watcher start success
+2018-04-12 14:30:59,453 INFO 24984 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:30:59,492 INFO 24984 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:30:59,492 INFO 24984 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:30:59,538 INFO 24984 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:30:59,541 INFO 24984 [egg-security] use csrf middleware
+2018-04-12 14:30:59,542 INFO 24984 [egg-security] use methodnoallow middleware
+2018-04-12 14:30:59,542 INFO 24984 [egg-security] use noopen middleware
+2018-04-12 14:30:59,543 INFO 24984 [egg-security] use nosniff middleware
+2018-04-12 14:30:59,543 INFO 24984 [egg-security] use xssProtection middleware
+2018-04-12 14:30:59,544 INFO 24984 [egg-security] use xframe middleware
+2018-04-12 14:30:59,544 INFO 24984 [egg-security] use dta middleware
+2018-04-12 14:30:59,544 INFO 24984 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:30:59,574 INFO 24984 [egg-watcher:app] watcher start success
+2018-04-12 14:31:34,187 INFO 25000 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:31:34,229 INFO 25000 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:31:34,229 INFO 25000 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:31:34,283 INFO 25000 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:31:34,286 INFO 25000 [egg-security] use csrf middleware
+2018-04-12 14:31:34,287 INFO 25000 [egg-security] use methodnoallow middleware
+2018-04-12 14:31:34,287 INFO 25000 [egg-security] use noopen middleware
+2018-04-12 14:31:34,288 INFO 25000 [egg-security] use nosniff middleware
+2018-04-12 14:31:34,288 INFO 25000 [egg-security] use xssProtection middleware
+2018-04-12 14:31:34,288 INFO 25000 [egg-security] use xframe middleware
+2018-04-12 14:31:34,289 INFO 25000 [egg-security] use dta middleware
+2018-04-12 14:31:34,289 INFO 25000 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:31:34,314 INFO 25000 [egg-watcher:app] watcher start success
+2018-04-12 14:31:44,837 INFO 25035 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:31:44,873 INFO 25035 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:31:44,873 INFO 25035 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:31:44,916 INFO 25035 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:31:44,919 INFO 25035 [egg-security] use csrf middleware
+2018-04-12 14:31:44,919 INFO 25035 [egg-security] use methodnoallow middleware
+2018-04-12 14:31:44,920 INFO 25035 [egg-security] use noopen middleware
+2018-04-12 14:31:44,920 INFO 25035 [egg-security] use nosniff middleware
+2018-04-12 14:31:44,920 INFO 25035 [egg-security] use xssProtection middleware
+2018-04-12 14:31:44,921 INFO 25035 [egg-security] use xframe middleware
+2018-04-12 14:31:44,921 INFO 25035 [egg-security] use dta middleware
+2018-04-12 14:31:44,921 INFO 25035 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:31:44,946 INFO 25035 [egg-watcher:app] watcher start success
+2018-04-12 14:33:02,223 INFO 25121 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:33:02,265 INFO 25121 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:33:02,265 INFO 25121 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:33:02,310 INFO 25121 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:33:02,313 INFO 25121 [egg-security] use csrf middleware
+2018-04-12 14:33:02,314 INFO 25121 [egg-security] use methodnoallow middleware
+2018-04-12 14:33:02,315 INFO 25121 [egg-security] use noopen middleware
+2018-04-12 14:33:02,315 INFO 25121 [egg-security] use nosniff middleware
+2018-04-12 14:33:02,315 INFO 25121 [egg-security] use xssProtection middleware
+2018-04-12 14:33:02,316 INFO 25121 [egg-security] use xframe middleware
+2018-04-12 14:33:02,316 INFO 25121 [egg-security] use dta middleware
+2018-04-12 14:33:02,316 INFO 25121 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:33:02,349 INFO 25121 [egg-watcher:app] watcher start success
+2018-04-12 14:35:56,009 INFO 25225 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:35:56,052 INFO 25225 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:35:56,052 INFO 25225 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:35:56,109 INFO 25225 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:35:56,115 INFO 25225 [egg-security] use csrf middleware
+2018-04-12 14:35:56,116 INFO 25225 [egg-security] use methodnoallow middleware
+2018-04-12 14:35:56,116 INFO 25225 [egg-security] use noopen middleware
+2018-04-12 14:35:56,117 INFO 25225 [egg-security] use nosniff middleware
+2018-04-12 14:35:56,117 INFO 25225 [egg-security] use xssProtection middleware
+2018-04-12 14:35:56,118 INFO 25225 [egg-security] use xframe middleware
+2018-04-12 14:35:56,118 INFO 25225 [egg-security] use dta middleware
+2018-04-12 14:35:56,118 INFO 25225 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:35:56,137 INFO 25225 [egg-watcher:app] watcher start success
+2018-04-12 14:36:14,062 INFO 25243 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:36:14,097 INFO 25243 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:36:14,097 INFO 25243 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:36:14,140 INFO 25243 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:36:14,143 INFO 25243 [egg-security] use csrf middleware
+2018-04-12 14:36:14,143 INFO 25243 [egg-security] use methodnoallow middleware
+2018-04-12 14:36:14,144 INFO 25243 [egg-security] use noopen middleware
+2018-04-12 14:36:14,144 INFO 25243 [egg-security] use nosniff middleware
+2018-04-12 14:36:14,144 INFO 25243 [egg-security] use xssProtection middleware
+2018-04-12 14:36:14,144 INFO 25243 [egg-security] use xframe middleware
+2018-04-12 14:36:14,145 INFO 25243 [egg-security] use dta middleware
+2018-04-12 14:36:14,145 INFO 25243 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:36:14,161 INFO 25243 [egg-watcher:app] watcher start success
+2018-04-12 14:36:14,822 INFO 25244 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:36:14,856 INFO 25244 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:36:14,856 INFO 25244 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:36:14,895 INFO 25244 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:36:14,897 INFO 25244 [egg-security] use csrf middleware
+2018-04-12 14:36:14,897 INFO 25244 [egg-security] use methodnoallow middleware
+2018-04-12 14:36:14,898 INFO 25244 [egg-security] use noopen middleware
+2018-04-12 14:36:14,898 INFO 25244 [egg-security] use nosniff middleware
+2018-04-12 14:36:14,898 INFO 25244 [egg-security] use xssProtection middleware
+2018-04-12 14:36:14,899 INFO 25244 [egg-security] use xframe middleware
+2018-04-12 14:36:14,899 INFO 25244 [egg-security] use dta middleware
+2018-04-12 14:36:14,899 INFO 25244 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:36:14,916 INFO 25244 [egg-watcher:app] watcher start success
+2018-04-12 14:36:37,230 INFO 25260 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:36:37,267 INFO 25260 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:36:37,267 INFO 25260 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:36:37,308 INFO 25260 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:36:37,310 INFO 25260 [egg-security] use csrf middleware
+2018-04-12 14:36:37,311 INFO 25260 [egg-security] use methodnoallow middleware
+2018-04-12 14:36:37,311 INFO 25260 [egg-security] use noopen middleware
+2018-04-12 14:36:37,312 INFO 25260 [egg-security] use nosniff middleware
+2018-04-12 14:36:37,312 INFO 25260 [egg-security] use xssProtection middleware
+2018-04-12 14:36:37,312 INFO 25260 [egg-security] use xframe middleware
+2018-04-12 14:36:37,312 INFO 25260 [egg-security] use dta middleware
+2018-04-12 14:36:37,312 INFO 25260 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:36:37,329 INFO 25260 [egg-watcher:app] watcher start success
+2018-04-12 14:36:37,966 INFO 25261 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:36:38,005 INFO 25261 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:36:38,005 INFO 25261 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:36:38,042 INFO 25261 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:36:38,044 INFO 25261 [egg-security] use csrf middleware
+2018-04-12 14:36:38,045 INFO 25261 [egg-security] use methodnoallow middleware
+2018-04-12 14:36:38,045 INFO 25261 [egg-security] use noopen middleware
+2018-04-12 14:36:38,045 INFO 25261 [egg-security] use nosniff middleware
+2018-04-12 14:36:38,046 INFO 25261 [egg-security] use xssProtection middleware
+2018-04-12 14:36:38,046 INFO 25261 [egg-security] use xframe middleware
+2018-04-12 14:36:38,046 INFO 25261 [egg-security] use dta middleware
+2018-04-12 14:36:38,046 INFO 25261 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:36:38,063 INFO 25261 [egg-watcher:app] watcher start success
+2018-04-12 14:37:53,383 INFO 25339 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:37:53,418 INFO 25339 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:37:53,418 INFO 25339 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:37:53,458 INFO 25339 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:37:53,460 INFO 25339 [egg-security] use csrf middleware
+2018-04-12 14:37:53,461 INFO 25339 [egg-security] use methodnoallow middleware
+2018-04-12 14:37:53,461 INFO 25339 [egg-security] use noopen middleware
+2018-04-12 14:37:53,462 INFO 25339 [egg-security] use nosniff middleware
+2018-04-12 14:37:53,462 INFO 25339 [egg-security] use xssProtection middleware
+2018-04-12 14:37:53,462 INFO 25339 [egg-security] use xframe middleware
+2018-04-12 14:37:53,462 INFO 25339 [egg-security] use dta middleware
+2018-04-12 14:37:53,462 INFO 25339 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:37:53,481 INFO 25339 [egg-watcher:app] watcher start success
+2018-04-12 14:39:43,427 INFO 25364 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:39:43,464 INFO 25364 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:39:43,464 INFO 25364 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:39:43,499 INFO 25364 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:39:43,501 INFO 25364 [egg-security] use csrf middleware
+2018-04-12 14:39:43,501 INFO 25364 [egg-security] use methodnoallow middleware
+2018-04-12 14:39:43,501 INFO 25364 [egg-security] use noopen middleware
+2018-04-12 14:39:43,502 INFO 25364 [egg-security] use nosniff middleware
+2018-04-12 14:39:43,502 INFO 25364 [egg-security] use xssProtection middleware
+2018-04-12 14:39:43,502 INFO 25364 [egg-security] use xframe middleware
+2018-04-12 14:39:43,502 INFO 25364 [egg-security] use dta middleware
+2018-04-12 14:39:43,502 INFO 25364 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:39:43,518 INFO 25364 [egg-watcher:app] watcher start success
+2018-04-12 14:43:27,569 INFO 25511 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:43:27,603 INFO 25511 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:43:27,603 INFO 25511 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:43:27,647 INFO 25511 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:43:27,649 INFO 25511 [egg-security] use csrf middleware
+2018-04-12 14:43:27,650 INFO 25511 [egg-security] use methodnoallow middleware
+2018-04-12 14:43:27,650 INFO 25511 [egg-security] use noopen middleware
+2018-04-12 14:43:27,650 INFO 25511 [egg-security] use nosniff middleware
+2018-04-12 14:43:27,651 INFO 25511 [egg-security] use xssProtection middleware
+2018-04-12 14:43:27,651 INFO 25511 [egg-security] use xframe middleware
+2018-04-12 14:43:27,651 INFO 25511 [egg-security] use dta middleware
+2018-04-12 14:43:27,651 INFO 25511 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:43:27,672 INFO 25511 [egg-watcher:app] watcher start success
+2018-04-12 14:43:39,812 INFO 25511 [egg-view-nunjucks] loading templates from ["/Users/mine/FE/sohi/learning/egg/myEgg/app/view"]
+2018-04-12 14:46:36,625 INFO 25566 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:46:36,661 INFO 25566 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:46:36,661 INFO 25566 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:46:36,704 INFO 25566 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:46:36,707 INFO 25566 [egg-security] use csrf middleware
+2018-04-12 14:46:36,707 INFO 25566 [egg-security] use methodnoallow middleware
+2018-04-12 14:46:36,708 INFO 25566 [egg-security] use noopen middleware
+2018-04-12 14:46:36,708 INFO 25566 [egg-security] use nosniff middleware
+2018-04-12 14:46:36,708 INFO 25566 [egg-security] use xssProtection middleware
+2018-04-12 14:46:36,709 INFO 25566 [egg-security] use xframe middleware
+2018-04-12 14:46:36,709 INFO 25566 [egg-security] use dta middleware
+2018-04-12 14:46:36,709 INFO 25566 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:46:36,728 INFO 25566 [egg-watcher:app] watcher start success
+2018-04-12 14:52:28,020 INFO 25618 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:52:28,058 INFO 25618 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:52:28,058 INFO 25618 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:52:28,093 INFO 25618 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:52:28,095 INFO 25618 [egg-security] use csrf middleware
+2018-04-12 14:52:28,096 INFO 25618 [egg-security] use methodnoallow middleware
+2018-04-12 14:52:28,096 INFO 25618 [egg-security] use noopen middleware
+2018-04-12 14:52:28,096 INFO 25618 [egg-security] use nosniff middleware
+2018-04-12 14:52:28,097 INFO 25618 [egg-security] use xssProtection middleware
+2018-04-12 14:52:28,097 INFO 25618 [egg-security] use xframe middleware
+2018-04-12 14:52:28,097 INFO 25618 [egg-security] use dta middleware
+2018-04-12 14:52:28,097 INFO 25618 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:52:28,113 INFO 25618 [egg-watcher:app] watcher start success
+2018-04-12 14:52:29,523 INFO 25619 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:52:29,562 INFO 25619 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:52:29,562 INFO 25619 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:52:29,601 INFO 25619 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:52:29,602 INFO 25619 [egg-security] use csrf middleware
+2018-04-12 14:52:29,603 INFO 25619 [egg-security] use methodnoallow middleware
+2018-04-12 14:52:29,603 INFO 25619 [egg-security] use noopen middleware
+2018-04-12 14:52:29,604 INFO 25619 [egg-security] use nosniff middleware
+2018-04-12 14:52:29,604 INFO 25619 [egg-security] use xssProtection middleware
+2018-04-12 14:52:29,604 INFO 25619 [egg-security] use xframe middleware
+2018-04-12 14:52:29,604 INFO 25619 [egg-security] use dta middleware
+2018-04-12 14:52:29,604 INFO 25619 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:52:29,620 INFO 25619 [egg-watcher:app] watcher start success
+2018-04-12 14:53:11,567 INFO 25635 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:53:11,606 INFO 25635 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:53:11,606 INFO 25635 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:53:11,647 INFO 25635 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:53:11,650 INFO 25635 [egg-security] use csrf middleware
+2018-04-12 14:53:11,651 INFO 25635 [egg-security] use methodnoallow middleware
+2018-04-12 14:53:11,651 INFO 25635 [egg-security] use noopen middleware
+2018-04-12 14:53:11,652 INFO 25635 [egg-security] use nosniff middleware
+2018-04-12 14:53:11,652 INFO 25635 [egg-security] use xssProtection middleware
+2018-04-12 14:53:11,652 INFO 25635 [egg-security] use xframe middleware
+2018-04-12 14:53:11,653 INFO 25635 [egg-security] use dta middleware
+2018-04-12 14:53:11,653 INFO 25635 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:53:11,669 INFO 25635 [egg-watcher:app] watcher start success
+2018-04-12 14:53:12,271 INFO 25636 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:53:12,313 INFO 25636 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:53:12,313 INFO 25636 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:53:12,352 INFO 25636 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:53:12,354 INFO 25636 [egg-security] use csrf middleware
+2018-04-12 14:53:12,355 INFO 25636 [egg-security] use methodnoallow middleware
+2018-04-12 14:53:12,355 INFO 25636 [egg-security] use noopen middleware
+2018-04-12 14:53:12,355 INFO 25636 [egg-security] use nosniff middleware
+2018-04-12 14:53:12,356 INFO 25636 [egg-security] use xssProtection middleware
+2018-04-12 14:53:12,356 INFO 25636 [egg-security] use xframe middleware
+2018-04-12 14:53:12,356 INFO 25636 [egg-security] use dta middleware
+2018-04-12 14:53:12,356 INFO 25636 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:53:12,372 INFO 25636 [egg-watcher:app] watcher start success
+2018-04-12 14:53:13,537 INFO 25638 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:53:13,577 INFO 25638 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:53:13,577 INFO 25638 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:53:13,613 INFO 25638 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:53:13,615 INFO 25638 [egg-security] use csrf middleware
+2018-04-12 14:53:13,616 INFO 25638 [egg-security] use methodnoallow middleware
+2018-04-12 14:53:13,616 INFO 25638 [egg-security] use noopen middleware
+2018-04-12 14:53:13,616 INFO 25638 [egg-security] use nosniff middleware
+2018-04-12 14:53:13,616 INFO 25638 [egg-security] use xssProtection middleware
+2018-04-12 14:53:13,617 INFO 25638 [egg-security] use xframe middleware
+2018-04-12 14:53:13,617 INFO 25638 [egg-security] use dta middleware
+2018-04-12 14:53:13,617 INFO 25638 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:53:13,632 INFO 25638 [egg-watcher:app] watcher start success
+2018-04-12 14:55:31,039 INFO 25665 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:55:31,075 INFO 25665 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:55:31,075 INFO 25665 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:55:31,116 INFO 25665 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:55:31,118 INFO 25665 [egg-security] use csrf middleware
+2018-04-12 14:55:31,119 INFO 25665 [egg-security] use methodnoallow middleware
+2018-04-12 14:55:31,119 INFO 25665 [egg-security] use noopen middleware
+2018-04-12 14:55:31,119 INFO 25665 [egg-security] use nosniff middleware
+2018-04-12 14:55:31,120 INFO 25665 [egg-security] use xssProtection middleware
+2018-04-12 14:55:31,120 INFO 25665 [egg-security] use xframe middleware
+2018-04-12 14:55:31,120 INFO 25665 [egg-security] use dta middleware
+2018-04-12 14:55:31,120 INFO 25665 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:55:31,137 INFO 25665 [egg-watcher:app] watcher start success
+2018-04-12 14:57:12,853 INFO 25692 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:57:12,887 INFO 25692 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:57:12,887 INFO 25692 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:57:12,928 INFO 25692 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:57:12,933 INFO 25692 [egg-security] use csrf middleware
+2018-04-12 14:57:12,934 INFO 25692 [egg-security] use methodnoallow middleware
+2018-04-12 14:57:12,934 INFO 25692 [egg-security] use noopen middleware
+2018-04-12 14:57:12,935 INFO 25692 [egg-security] use nosniff middleware
+2018-04-12 14:57:12,935 INFO 25692 [egg-security] use xssProtection middleware
+2018-04-12 14:57:12,936 INFO 25692 [egg-security] use xframe middleware
+2018-04-12 14:57:12,936 INFO 25692 [egg-security] use dta middleware
+2018-04-12 14:57:12,936 INFO 25692 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:57:12,955 INFO 25692 [egg-watcher:app] watcher start success
+2018-04-12 14:57:13,616 INFO 25693 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:57:13,649 INFO 25693 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:57:13,649 INFO 25693 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:57:13,697 INFO 25693 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:57:13,699 INFO 25693 [egg-security] use csrf middleware
+2018-04-12 14:57:13,700 INFO 25693 [egg-security] use methodnoallow middleware
+2018-04-12 14:57:13,700 INFO 25693 [egg-security] use noopen middleware
+2018-04-12 14:57:13,701 INFO 25693 [egg-security] use nosniff middleware
+2018-04-12 14:57:13,701 INFO 25693 [egg-security] use xssProtection middleware
+2018-04-12 14:57:13,701 INFO 25693 [egg-security] use xframe middleware
+2018-04-12 14:57:13,701 INFO 25693 [egg-security] use dta middleware
+2018-04-12 14:57:13,701 INFO 25693 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:57:13,722 INFO 25693 [egg-watcher:app] watcher start success
+2018-04-12 14:57:45,808 INFO 25711 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:57:45,846 INFO 25711 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:57:45,846 INFO 25711 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:57:45,886 INFO 25711 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:57:45,888 INFO 25711 [egg-security] use csrf middleware
+2018-04-12 14:57:45,889 INFO 25711 [egg-security] use methodnoallow middleware
+2018-04-12 14:57:45,889 INFO 25711 [egg-security] use noopen middleware
+2018-04-12 14:57:45,890 INFO 25711 [egg-security] use nosniff middleware
+2018-04-12 14:57:45,890 INFO 25711 [egg-security] use xssProtection middleware
+2018-04-12 14:57:45,890 INFO 25711 [egg-security] use xframe middleware
+2018-04-12 14:57:45,890 INFO 25711 [egg-security] use dta middleware
+2018-04-12 14:57:45,890 INFO 25711 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:57:45,906 INFO 25711 [egg-watcher:app] watcher start success
+2018-04-12 14:57:47,764 INFO 25721 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:57:47,800 INFO 25721 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:57:47,800 INFO 25721 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:57:47,838 INFO 25721 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:57:47,840 INFO 25721 [egg-security] use csrf middleware
+2018-04-12 14:57:47,840 INFO 25721 [egg-security] use methodnoallow middleware
+2018-04-12 14:57:47,840 INFO 25721 [egg-security] use noopen middleware
+2018-04-12 14:57:47,841 INFO 25721 [egg-security] use nosniff middleware
+2018-04-12 14:57:47,841 INFO 25721 [egg-security] use xssProtection middleware
+2018-04-12 14:57:47,842 INFO 25721 [egg-security] use xframe middleware
+2018-04-12 14:57:47,842 INFO 25721 [egg-security] use dta middleware
+2018-04-12 14:57:47,842 INFO 25721 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:57:47,858 INFO 25721 [egg-watcher:app] watcher start success
+2018-04-12 14:57:50,586 INFO 25722 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:57:50,625 INFO 25722 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:57:50,625 INFO 25722 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:57:50,661 INFO 25722 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:57:50,663 INFO 25722 [egg-security] use csrf middleware
+2018-04-12 14:57:50,663 INFO 25722 [egg-security] use methodnoallow middleware
+2018-04-12 14:57:50,664 INFO 25722 [egg-security] use noopen middleware
+2018-04-12 14:57:50,664 INFO 25722 [egg-security] use nosniff middleware
+2018-04-12 14:57:50,664 INFO 25722 [egg-security] use xssProtection middleware
+2018-04-12 14:57:50,664 INFO 25722 [egg-security] use xframe middleware
+2018-04-12 14:57:50,665 INFO 25722 [egg-security] use dta middleware
+2018-04-12 14:57:50,665 INFO 25722 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:57:50,680 INFO 25722 [egg-watcher:app] watcher start success
+2018-04-12 14:58:58,949 INFO 25759 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:58:58,984 INFO 25759 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:58:58,984 INFO 25759 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:58:59,025 INFO 25759 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:58:59,027 INFO 25759 [egg-security] use csrf middleware
+2018-04-12 14:58:59,028 INFO 25759 [egg-security] use methodnoallow middleware
+2018-04-12 14:58:59,028 INFO 25759 [egg-security] use noopen middleware
+2018-04-12 14:58:59,029 INFO 25759 [egg-security] use nosniff middleware
+2018-04-12 14:58:59,029 INFO 25759 [egg-security] use xssProtection middleware
+2018-04-12 14:58:59,029 INFO 25759 [egg-security] use xframe middleware
+2018-04-12 14:58:59,029 INFO 25759 [egg-security] use dta middleware
+2018-04-12 14:58:59,029 INFO 25759 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:58:59,047 INFO 25759 [egg-watcher:app] watcher start success
+2018-04-12 14:58:59,686 INFO 25760 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 14:58:59,722 INFO 25760 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 14:58:59,722 INFO 25760 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 14:58:59,762 INFO 25760 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 14:58:59,764 INFO 25760 [egg-security] use csrf middleware
+2018-04-12 14:58:59,765 INFO 25760 [egg-security] use methodnoallow middleware
+2018-04-12 14:58:59,765 INFO 25760 [egg-security] use noopen middleware
+2018-04-12 14:58:59,766 INFO 25760 [egg-security] use nosniff middleware
+2018-04-12 14:58:59,766 INFO 25760 [egg-security] use xssProtection middleware
+2018-04-12 14:58:59,766 INFO 25760 [egg-security] use xframe middleware
+2018-04-12 14:58:59,766 INFO 25760 [egg-security] use dta middleware
+2018-04-12 14:58:59,766 INFO 25760 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 14:58:59,785 INFO 25760 [egg-watcher:app] watcher start success
+2018-04-12 15:00:34,877 INFO 25796 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 15:00:34,916 INFO 25796 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 15:00:34,916 INFO 25796 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 15:00:34,952 INFO 25796 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 15:00:34,954 INFO 25796 [egg-security] use csrf middleware
+2018-04-12 15:00:34,955 INFO 25796 [egg-security] use methodnoallow middleware
+2018-04-12 15:00:34,955 INFO 25796 [egg-security] use noopen middleware
+2018-04-12 15:00:34,955 INFO 25796 [egg-security] use nosniff middleware
+2018-04-12 15:00:34,956 INFO 25796 [egg-security] use xssProtection middleware
+2018-04-12 15:00:34,956 INFO 25796 [egg-security] use xframe middleware
+2018-04-12 15:00:34,956 INFO 25796 [egg-security] use dta middleware
+2018-04-12 15:00:34,956 INFO 25796 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 15:00:34,971 INFO 25796 [egg-watcher:app] watcher start success
+2018-04-12 15:00:35,571 INFO 25797 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 15:00:35,608 INFO 25797 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 15:00:35,608 INFO 25797 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 15:00:35,648 INFO 25797 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 15:00:35,650 INFO 25797 [egg-security] use csrf middleware
+2018-04-12 15:00:35,650 INFO 25797 [egg-security] use methodnoallow middleware
+2018-04-12 15:00:35,651 INFO 25797 [egg-security] use noopen middleware
+2018-04-12 15:00:35,651 INFO 25797 [egg-security] use nosniff middleware
+2018-04-12 15:00:35,651 INFO 25797 [egg-security] use xssProtection middleware
+2018-04-12 15:00:35,651 INFO 25797 [egg-security] use xframe middleware
+2018-04-12 15:00:35,652 INFO 25797 [egg-security] use dta middleware
+2018-04-12 15:00:35,652 INFO 25797 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 15:00:35,672 INFO 25797 [egg-watcher:app] watcher start success
+2018-04-12 15:01:19,059 INFO 25816 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 15:01:19,094 INFO 25816 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 15:01:19,094 INFO 25816 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 15:01:19,134 INFO 25816 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 15:01:19,136 INFO 25816 [egg-security] use csrf middleware
+2018-04-12 15:01:19,137 INFO 25816 [egg-security] use methodnoallow middleware
+2018-04-12 15:01:19,138 INFO 25816 [egg-security] use noopen middleware
+2018-04-12 15:01:19,138 INFO 25816 [egg-security] use nosniff middleware
+2018-04-12 15:01:19,138 INFO 25816 [egg-security] use xssProtection middleware
+2018-04-12 15:01:19,139 INFO 25816 [egg-security] use xframe middleware
+2018-04-12 15:01:19,139 INFO 25816 [egg-security] use dta middleware
+2018-04-12 15:01:19,139 INFO 25816 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 15:01:19,157 INFO 25816 [egg-watcher:app] watcher start success
+2018-04-12 15:01:59,090 INFO 25837 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 15:01:59,125 INFO 25837 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 15:01:59,125 INFO 25837 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 15:01:59,165 INFO 25837 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 15:01:59,168 INFO 25837 [egg-security] use csrf middleware
+2018-04-12 15:01:59,168 INFO 25837 [egg-security] use methodnoallow middleware
+2018-04-12 15:01:59,168 INFO 25837 [egg-security] use noopen middleware
+2018-04-12 15:01:59,169 INFO 25837 [egg-security] use nosniff middleware
+2018-04-12 15:01:59,169 INFO 25837 [egg-security] use xssProtection middleware
+2018-04-12 15:01:59,169 INFO 25837 [egg-security] use xframe middleware
+2018-04-12 15:01:59,170 INFO 25837 [egg-security] use dta middleware
+2018-04-12 15:01:59,170 INFO 25837 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 15:01:59,187 INFO 25837 [egg-watcher:app] watcher start success
+2018-04-12 15:01:59,875 INFO 25838 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 15:01:59,909 INFO 25838 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 15:01:59,909 INFO 25838 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 15:01:59,950 INFO 25838 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 15:01:59,953 INFO 25838 [egg-security] use csrf middleware
+2018-04-12 15:01:59,953 INFO 25838 [egg-security] use methodnoallow middleware
+2018-04-12 15:01:59,954 INFO 25838 [egg-security] use noopen middleware
+2018-04-12 15:01:59,954 INFO 25838 [egg-security] use nosniff middleware
+2018-04-12 15:01:59,954 INFO 25838 [egg-security] use xssProtection middleware
+2018-04-12 15:01:59,954 INFO 25838 [egg-security] use xframe middleware
+2018-04-12 15:01:59,955 INFO 25838 [egg-security] use dta middleware
+2018-04-12 15:01:59,955 INFO 25838 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 15:01:59,971 INFO 25838 [egg-watcher:app] watcher start success
+2018-04-12 15:03:02,257 INFO 25881 [egg:logger] init all loggers with options: {"dir":"/Users/mine/FE/sohi/learning/egg/myEgg/logs/myegg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"myegg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":true,"type":"application"}
+2018-04-12 15:03:02,303 INFO 25881 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js
+2018-04-12 15:03:02,303 INFO 25881 [egg-schedule]: register schedule /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js
+2018-04-12 15:03:02,350 INFO 25881 [egg-static] starting static serve /public/ -> /Users/mine/FE/sohi/learning/egg/myEgg/app/public
+2018-04-12 15:03:02,353 INFO 25881 [egg-security] use csrf middleware
+2018-04-12 15:03:02,354 INFO 25881 [egg-security] use methodnoallow middleware
+2018-04-12 15:03:02,354 INFO 25881 [egg-security] use noopen middleware
+2018-04-12 15:03:02,355 INFO 25881 [egg-security] use nosniff middleware
+2018-04-12 15:03:02,355 INFO 25881 [egg-security] use xssProtection middleware
+2018-04-12 15:03:02,356 INFO 25881 [egg-security] use xframe middleware
+2018-04-12 15:03:02,356 INFO 25881 [egg-security] use dta middleware
+2018-04-12 15:03:02,356 INFO 25881 [egg-security] compose 7 middlewares into one security middleware
+2018-04-12 15:03:02,382 INFO 25881 [egg-watcher:app] watcher start success

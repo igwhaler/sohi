@@ -1,9 +1,0 @@
-2018-01-24 13:10:06,846 ERROR 30622 nodejs.ClusterClientNoResponseError: client no response in 1859678ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
-    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/mine/FE/sohi/learning/egg/epEgg/node_modules/cluster-client/lib/leader.js:73:23)
-    at ontimeout (timers.js:458:11)
-    at tryOnTimeout (timers.js:296:5)
-    at Timer.listOnTimeout (timers.js:259:5)
-name: 'ClusterClientNoResponseError'
-pid: 30622
-hostname: fangshideMacBook-Pro.local
-

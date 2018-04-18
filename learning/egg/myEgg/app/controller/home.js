@@ -1,11 +1,10 @@
-'use strict';
-
-const Controller = require('egg').Controller;
+const {Controller} = require('egg')
 
 class HomeController extends Controller {
-  async index() {
-    this.ctx.body = 'hi, egg';
+  async index () {
+    // const result = await this.app.mysql.get('myDB').query('select * from arts')
+    this.ctx.body = 'Hello world'
   }
 }
 
-module.exports = HomeController;
+module.exports = HomeController

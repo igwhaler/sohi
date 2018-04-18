@@ -1,0 +1,14 @@
+2018-04-12 14:25:14,809 INFO 24711 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-04-13 00:00:00.000
+2018-04-12 14:25:14,810 INFO 24711 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-04-13 00:00:01.000
+2018-04-12 14:26:22,061 INFO 24776 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-04-13 00:00:00.000
+2018-04-12 14:26:22,062 INFO 24776 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-04-13 00:00:01.000
+2018-04-12 14:30:59,585 INFO 24982 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-04-13 00:00:00.000
+2018-04-12 14:30:59,586 INFO 24982 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-04-13 00:00:01.000
+2018-04-12 14:31:44,958 INFO 25034 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-04-13 00:00:00.000
+2018-04-12 14:31:44,958 INFO 25034 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-04-13 00:00:01.000
+2018-04-12 14:33:02,363 INFO 25120 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-04-13 00:00:00.000
+2018-04-12 14:33:02,364 INFO 25120 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-04-13 00:00:01.000
+2018-04-12 14:43:27,684 INFO 25510 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-04-13 00:00:00.000
+2018-04-12 14:43:27,685 INFO 25510 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-04-13 00:00:01.000
+2018-04-12 15:03:02,394 INFO 25880 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/clean_log.js next time will execute at 2018-04-13 00:00:00.000
+2018-04-12 15:03:02,395 INFO 25880 [Timer] /Users/mine/FE/sohi/learning/egg/myEgg/node_modules/_egg-logrotator@3.0.3@egg-logrotator/app/schedule/rotate_by_file.js next time will execute at 2018-04-13 00:00:01.000
