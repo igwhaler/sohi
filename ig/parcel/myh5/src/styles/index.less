@@ -1,6 +1,7 @@
 @import './common/common.less';
 // @import './fullPage/jquery.fullPage.less';
 .wrap {
+  position: relative;
   margin: auto;
   max-width: 640px;
 }
@@ -318,7 +319,7 @@
         line-height: 1em;
       }
       p {
-        min-height: 120px;
+        min-height: 140px;
         font-size: 18px;
         text-align: left;
         line-height: 1.5em;
@@ -832,7 +833,7 @@
 }
 
 .page16 {
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   background-color: #ffffff;
   color: #000000;
   .wrap-qr {
@@ -859,6 +860,34 @@
   .copyright {
     margin-top: 340px;
     color: #cecece;
+  }
+}
+
+.zy-menu {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f63636;
+  .menu-item {
+    padding: 30px 0;
+    float: left;
+    width: 25%;
+    &:nth-last-child(1) {
+      a {
+        border-right: none;
+      }
+    }
+    a {
+      font-size: 28px; /*px*/
+      line-height: 1.25em;
+      color: #fff;
+      display: block;
+      text-align: center;
+      border-right: 1px solid #fff; /*no*/
+    }
   }
 }
 

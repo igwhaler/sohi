@@ -248,13 +248,18 @@
         img {
           display: block;
         }
+        .modal-item.top {
+          top: 0;
+        }
+        .modal-item.bottom {
+          bottom: 0;
+        }
         .modal-item {
           z-index: -1;
           // display: none;
           opacity: 0;
           position: absolute;
           left: -20px;
-          bottom: 0;
           background-color: #fff;
           // transition: all 0.3s;
           .wrap-summary {
@@ -618,7 +623,6 @@
   height: 1138px;
   background: url('../assets/images/bg_11.png');
   background-size: cover;
-  background-position: 50% 50%;
 }
 
 .page12 {
@@ -641,9 +645,9 @@
     .wrap-icon {
       div {
         margin: 0 auto;
-        padding-top: 24px;
+        padding-top: 30px;
         width: 110px;
-        height: 76px;
+        height: 80px;
         border: 1px solid #fff; /*no*/
         border-radius: 50%;
         .icon {
