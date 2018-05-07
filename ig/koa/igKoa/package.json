@@ -10,5 +10,8 @@
     "koa"
   ],
   "author": "igwhaler",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.1"
+  }
 }
