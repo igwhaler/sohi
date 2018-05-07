@@ -1,0 +1,14 @@
+{
+  "name": "igkoa",
+  "version": "1.0.0",
+  "description": "IgWhaler's koa app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "igwhaler",
+  "license": "ISC"
+}
