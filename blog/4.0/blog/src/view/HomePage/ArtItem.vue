@@ -2,15 +2,16 @@
   <div class="art-item">
     <div class="article clearfix">
       <div class="article-date">
-        <a class="article-day" href="javascript:;">14</a>
-        <a class="article-year" href="javascript:;">12</a>
+        <a class="article-day" href="javascript:;">{{(new Date(article.created)).getDate()}}</a>
+        <a class="article-year" href="javascript:;">{{(new Date(article.created)).getMonth() + 1}}</a>
       </div>
       <div class="article-main">
         <div class="article-content">
-          <h2><a href="javascript:;">题都城南庄</a></h2>
-          <p>去年今日此门中，热面桃花相映红。</p>
-          <p>人面不知何处去，桃花依旧笑春风。</p>
-          <img class="" src="../../assets/images/main_bg.jpg" alt="题都城南庄">
+          <h2>
+            <a href="javascript:;">{{article.title}}</a>
+          </h2>
+          <p>{{article.summary}}</p>
+          <img v-if="article.cover" :src="article.cover" :alt="article.title">
         </div>
         <div class="more">
           <a href="/">更多>>></a>
@@ -22,7 +23,13 @@
 
 <script>
 export default {
-  name: 'ArtItem'
+  name: 'ArtItem',
+  props: {
+    article: {
+      required: true,
+      type: Object
+    }
+  }
 }
 </script>
 

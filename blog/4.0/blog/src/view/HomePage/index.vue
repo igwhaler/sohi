@@ -1,18 +1,15 @@
 <template>
   <div class="home-page">
-    <ArtItem class="grid-article" />
+    <div v-if="articleList && articleList.length" class="g-article-list">
+      <ArtItem v-for="(article, index) in articleList" :article="article" class="grid-article" :key="index"/>
+    </div>
   </div>
 </template>
 
 <script>
-import ArtItem from './ArtItem'
+import index from './js/index'
 
-export default {
-  name: 'HomePage',
-  components: {
-    ArtItem
-  }
-}
+export default index
 </script>
 
 <style scoped lang="less">
