@@ -15,16 +15,27 @@ export default {
   },
 
   mounted () {
-    this.getArticleList()
+    this.graphqlArticleList()
+    // this.getArticleList()
   },
 
   methods: {
-    // 获取文章列表
+    // restful获取文章列表
     getArticleList () {
       Axios.get('/api/article/list').then(res => {
         if (res) {
           this.articleList = res.list || []
         }
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+
+    // graphql获取文章列表
+    graphqlArticleList () {
+      Axios.get('/api/graphql?query={articles{list{id,summary,cover,created}}}').then(res => {
+        // console.log(res)
+        this.articleList = res.articles.list
       }).catch(err => {
         console.log(err)
       })

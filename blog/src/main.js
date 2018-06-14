@@ -9,6 +9,10 @@ const axiosInterRes = new Promise((resolve, reject) => {
   Axios.interceptors.response.use(response => {
     let { data } = response || {}
 
+    if (data.data) {
+      return data.data
+    }
+
     if (data && data.code === 0) {
       return data.result
     } else {
