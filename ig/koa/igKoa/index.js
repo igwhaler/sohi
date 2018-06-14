@@ -5,7 +5,9 @@ const path = require('path')
 const static = require('koa-static')
 const router = require('./router')
 
-/* const loggerSync = require('./middleware/loggerSync')
+/*
+// 中间件的使用
+const loggerSync = require('./middleware/loggerSync')
 app.use(loggerSync()) */
 
 /* const getRoute = require('./router/getRoute')
@@ -25,7 +27,6 @@ app.use(static(
 
 // 路由
 app.use(router.routes()).use(router.allowedMethods())
-
 
 app.listen(9000, () => {
   console.log('port: 9000')
