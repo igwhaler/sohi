@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Index from '@/view'
-import HomePage from '@/view/HomePage'
-
 Vue.use(Router)
 
 export default new Router({
@@ -13,13 +10,18 @@ export default new Router({
       path: '/',
       name: 'Index',
       redirect: '/index',
-      component: Index,
+      component: () => import('@/view'),
       children: [
         {
           path: 'index',
           name: 'HomePage',
           alias: [''],
-          component: HomePage
+          component: () => import('@/view/HomePage')
+        },
+        {
+          path: 'article',
+          name: 'ArtDetail',
+          component: () => import('@/view/ArtDetail')
         }
       ]
     },

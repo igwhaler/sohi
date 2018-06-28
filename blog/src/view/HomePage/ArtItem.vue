@@ -2,19 +2,19 @@
   <div class="art-item">
     <div class="article clearfix">
       <div class="article-date">
-        <a class="day" href="javascript:;">{{article.created | getDate}}</a>
-        <a class="month" href="javascript:;">{{article.created | getYear}}-{{article.created | getMonth}}</a>
+        <span class="date day" href="javascript:;">{{article.created | getDate}}</span>
+        <span class="date month" href="javascript:;">{{article.created | getYear}}-{{article.created | getMonth}}</span>
       </div>
       <div class="article-main">
         <div class="content">
           <h2>
-            <a href="javascript:;">{{article.title}}</a>
+            <router-link :to="`/article?id=${article.id}`">{{article.title}}</router-link>
           </h2>
           <p>{{article.summary}}</p>
           <img v-if="article.cover" :src="article.cover" :alt="article.title">
         </div>
         <div class="more">
-          <a href="/">更多>>></a>
+          <router-link :to="`/article?id=${article.id}`">更多>>></router-link>
         </div>
       </div>
     </div>
@@ -57,13 +57,13 @@ export default {
   background: #fff;
   .article-date {
     float: left;
-    a {
+    .date {
       display: block;
       transition: 0.3s;
-      &:hover {
+      /* &:hover {
         color: #4d4d4d;
         border-color: #4d4d4d;
-      }
+      } */
     }
     .day {
       width: 70px;

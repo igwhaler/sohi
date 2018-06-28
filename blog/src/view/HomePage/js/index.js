@@ -33,7 +33,7 @@ export default {
 
     // graphql获取文章列表
     graphqlArticleList () {
-      Axios.get('/api/graphql?query={articles{list{id,title,summary,cover,created}}}').then(res => {
+      Axios.get(`/api/graphql?query={articles{list{id,title,summary,cover,created}}}`).then(res => {
         // console.log(res)
         this.articleList = res.articles.list
       }).catch(err => {
