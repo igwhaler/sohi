@@ -2,11 +2,11 @@
   <div class="art-item">
     <div class="article clearfix">
       <div class="article-date">
-        <a class="article-day" href="javascript:;">{{(new Date(article.created)).getDate()}}</a>
-        <a class="article-year" href="javascript:;">{{(new Date(article.created)).getMonth() + 1}}</a>
+        <a class="day" href="javascript:;">{{article.created | getDate}}</a>
+        <a class="month" href="javascript:;">{{article.created | getYear}}-{{article.created | getMonth}}</a>
       </div>
       <div class="article-main">
-        <div class="article-content">
+        <div class="content">
           <h2>
             <a href="javascript:;">{{article.title}}</a>
           </h2>
@@ -29,6 +29,24 @@ export default {
       required: true,
       type: Object
     }
+  },
+
+  filters: {
+    getDate (time) {
+      let date = (new Date(time)).getDate()
+
+      return date < 10 ? `0${date}` : date
+    },
+
+    getMonth (time) {
+      let month = (new Date(time)).getMonth() + 1
+
+      return month < 10 ? `0${month}` : month
+    },
+
+    getYear (time) {
+      return (new Date(time)).getFullYear()
+    }
   }
 }
 </script>
@@ -47,7 +65,7 @@ export default {
         border-color: #4d4d4d;
       }
     }
-    .article-day {
+    .day {
       width: 70px;
       height: 70px;
       border: 5px solid #828d95;
@@ -57,20 +75,21 @@ export default {
       font-size: 40px;
       border-radius: 50%;
     }
-    .article-year {
+    .month,
+    .year {
       text-align: center;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 1.5em;
       color: #c0c0c0;
     }
   }
   .article-main {
     margin-left: 105px;
-    .article-content {
+    .content {
       h2 {
         font-weight: normal;
         a {
-          font-size: 26px;
+          font-size: 24px;
           color: #4c4c4c;
           line-height: 1.5em;
           transition: 0.3s;
