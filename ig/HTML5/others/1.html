@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5</title>
+</head>
+<body>
+  <div>
+    Email: <input type="email" id="email">
+  </div>
+
+  <div>
+    Url: <input type="url" id="url">
+  </div>
+
+  <div>
+    <input type="color">
+  </div>
+  <script>
+    function getMsg(id) {
+      document.getElementById(id).addEventListener('input', function (event) {
+        console.log(event)
+      }, false)
+    }
+
+    getMsg('email')
+    getMsg('url')
+  </script>
+</body>
+</html>
