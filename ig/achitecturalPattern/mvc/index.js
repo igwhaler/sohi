@@ -1,3 +1,16 @@
+// 观察模式
+function Observable () {
+  let events = []
+
+  this.listen = function (fn) {
+    events.push(fn)
+  }
+
+  this.notify = function (params) {
+    events.forEach(fn => fn(params))
+  }
+}
+
 let myApp = {
   Modal: function () {
     let val = 0
@@ -12,17 +25,6 @@ let myApp = {
 
     this.getVal = function () {
       return val
-    }
-
-    // 观察者模式
-    let views = []
-
-    this.register = function (view) {
-      views.push(view)
-    }
-
-    this.notify = function () {
-      views.forEach(view => view.render(this))
     }
   },
 
@@ -40,29 +42,30 @@ let myApp = {
   },
 
   Controller: function () {
-    let modal = null
-    let view = null
+    let _obs = new Observable()
+    let modal = new myApp.Modal()
 
     this.init = function () {
-      modal = new myApp.Modal()
-      view = new myApp.View(this)
+      let view = new myApp.View(this)
 
-      modal.register(view)
-      modal.notify()
+      _obs.listen(view.render)
+      _obs.notify(modal)
     }
 
     this.increase = function () {
       modal.add()
-      modal.notify()
+
+      _obs.notify(modal)
     }
 
     this.decrease = function () {
       modal.sub()
-      modal.notify()
+
+      _obs.notify(modal)
     }
   }
 }
 
-let c1 = new myApp.Controller()
+let app = new myApp.Controller()
 
-c1.init()
+app.init()
