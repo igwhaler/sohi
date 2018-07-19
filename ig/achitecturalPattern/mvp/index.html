@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MVP</title>
+
+  <style>
+    .g-container {
+      margin: 0 auto;
+      width: 200px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 0 10px 5px rgba(000, 000, 000, 0.2);
+      transform: scale(1.5);
+      transform-origin: 100px -50px;
+    }
+
+    .g-number {
+      height: 150px;
+      line-height: 150px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .g-btn {
+      float: left;
+      width: 50%;
+      height: 100px;
+      line-height: 100px;
+      font-size: 24px;
+      color: #ffffff;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .g-increase {
+      background-color: tan;
+    }
+
+    .g-decrease {
+      background-color: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="g-container">
+    <div class="g-number" id="number">0</div>
+    <div class="g-btn g-decrease" id="btnDecrease">-</div>
+    <div class="g-btn g-increase" id="btnIncrease">+</div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
