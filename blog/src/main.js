@@ -4,6 +4,13 @@ import router from './router'
 import './assets/styles/common.less'
 import Axios from 'axios'
 
+/* import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor) */
+
 // http response 拦截器
 const axiosInterRes = new Promise((resolve, reject) => {
   Axios.interceptors.response.use(response => {

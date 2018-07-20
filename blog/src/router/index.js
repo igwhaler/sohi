@@ -26,6 +26,10 @@ export default new Router({
       ]
     },
     {
+      path: '/admin',
+      component: () => import('@/view/AdminPage')
+    },
+    {
       path: '*',
       redirect: '/'
     }
