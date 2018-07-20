@@ -1,11 +1,16 @@
 <template>
-  <div class="art-detail">
-    <template v-if="id && !isError">
-      <div v-html="detail"></div>
-    </template>
-    <p v-if="isError" class="none-data">
-      <img src="../../assets/images/error.jpg" alt="Error">
-    </p>
+  <div>
+    <transition name="fade">
+      <div v-if="id && !isError" class="art-detail">
+        <div v-html="detail"></div>
+      </div>
+
+      <div v-if="isError" class="art-detail">
+        <p class="none-data">
+          <img src="../../assets/images/error.jpg" alt="Error">
+        </p>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -30,14 +35,15 @@ export default {
 
   methods: {
     getId () {
-      let {id} = this.$route.query
-
-      if (id) {
-        this.id = id
-        this.getArtDetai(id)
-      } else {
-        this.isError = true
-      }
+      this.$nextTick(() => {
+        let {id} = this.$route.query
+        if (id) {
+          this.id = id
+          this.getArtDetai(id)
+        } else {
+          this.isError = true
+        }
+      })
     },
 
     getArtDetai (id) {

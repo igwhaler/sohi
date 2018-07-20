@@ -10,16 +10,19 @@ export default {
 
   data () {
     return {
+      showState: false,
       articleList: []
     }
   },
 
-  mounted () {
-    this.graphqlArticleList()
-    // this.getArticleList()
+  created () {
+    this.init()
   },
 
   methods: {
+    init () {
+      this.graphqlArticleList()
+    },
     // restful获取文章列表
     getArticleList () {
       Axios.get('/api/article/list').then(res => {

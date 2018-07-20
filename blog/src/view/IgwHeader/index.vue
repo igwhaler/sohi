@@ -71,12 +71,12 @@ export default {
         }
       }
       .menu {
-        margin: 20px 0 0 105px;
+        margin: 4px 0 0 105px;
         padding-top: 10px;
         ul {
           li {
             float: left;
-            margin-right: 20px;
+            margin-right: 14px;
             a {
               display: inline-block;
               padding: 0 10px;

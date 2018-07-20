@@ -1,15 +1,17 @@
 <template>
   <div class="home-page">
-    <div v-if="articleList && articleList.length" class="g-article-list">
-      <ArtItem v-for="(article, index) in articleList" :article="article" class="grid-article" :key="index"/>
-    </div>
+     <keep-alive>
+      <transition name="fade">
+        <div v-if="articleList && articleList.length" class="g-article-list">
+          <ArtItem v-for="(article, index) in articleList" :article="article" class="grid-article" :key="index"/>
+        </div>
+      </transition>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-import index from './js/index'
-
-export default index
+export {default} from './js/index'
 </script>
 
 <style scoped lang="less">

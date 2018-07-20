@@ -1,6 +1,10 @@
 <template>
   <div>
-    <IgwHeader />
+    <transition name="fade">
+      <div v-if="showState">
+        <IgwHeader />
+      </div>
+    </transition>
 
     <router-view></router-view>
   </div>
@@ -15,7 +19,15 @@ export default {
     IgwHeader
   },
   data () {
-    return {}
+    return {
+      showState: false
+    }
+  },
+
+  created () {
+    setTimeout(() => {
+      this.showState = true
+    }, 0)
   }
 }
 </script>
