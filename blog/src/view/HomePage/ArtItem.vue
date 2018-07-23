@@ -11,7 +11,9 @@
             <router-link :to="`/article?id=${article.id}`">{{article.title}}</router-link>
           </h2>
           <p>{{article.summary}}</p>
-          <img v-if="article.cover" :src="article.cover" :alt="article.title">
+          <div class="g-cover">
+            <img v-if="article.cover" :src="article.cover" :alt="article.title">
+          </div>
         </div>
         <div class="more">
           <router-link :to="`/article?id=${article.id}`">更多>>></router-link>
@@ -89,7 +91,7 @@ export default {
       h2 {
         font-weight: normal;
         a {
-          font-size: 24px;
+          font-size: 20px;
           color: #4c4c4c;
           line-height: 1.5em;
           transition: 0.3s;
@@ -103,9 +105,19 @@ export default {
         color: #737373;
         line-height: 1.5em;
       }
-      img {
+      .g-cover {
         margin: 20px 0;
+        overflow: hidden;
+        &:hover {
+          img {
+            transform: scale(1.15);
+          }
+        }
+        img {
+          transition: 0.6s ease-in-out;
+        }
       }
+
     }
     .more {
       overflow: hidden;

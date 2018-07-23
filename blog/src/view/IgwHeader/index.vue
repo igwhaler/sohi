@@ -60,7 +60,7 @@ export default {
         margin-left: 105px;
         font-weight: normal;
         div {
-          font-size: 26px;
+          font-size: 22px;
           color: #4c4c4c;
         }
         p {
