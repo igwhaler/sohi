@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './common/interceptor'
+import './assets/styles/common.less'
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
