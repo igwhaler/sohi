@@ -1,0 +1,17 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "js",
+  "main": "babelHightLight.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "igwhaler",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/highlight": "^7.0.0-rc.2"
+  }
+}
