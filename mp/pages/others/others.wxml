@@ -1,0 +1,7 @@
+<view>
+  <i-toast id="toast" />
+
+  <image wx:if="{{img}}" class="image" src="{{img}}" mode="widthFix"></image>
+
+  <i-button type="primary" size="small" bind:click="handlClick">按钮</i-button>
+</view>

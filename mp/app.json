@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/fe/fe",
+    "pages/art/art",
+    "pages/others/others"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "大鱼你个锅锅",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "#404B69",
+    "selectedColor": "#24BDDF",
+    "borderColor": "black",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/tabBar/index.png",
+        "selectedIconPath": "assets/tabBar/index.png"
+      },
+      {
+        "text": "FE",
+        "pagePath": "pages/fe/fe",
+        "iconPath": "assets/tabBar/fe.png",
+        "selectedIconPath": "assets/tabBar/fe.png"
+      },
+      {
+        "text": "其他",
+        "pagePath": "pages/others/others",
+        "iconPath": "assets/tabBar/others.png",
+        "selectedIconPath": "assets/tabBar/others.png"
+      }
+    ]
+  },
+  "debug": false
+}

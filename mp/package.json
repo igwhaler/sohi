@@ -1,0 +1,17 @@
+{
+  "name": "mp",
+  "version": "1.0.0",
+  "description": "mp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mp"
+  ],
+  "author": "igwhaler",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "^3.0.3"
+  }
+}
