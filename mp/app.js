@@ -6,9 +6,9 @@ App({
   },
 
   onLaunch: function () {
-    wx.reLaunch({
+    /* wx.reLaunch({
       url: '/pages/others/others'
-    })
+    }) */
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
