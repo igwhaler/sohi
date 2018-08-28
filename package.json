@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "less-loader": "^4.1.0"
+    "less-loader": "^4.1.0",
+    "webpack-monitor": "^1.0.14"
   }
 }
