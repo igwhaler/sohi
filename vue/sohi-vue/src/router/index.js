@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import ViewContainer from '@/view'
 
 Vue.use(Router)
 
@@ -9,7 +10,7 @@ export default new Router({
     {
       path: '/',
       redirect: '/flex',
-      component: () => import('@/view'),
+      component: ViewContainer,
       children: [
         {
           path: 'flex',
