@@ -1,11 +1,4 @@
-let server = require('./build/server')
-let {route} = require('./build/router')
-let {start, upload} = require('./build/requestHandlers')
+const ep1 = require('./1.js')
+const ep2 = require('./2.js')
 
-let handle = {
-    '/': start,
-    '/start': start,
-    '/upload': upload
-}
-
-server.start(route, handle)
+console.log(ep1, ep2)
