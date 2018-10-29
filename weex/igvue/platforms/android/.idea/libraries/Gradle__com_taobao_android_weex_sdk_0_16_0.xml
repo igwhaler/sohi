@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.taobao.android:weex_sdk-0.16.0">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.16.0.aar/0bd8517a156859968d8dbf43708dd2f7/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.16.0.aar/0bd8517a156859968d8dbf43708dd2f7/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.16.0.aar/0bd8517a156859968d8dbf43708dd2f7/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.taobao.android/weex_sdk/0.16.0/7f4e344a9b06f973d6569e6aef9820278851b112/weex_sdk-0.16.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
