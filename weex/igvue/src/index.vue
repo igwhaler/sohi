@@ -1,5 +1,5 @@
 <template>
-  <div class="g-container">
+  <div style="max-width: 750px;padding-top: 40px;">
     <router-view />
   </div>
 </template>

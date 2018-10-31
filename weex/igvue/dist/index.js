@@ -76,7 +76,7 @@
 
 /* weex initialized here, please do not move this line */
 var router = __webpack_require__(1);
-var App = __webpack_require__(9);
+var App = __webpack_require__(10);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
@@ -97,7 +97,7 @@ var _Home = __webpack_require__(3);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Art = __webpack_require__(6);
+var _Art = __webpack_require__(7);
 
 var _Art2 = _interopRequireDefault(_Art);
 
@@ -2756,11 +2756,15 @@ if (inBrowser && window.Vue) {
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
+/* styles */
+__vue_styles__.push(__webpack_require__(4)
+)
+
 /* script */
-__vue_exports__ = __webpack_require__(4)
+__vue_exports__ = __webpack_require__(5)
 
 /* template */
-var __vue_template__ = __webpack_require__(5)
+var __vue_template__ = __webpack_require__(6)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2775,6 +2779,7 @@ if (typeof __vue_options__ === "function") {
 __vue_options__.__file = "/Users/mine/FE/sohi/weex/igvue/src/views/Home/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-1d9b105c"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -2790,6 +2795,43 @@ module.exports = __vue_exports__
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "g-btn": {
+    "textAlign": "center",
+    "fontSize": "80",
+    "color": "#D2B48C",
+    "borderWidth": "10",
+    "borderStyle": "solid",
+    "borderColor": "#000000",
+    "borderRadius": "20"
+  },
+  "g-container-list": {
+    "display": "flex",
+    "flexDirection": "row",
+    "flexWrap": "wrap",
+    "justifyContent": "space-between",
+    "paddingTop": "30",
+    "paddingRight": "10",
+    "paddingBottom": 0,
+    "paddingLeft": "10"
+  },
+  "g-img": {
+    "display": "flex",
+    "paddingTop": "10",
+    "paddingRight": 0,
+    "paddingBottom": "10",
+    "paddingLeft": 0
+  },
+  "img": {
+    "width": "355",
+    "height": "200"
+  }
+}
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2798,6 +2840,7 @@ module.exports = __vue_exports__
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
 //
 //
 //
@@ -2806,44 +2849,135 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var _weex$requireModule = weex.requireModule('stream'),
+    fetch = _weex$requireModule.fetch;
+// let modal = weex.requireModule('modal')
 
 exports.default = {
   name: 'Home',
 
+  data: function data() {
+    return {
+      artList: []
+    };
+  },
+  created: function created() {
+    this.getArtList();
+  },
+
+
   methods: {
     jumpArt: function jumpArt(e) {
       this.$router.push('art');
+    },
+    getArtList: function getArtList() {
+      var _this = this;
+
+      fetch({
+        // url: 'http://weex.igwhaler.com/api/graphql?query={articles{list{id,title,summary,cover,created}}}',
+        url: 'https://igwhaler.com/api/graphql?query=' + encodeURIComponent('{articles{list{id,title,summary,cover,created}}}'),
+        method: 'GET',
+        type: 'json'
+      }, function (res) {
+        _this.artList = res.data.data.articles.list;
+      });
     }
   }
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _c('scroller', {
+    attrs: {
+      "showScrollbar": false
+    }
+  }, [_c('div', {
     staticClass: ["home-page"]
-  }, [_c('text', [_vm._v("首页")]), _c('text', {
+  }, [_c('text', {
+    staticStyle: {
+      fontSize: "50px"
+    }
+  }, [_vm._v("首页")]), _c('text', {
+    staticClass: ["g-btn"],
     on: {
       "click": _vm.jumpArt
     }
-  }, [_vm._v("跳转详情")])])
-},staticRenderFns: []}
+  }, [_vm._v("跳转文章详情")]), _c('div', {
+    staticClass: ["g-container-list"]
+  }, _vm._l((_vm.artList), function(art, index) {
+    return _c('div', {
+      key: index,
+      staticClass: ["g-img"]
+    }, [_c('image', {
+      staticClass: ["img"],
+      attrs: {
+        "src": art.cover,
+        "alt": "封面"
+      }
+    })])
+  })), _vm._m(0)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["g-container-list"]
+  }, [_c('div', {
+    staticClass: ["g-img"]
+  }, [_c('image', {
+    staticClass: ["img"],
+    attrs: {
+      "src": "https://ws1.sinaimg.cn/large/bbc609d5ly1ftcp05mzvoj23402c048c.jpg",
+      "alt": ""
+    }
+  })]), _c('div', {
+    staticClass: ["g-img"]
+  }, [_c('image', {
+    staticClass: ["img"],
+    attrs: {
+      "src": "https://ws1.sinaimg.cn/large/bbc609d5ly1ftcp05mzvoj23402c048c.jpg",
+      "alt": ""
+    }
+  })])])
+}]}
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* script */
-__vue_exports__ = __webpack_require__(7)
+__vue_exports__ = __webpack_require__(8)
 
 /* template */
-var __vue_template__ = __webpack_require__(8)
+var __vue_template__ = __webpack_require__(9)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2872,7 +3006,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2901,7 +3035,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2916,17 +3050,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* script */
-__vue_exports__ = __webpack_require__(10)
+__vue_exports__ = __webpack_require__(11)
 
 /* template */
-var __vue_template__ = __webpack_require__(11)
+var __vue_template__ = __webpack_require__(12)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2955,7 +3089,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2977,12 +3111,15 @@ exports.default = {
 };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["g-container"]
+    staticStyle: {
+      maxWidth: "750px",
+      paddingTop: "40px"
+    }
   }, [_c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true

@@ -16,8 +16,9 @@ const config = {
   dev: {
     // Various Dev Server settings
     contentBase: ROOT,
-    host: ip,
-    port: 8081,
+    // host: ip,
+    host: 'weex.igwhaler.com',
+    port: 8089,
     historyApiFallback: true,
     open: true,
     watchContentBase: true,
