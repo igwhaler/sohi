@@ -6,48 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7423734f-041f-4d36-8113-c444d05d4648" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../configs/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../configs/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dist/index.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../dist/index.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dist/vendor.web.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../dist/vendor.web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/weex-app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/weex-app.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/WeexDemo/WeexDemo-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/WeexDemo/WeexDemo-Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-WeexDemo.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Pods-WeexDemo.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SDWebImage.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SDWebImage.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SocketRocket.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SocketRocket.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/WeexSDK.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/WeexSDK.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/WeexDemo.build/Debug-iphonesimulator/WeexDemo.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Intermediates.noindex/WeexDemo.build/Debug-iphonesimulator/WeexDemo.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/SDWebImage/libSDWebImage.a" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/SDWebImage/libSDWebImage.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/SocketRocket/libSocketRocket.a" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/SocketRocket/libSocketRocket.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/Assets.car" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/Assets.car" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/WeexDemo" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/WeexDemo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/_CodeSignature/CodeResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/bundlejs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexDemo.app/bundlejs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexSDK/libWeexSDK.a" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/WeexSDK/libWeexSDK.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/libPods-WeexDemo.a" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Build/Products/Debug-iphonesimulator/libPods-WeexDemo.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Logs/Build/7E1047B4-A83C-4400-B9A9-18DA0526A206.xcactivitylog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Logs/Build/9E6F3AC9-23D2-4E5A-B848-D135E7F48939.xcactivitylog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/Logs/Build/Cache.db" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/Logs/Build/Cache.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/build/info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/build/info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/bundlejs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/bundlejs/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/views/Home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/views/Home/index.vue" afterDir="false" />
-    </list>
+    <list default="true" id="7423734f-041f-4d36-8113-c444d05d4648" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -2549,7 +2508,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1542" y="27" width="1440" height="838" extended-state="0" />
+    <frame x="-1600" y="0" width="1600" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
@@ -2558,7 +2517,7 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.50144094" side_tool="true" visible="true" weight="0.536903" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.50144094" side_tool="true" visible="true" weight="0.47870967" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -2566,7 +2525,7 @@
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24748202" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22193548" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4985591" weight="0.536903" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

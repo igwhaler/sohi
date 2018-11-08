@@ -1,0 +1,31 @@
+.app {
+  max-width: 750;
+  padding-top: 20px;
+  flex: 1;
+}
+
+.helloWorld {
+  /* flex: 1; */
+}
+
+.countNum {
+  font-size: 100;
+}
+
+.gImgList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.gImg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 10;
+  border-style: solid;
+  border-color: aqua;
+  border-radius: 10;
+}
