@@ -3,8 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/fe/fe",
-    "pages/art/art",
-    "pages/others/others"
+    "pages/art/art"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,12 +28,6 @@
         "pagePath": "pages/fe/fe",
         "iconPath": "assets/tabBar/fe.png",
         "selectedIconPath": "assets/tabBar/fe.png"
-      },
-      {
-        "text": "其他",
-        "pagePath": "pages/others/others",
-        "iconPath": "assets/tabBar/others.png",
-        "selectedIconPath": "assets/tabBar/others.png"
       }
     ]
   },

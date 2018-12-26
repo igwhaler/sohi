@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "其他",
-  "usingComponents": {
-    "i-button": "../../libs/iview/button/index",
-    "i-toast": "../../libs/iview/toast/index"
-  }
-}

@@ -3,20 +3,11 @@
 const app = getApp()
 
 Page({
-  data: {
-    message: 123123
-  },
-  onLoad () {
-    console.log(this)
-    console.log(app)
-    console.log(wx)
-  },
+  data: {},
 
-  onUnload () {
-    console.log(123)
-  },
+  onLoad () {},
 
-  onShow () {
-    // console.log(app)
-  }
+  onUnload () {},
+
+  onShow () {}
 })
