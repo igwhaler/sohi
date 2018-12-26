@@ -10,16 +10,37 @@ import './app.less'
 // }
 
 class App extends Component {
-
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/fe/fe',
+      'pages/art/art'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '大鱼你个锅锅',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      position: 'bottom',
+      color: '#404B69',
+      selectedColor: '#24BDDF',
+      borderColor: 'black',
+      list: [
+        {
+          text: '首页',
+          pagePath: 'pages/index/index',
+          iconPath: 'assets/images/tabBar/index.png',
+          selectedIconPath: 'assets/images/tabBar/index.png'
+        },
+        {
+          text: 'FE',
+          pagePath: 'pages/fe/fe',
+          iconPath: 'assets/images/tabBar/fe.png',
+          selectedIconPath: 'assets/images/tabBar/fe.png'
+        }
+      ]
     }
   }
 
