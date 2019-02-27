@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>垂直水平居中</title>
+
+  <style>
+    .container {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      width: 200px;
+      height: 200px;
+      background-color: burlywood;
+    }
+
+    .box {
+      background-color: aqua;
+    }
+  </style>
+
+  <style>
+    /* flex */
+    .container1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box1 {}
+  </style>
+
+  <style>
+    /* position */
+    .container2 {
+      position: relative;
+    }
+
+    .box2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+  <style>
+    .container3 {
+      display: table;
+    }
+
+    .container-child {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .box3 {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container container1">
+    <div class="box box1">按时打算打算的</div>
+  </div>
+
+  <div class="container container2">
+    <div class="box box2">123123啊实打实大</div>
+  </div>
+
+  <div class="container container3">
+    <div class="container-child">
+      <div class="box box3">123123啊实打实大</div>
+    </div>
+  </div>
+</body>
+</html>

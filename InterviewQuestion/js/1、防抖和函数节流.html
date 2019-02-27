@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>防抖、节流</title>
+
+  <style>
+    #userName {
+      border: 1px solid salmon;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="userName" />
+</body>
+
+<script>
+  // 防抖
+  /**
+   * 1、闭包
+   * 2、定时器
+   */
+  function debounce(fn, delay) {
+    let timer = null
+
+    return function () {
+      clearTimeout(timer)
+
+      timer = setTimeout(fn.bind(null, ...arguments), delay)
+    }
+  }
+
+  var showUserName = debounce(function(value, a) {
+    console.log(value, a)
+  }, 500);
+
+  document.getElementById('userName').addEventListener('input', function (e) {
+    showUserName(e.target.value, 123)
+  }, false);
+</script>
+
+<script>
+  // 节流
+  /**
+   * 1、闭包
+   * 2、定时器
+   */
+  function throttle (fn, delay) {
+    let timer = null
+
+    return function () {
+      if (timer) {
+        return
+      }
+
+      let args = arguments
+
+      timer = setTimeout(function () {
+        fn.apply(null, args)
+
+        timer = null
+      }, delay)
+    }
+  }
+
+  let showInfo = throttle(function (value) {
+    console.log(value)
+  }, 500);
+
+  window.addEventListener('resize', function () {
+    showInfo(123)
+  }, false);
+</script>
+
+</html>

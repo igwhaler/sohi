@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>柯里化</title>
+</head>
+<body>
+  <script>
+    function add() {
+      return Array.from(arguments).reduce((pre, cur) => pre + cur )
+    }
+
+    console.log(add(1, 2, 3))
+  </script>
+
+  <script>
+    function add (a, b, c) {
+      return a + b + c
+    }
+
+    function simpleCurr () {
+      return function (x) {
+        return function (y) {
+          return function (z) {
+            return x + y + z
+          }
+        }
+      }
+    }
+
+    function currie(fn) {
+      var args = []
+
+      return function repeat() {
+        args.push(...arguments)
+
+        if (args.length >= fn.length) {
+          return fn.apply(null, args)
+        }
+
+        return repeat
+      }
+    }
+
+    let currieAdd = currie(add);
+
+    console.log(currieAdd(1)(2, 4))
+    console.log(simpleCurr()(1)(2)(3))
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Proxy</title>
+</head>
+<body>
+  <script>
+    var a = ['a', 'b', 'c']
+
+    var o1 = new Proxy(a, {
+      get (target, key) {
+        console.log(target, key)
+
+        return target[key]
+      },
+
+      set (target, key, value) {
+        console.log(target, key, value)
+
+        target[key] = value
+      }
+    });
+
+    o1 = [123]
+
+    console.log(o1, a)
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>deepClone</title>
+</head>
+<body>
+  <script>
+    function isObject (obj) {
+      return Object.prototype.toString.call(obj) === '[object Object]'
+    }
+
+    function deepClone(obj) {
+      let res = obj
+
+      if (Array.isArray(obj)) {
+        res = []
+
+        obj.forEach((item, index) => {
+          res[index] = deepClone(item)
+        })
+      }
+
+      if (isObject(obj)) {
+        res = {}
+
+        for (key in obj) {
+          res[key] = deepClone(obj[key])
+        }
+      }
+
+      return res
+    }
+  </script>
+</body>
+</html>
