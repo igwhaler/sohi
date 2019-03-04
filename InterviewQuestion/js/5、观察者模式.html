@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>观察者模式</title>
+</head>
+<body>
+  <script>
+    function SubPubs () {
+      this.events = {}
+    }
+
+    SubPubs.prototype = {
+      constouctor: SubPubs,
+
+      // 订阅事件
+      on (name, handle) {
+        var events = this.events
+
+        if (!events[name]) {
+          events[name] = []
+        }
+
+        events[name].push({ handle })
+
+        console.log(events)
+      },
+
+      // 发布事件
+      emit (name, payload) {
+        var events = this.events
+
+        for (key in events) {
+          if (key === name) {
+            events[key].forEach(event => {
+              event.handle(payload)
+            })
+
+            break
+          }
+        }
+      },
+
+      off (name) {
+        delete this.events[name]
+
+        console.log(this.events)
+      }
+    }
+
+    var sp1 = new SubPubs();
+
+    sp1.on('a', function (number) {
+      console.log(number)
+    })
+
+    sp1.on('a', function (number) {
+      console.log(number)
+    })
+
+    sp1.on('a', function (number) {
+      console.log(number)
+    })
+
+    sp1.emit('a', 123)
+
+    sp1.off('a')
+  </script>
+</body>
+</html>
