@@ -8,32 +8,41 @@
 
   <style>
     .g-box1 {
-      display: flex;
-      background-color: azure;
+      background-color: beige;
+      /* overflow: hidden; */
+      overflow: auto;
     }
 
-    .box1 {
-      width: 100px;
-    }
+    .box1 {}
 
     .box1-1 {
       background-color: aquamarine;
-      height: 100px;
+
+      float: left;
+      width: 100px;
+      height: 200px;
+      border-radius: 50px;
     }
     .box1-2 {
       background-color: bisque;
-      flex-grow: 1;
+
+      float: right;
+      width: 100px;
+      height: 300px;
     }
     .box1-3 {
       background-color: brown;
+
+      margin-left: 100px;
+      margin-right: 100px;
     }
   </style>
 </head>
 <body>
   <div class="g-box1">
-    <div class="box1 box1-1"></div>
-    <div class="box1 box1-2"></div>
-    <div class="box1 box1-3"></div>
+    <div class="box1 box1-1">1</div>
+    <div class="box1 box1-2">2</div>
+    <div class="box1 box1-3">3</div>
   </div>
 </body>
 </html>
