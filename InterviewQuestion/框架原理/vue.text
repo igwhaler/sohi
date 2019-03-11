@@ -1,0 +1,14 @@
+1、组件的data必须是函数：
+  多个组件实例化时 可以 利用函数的作用域 生成多个无关的data；
+  如果不是函数是object，引用类型会导致多个实例组件共享一个data，修改一个data影响多个组件的data。
+
+2、双向绑定：
+  * 数据变动 -> 视图更新：
+    劫持data的key的setter，从而触发DOM视图重新渲染。
+
+  * 视图变动 -> 数据更新：
+    input、textarea等的值变动 通过事件(oninput、onchange等) 修改 data。
+
+3、监听数组变化：重写数组方法；
+
+4、computed和watch的区别以及原理
