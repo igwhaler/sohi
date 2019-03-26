@@ -1,45 +1,36 @@
 import React, { Component } from 'react';
-import { handleIncreaseCount, handleDecreaseCount } from '../../redux'
+import { connect } from "react-redux"
+// import { store, actions } from './redux'
+import * as actions from '../../store/actions'
 
 class TextMsg extends Component {
-  state = {a: 1}
-
-  componentWillMount () {
-    console.log(1)
-  }
+  /* constructor (props) {
+    super(props)
+  } */
 
   componentDidMount () {
-    console.log(2)
-    // this.setState({ a: 2 })
+    console.log(this)
   }
 
-  componentWillReceiveProps() {
-    console.log('3')
+  increaseCount = () => {
+    this.props.dispatch(actions.increase(2))
   }
 
-  shouldComponentUpdate() {
-    console.log('should')
-    return false
-  }
-
-  componentWillUpdate () {
-    console.log(4)
-  }
-
-  componentDidUpdate () {
-    console.log(5)
+  decreaseCount = () => {
+    this.props.dispatch(actions.decrease())
   }
 
   render () {
-    console.log('render')
+    let { testMsg } = this.props
 
     return (
       <div>
-        <p>{this.props.b}</p>
+        <p>{testMsg.count}</p>
+
         <div>
-          <span onClick={handleIncreaseCount}> + </span>
+          <span onClick={this.increaseCount}> + </span>
           <span>  |  </span>
-          <span onClick={handleDecreaseCount}> - </span>
+          <span onClick={this.decreaseCount}> - </span>
         </div>
       </div>
     )
@@ -47,18 +38,8 @@ class TextMsg extends Component {
   }
 }
 
-export default class TestRedux extends Component {
-  state = {c : 123}
+const mapStateToProps = state => ({
+  testMsg: state.testMsg
+})
 
-  componentDidMount () {
-    this.setState({c: 456})
-  }
-
-  render () {
-    return (
-      <div>
-        <TextMsg b={this.state.c}></TextMsg>
-      </div>
-    )
-  }
-}
+export default connect(mapStateToProps)(TextMsg)
