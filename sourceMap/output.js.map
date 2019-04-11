@@ -1,0 +1,1 @@
+{"version":3,"sources":["log.js","main.js"],"names":["sayHello","name","length","substr","console","log"],"mappings":"AAAAA,SAAS,MACTA,SAAS,WCDT,SAASA,SAASC,MAChB,GAAIA,KAAKC,OAAS,EAAG,CACnBD,KAAOA,KAAKE,OAAO,EAAG,GAAK,MAE7BC,QAAQC,IAAI,SAAUJ"}
