@@ -23,7 +23,7 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
-
+const px2rem = require('postcss-px2rem-exclude');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -41,7 +41,7 @@ const lessRegex = /\.less$/;
 const lessModuleRegex = /\.module\.less$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
-const theme = require('../package.json').theme;
+const antMTheme = require('../package.json').theme;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -100,6 +100,12 @@ module.exports = function(webpackEnv) {
               },
               stage: 3,
             }),
+            // px2rem 相关的配置
+            px2rem({
+              remUnit: 124.2,
+              // exclude: ['node_modules']
+              exclude: /node_modules/
+            })
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
@@ -269,6 +275,8 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        '@store': `${paths.appSrc}/store`,
+        '@utils': `${paths.appSrc}/utils`
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -397,7 +405,7 @@ module.exports = function(webpackEnv) {
               exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
-                sourceMap: isEnvProduction && shouldUseSourceMap,
+                sourceMap: isEnvProduction && shouldUseSourceMap
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -412,20 +420,36 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders({
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
-                modules: true,
                 getLocalIdent: getCSSModuleLocalIdent,
               }),
             },
-            // less
+            // less 相关的配置
             {
               test: lessRegex,
+              include: '/',
               exclude: lessModuleRegex,
               use: getStyleLoaders(
-                { importLoaders: 2 },
+                {
+                  importLoaders: 2
+                },
                 'less-loader',
-                { modifyVars: theme }
-              ),
-              include: '/'
+                {
+                  modifyVars: antMTheme
+                }
+              )
+            },
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  getLocalIdent: getCSSModuleLocalIdent,
+                  modules: true,
+                  // localIndetName: '[name]__[local]___[hash:base64:5]'
+                },
+                'less-loader'
+              )
             },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
