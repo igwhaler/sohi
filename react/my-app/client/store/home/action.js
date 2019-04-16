@@ -6,11 +6,11 @@ import {
 export const handleIncreaseNum = () => {
     return {
         type: HOME_INCREASE_NUM
-    }
-}
+    };
+};
 
 export const handleDecreaseNum = () => {
     return {
         type: HOME_DECREASE_NUM
-    }
-}
+    };
+};

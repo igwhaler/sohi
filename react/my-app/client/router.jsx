@@ -4,7 +4,7 @@ import {
     Switch,
     BrowserRouter as Router
 } from 'react-router-dom';
-import LazyComponent from './components/LazyComponent'
+import LazyComponent from './components/LazyComponent';
 
 const Home = lazy(() => import(/* webpackChunkName: 'home' */ './pages/home'));
 const My = lazy(() => import(/* webpackChunkName: 'my' */ './pages/my'));
@@ -18,7 +18,7 @@ const router = () => {
                 <Route path="/my123" render={() => <LazyComponent component={My} />} />
             </Switch>
         </Router>
-    )
-}
+    );
+};
 
 export default router;

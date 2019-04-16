@@ -22,6 +22,6 @@ const homeReducer = (state = homeState, action) => {
     default:
         return state;
     }
-}
+};
 
 export default homeReducer;

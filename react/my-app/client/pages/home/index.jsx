@@ -5,29 +5,29 @@ import { Button } from 'antd-mobile';
 import * as homeActions from '@store/home/action';
 import styles from './index.module.less';
 // const cloneDeep = require('lodash/cloneDeep');
-import cloneDeep from 'lodash/cloneDeep'
+import cloneDeep from 'lodash/cloneDeep';
 
-var a = { a: 123 }
+var a = { a: 123 };
 
-console.log(cloneDeep(a))
+console.log(cloneDeep(a));
 
 class Home extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {}
+        this.state = {};
     }
 
     componentDidMount() {
-        console.log(this)
+        console.log(this);
     }
 
     increaseCount = () => {
-        this.props.dispatch(homeActions.handleIncreaseNum())
+        this.props.dispatch(homeActions.handleIncreaseNum());
     }
 
     decreaseCount = () => {
-        this.props.dispatch(homeActions.handleDecreaseNum())
+        this.props.dispatch(homeActions.handleDecreaseNum());
     }
 
     render() {
@@ -51,7 +51,7 @@ class Home extends Component {
 const mapStateToProps = ({ home }) => {
     return {
         num: home.num
-    }
-}
+    };
+};
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(Home);

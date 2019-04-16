@@ -13,4 +13,4 @@ class My extends Component {
     }
 }
 
-export default withRouter(My)
+export default withRouter(My);
