@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd-mobile';
 import * as homeActions from '@store/home/action';
 import styles from './index.module.less';
-// const cloneDeep = require('lodash/cloneDeep');
-import cloneDeep from 'lodash/cloneDeep';
+import _ from 'lodash';
 
 var a = { a: 123 };
 
-console.log(cloneDeep(a));
+console.log(_.cloneDeep(a));
 
 class Home extends Component {
     constructor(props) {

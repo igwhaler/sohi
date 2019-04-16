@@ -1,0 +1,25 @@
+{
+    "presets": [
+        "react-app",
+        [
+            "@babel/env",
+            {
+                "targets": {
+                    "node": 6
+                }
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "import",
+            {
+                "libraryName": "antd-mobile",
+                "style": true
+            }
+        ],
+        [
+            "lodash"
+        ]
+    ]
+}

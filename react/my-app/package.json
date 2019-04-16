@@ -69,30 +69,12 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "babel-plugin-import": "^1.11.0",
+    "babel-plugin-lodash": "^3.3.4",
     "less": "^3.9.0",
     "less-loader": "^4.1.0"
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      [
-        "import",
-        {
-          "libraryName": "antd-mobile",
-          "style": true
-        }
-      ]
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "indent": ["error", 4],
-      "semi": [2, "always"]
-    }
   },
   "sideEffects": false,
   "homepage": "https://baijiahao.baidu.com",
