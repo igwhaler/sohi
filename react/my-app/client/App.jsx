@@ -4,13 +4,13 @@ import Router from './router.jsx';
 import store from './store';
 
 class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router />
-      </Provider>
-    );
-  }
+    render() {
+        return (
+            <Provider store={store}>
+                <Router />
+            </Provider>
+        );
+    }
 }
 
 export default App;

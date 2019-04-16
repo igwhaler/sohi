@@ -114,10 +114,9 @@ module.exports = function(webpackEnv) {
     if (preProcessor) {
       loaders.push({
         loader: require.resolve(preProcessor),
-        options: {
-          sourceMap: isEnvProduction && shouldUseSourceMap,
-          ...preOptions
-        },
+        options: Object.assign({
+          sourceMap: isEnvProduction && shouldUseSourceMap
+        }, preOptions)
       });
     }
     return loaders;

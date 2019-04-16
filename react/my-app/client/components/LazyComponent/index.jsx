@@ -7,13 +7,13 @@ import React, { Suspense } from 'react';
  * @return {Component}
  */
 const LazyComponent = (props) => {
-  let { component: SelfComponent, fallback = null } = props
+    let { component: SelfComponent, fallback = null } = props
 
-  return (
-    <Suspense fallback={fallback}>
-      <SelfComponent></SelfComponent>
-    </Suspense>
-  )
+    return (
+        <Suspense fallback={fallback}>
+            <SelfComponent></SelfComponent>
+        </Suspense>
+    )
 }
 
 export default LazyComponent

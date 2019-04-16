@@ -73,10 +73,32 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0"
   },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd-mobile",
+          "style": true
+        }
+      ]
+    ]
+  },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "indent": ["error", 4]
+    }
   },
   "sideEffects": false,
+  "homepage": "https://baijiahao.baidu.com",
+  "theme": {
+    "brand-primary": "blue",
+    "color-text-base": "#333"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -127,23 +149,5 @@
       "/Users/mine/FE/sohi/react/my-app/node_modules/jest-watch-typeahead/filename.js",
       "/Users/mine/FE/sohi/react/my-app/node_modules/jest-watch-typeahead/testname.js"
     ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      [
-        "import",
-        {
-          "libraryName": "antd-mobile",
-          "style": true
-        }
-      ]
-    ]
-  },
-  "theme": {
-    "brand-primary": "blue",
-    "color-text-base": "#333"
   }
 }
