@@ -7,7 +7,7 @@ class My extends Component {
         return (
             <div className="My">
                 <p>my</p>
-                <Link to='/'>/</Link>
+                <Link to="/">/</Link>
             </div>
         );
     }

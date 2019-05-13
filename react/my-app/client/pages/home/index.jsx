@@ -34,7 +34,7 @@ class Home extends Component {
             <div className={styles.home}>
                 <p className={styles.text}>home</p>
 
-                <Link to='my'>my</Link>
+                <Link to="my">my</Link>
 
                 <div>
                     <p>{this.props.num}</p>
