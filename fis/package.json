@@ -1,0 +1,29 @@
+{
+  "name": "php-smarty-app",
+  "version": "1.0.0",
+  "description": "PHP-smarty project based on fis3.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "fis3 server start",
+    "dev": "fis3 release -cw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fis-scaffold/php-smarty.git"
+  },
+  "keywords": [
+    "fis",
+    "scaffold"
+  ],
+  "author": "fex",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/fis-scaffold/php-smarty/issues"
+  },
+  "homepage": "https://github.com/fis-scaffold/php-smarty",
+  "devDependencies": {
+    "fis3": "^3.3.21",
+    "fis3-smarty": "^1.1.12"
+  }
+}

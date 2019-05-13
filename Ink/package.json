@@ -1,0 +1,29 @@
+{
+    "name": "ink",
+    "version": "1.0.0",
+    "description": "ink-app",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "ink",
+        "react",
+        "js",
+        "cmd"
+    ],
+    "author": "igwhaler",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^16.8.6",
+        "ink": "^2.0.5"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-react"
+        ]
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.0.0"
+    }
+}
