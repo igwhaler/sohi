@@ -1,82 +1,42 @@
-import React, {Component, PureComponent} from 'react';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {funcDocumentTitle} from '../../decorators/setDocumentTitle';
+import log from '../../decorators/log';
 
-class UserName extends Component {
-    render() {
-        return (
-            <span>{this.props.name}</span>
-        );
-    }
-}
-
-class UserAge extends Component {
-    render() {
-        return (
-            <span>{this.props.age}</span>
-        );
-    }
-}
-
-class UserInfo extends PureComponent {
-    render () {
-        let {info} = this.props;
-
-        return (
-            <p>
-                <UserName name={info.name}></UserName>
-                <UserAge age={info.age}></UserAge>
-            </p>
-        )
-    }
-}
-
-class SelfUserInfo extends Component {
-    render () {
-        let {info} = this.props;
-
-        return (
-            <p>
-                <UserName name={info.name}></UserName>
-                <UserAge age={info.age}></UserAge>
-            </p>
-        )
-    }
-}
-
-export default class HomePage extends Component {
+class HomePage extends Component {
     state = {
-        info: {
-            name: '哈哈',
-            age: 17
-        }
+        text: ''
     }
 
-    handleName = ({target}) => {
-        let {info} = this.state;
+    @funcDocumentTitle('首页')
+    componentDidMount() {}
 
-        info.name = target.value;
-
-        /* this.setState(preState => {
-            preState['info'] = {...info}
-
-            return preState;
-        }) */
-
-        this.setState({info})
+    @log
+    handleChange({target}) {
+        this.setState({
+            text: target.value
+        });
     }
 
-    render () {
-        let {info} = this.state;
+    render() {
+        let {text} = this.state;
 
         return (
             <div>
-                <div>
-                    名字：<input type="text" onInput={this.handleName}/>
-                </div>
+                <h2>
+                    <Link to="/todo">Todo</Link>
+                </h2>
 
-                <UserInfo info={info}></UserInfo>
+                <div>首页-大鱼你个锅锅</div>
 
-                <SelfUserInfo info={info}></SelfUserInfo>
+                <p>
+                    <input value={text} type="text" onChange={(e) => { this.handleChange(e) }} />
+                </p>
+
+                <p>{text}</p>
             </div>
         );
     }
 }
+
+export default HomePage;
