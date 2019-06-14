@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {funcDocumentTitle} from '../../decorators/setDocumentTitle';
 import log from '../../decorators/log';
+import './index.scss';
 
 class HomePage extends Component {
     state = {
@@ -22,7 +23,7 @@ class HomePage extends Component {
         let {text} = this.state;
 
         return (
-            <div>
+            <div className="box">
                 <h2>
                     <Link to="/todo">Todo</Link>
                 </h2>
