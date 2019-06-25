@@ -1,0 +1,39 @@
+.wrap-theme {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .theme {
+        display: inline-block;
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        background-color: #333333;
+    }
+
+    .theme-tan {
+        background-color: tan;
+    }
+
+    .theme-gold {
+        background-color: gold;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 4px 20px;
+    font-size: 14px;
+    color: #333333;
+    border: 1px solid #999999;
+    border-radius: 4px;
+}
+
+.theme-tan_button {
+    color: #ffffff;
+    background-color: tan;
+}
+
+.theme-gold_button {
+    color: #333333;
+    background-color: gold;
+}
