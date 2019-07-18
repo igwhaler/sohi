@@ -5,6 +5,7 @@ import Home from '../pages/home';
 import Todo from '../pages/todo';
 import RichInput from '../pages/richInput';
 import Arrow from '../pages/arrow';
+import SlateEditor from '../pages/slate';
 
 export default class Layout extends Component {
     render() {
@@ -15,6 +16,7 @@ export default class Layout extends Component {
                     <Route path="/todo" exact component={Todo} />
                     <Route path="/richinput" exact component={RichInput} />
                     <Route path="/arrow" exact component={Arrow} />
+                    <Route path="/slate" exact component={SlateEditor} />
                 </Switch>
             </Router>
         );

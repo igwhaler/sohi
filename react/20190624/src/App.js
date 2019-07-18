@@ -4,6 +4,7 @@ import IgDemo from './components/IgDemo';
 import IgModal from './components/IgModal';
 import IgRef from './components/IgRef';
 import IgContext from './components/IgContext';
+import IgMemo from './components/IgMemo';
 
 class App extends Component {
     constructor(props) {
@@ -65,6 +66,10 @@ class App extends Component {
                 <br />
 
                 <IgContext></IgContext>
+
+                <br />
+
+                <IgMemo></IgMemo>
             </div>
         );
     }
