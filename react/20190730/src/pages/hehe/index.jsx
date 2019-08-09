@@ -4,14 +4,27 @@ import One from './modules/One';
 import Two from './modules/Two';
 
 export default class Hehe extends Component {
-    componentDidMount() {
-        console.log('Hehe didMount');
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            count: 1
+        };
+    }
+
+    handleIncrease = () => {
+        this.setState((preState) => ({
+            count: preState.count + 1
+        }));
     }
 
     render() {
         return (
             <div>
                 <p>呵呵</p>
+
+                <span onClick={this.handleIncrease}>+</span>
+                <p>{this.state.count}</p>
 
                 <div>
                     <div>
@@ -23,7 +36,8 @@ export default class Hehe extends Component {
                 </div>
 
                 <div>
-                    <Route path="/hehe/1" component={One} />
+                    <Route path="/hehe/1" render={() => <One {...this.props}></One>} />
+
                     <Route path="/hehe/2" component={Two} />
                 </div>
             </div>

@@ -8,7 +8,7 @@ class Two extends Component {
     }
 
     componentDidMount() {
-        console.log('Two didMount');
+        // console.log('Two didMount');
     }
 
     render() {

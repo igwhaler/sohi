@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
-class One extends Component {
+class One extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -8,12 +8,16 @@ class One extends Component {
     }
 
     componentDidMount() {
-        console.log('One didMount');
+        // console.log('One didMount');
     }
 
     render() {
+        console.log(this.props, 123);
+
         return (
-            <div>One</div>
+            <div onClick={() => {
+                this.props.history.push('/');
+            }}>One</div>
         );
     }
 }
