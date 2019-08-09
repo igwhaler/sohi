@@ -10,8 +10,6 @@ class Home extends PureComponent {
     componentDidMount() {}
 
     render() {
-        console.log(this.props, 123456);
-
         return (
             <div>123</div>
         );
