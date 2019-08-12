@@ -10,10 +10,6 @@ class App extends PureComponent {
         this.props.dispatch(getUserInfo());
     }
 
-    componentDidUpdate() {
-        // console.log(this.props);
-    }
-
     render() {
         let {isFetching} = this.props;
 
