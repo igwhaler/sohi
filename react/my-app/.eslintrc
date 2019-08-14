@@ -1,8 +1,0 @@
-{
-    "extends": "react-app",
-    "rules": {
-        "indent": [2, 4],
-        "semi": [2, "always"],
-        "jsx-quotes": [2, "prefer-double"]
-    }
-}
