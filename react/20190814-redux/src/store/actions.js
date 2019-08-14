@@ -5,7 +5,7 @@ import {
     GET_USER_INFO_ERR
 } from './constants';
 
-const updateFetching = (status) => {
+export const updateFetching = (status) => {
     return {
         type: GET_USER_INFO_ING,
         payload: {
@@ -14,7 +14,7 @@ const updateFetching = (status) => {
     }
 };
 
-const updateFetchErr = (status) => {
+export const updateFetchErr = (status) => {
     return {
         type: GET_USER_INFO_ERR,
         payload: {
@@ -23,7 +23,7 @@ const updateFetchErr = (status) => {
     }
 };
 
-const updateUserInfo = (data) => {
+export const updateUserInfo = (data) => {
     return {
         type: GET_USER_INFO,
         payload: {

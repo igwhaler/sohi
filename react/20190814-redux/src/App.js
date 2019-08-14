@@ -11,16 +11,18 @@ class App extends PureComponent {
     }
 
     render() {
-        let {isFetching} = this.props;
+        let {userInfo, isFetching} = this.props;
+
+        console.log('App render', userInfo, isFetching);
 
         return (
             <div className="App">
                 {
                     isFetching
-                    ? <header className="App-header">
+                    ? 'loading'
+                    : <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo" />
                     </header>
-                    : '哈哈哈'
                 }
 
                 <Home />
@@ -31,12 +33,17 @@ class App extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-    state = state.toJS();
 
+    // state = state.toJS();
     return {
+        userInfo: state.get('data'),
+        isFetching: state.get('isFetching')
+    }
+
+    /* return {
         userInfo: state.data,
         isFetching: state.isFetching
-    }
+    } */
 }
 
 export default connect(mapStateToProps)(App);
