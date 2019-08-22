@@ -19,7 +19,7 @@ function App() {
 
             <Router>
                 <div>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Home123123</Link>
                     <span> | </span>
                     <Link to="/hehe/1">Hehe</Link>
                 </div>
