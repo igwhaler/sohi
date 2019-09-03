@@ -5,7 +5,7 @@ import {
     Switch,
     Link
 } from "react-router-dom";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Home from './pages/home'
 import Hehe from './pages/hehe'
@@ -13,13 +13,13 @@ import Hehe from './pages/hehe'
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
+            {/* <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-            </header>
+            </header> */}
 
             <Router>
                 <div>
-                    <Link to="/">Home123123</Link>
+                    <Link to="/">Home</Link>
                     <span> | </span>
                     <Link to="/hehe/1">Hehe</Link>
                 </div>
