@@ -1,0 +1,30 @@
+.App {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+    .App-aside-menu {
+        padding: 10px 20px;
+        width: 100px;
+        background-color: beige;
+    }
+
+    .App-content {
+        padding: 10px 20px;
+        flex: 1;
+        background-color: aliceblue;
+    }
+}
+
+:global {
+    html,
+    body,
+    #root {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+}
