@@ -1,25 +1,44 @@
 import React from 'react';
 import {
-    Switch,
     Route
 } from 'react-router-dom';
-import {routes} from './config.js';
+import {
+    CSSTransition
+} from 'react-transition-group';
+import { routes } from './config.js';
+import './index.scss';
 
 export const RouterContent = (props) => {
     return (
-        <Switch>
+        <div className="animate-route-container">
             {
                 routes.map(item => {
                     return (
                         <Route
                             path={item.path}
-                            component={item.component}
                             exact={item.exact || true}
                             key={item.path}
-                        />
+                        >
+                            {
+                                (history) => {
+                                    return (
+                                        <CSSTransition
+                                            classNames="route-page"
+                                            in={history.match != null}
+                                            timeout={300}
+                                            unmountOnExit
+                                        >
+                                            <div className="route-page">
+                                                <item.component {...history} />
+                                            </div>
+                                        </CSSTransition>
+                                    );
+                                }
+                            }
+                        </Route>
                     );
                 })
             }
-        </Switch>
+        </div>
     );
 };

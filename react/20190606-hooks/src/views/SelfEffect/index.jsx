@@ -24,21 +24,19 @@ const SelfCount = memo((props) => {
     );
 });
 
-const SelfEffect = () => {
+const SelfEffect = (props) => {
     const [number, setNumber] = useState(0);
     const [textValue, SetTextValue] = useState('');
 
-    console.log(number);
-
     useEffect(() => {
-        console.log('effect');
+        // console.log('effect');
 
         setNumber(value => {
             return value + 1;
         });
 
         return () => {
-            console.log('cleanup');
+            // console.log('cleanup');
         };
     }, [textValue]);
 

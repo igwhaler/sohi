@@ -1,33 +1,39 @@
 import React, { useState, useEffect } from 'react';
 
 export default function () {
-  const [count, setCount] = useState(0)
-  const [userInfo, updateAge] = useState({ age: 10, name: '呵呵' })
+    const [count, setCount] = useState(0)
+    const [userInfo, updateAge] = useState({ age: 10, name: '呵呵' })
 
-  useEffect(() => {
-    document.title = `You clicked ${count} times`
+    useEffect(() => {
+        document.title = `You clicked ${count} times`
 
-    setTimeout(() => {
-      setCount(20)
-    }, 2000)
-  })
+        const timeId = setTimeout(() => {
+            setCount(20)
+        }, 2000);
 
-  return <div>
-    <div>
-      <p>{userInfo.age}</p>
-      <p>{userInfo.name}</p>
-    </div>
+        return () => {
+            clearTimeout(timeId);
+        };
+    }, [count]);
 
-    <div>{count}</div>
+    return (
+        <div>
+            <div>
+                <p>{userInfo.age}</p>
+                <p>{userInfo.name}</p>
+            </div>
 
-    <input
-      value="+"
-      type="button"
-      onClick={() => {
-        setCount(count + 1)
+            <div>{count}</div>
 
-        updateAge(Object.assign(userInfo, { age: 11 }))
-      }}
-    />
-  </div>
+            <input
+                value="+"
+                type="button"
+                onClick={() => {
+                    setCount(count + 1)
+
+                    updateAge(Object.assign(userInfo, { age: 11 }))
+                }}
+            />
+        </div>
+    );
 }

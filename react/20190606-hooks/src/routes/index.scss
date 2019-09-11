@@ -1,0 +1,31 @@
+.animate-route-container {
+    position: relative;
+
+    .route-page {
+        position: absolute;
+        left: 15px;
+        right: 15px;
+    }
+
+    .route-page-enter {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    .route-page-enter-active {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    }
+
+    .route-page-exit {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .route-page-exit-active {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    }
+}
