@@ -1,5 +1,6 @@
 import MyNewHooks from '../views/MyNewHooks';
 import SelfEffect from '../views/SelfEffect';
+import SelfStorage from '../views/SelfStorage';
 
 export const routes = [
     {
@@ -11,5 +12,10 @@ export const routes = [
         path: '/selfEffect',
         title: 'SelfEffect',
         component: SelfEffect
+    },
+    {
+        path: '/selfStorage',
+        title: 'SelfStorage',
+        component: SelfStorage
     }
 ];
