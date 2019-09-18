@@ -1,0 +1,1 @@
+{"id":"../node_modules/vconsole/src/element/tpl_node_foot.html","dependencies":[],"generated":{"html":"<span class=\"vcelm-node\">&lt;/{{node.tagName.toLowerCase()}}&gt;</span>"},"sourceMaps":null,"error":null,"hash":"0b7be1238cc60469584c6c66f9e6b1d6","cacheData":{}}

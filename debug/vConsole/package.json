@@ -1,0 +1,21 @@
+{
+  "name": "vconsole-demo",
+  "version": "1.0.0",
+  "description": "vconsole, parcel",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel -p 1212 watch ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "debug",
+    "vconsole",
+    "parcel"
+  ],
+  "author": "igwhaler",
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7",
+    "vconsole": "^3.3.4"
+  }
+}

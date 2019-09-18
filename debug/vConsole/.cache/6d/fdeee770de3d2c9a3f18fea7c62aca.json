@@ -1,0 +1,1 @@
+{"id":"../node_modules/vconsole/src/core/topbar_item.html","dependencies":[],"generated":{"html":"<a class=\"vc-toptab vc-topbar-{{pluginID}}{{if (className)}} {{className}}{{/if}}\">{{name}}</a>"},"sourceMaps":null,"error":null,"hash":"3c137dee95cb4e18ecdb926aa8faad41","cacheData":{}}

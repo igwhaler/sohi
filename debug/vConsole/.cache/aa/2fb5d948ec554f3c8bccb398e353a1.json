@@ -1,0 +1,1 @@
+{"id":"../node_modules/vconsole/src/core/tabbar.html","dependencies":[],"generated":{"html":"<a class=\"vc-tab\" data-tab=\"{{id}}\" id=\"__vc_tab_{{id}}\">{{name}}</a>"},"sourceMaps":null,"error":null,"hash":"41ebd2f2edb4a6ef5974d6e33b3f7c7c","cacheData":{}}
