@@ -1,6 +1,7 @@
 import MyNewHooks from '../views/MyNewHooks';
 import SelfEffect from '../views/SelfEffect';
 import SelfStorage from '../views/SelfStorage';
+import ArrowFunc from '../views/ArrowFunc';
 
 export const routes = [
     {
@@ -17,5 +18,10 @@ export const routes = [
         path: '/selfStorage',
         title: 'SelfStorage',
         component: SelfStorage
+    },
+    {
+        path: '/arrowFunc',
+        title: 'ArrowFunc',
+        component: ArrowFunc
     }
 ];
