@@ -1,4 +1,6 @@
-# cli4
+# CLI4 —— 大鱼你个锅锅
+
+@(技术栈)[vue|vue-cli3|axios|element-ui]
 
 ## 相关命令
 
@@ -25,3 +27,5 @@
 ### vue.config.js
 
 - 查看 [配置](https://cli.vuejs.org/config/).
+
+## 目录介绍
