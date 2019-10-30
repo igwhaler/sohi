@@ -1,24 +1,23 @@
 # cli4
 
-## Project setup
-```
-npm install
-```
+## 安装依赖
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- npm install -g @vue/cli-service-global
+- npm install -g @vue/cli
+- npm install
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### 项目启动
 
-### Lints and fixes files
-```
-npm run lint
-```
+- npm run serve
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 本地打包
+
+- npm run build
+
+### Lints
+
+- npm run lint
+
+### vue.config.js
+
+查看 [配置](https://cli.vuejs.org/config/).

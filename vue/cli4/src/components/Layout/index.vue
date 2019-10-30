@@ -11,11 +11,10 @@
                     <div class="name">漩涡鸣人</div>
                 </div>
 
-                <div class="login-out">
-                    <el-button size="small" type="info">退出登录</el-button>
+                <div class="logout">
+                    <el-button size="small" type="info" @click="handleLogout">退出登录</el-button>
                 </div>
             </div>
-
         </el-header>
 
         <el-container>
@@ -105,6 +104,10 @@ export default {
 
                 return false;
             });
+        },
+
+        handleLogout() {
+            this.$router.replace('/login');
         }
     }
 };
@@ -143,7 +146,7 @@ export default {
                 }
             }
         }
-        .login-out {
+        .logout {
             float: right;
             line-height: 60px;
         }
