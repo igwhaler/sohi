@@ -1,6 +1,8 @@
 # cli4
 
-## 安装依赖
+## 相关命令
+
+### 安装依赖
 
 - npm install -g @vue/cli-service-global
 - npm install -g @vue/cli
@@ -18,6 +20,8 @@
 
 - npm run lint
 
+## 配置相关
+
 ### vue.config.js
 
-查看 [配置](https://cli.vuejs.org/config/).
+- 查看 [配置](https://cli.vuejs.org/config/).
