@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交叉观察者</title>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        .scroll-container {
+            height: 600px;
+            max-height: 600px;
+            overflow-y: scroll;
+            background-color: bisque;
+        }
+
+        .container {
+            position: relative;
+            height: 1500px;
+        }
+
+        .box1 {
+            position: absolute;
+            bottom: 200px;
+            left: 200px;
+            width: 300px;
+            height: 300px;
+            background-color: thistle;
+            transition: all 0.5s;
+        }
+
+        .box1.active {
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <div class="container">
+            <div class="box1"></div>
+        </div>
+    </div>
+
+    <script>
+        var oBox1 = document.querySelector('.box1');
+
+        var ob1 = new IntersectionObserver((entries, observer) => {
+            console.log(entries, observer);
+
+            entries.forEach(({isIntersecting, target}) => {
+                if (target === oBox1) {
+                    if (isIntersecting) {
+                        oBox1.classList.add('active');
+                    } else {
+                        oBox1.classList.remove('active');
+                    }
+                }
+            })
+        }, {
+            root: document.querySelector('.scroll-container'),
+            rootMargin: '0px 0px -300px 0px'
+        });
+
+
+
+        ob1.observe(oBox1);
+    </script>
+</body>
+</html>
