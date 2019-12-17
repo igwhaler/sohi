@@ -2,6 +2,7 @@ import MyNewHooks from '../views/MyNewHooks';
 import SelfEffect from '../views/SelfEffect';
 import SelfStorage from '../views/SelfStorage';
 import ArrowFunc from '../views/ArrowFunc';
+import ErrorModal from '../views/ErrorModal';
 
 export const routes = [
     {
@@ -23,5 +24,10 @@ export const routes = [
         path: '/arrowFunc',
         title: 'ArrowFunc',
         component: ArrowFunc
+    },
+    {
+        path: '/errorModal',
+        title: 'ErrorModal',
+        component: ErrorModal
     }
 ];

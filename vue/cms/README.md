@@ -1,4 +1,4 @@
-# CLI4 —— 大鱼你个锅锅
+# 夺宝电商后台 —— 大鱼你个锅锅
 
 @(技术栈)[vue|vue-cli3|axios|element-ui]
 
