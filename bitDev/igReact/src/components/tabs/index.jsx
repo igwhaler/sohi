@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Buttom extends Component {
+class Tabs extends Component {
     constructor(props) {
         super(props);
 
@@ -11,9 +11,9 @@ class Buttom extends Component {
 
     render() {
         return (
-            <div>按钮</div>
+            <div></div>
         );
     }
 }
 
-export default Buttom;
+export default Tabs;
