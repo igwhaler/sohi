@@ -1,2 +1,3 @@
-exports.a = 1
-exports.b = 2
+const obj = require('./1.js');
+
+module.exports = obj;

@@ -1,4 +1,4 @@
-import React, {Component, PureComponent} from 'react';
+import React, { Component, PureComponent } from 'react';
 
 class ChildFunc extends PureComponent {
     constructor(props) {

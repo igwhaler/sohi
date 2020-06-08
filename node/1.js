@@ -1,7 +1,5 @@
-const a = 1
-const b = 2
-
-module.exports = {
-  a,
-  b
+const obj = {
+    a: 1
 }
+
+module.exports = obj;

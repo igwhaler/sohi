@@ -1,4 +1,8 @@
 const ep1 = require('./1.js')
 const ep2 = require('./2.js')
 
-console.log(ep1, ep2)
+ep1['a'] = 123;
+
+console.log(ep2);
+
+console.log(ep1)

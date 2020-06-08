@@ -3,6 +3,8 @@ import SelfEffect from '../views/SelfEffect';
 import SelfStorage from '../views/SelfStorage';
 import ArrowFunc from '../views/ArrowFunc';
 import ErrorModal from '../views/ErrorModal';
+import ShallowEqual from '../views/ShallowEqual';
+import SelfState from '../views/SelfState';
 
 export const routes = [
     {
@@ -29,5 +31,15 @@ export const routes = [
         path: '/errorModal',
         title: 'ErrorModal',
         component: ErrorModal
+    },
+    {
+        path: '/shallowEqual',
+        title: 'ShallowEqual',
+        component: ShallowEqual
+    },
+    {
+        path: '/selfState',
+        title: 'SelfState',
+        component: SelfState
     }
 ];

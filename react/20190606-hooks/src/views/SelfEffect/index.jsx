@@ -1,4 +1,4 @@
-import React, {useState, memo, useEffect} from 'react';
+import React, { useState, memo, useEffect } from 'react';
 
 const SelfCount = memo((props) => {
     const [count, setCount] = useState(0);
