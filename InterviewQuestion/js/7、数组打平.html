@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组打平</title>
+</head>
+<body>
+    <script>
+        // [1, 2, [3, [4]]] => [1, 2, 3, 4]
+
+        //
+        function flatten1(arr) {
+            return arr.reduce((curr, next) => {
+                const isArr = Array.isArray(next);
+
+                return curr.concat(isArr ? flatten1(next) : next);
+            }, []);
+        }
+
+        function flatten2(arr) {
+            let temp = [];
+
+            arr.forEach(value => {
+                if (Array.isArray(value)) {
+                    temp = temp.concat(flatten2(value));
+                } else {
+                    temp.push(value)
+                }
+            });
+
+            return temp;
+        }
+
+        console.log(flatten1([1, 2, [3, [4]]]));
+    </script>
+</body>
+</html>

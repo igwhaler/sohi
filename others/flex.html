@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .wrap {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box1 {
+            background-color: red;
+            flex: 0 1 100px;
+        }
+
+        .box2 {
+            background-color: sandybrown;
+            flex: 1 0 auto;
+        }
+
+        .box3 {
+            background-color: springgreen;
+            flex: 0 4 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1"></div>
+        <!-- <div class="box2"></div> -->
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
