@@ -1,8 +1,6 @@
 import React, {Component, memo} from 'react';
 
 const TextDesc = memo(function(props) {
-    console.log(props);
-
     return <div>{props.text}</div>
 });
 
