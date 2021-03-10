@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import invoke from '@baidu/xbox/na/invoke';
+import {command} from '@baidu/xbox/na/android';
 import IgDemo from './components/IgDemo';
 import IgModal from './components/IgModal';
 import IgRef from './components/IgRef';
@@ -34,6 +35,27 @@ class App extends Component {
         // var schema = 'baiduboxapp://v1/easybrowse/hybrid?upgrade=1&type=hybrid&tpl_id=landing_app.html&context=%7b%22nid%22%3a%22news_9988575118303602785%22%7d&style=%7B%22toolbaricons%22%3A%7B%22toolids%22%3A%5B%221%22%2C%222%22%2C%223%22%5D%7D%2C+%22menumode%22%3A%222%22%7D&newbrowser=1&commentInfo=%7b%22topic_id%22%3a%221016000005612717%22%2c%22opentype%22%3a2%7d&slog=%7b%22from%22%3a%22feed%22%2c%22source%22%3a%22push%22%2c%22nid%22%3a%229988575118303602785%22%2c%22page%22%3a%22pic_text%22%7d&ch_url=https%3a%2f%2fmbd.baidu.com%2fnewspage%2fdata%2flandingreact%3fpageType%3d2%26nid%3dnews_9988575118303602785';
 
 
+        // var schema = 'baiduboxapp://v11/appTab/select?item=home&upgrade=0&params=%7b%22channel%22%3a%2216%22%2c%22tab_info%22%3a%7b%22id%22%3a%2216%22%2c%22name%22%3a%22%e6%b8%b8%e6%88%8f%22%2c%22canDelete%22%3a%221%22%2c%22canDegrade%22%3a%221%22%2c%22canTTS%22%3a%221%22%2c%22rnInfo%22%3a%7b%22bundleId%22%3a%22box.rnplugin.feedhn%22%2c%22moduleName%22%3a%22FeedHN%22%2c%22bundleVersion%22%3a%222%22%7d%7d%7d';
+
+        invoke(schema);
+        // window.open(schema);
+    }
+
+    handleInvokeEvent = () => {
+        var schema = `baiduboxapp://v6/ugc/publish?upgrade=1&params=${encodeURIComponent(JSON.stringify({ "publishType": "0", "source": "ugctopic", "source_from": "ugctopic", "topic": { "id": "160855066629999415", "name": "#冬日养膘季# " }, "placetitle": "冬日养膘季", "ugcCallback": "topic_callback_publish_566" }))}&callback=_bdbox_js_525`;
+
+        invoke(schema);
+    }
+
+    handleInvokeNews = () => {
+        /* var schema = {
+            "mode": "0",
+            "intent": "intent:#Intent;S.commentInfo=%7B%22topic_id%22%3A%221106000037390570%22%2C%22opentype%22%3A2%7D;S.slog=%7B%22from%22%3A%22feed%22%2C%22nid%22%3A%22news_10393166986145738678%22%2C%22page%22%3A%22pic_text%22%2C%22ext%22%3A%7B%22gr_ext%22%3A%22%7B%5C%22stype%5C%22%3A%5C%22mdpage%5C%22%2C%5C%22spos%5C%22%3A8%7D%22%2C%22source%22%3A%22%5Cu4eac%5Cu5e73%5Cu5a92%22%7D%7D;component=com.baidu.searchbox/.lightbrowser.LightBrowserActivity;S.sfrom=feed;S.bdsb_light_start_url=http%3A%2F%2Fbaijiahao.baidu.com%2Ffeed%2Fnews_10393166986145738678;B.bdsb_append_param=true;end",
+            "min_v": "16789248"
+        }; */
+
+        var schema = 'baiduboxapp://v1/easybrowse/hybrid?upgrade=1&type=hybrid&tpl_id=landing_app.html&context=%7b%22nid%22%3a%22news_9584347132957274096%22%7d&style=%7b%22toolbaricons%22%3a%7b%22toolids%22%3a%5b%221%22%2c%222%22%2c%223%22%5d%7d%2c+%22menumode%22%3a%222%22%7d&newbrowser=1&ch_url=https%3a%2f%2fmbd.baidu.com%2fnewspage%2fdata%2flandingreact%3fpageType%3d2%26nid%3dnews_9584347132957274096';
+
         invoke(schema);
     }
 
@@ -55,6 +77,12 @@ class App extends Component {
             </div>
                 : <div className="App">
                 <button onClick={this.handleInvoke}>点击我</button>
+                <br />
+
+                <button onClick={this.handleInvokeEvent}>调起动态</button>
+                <br />
+
+                <button onClick={this.handleInvokeNews}>跳转落地页</button>
                 <br/>
                 {/* <IgDemo></IgDemo>
 
@@ -86,6 +114,9 @@ class App extends Component {
                 <br />
 
                 <IgPortals></IgPortals> */}
+                    <a href="https://pic.rmb.bdstatic.com/bjh/d8c6c5cc619ba9418de6aff47e41a82c.png" download={true}>123123</a>
+
+                    <img src="https://pic.rmb.bdstatic.com/bjh/d8c6c5cc619ba9418de6aff47e41a82c.png" alt=""/>
             </div>
         );
     }
