@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HelloWord from './hooks/helloWorld';
+import EffectHook from './hooks/effectHook';
+import FriendHook from './hooks/selfHook';
+import Container, {ContextHook} from './hooks/contextHook';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    return (
+        <div className="App">
+            <HelloWord />
+
+            <EffectHook />
+
+            <FriendHook />
+
+            <Container />
+
+            <ContextHook />
+        </div>
   );
 }
 
