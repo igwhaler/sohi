@@ -1,0 +1,32 @@
+.userInfo {
+    padding: 10px;
+    background-color: aliceblue;
+    border-radius: 12px;
+
+    .info {
+        display: flex;
+        flex-direction: row;
+
+        .avatar {
+            margin-right: 10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid tan;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 10px 0;
+            .name {
+                color: tan;
+            }
+            .desc {
+                font-size: 14px;
+                color: turquoise;
+            }
+        }
+    }
+}
