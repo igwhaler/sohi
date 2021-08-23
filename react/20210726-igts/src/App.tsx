@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import UtilsDemo from './pages/utilsDemo';
 import User from './pages/user';
+import SelfList from './pages/selfList';
 
 function App() {
     return (
@@ -17,6 +18,10 @@ function App() {
 
                     <Route path="/user">
                         <User />
+                    </Route>
+
+                    <Route path="/list">
+                        <SelfList />
                     </Route>
                 </Switch>
             </Router>

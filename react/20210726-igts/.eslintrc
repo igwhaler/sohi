@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+    ],
+    "rules": {
+        "indent": [2, 4, {"SwitchCase": 1}]
+    }
+}
