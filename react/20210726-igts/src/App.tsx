@@ -1,15 +1,17 @@
+import { lazy, Suspense } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route
 } from 'react-router-dom';
-import UtilsDemo from './pages/utilsDemo';
-import User from './pages/user';
-import SelfList from './pages/selfList';
+const UtilsDemo = lazy(() => import(/* webpackChunkName: 'utilsDemo' */ './pages/utilsDemo'));
+const User = lazy(() => import(/* webpackChunkName: 'user' */ './pages/user'));
+const SelfList = lazy(() => import(/* webpackChunkName: 'selfList' */ './pages/selfList'));
+const TestUI = lazy(() => import(/* webpackChunkName: 'testUI' */ './pages/ui'));
 
 function App() {
     return (
-        <div className="App">
+        <Suspense fallback={null}>
             <Router>
                 <Switch>
                     <Route path="/utils">
@@ -23,9 +25,13 @@ function App() {
                     <Route path="/list">
                         <SelfList />
                     </Route>
+
+                    <Route path="/ui">
+                        <TestUI />
+                    </Route>
                 </Switch>
             </Router>
-        </div>
+        </Suspense>
     );
 }
 
