@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ItemType {
     id: number
@@ -6,33 +6,6 @@ interface ItemType {
 }
 
 const listA = [
-    {
-        id: 1,
-        name: 'a'
-    },
-    {
-        id: 2,
-        name: 'b'
-    },
-    {
-        id: 3,
-        name: 'c'
-    },
-    {
-        id: 2,
-        name: 'd'
-    },
-    {
-        id: 2,
-        name: 'e'
-    },
-    {
-        id: 4,
-        name: 'f'
-    },
-];
-
-const listB = [
     {
         id: 11,
         name: '11'
@@ -61,11 +34,17 @@ function SelfList() {
         }
     };
 
+    useEffect(() => {
+        setInterval(() => {
+            console.log(list);
+        }, 1000);
+        return () => {}
+    }, []);
+
     return (
         <>
             <div>
                 <button onClick={handleChangeList(listA)}>A</button>
-                <button onClick={handleChangeList(listB)}>B</button>
             </div>
             <ol>
                 {
