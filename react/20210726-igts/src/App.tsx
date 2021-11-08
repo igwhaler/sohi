@@ -9,6 +9,7 @@ const User = lazy(() => import(/* webpackChunkName: 'user' */ './pages/user'));
 const SelfList = lazy(() => import(/* webpackChunkName: 'selfList' */ './pages/selfList'));
 const TestUI = lazy(() => import(/* webpackChunkName: 'testUI' */ './pages/ui'));
 const Effect = lazy(() => import(/* webpackChunkName: 'effect' */ './pages/effect'));
+const SelfUri = lazy(() => import(/* webpackChunkName: 'uri' */ './pages/uri'));
 
 function App() {
     return (
@@ -33,6 +34,10 @@ function App() {
 
                     <Route path="/effect">
                         <Effect />
+                    </Route>
+
+                    <Route path="/uri">
+                        <SelfUri />
                     </Route>
                 </Switch>
             </Router>

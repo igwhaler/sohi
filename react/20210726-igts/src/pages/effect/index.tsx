@@ -39,7 +39,7 @@ function SelfList() {
             console.log(list);
         }, 1000);
         return () => {}
-    }, []);
+    }, [list]);
 
     return (
         <>
