@@ -170,12 +170,13 @@ function SelfMaterial() {
     const handleAddAll = useCallback(
         (successFiles) => {
             console.log('handleAddAll', successFiles);
-            const list = successFiles.map(data => {
+            const list = successFiles.map((data: { response: { data: { data: { url: any; }; }; }; }) => {
                 return {
                     image: data.response.data.data.url
                 }
             });
 
+            // setImgList(imgList.concat(list))
             setImgList(imgList.concat(list))
 
             setLocalFileList([]);
