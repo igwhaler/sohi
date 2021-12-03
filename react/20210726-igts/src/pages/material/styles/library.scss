@@ -1,0 +1,36 @@
+.material-library {
+    padding-bottom: 16px;
+    width: 270px;
+    // background: #FFFFFF;
+    background: tan;
+    border-radius: 12px;
+    .material-library-title {
+        height: 48px;
+        text-align: center;
+        line-height: 48px;
+        border-bottom: 1px solid #efefef;
+    }
+
+    .material-library-upload {
+        padding: 24px 0;
+        text-align: center;
+        .material-library-upload-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 22px;
+            height: 32px;
+            font-size: 14px;
+            color: #333333;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            border-radius: 16px;
+            cursor: pointer;
+            user-select: none;
+            img {
+                margin: 6px;
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+}

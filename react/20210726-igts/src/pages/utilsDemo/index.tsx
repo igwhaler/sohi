@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { showErr, getUserData, Student } from '../../utils';
+import { showErr, getUserData, Student } from '../../utils/index';
 
 export default function UtilsDemo() {
     const [info, setInfoState] = useState('loading');

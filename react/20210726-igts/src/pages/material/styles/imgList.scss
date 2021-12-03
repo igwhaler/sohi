@@ -1,0 +1,38 @@
+.material-library-img-list {
+    display: flex;
+    padding: 0 12px;
+    height: 500px;
+    overflow-y: scroll;
+}
+.material-library-img-column {
+    .img-item {
+        position: relative;
+        margin: 0 4px 8px;
+        // border: 1px solid #999999;
+        border-radius: 6px;
+        overflow: hidden;
+        .img {
+            display: block;
+            width: 116px;
+        }
+        .btn-delete {
+            display: flex;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            width: 18px;
+            height: 18px;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            border-radius: 0 6px 0 6px;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            img {
+                width: 8px;
+                height: 8px;
+            }
+        }
+    }
+}

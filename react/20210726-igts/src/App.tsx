@@ -1,44 +1,71 @@
-import { lazy, Suspense } from 'react';
+import { lazy, ExoticComponent, Suspense } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route
 } from 'react-router-dom';
-const UtilsDemo = lazy(() => import(/* webpackChunkName: 'utilsDemo' */ './pages/utilsDemo'));
-const User = lazy(() => import(/* webpackChunkName: 'user' */ './pages/user'));
-const SelfList = lazy(() => import(/* webpackChunkName: 'selfList' */ './pages/selfList'));
-const TestUI = lazy(() => import(/* webpackChunkName: 'testUI' */ './pages/ui'));
-const Effect = lazy(() => import(/* webpackChunkName: 'effect' */ './pages/effect'));
-const SelfUri = lazy(() => import(/* webpackChunkName: 'uri' */ './pages/uri'));
+
+const routes = [
+    {
+        path: "/utils",
+        component: lazy(() => import(/* webpackChunkName: 'utilsDemo' */ './pages/utilsDemo'))
+    },
+    {
+        path: "/user",
+        component: lazy(() => import(/* webpackChunkName: 'user' */ './pages/user'))
+    },
+    {
+        path: "/list",
+        component: lazy(() => import(/* webpackChunkName: 'selfList' */ './pages/selfList'))
+    },
+    {
+        path: "/ui",
+        component: lazy(() => import(/* webpackChunkName: 'testUI' */ './pages/ui'))
+    },
+    {
+        path: "/effect",
+        component: lazy(() => import(/* webpackChunkName: 'effect' */ './pages/effect'))
+    },
+    {
+        path: "/uri",
+        component: lazy(() => import(/* webpackChunkName: 'uri' */ './pages/uri'))
+    },
+    {
+        path: "/input",
+        component: lazy(() => import(/* webpackChunkName: 'input' */ './pages/input'))
+    },
+    {
+        path: "/material",
+        component: lazy(() => import(/* webpackChunkName: 'material' */ './pages/material'))
+    },
+    {
+        path: "/scroll",
+        component: lazy(() => import(/* webpackChunkName: 'scroll' */ './pages/scroll/index.jsx'))
+    },
+];
+
+interface routItemTypes {
+    path: string,
+    component: ExoticComponent
+}
 
 function App() {
     return (
         <Suspense fallback={null}>
             <Router>
                 <Switch>
-                    <Route path="/utils">
-                        <UtilsDemo />
-                    </Route>
-
-                    <Route path="/user">
-                        <User />
-                    </Route>
-
-                    <Route path="/list">
-                        <SelfList />
-                    </Route>
-
-                    <Route path="/ui">
-                        <TestUI />
-                    </Route>
-
-                    <Route path="/effect">
-                        <Effect />
-                    </Route>
-
-                    <Route path="/uri">
-                        <SelfUri />
-                    </Route>
+                    {
+                        routes.map(({
+                            path,
+                            component: SelfComponent
+                        }: routItemTypes) => {
+                            return (
+                                <Route key={path} path={path}>
+                                    <SelfComponent />
+                                </Route>
+                            );
+                        })
+                    }
                 </Switch>
             </Router>
         </Suspense>
