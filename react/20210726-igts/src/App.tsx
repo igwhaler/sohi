@@ -36,7 +36,7 @@ const routes = [
     },
     {
         path: "/material",
-        component: lazy(() => import(/* webpackChunkName: 'material' */ './pages/material'))
+        component: lazy(() => import(/* webpackChunkName: 'material' */ './pages/material/demo'))
     },
     {
         path: "/scroll",
