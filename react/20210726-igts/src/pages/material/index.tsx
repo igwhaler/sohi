@@ -27,6 +27,7 @@ function Material(
     }: mterialProps
 ) {
     const [visible, setModalVisible] = useState(false);
+    const [closeConfirmVisibel, setCloseConfirmVisibel] = useState(false);
     const { onUpload } = imgLibraryProps;
     const { fileList: localFileList = [] } = localUploadProps.uploadProps;
 
@@ -39,19 +40,43 @@ function Material(
         }
     }, [onUpload]);
 
-    // 关闭弹窗
-    const handleCloseModal = useCallback(() => {
-        // 关闭二次确认逻辑
-        setModalVisible(false);
-        onAfterModalClose && onAfterModalClose();
-    }, [onAfterModalClose]);
-
-    /* 本地上传相关逻辑 */
+    /* 本地上传相关逻辑 上传成功 */
     const [successLocalFiles, hasSuccessFile] = useMemo(() => {
         const successFiles = localFileList.filter(item => item.status === 'done');
 
         return [successFiles, successFiles.length > 0];
     }, [localFileList]);
+
+    /* 本地上传相关逻辑 上传中 */
+    const hasUploadingFile = useMemo(() => {
+        const uploadingFiles = localFileList.filter(item => item.status === 'uploading');
+
+        return uploadingFiles.length > 0;
+    }, [localFileList]);
+
+    const closeModal = useCallback(() => {
+        setModalVisible(false);
+        onAfterModalClose && onAfterModalClose();
+    }, [onAfterModalClose]);
+
+    // 关闭弹窗
+    const handleBtnCloseModal = useCallback(() => {
+        // 关闭二次确认逻辑
+        if (hasUploadingFile || hasSuccessFile) {
+            setCloseConfirmVisibel(true);
+            return;
+        }
+        closeModal();
+    }, [hasUploadingFile, hasSuccessFile, closeModal]);
+
+    const handleCloseConfirm = useCallback(() => {
+        setCloseConfirmVisibel(false);
+    }, []);
+
+    const handleOkConfirm = useCallback(() => {
+        closeModal();
+        setCloseConfirmVisibel(false);
+    }, [closeModal]);
 
     // 添加全部
     const handleAddAll = useCallback(
@@ -61,13 +86,12 @@ function Material(
 
                 if (result) {
                     setTimeout(() => {
-                        setModalVisible(false);
-                        onAfterModalClose && onAfterModalClose();
+                        closeModal();
                     }, 0);
                 }
             }
         },
-        [successLocalFiles, hasSuccessFile, onAddAll, onAfterModalClose]
+        [hasSuccessFile, successLocalFiles, onAddAll, closeModal]
     );
 
     return (
@@ -84,7 +108,7 @@ function Material(
                 className="material-modal"
                 visible={visible}
                 footer={null}
-                onCancel={handleCloseModal}
+                onCancel={handleBtnCloseModal}
             >
                 <Tabs
                     defaultActiveKey="1"
@@ -113,6 +137,19 @@ function Material(
                         添加全部({successLocalFiles.length})
                     </div>
                 </div>
+
+                {
+                    closeConfirmVisibel && (
+                        <div className="material-modal-close-confirm">
+                            <div className="title">确定关闭？</div>
+                            <div className="desc">关闭后所上传图片无法同步到素材库</div>
+                            <div className="wrap-btn">
+                                <div className="btn btn-cancel" onClick={handleCloseConfirm}>取消</div>
+                                <div className="btn btn-confirm" onClick={handleOkConfirm}>确定</div>
+                            </div>
+                        </div>
+                    )
+                }
             </Modal>
         </>
     );
