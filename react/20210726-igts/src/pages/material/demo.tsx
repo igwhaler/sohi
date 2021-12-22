@@ -47,7 +47,18 @@ function SelfMaterial() {
 
     // 监听文件上传
     const handleLocalFilesChange = useCallback((list: UploadFile[]) => {
-        setLocalFileList(list);
+        // console.log(list);
+        const slefList = list.map(item => {
+            if (item.status === 'done') {
+                const httpUrl = item?.response?.data?.data?.url;
+
+                item.thumbUrl = httpUrl;
+            }
+
+            return item;
+        });
+
+        setLocalFileList(slefList);
     }, []);
 
     // 关闭弹窗
