@@ -1,0 +1,22 @@
+.sprite {
+    width: 58px;
+    height: 54px;
+    will-change: transform;
+    background-repeat: no-repeat;
+    background-image: url(./butterfly.png);
+    animation: frame 333ms steps(1, end) both infinite;
+}
+@keyframes frame {
+    0% {
+        background-position: 0 center;
+    }
+    25% {
+        background-position: -60px center;
+    }
+    50% {
+        background-position: -120px center;
+    }
+    100% {
+        background-position: 0px center;
+    }
+}

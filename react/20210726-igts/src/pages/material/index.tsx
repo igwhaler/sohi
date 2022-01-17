@@ -5,7 +5,6 @@ import { UploadFile } from 'antd/es/upload/interface';
 import ImgLibrary, {imgLibraryProps} from './Library';
 import LocalUpload, {localUploadProps} from './LocalUpload';
 import './index.scss';
-import 'antd/dist/antd.css';
 
 const { TabPane } = Tabs;
 

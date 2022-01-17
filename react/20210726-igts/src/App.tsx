@@ -42,6 +42,14 @@ const routes = [
         path: "/scroll",
         component: lazy(() => import(/* webpackChunkName: 'scroll' */ './pages/scroll/index.jsx'))
     },
+    {
+        path: "/ani",
+        component: lazy(() => import(/* webpackChunkName: 'ani' */ './pages/ani'))
+    },
+    {
+        path: "/address",
+        component: lazy(() => import(/* webpackChunkName: 'address' */ './pages/address'))
+    },
 ];
 
 interface routItemTypes {
