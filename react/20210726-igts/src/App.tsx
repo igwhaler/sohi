@@ -50,6 +50,10 @@ const routes = [
         path: "/address",
         component: lazy(() => import(/* webpackChunkName: 'address' */ './pages/address'))
     },
+    {
+        path: "/more",
+        component: lazy(() => import(/* webpackChunkName: 'more' */ './pages/more'))
+    },
 ];
 
 interface routItemTypes {
