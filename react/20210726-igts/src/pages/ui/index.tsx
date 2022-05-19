@@ -1,26 +1,28 @@
 import { useEffect } from 'react';
-// import { Toast } from '@baidu/fe-cheetah-mobile-ui';
-
-const getData = () => {
-    return new Promise((resolve, reject) => {
-        resolve({ err: 1 });
-    })
-}
+import { BroadcastList } from '@baidu/fe-cheetah-mobile-ui';
 
 function TestUI() {
     useEffect(() => {
         // Toast.info(123, 10);
-
-        async function fetchData() {
-            const res = await getData();
-            console.log(res);
-        }
-
-        fetchData();
     });
 
     return (
-        <div>TestUI</div>
+        <div>
+            <BroadcastList
+                activityId={1}
+                titleConfig={{
+                    title: '获奖信1',
+                }}
+                style={{
+                    background: 'tan',
+                }}
+                mainStyle={{
+                    height: '300px',
+                    background: '#e36209',
+                }}
+                slidesPerView={8}
+            />
+        </div>
     );
 }
 
