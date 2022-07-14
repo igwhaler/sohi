@@ -1,0 +1,15 @@
+{
+    "extends": [
+        "@ecomfe/eslint-config",
+        '@ecomfe/eslint-config/typescript',
+        "@ecomfe/eslint-config/react"
+    ],
+    "rules": {
+        // 允许使用console
+        "no-console": "off",
+        // todo 关闭hooks中effect和callback的依赖警告
+        "react-hooks/exhaustive-deps": "off",
+        // todo 关闭dangerouslySetInnerHTML的警告
+        "react/no-danger": "off"
+    }
+}
