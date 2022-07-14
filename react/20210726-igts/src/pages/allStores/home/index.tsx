@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useQuery, useQueryClient } from 'react-query';
+import Loading from '@/components/Loading';
 import './index.scss';
-import { getMaterialGroupList, getUserInfo } from '../service';
+import { getMaterialGroupList, getUserInfo, getMgetList } from '../service';
 
 const AllStoresHome = () => {
     const queryClient = useQueryClient();
@@ -10,25 +11,32 @@ const AllStoresHome = () => {
 
     queryClient.prefetchQuery('getUserInfo', getUserInfo);
 
+    if (data && data.length) {
+        queryClient.prefetchQuery(['getMgetList', {id: data[0]['id']}], getMgetList);
+    }
+
     return (
-        isLoading ? (<div>loading...</div>) : (
-            <div className="material-group">
-                {
-                    data.map((item: any) => {
-                        return (
-                            <Link
-                                key={item.id}
-                                className="group-item"
-                                to={`/allStores/list/${item.id}`}
-                            >
-                                <span>集合：{item.name} </span>
-                                <span>(数量：{item.count})</span>
-                            </Link>
-                        );
-                    })
-                }
-            </div>
-        )
+        <Loading
+            isLoading={isLoading}
+            render={() => (
+                <div className="material-group">
+                    {
+                        data.map((item: any) => {
+                            return (
+                                <Link
+                                    key={item.id}
+                                    className="group-item"
+                                    to={`/allStores/list/${item.id}`}
+                                >
+                                    <span>集合：{item.name} </span>
+                                    <span>(数量：{item.count})</span>
+                                </Link>
+                            );
+                        })
+                    }
+                </div>
+            )}
+        />
     );
 }
 

@@ -1,0 +1,11 @@
+$color: tan;
+
+.loading {
+    text-align: center;
+    .self-spin {
+        .ant-spin-dot-item {
+            color: $color;
+            background-color: $color;
+        }
+    }
+}
