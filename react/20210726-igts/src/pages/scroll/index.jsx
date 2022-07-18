@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/swiper.scss';
 import './index.scss';
 
@@ -6,7 +6,7 @@ let flag = true;
 let endCurrentX = null;
 
 function SelfScroll() {
-    const data = [1, 2, 3, 4, 5]
+    const data = [1, 2, 3, 4, 5];
 
     return (
         <div className="self-banner">

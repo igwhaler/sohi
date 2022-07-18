@@ -2,12 +2,12 @@ import {
     useQuery,
 } from 'react-query';
 import './index.scss';
-import { getUserInfo } from '../service';
+import {getUserInfo} from '../../service';
 import Loading from '@/components/Loading';
 
 const AllStoresDetail = () => {
     const res = useQuery('getUserInfo', getUserInfo);
-    const { isLoading, data = {} } = res;
+    const {isLoading, data = {}} = res;
 
     return (
         <Loading isLoading={isLoading}>
@@ -17,6 +17,6 @@ const AllStoresDetail = () => {
             </div>
         </Loading>
     );
-}
+};
 
 export default AllStoresDetail;

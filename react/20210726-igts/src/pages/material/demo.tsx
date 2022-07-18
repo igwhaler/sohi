@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { UploadFile } from 'antd/es/upload/interface';
+import {useCallback, useState} from 'react';
+import {UploadFile} from 'antd/es/upload/interface';
 import Material from './index';
 
 const imagesData = [
@@ -31,7 +31,7 @@ function SelfMaterial() {
     // 点击上传
     const handleUpload = () => {
         return true;
-    }
+    };
 
     // 删除图片
     const handleRemoveImg = useCallback((index: number) => {
@@ -72,11 +72,11 @@ function SelfMaterial() {
             const list = successFiles.map((data: { response: { data: { data: { url: any; }; }; }; }) => {
                 return {
                     image: data.response.data.data.url
-                }
+                };
             });
 
             // setImgList(imgList.concat(list))
-            setImgList(imgList.concat(list))
+            setImgList(imgList.concat(list));
 
             setLocalFileList([]);
 

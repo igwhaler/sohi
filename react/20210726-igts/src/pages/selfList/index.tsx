@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState} from "react";
 
 interface ItemType {
     id: number
@@ -58,7 +58,7 @@ function SelfList() {
 
         return () => {
             setList(list);
-        }
+        };
     };
 
     return (

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { Modal, Button } from "antd";
+import {useEffect, useRef} from "react";
+import {Modal, Button} from "antd";
 
 const SelfAddress = () => {
     const domIframe = useRef<HTMLIFrameElement>(null);
@@ -37,6 +37,6 @@ const SelfAddress = () => {
             </Modal>
         </div>
     );
-}
+};
 
 export default SelfAddress;

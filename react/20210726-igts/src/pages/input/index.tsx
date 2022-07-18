@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, memo, useCallback } from 'react';
+import {ChangeEvent, useState, memo, useCallback} from 'react';
 
 interface selfInputTypes {
     onChange: (e: ChangeEvent<HTMLInputElement>) => any
@@ -17,8 +17,8 @@ const SelfInput = memo((
 ) => {
     console.log('render input');
 
-    return <input type="text" onChange={onChange} />
-})
+    return <input type="text" onChange={onChange} />;
+});
 
 //
 const WrapInput = memo((
@@ -57,7 +57,7 @@ function TestUI() {
     const data = ['hehe', 'yaya'];
 
     const handleChange = useCallback(({name, value}) => {
-        console.log(name, value)
+        console.log(name, value);
     }, []);
 
     return (

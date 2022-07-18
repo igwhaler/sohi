@@ -1,12 +1,12 @@
-import { useCallback, useState, useMemo } from 'react';
+import {useCallback, useState, useMemo} from 'react';
 import cls from 'classnames';
-import { Modal, Tabs } from 'antd';
-import { UploadFile } from 'antd/es/upload/interface';
+import {Modal, Tabs} from 'antd';
+import {UploadFile} from 'antd/es/upload/interface';
 import ImgLibrary, {imgLibraryProps} from './Library';
 import LocalUpload, {localUploadProps} from './LocalUpload';
 import './index.scss';
 
-const { TabPane } = Tabs;
+const {TabPane} = Tabs;
 
 export interface mterialProps {
     maxLen?: number; // 图片最大数
@@ -27,8 +27,8 @@ function Material(
 ) {
     const [visible, setModalVisible] = useState(false);
     const [closeConfirmVisibel, setCloseConfirmVisibel] = useState(false);
-    const { onUpload } = imgLibraryProps;
-    const { fileList: localFileList = [] } = localUploadProps.uploadProps;
+    const {onUpload} = imgLibraryProps;
+    const {fileList: localFileList = []} = localUploadProps.uploadProps;
 
     // 点击上传图片
     const handleUpload = useCallback(() => {

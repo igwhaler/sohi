@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
 interface ItemType {
     id: number
@@ -31,14 +31,14 @@ function SelfList() {
 
         return () => {
             setList(list);
-        }
+        };
     };
 
     useEffect(() => {
         setInterval(() => {
             console.log(list);
         }, 1000);
-        return () => {}
+        return () => {};
     }, [list]);
 
     return (

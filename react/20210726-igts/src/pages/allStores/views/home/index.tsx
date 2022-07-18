@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
-import { useQuery, useQueryClient } from 'react-query';
+import {Link} from 'react-router-dom';
+import {useQuery, useQueryClient} from 'react-query';
 import Loading from '@/components/Loading';
 import './index.scss';
-import { getMaterialGroupList, getUserInfo, getMgetList } from '../service';
+import {getMaterialGroupList, getUserInfo, getMgetList} from '../../service';
 
 const AllStoresHome = () => {
     const queryClient = useQueryClient();
     const res = useQuery('getMaterialGroupList', getMaterialGroupList);
-    const { isLoading, data } = res;
+    const {isLoading, data} = res;
 
     queryClient.prefetchQuery('getUserInfo', getUserInfo);
 
@@ -28,8 +28,8 @@ const AllStoresHome = () => {
                                     className="group-item"
                                     to={`/allStores/list/${item.id}`}
                                 >
-                                    <span>集合：{item.name} </span>
-                                    <span>(数量：{item.count})</span>
+                                    <span>{item.name} </span>
+                                    <span>({item.count})</span>
                                 </Link>
                             );
                         })
@@ -38,6 +38,6 @@ const AllStoresHome = () => {
             )}
         />
     );
-}
+};
 
 export default AllStoresHome;

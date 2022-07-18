@@ -10,7 +10,7 @@ export const showErr = (msg: string): boolean => {
 
 export const getUserData = ({name, age}: userInfo): string => {
     return `${name}, ${age}岁`;
-}
+};
 
 export class Student {
     info: string;

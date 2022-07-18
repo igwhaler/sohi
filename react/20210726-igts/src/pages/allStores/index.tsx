@@ -7,9 +7,9 @@ import {
     QueryClient,
     QueryClientProvider
 } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools'
-import './index.scss'
-import { mapRoutes } from './const';
+import {ReactQueryDevtools} from 'react-query/devtools';
+import './index.scss';
+import {mapRoutes} from './const';
 
 const queryClient = new QueryClient();
 
@@ -37,7 +37,7 @@ const AllStores = () => {
                 <div className="body">
                     <Switch>
                         {
-                            mapRoutes.map(({ path, component, exact }) => {
+                            mapRoutes.map(({path, component, exact}) => {
                                 return (
                                     <Route
                                         key={path}
@@ -54,6 +54,6 @@ const AllStores = () => {
             <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
     );
-}
+};
 
 export default AllStores;

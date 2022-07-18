@@ -1,4 +1,4 @@
-import { lazy, ExoticComponent, Suspense } from 'react';
+import {lazy, ExoticComponent, Suspense} from 'react';
 import {
     BrowserRouter as Router,
     Switch,

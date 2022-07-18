@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { BroadcastList } from '@baidu/fe-cheetah-mobile-ui';
+import {useEffect} from 'react';
+import {BroadcastList} from '@baidu/fe-cheetah-mobile-ui';
 
 function TestUI() {
     useEffect(() => {

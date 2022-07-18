@@ -1,4 +1,4 @@
-import Masonry from 'react-masonry-css'
+import Masonry from 'react-masonry-css';
 import './styles/imgList.scss';
 import deleteIcon from './images/delete.png';
 
@@ -20,7 +20,7 @@ const ImgList = ({
     const handleRemove = (index: number) => {
         return () => {
             onRemoveImg(index);
-        }
+        };
     };
 
     const handleSelect = (data: imgData) => {
@@ -36,7 +36,7 @@ const ImgList = ({
             columnClassName="material-library-img-column">
             {
                 imgList.map((data, index) => {
-                    const { image } = data;
+                    const {image} = data;
 
                     return (
                         <div className="img-item" key={image}>
@@ -51,6 +51,6 @@ const ImgList = ({
         </Masonry>
 
     );
-}
+};
 
 export default ImgList;

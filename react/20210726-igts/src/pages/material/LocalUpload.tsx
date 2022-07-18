@@ -1,6 +1,6 @@
-import { useState, useEffect, ReactElement, useCallback, useMemo } from 'react';
-import { Upload } from 'antd';
-import { UploadFile, UploadChangeParam, RcFile, UploadProps } from 'antd/es/upload/interface';
+import {useState, useEffect, ReactElement, useCallback, useMemo} from 'react';
+import {Upload} from 'antd';
+import {UploadFile, UploadChangeParam, RcFile, UploadProps} from 'antd/es/upload/interface';
 import './styles/localUpload.scss';
 import deleteIcon from './images/delete.png';
 import uploadIcon from './images/upload.png';
@@ -11,13 +11,13 @@ const ltImgSize = (size: number, max: number = 5): boolean => (size / 1024 / 102
 const statusTypes: string[] = ['uploading', 'error'];
 
 // 自定义图片展示
-const ImageItem = ({ maxSize = 5, file, onRemove }: {
+const ImageItem = ({maxSize = 5, file, onRemove}: {
     maxSize?: number,
     file: UploadFile,
     onRemove: () => void
 }) => {
     const [localUrl, setLocalUrl] = useState<string>('');
-    let { thumbUrl, status = '', size = 0 } = file;
+    let {thumbUrl, status = '', size = 0} = file;
     const isLtImg = ltImgSize(size, maxSize);
 
     if (isLtImg) {
@@ -26,7 +26,7 @@ const ImageItem = ({ maxSize = 5, file, onRemove }: {
 
     // 缓存localurl
     useEffect(() => {
-        thumbUrl && setLocalUrl(thumbUrl)
+        thumbUrl && setLocalUrl(thumbUrl);
     }, [thumbUrl]);
 
     // console.log(file);
@@ -73,10 +73,10 @@ const ImageItem = ({ maxSize = 5, file, onRemove }: {
             }
         </div>
     );
-}
+};
 
 // 上传按钮
-const UploadButton = ({ isMore = false }: { isMore: boolean }) => (
+const UploadButton = ({isMore = false}: { isMore: boolean }) => (
     <div className="wrap-upload-btn">
         <div className={`btn-upload ${isMore && 'btn-upload-more'}`}>
             <img className="upload-icon" src={uploadIcon} alt="上传" />
@@ -98,11 +98,11 @@ function LocalUpload({
     onFilesChange,
     uploadProps
 }: localUploadProps) {
-    const { beforeUpload, fileList = [] } = uploadProps;
+    const {beforeUpload, fileList = []} = uploadProps;
 
     const handleChange = useCallback(
         (params: UploadChangeParam) => {
-            const { fileList } = params;
+            const {fileList} = params;
 
             onFilesChange(fileList);
         },

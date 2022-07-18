@@ -25,6 +25,6 @@ const ImgLibrary = ({
             <ImgList {...imgListProps} />
         </div>
     );
-}
+};
 
 export default ImgLibrary;
