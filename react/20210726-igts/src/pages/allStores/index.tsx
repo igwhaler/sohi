@@ -10,8 +10,28 @@ import {
 import {ReactQueryDevtools} from 'react-query/devtools';
 import './index.scss';
 import {mapRoutes} from './const';
+/* import {ChangeEvent, ReactEventHandler} from 'react';
 
-const queryClient = new QueryClient();
+interface PostgresFormData {
+    userName: string,
+    passWord: string,
+    size: number
+};
+
+const handleChange = <T extends keyof PostgresFormData>(item: T): ReactEventHandler<HTMLInputElement>  => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+        const obj = {...{}} as PostgresFormData;
+        obj[item] = event.currentTarget.value as PostgresFormData[T];
+    };
+}; */
+
+const queryClient = new QueryClient(/* {
+    defaultOptions: {
+        queries: {
+            refetchOnMount: false
+        }
+    }
+} */);
 
 const AllStores = () => {
     return (

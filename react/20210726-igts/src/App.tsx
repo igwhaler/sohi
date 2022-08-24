@@ -58,6 +58,14 @@ const routes = [
         path: "/allStores",
         component: lazy(() => import(/* webpackChunkName: 'allStores' */ './pages/allStores'))
     },
+    {
+        path: "/xss",
+        component: lazy(() => import(/* webpackChunkName: 'xss' */ './pages/xss'))
+    },
+    {
+        path: "/fabric",
+        component: lazy(() => import(/* webpackChunkName: 'fabric' */ './pages/fabric'))
+    },
 ];
 
 interface routItemTypes {

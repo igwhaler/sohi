@@ -11,6 +11,8 @@ const StoresAll = () => {
     const cacheData = queryClient.getQueriesData('getAllMgetList');
     const selfPage = _.get(cacheData, `${[cacheData.length - 1]}[0][1]`, 1);
 
+    console.log(cacheData);
+
     const [page, setPage] = useState(selfPage);
 
     const {isLoading, data} = useQuery(

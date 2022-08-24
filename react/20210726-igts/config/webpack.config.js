@@ -105,7 +105,7 @@ module.exports = function (webpackEnv) {
                 // css is located in `static/css`, use '../../' to locate index.html folder
                 // in production `paths.publicUrlOrPath` can be a relative path
                 options: paths.publicUrlOrPath.startsWith('.')
-                    ? { publicPath: '../../' }
+                    ? {publicPath: '../../'}
                     : {},
             },
             {
@@ -289,7 +289,7 @@ module.exports = function (webpackEnv) {
                             : false,
                     },
                     cssProcessorPluginOptions: {
-                        preset: ['default', { minifyFontValues: { removeQuotes: false } }],
+                        preset: ['default', {minifyFontValues: {removeQuotes: false}}],
                     },
                 }),
             ],
@@ -362,7 +362,7 @@ module.exports = function (webpackEnv) {
             strictExportPresence: true,
             rules: [
                 // Disable require.ensure as it's not a standard language feature.
-                { parser: { requireEnsure: false } },
+                {parser: {requireEnsure: false}},
                 {
                     // "oneOf" will traverse all following loaders until one will
                     // match the requirements. When no loader matches it will fall
@@ -447,7 +447,7 @@ module.exports = function (webpackEnv) {
                                 presets: [
                                     [
                                         require.resolve('babel-preset-react-app/dependencies'),
-                                        { helpers: true },
+                                        {helpers: true},
                                     ],
                                 ],
                                 cacheDirectory: true,
@@ -555,6 +555,11 @@ module.exports = function (webpackEnv) {
                         // Make sure to add the new loader(s) before the "file" loader.
                     ],
                 },
+                {
+                    test: /\.mjs$/,
+                    include: /node_modules/,
+                    type: "javascript/auto"
+                }
             ],
         },
         plugins: [
