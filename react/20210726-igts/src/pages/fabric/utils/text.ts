@@ -9,6 +9,7 @@ export const addText = (instance: fabric.Canvas, text: string, options = {}) => 
         originY: 'center',
         left: (instance?.width || 0) / 2,
         top: (instance?.height || 0) / 2,
+        padding: 10,
         ...options
     });
 
