@@ -17,8 +17,6 @@ export const addText = (instance: fabric.Canvas, text: string, options = {}) => 
 };
 
 export const setBgColor = (instance: fabric.Canvas, color: string) => {
-    console.log(instance._activeObject);
-
     const activeText = instance._activeObject;
 
     if (activeText && activeText.isType('i-text')) {

@@ -9,13 +9,13 @@ const FabricJSCanvas = () => {
     const canvasEl = useRef(null);
     const cropCanvasEl = useRef(null);
     const [rootCollections, setRootCollections] = useState<{
-        canvas: fabric.Canvas;
-        img: fabric.Image;
+        rootCanvas: fabric.Canvas;
+        rootImg: fabric.Image;
     }>();
 
     useEffect(() => {
         // init
-        const canvas = new fabric.Canvas(canvasEl.current, {
+        const rootCanvas = new fabric.Canvas(canvasEl.current, {
             width: 800,
             height: 500,
         });
@@ -23,14 +23,14 @@ const FabricJSCanvas = () => {
         // load img
         fabric.Image.fromURL(
             imgDemo,
-            img => {
-                img.scaleToHeight(500);
-                canvas.add(img);
-                img.center();
+            rootImg => {
+                rootImg.scaleToHeight(500);
+                rootCanvas.add(rootImg);
+                rootImg.center();
 
                 setRootCollections({
-                    canvas,
-                    img,
+                    rootCanvas,
+                    rootImg,
                 });
             },
             {
@@ -39,13 +39,13 @@ const FabricJSCanvas = () => {
             }
         );
         return () => {
-            canvas.dispose();
+            rootCanvas.dispose();
         };
     }, []);
 
     const handleDownload = () => {
         const ext = 'jpeg';
-        const base64 = rootCollections?.canvas?.toDataURL({
+        const base64 = rootCollections?.rootCanvas?.toDataURL({
 
             format: 'jpeg',
             enableRetinaScaling: true
