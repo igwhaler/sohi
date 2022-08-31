@@ -7,17 +7,16 @@ import React, {useEffect, useState} from 'react';
 const {Option} = Select;
 const {TabPane} = Tabs;
 
-const ToolBars = ({rootCollections, crops}: {
+const ToolBars = ({rootCollections, clips}: {
     rootCollections: {
         rootCanvas: fabric.Canvas;
         rootImg: fabric.Image;
     };
-    crops: {
-        cropCanvasEl: React.MutableRefObject<null>;
-        // onClipImg: () => void
+    clips: {
+        clipCanvasEl: React.MutableRefObject<null>;
     };
 }) => {
-    const [cropCanvas, setCropCanvas] = useState<fabric.Canvas>();
+    const [clipCanvas, setCropCanvas] = useState<fabric.Canvas>();
 
     // 添加文本
     const handleAddText = () => {
@@ -35,44 +34,41 @@ const ToolBars = ({rootCollections, crops}: {
     };
 
     // 裁剪 = 蒙层 + 裁剪框；裁剪是一个独立的canvas
-    const initCrop = () => {
-        const {rootImg} = rootCollections;
+    const initClip = () => {
+        const {rootCanvas} = rootCollections;
         const {
-            left: imgLeft = 0,
-            top: imgTop = 0,
-            width: imgWidth = 0,
-            height: imgHeight = 0,
-            scaleX: imgScaleX = 0,
-            scaleY: imgScaleY = 0
-        } = rootImg;
+            width: canvasWidth = 0,
+            height: canvasHeight = 0,
+        } = rootCanvas;
 
         // 初始化裁剪canvas
-        const cropCanvas = new fabric.Canvas(crops.cropCanvasEl.current,{
-            width: 800,
-            height: 500,
+        const clipCanvas = new fabric.Canvas(clips.clipCanvasEl.current, {
+            width: canvasWidth,
+            height: canvasHeight,
         });
-        setCropCanvas(cropCanvas);
+        setCropCanvas(clipCanvas);
 
         // 添加蒙层
         const maskRect = new fabric.Rect({
-            top: 0,
-            left: 0,
-            width: 800,
-            height: 500,
+            top: -2,
+            left: -2,
+            width: canvasWidth + 4,
+            height: canvasHeight + 4,
             fill: 'rgba(51, 51, 51, 0.5)',
             evented: false,
             hasControls: false,
             selectable: false,
         });
 
+
         // 添加裁剪框
-        const cropRect = new fabric.Rect({
-            top: rootImg.top,
-            left: rootImg.left,
-            width: (rootImg.width|| 0) * (rootImg.scaleX || 0) - 2,
-            height: (rootImg.height || 0) * (rootImg.scaleY || 0) - 2,
+        const clipRect = new fabric.Rect({
+            top: 0,
+            left: 0,
+            width: canvasWidth / 2,
+            height: canvasHeight / 2,
             stroke: 'tan',
-            strokeWidth: 1,
+            strokeWidth: 0,
             padding: 0,
             hasBorders: true,
             cornerColor: 'tan',
@@ -86,7 +82,7 @@ const ToolBars = ({rootCollections, crops}: {
         });
 
         // 隐藏无关控制区域
-        cropRect.setControlsVisibility({
+        clipRect.setControlsVisibility({
             ml: false,
             mb: false,
             mr: false,
@@ -94,28 +90,28 @@ const ToolBars = ({rootCollections, crops}: {
             mtr: false
         });
 
-        cropCanvas.selection = false;
-        cropCanvas.add(maskRect, cropRect);
-        cropCanvas.setActiveObject(cropRect).renderAll();
+        clipCanvas.selection = false;
+        clipCanvas.add(maskRect, clipRect);
+        clipCanvas.setActiveObject(clipRect).renderAll();
 
         // 缩放+拖拽裁剪框 不能溢出图片区域，记录初始值。
-        let cropInitData = {
+        let clipInitData = {
             scaleX: 1,
             scaleY: 1,
-            top: rootImg.top,
-            left: rootImg.left
+            top: 0,
+            left: 0
         };
 
         // 始终选中裁剪框
-        cropCanvas.on(
+        clipCanvas.on(
             'mouse:down',
             event => {
-                cropCanvas.setActiveObject(cropRect);
+                clipCanvas.setActiveObject(clipRect);
             }
         );
 
         // 拖拽裁剪框 不能溢出图片区域
-        cropCanvas.on(
+        clipCanvas.on(
             'object:moving',
             event => {
                 const {
@@ -127,38 +123,37 @@ const ToolBars = ({rootCollections, crops}: {
                     scaleY = 0,
                 } = event.target || {};
 
-
                 // 挪出顶部
-                if (top <= imgTop) {
-                    cropRect.set({
-                        top: imgTop
+                if (top <= 0) {
+                    clipRect.set({
+                        top: 0
                     });
                 }
 
                 // 挪出左侧
-                if (left < imgLeft) {
-                    cropRect.set({
-                        left: imgLeft
+                if (left < 0) {
+                    clipRect.set({
+                        left: 0
                     });
                 }
 
                 // 挪出底部
-                const maxTop = imgHeight * imgScaleY - height * scaleY + imgTop -1;
+                const maxTop = canvasHeight - height * scaleY -1;
                 if (top >= maxTop) {
-                    cropRect.set({
+                    clipRect.set({
                         top: maxTop
                     });
                 }
 
                 // 挪出右侧
-                const maxLeft = imgWidth * imgScaleX - width * scaleX + imgLeft - 1;
+                const maxLeft = canvasWidth - width * scaleX - 1;
                 if (left >= maxLeft) {
-                    cropRect.set({
+                    clipRect.set({
                         left: maxLeft
                     });
                 }
 
-                cropInitData = {
+                clipInitData = {
                     scaleX,
                     scaleY,
                     top,
@@ -168,7 +163,7 @@ const ToolBars = ({rootCollections, crops}: {
         );
 
         // 缩放裁剪框 不能溢出图片区域
-        cropCanvas.on(
+        clipCanvas.on(
             'object:scaling',
             event => {
                 const {
@@ -184,41 +179,41 @@ const ToolBars = ({rootCollections, crops}: {
                 } = event.transform || {};
 
                 // ◰ + ◳ 溢出顶部
-                if (top <= imgTop) {
+                if (top <= 0) {
                     if (corner === 'tl' || corner === 'tr') {
-                        cropRect.set(cropInitData);
+                        clipRect.set(clipInitData);
                         return;
                     }
                 }
 
                 //  ◰ + ◱ 溢出左侧
-                if (left < imgLeft) {
+                if (left < 0) {
                     if (corner === 'tl' || corner === 'bl') {
-                        cropRect.set(cropInitData);
+                        clipRect.set(clipInitData);
                         return;
                     }
                 }
 
                 // ◱ + ◲ 溢出底部
-                const maxTop = imgHeight * imgScaleY - height * scaleY + imgTop -1;
+                const maxTop = canvasHeight - height * scaleY -1;
                 if (top >= maxTop) {
                     if (corner === 'bl' || corner === 'br') {
-                        cropRect.set(cropInitData);
+                        clipRect.set(clipInitData);
                         return;
                     }
                 }
 
                 // ◳ + ◲ 溢出右侧
-                const maxLeft = imgWidth * imgScaleX - width * scaleX + imgLeft - 1;
+                const maxLeft = canvasWidth - width * scaleX - 1;
                 if (left >= maxLeft) {
                     if (corner === 'tr' || corner === 'br') {
-                        cropRect.set(cropInitData);
+                        clipRect.set(clipInitData);
                         return;
                     }
                 }
 
 
-                cropInitData = {
+                clipInitData = {
                     scaleX,
                     scaleY,
                     top,
@@ -228,42 +223,79 @@ const ToolBars = ({rootCollections, crops}: {
         );
     };
 
+    // 完成裁剪
     const handleClipImg = () => {
-        // console.log(cropCanvas?._activeObject);
         const {
-            top = 0,
-            left = 0,
-            width = 0,
-            height = 0,
-            scaleX = 0
-        } = cropCanvas?._activeObject || {};
+            width: canvasWidth = 0,
+            height: canvasHeight = 0
+        } = rootCollections.rootCanvas;
+        let {
+            top: clipTop = 0,
+            left: clipLeft = 0,
+            width: clipWidth = 0,
+            height: clipHeight = 0,
+            scaleX: clipScaleX = 0,
+            scaleY: clipScaleY = 0
+        } = clipCanvas?._activeObject || {};
 
-        const clipPath = new fabric.Rect({
-            top,
-            left,
-            width: width * scaleX,
-            height: height * scaleX
-        });
+        clipWidth = clipWidth * clipScaleX;
+        clipHeight = clipHeight * clipScaleY;
 
-        rootCollections.rootCanvas.clipPath = clipPath;
-        rootCollections.rootCanvas.renderAll();
+        // 计算裁裁剪后的缩放
+        const scaleWidth = clipWidth / canvasWidth;
+        const scaleHeight = clipHeight / canvasHeight;
 
         // 裁剪后居中铺满
-        // rootCollections.rootCanvas.setWidth(clipPath.width || 0);
-        // rootCollections.rootCanvas.setHeight(clipPath.height || 0);
+        rootCollections.rootCanvas._objects.forEach(klass => {
+            const {
+                top = 0,
+                left = 0,
+                scaleX = 0,
+                scaleY = 0
+            } = klass;
 
-        console.log(rootCollections.rootCanvas, rootCollections.rootImg);
+            klass.set({
+                top: (top - clipTop) / scaleHeight,
+                left: (left - clipLeft) / scaleWidth,
+                scaleX: scaleX / scaleWidth,
+                scaleY: scaleY / scaleHeight,
+            });
+        });
 
+        // 添加 clipPath
+        /* const clipPath = new fabric.Rect({
+            top: clipTop / scaleHeight,
+            // top,
+            left: clipLeft / scaleWidth,
+            // left,
+            width: clipWidth / scaleWidth,
+            height: clipHeight / scaleHeight,
+        });
+        rootCollections.rootCanvas.clipPath = clipPath; */
+
+        rootCollections.rootCanvas.renderAll();
     };
 
     useEffect(() => {
-        handleAddText();
-        initCrop();
+        // handleAddText();
+        // initClip();
     }, []);
+
+    const handleChangTab = (key: string) => {
+        switch (key) {
+            case '1':
+                clipCanvas?.dispose();
+                break;
+            case '2':
+                // rootCollections.rootCanvas._setActiveObject(null);
+                initClip();
+                break;
+        }
+    };
 
     return (
         <div>
-            <Tabs defaultActiveKey="2">
+            <Tabs defaultActiveKey="1" onChange={handleChangTab}>
                 <TabPane tab="文字" key="1">
                     <Button onClick={handleAddText}>添加文字</Button>
 

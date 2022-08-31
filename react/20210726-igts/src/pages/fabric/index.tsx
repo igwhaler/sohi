@@ -7,7 +7,7 @@ import imgDemo from './big.jpeg';
 
 const FabricJSCanvas = () => {
     const canvasEl = useRef(null);
-    const cropCanvasEl = useRef(null);
+    const clipCanvasEl = useRef(null);
     const [rootCollections, setRootCollections] = useState<{
         rootCanvas: fabric.Canvas;
         rootImg: fabric.Image;
@@ -15,18 +15,25 @@ const FabricJSCanvas = () => {
 
     useEffect(() => {
         // init
-        const rootCanvas = new fabric.Canvas(canvasEl.current, {
-            width: 800,
-            height: 500,
-        });
+        const rootCanvas = new fabric.Canvas(canvasEl.current);
 
         // load img
         fabric.Image.fromURL(
             imgDemo,
             rootImg => {
+                // todo: 待结算
                 rootImg.scaleToHeight(500);
                 rootCanvas.add(rootImg);
-                rootImg.center();
+
+                const {
+                    scaleX = 0,
+                    scaleY = 0,
+                    width = 0,
+                    height = 0
+                } = rootImg;
+
+                rootCanvas.setWidth(width * scaleX);
+                rootCanvas.setHeight(height * scaleY);
 
                 setRootCollections({
                     rootCanvas,
@@ -62,8 +69,8 @@ const FabricJSCanvas = () => {
             {rootCollections && (
                 <ToolBars
                     rootCollections={rootCollections}
-                    crops={{
-                        cropCanvasEl: cropCanvasEl,
+                    clips={{
+                        clipCanvasEl: clipCanvasEl,
                         // onClipImg: handleClipImg
                     }}
                 />
@@ -74,10 +81,10 @@ const FabricJSCanvas = () => {
                     <canvas ref={canvasEl} />
                 </div>
 
-                <div className="crop-canvas">
+                <div className="clip-canvas">
                     <canvas
-                        className="crop-canvas"
-                        ref={cropCanvasEl}
+                        className="clip-canvas"
+                        ref={clipCanvasEl}
                     />
                 </div>
             </div>

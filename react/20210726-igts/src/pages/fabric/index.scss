@@ -19,6 +19,9 @@
     background-position: center center;
     background-size: contain;
     background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::after {
         content: " ";
@@ -53,12 +56,10 @@
     }
 
     .self-canvas {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
     }
 
-    .crop-canvas {
+    .clip-canvas {
         position: absolute;
         top: 0;
         left: 0;
