@@ -94,6 +94,12 @@ const FabricJSCanvas = () => {
                     <Button>上一步</Button>
                     <Button>下一步</Button>
 
+                    <Button type="primary" ghost>旋转</Button>
+                    <Button type="primary" ghost>左右翻转</Button>
+                    <Button type="primary" ghost>上下翻转</Button>
+
+                    <Button type="primary" danger ghost>长按对比</Button>
+
                     <Button onClick={handleDownload} type="primary">下载</Button>
                 </div>
             </div>

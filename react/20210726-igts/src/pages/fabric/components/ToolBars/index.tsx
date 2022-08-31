@@ -17,6 +17,7 @@ const ToolBars = ({rootCollections, clips}: {
     };
 }) => {
     const [clipCanvas, setCropCanvas] = useState<fabric.Canvas>();
+    const [activeKey, setActiveKey] = useState('3');
 
     // 添加文本
     const handleAddText = () => {
@@ -60,13 +61,12 @@ const ToolBars = ({rootCollections, clips}: {
             selectable: false,
         });
 
-
         // 添加裁剪框
         const clipRect = new fabric.Rect({
             top: 0,
             left: 0,
-            width: canvasWidth / 2,
-            height: canvasHeight / 2,
+            width: canvasWidth,
+            height: canvasHeight,
             stroke: 'tan',
             strokeWidth: 0,
             padding: 0,
@@ -245,35 +245,89 @@ const ToolBars = ({rootCollections, clips}: {
         const scaleWidth = clipWidth / canvasWidth;
         const scaleHeight = clipHeight / canvasHeight;
 
-        // 裁剪后居中铺满
-        rootCollections.rootCanvas._objects.forEach(klass => {
+        // 一、裁剪后居中铺满，全裁剪，背景图+添加的元素；全裁剪有bug，新元素因为放大坐标不对导致选中异常。
+        /* rootCollections.rootCanvas._objects.forEach(klass => {
             const {
                 top = 0,
                 left = 0,
                 scaleX = 0,
-                scaleY = 0
+                scaleY = 0,
             } = klass;
 
             klass.set({
                 top: (top - clipTop) / scaleHeight,
+                // top: top / scaleHeight,
                 left: (left - clipLeft) / scaleWidth,
+                // left: left / scaleWidth,
                 scaleX: scaleX / scaleWidth,
                 scaleY: scaleY / scaleHeight,
+                // width: width / scaleWidth,
+                // height: height / scaleHeight
             });
-        });
+        }); */
 
-        // 添加 clipPath
-        /* const clipPath = new fabric.Rect({
-            top: clipTop / scaleHeight,
-            // top,
-            left: clipLeft / scaleWidth,
-            // left,
-            width: clipWidth / scaleWidth,
-            height: clipHeight / scaleHeight,
-        });
-        rootCollections.rootCanvas.clipPath = clipPath; */
+        // 二、裁剪后居中铺满，只裁背景图，其它元素不变
+        const kclassImg = rootCollections.rootCanvas._objects[0];
+        const {
+            top = 0,
+            left = 0,
+            scaleX = 0,
+            scaleY = 0,
+        } = kclassImg;
 
+        kclassImg.set({
+            top: (top - clipTop) / scaleHeight,
+            // top: top / scaleHeight,
+            left: (left - clipLeft) / scaleWidth,
+            // left: left / scaleWidth,
+            scaleX: scaleX / scaleWidth,
+            scaleY: scaleY / scaleHeight,
+            // width: width / scaleWidth,
+            // height: height / scaleHeight
+        });
         rootCollections.rootCanvas.renderAll();
+
+        // 重置裁剪位置和大小
+        clipCanvas?._activeObject.set({
+            top: 0,
+            left: 0,
+            width: canvasWidth,
+            height: canvasHeight,
+            scaleX: 1,
+            scaleY: 1
+        });
+        clipCanvas?.renderAll();
+    };
+
+    // 设置裁剪比例
+    const setClipRatio = () => {
+        const {
+            width: canvasWidth = 0,
+            height: canvasHeight = 0
+        } = rootCollections.rootCanvas;
+        const ratio = {
+            w: 1,
+            h: 1
+        };
+        const selfClipData = {
+            top: 0,
+            left: 0,
+            width: canvasWidth,
+            height: canvasHeight,
+            scaleX: 1,
+            scaleY: 1
+        };
+
+        if (canvasWidth < canvasHeight) {
+            selfClipData.top = (canvasHeight - canvasWidth) / 2;
+            selfClipData.height = canvasWidth;
+        } else {
+            selfClipData.width = canvasHeight;
+            selfClipData.left = (canvasWidth - canvasHeight) / 2;
+        }
+
+        clipCanvas?._activeObject.set(selfClipData);
+        clipCanvas?.renderAll();
     };
 
     useEffect(() => {
@@ -282,21 +336,37 @@ const ToolBars = ({rootCollections, clips}: {
     }, []);
 
     const handleChangTab = (key: string) => {
-        switch (key) {
-            case '1':
+        if (activeKey === '2') {
+            if (['1', '3', '4', '5'].includes(key)) {
                 clipCanvas?.dispose();
-                break;
+            }
+        }
+
+        switch (key) {
             case '2':
-                // rootCollections.rootCanvas._setActiveObject(null);
                 initClip();
                 break;
+            case '3':
+                break;
         }
+
+        setActiveKey(key);
     };
 
     return (
         <div>
-            <Tabs defaultActiveKey="1" onChange={handleChangTab}>
-                <TabPane tab="文字" key="1">
+            <Tabs activeKey={activeKey} onChange={handleChangTab}>
+                <TabPane tab="模板" key="1">模板列表</TabPane>
+
+                <TabPane tab="裁剪" key="2">
+                    <Button>原图比例</Button>
+                    <Button onClick={setClipRatio}>1:1</Button>
+                    <Button>4:3</Button>
+                    <Button>16:9</Button>
+                    <Button type="primary" onClick={handleClipImg}>完成裁剪</Button>
+                </TabPane>
+
+                <TabPane tab="文字" key="3">
                     <Button onClick={handleAddText}>添加文字</Button>
 
                     <Select defaultValue="对齐方式" onChange={handleAlignChange}>
@@ -316,9 +386,9 @@ const ToolBars = ({rootCollections, clips}: {
                     </Select>
                 </TabPane>
 
-                <TabPane tab="裁剪" key="2">
-                    <Button type="primary" onClick={handleClipImg}>完成裁剪</Button>
-                </TabPane>
+                <TabPane tab="贴纸" key="4">贴纸列表</TabPane>
+
+                <TabPane tab="滤镜" key="5">滤镜列表</TabPane>
             </Tabs>
         </div>
     );
