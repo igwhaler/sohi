@@ -4,6 +4,12 @@ import {fabric} from 'fabric';
 import ToolBars from './components/ToolBars';
 import './index.scss';
 import imgDemo from './big.jpeg';
+import imgRed from './red.jpeg';
+
+export const BoxConfigs = {
+    width: 800,
+    height: 500
+};
 
 const FabricJSCanvas = () => {
     const canvasEl = useRef(null);
@@ -19,10 +25,12 @@ const FabricJSCanvas = () => {
 
         // load img
         fabric.Image.fromURL(
-            imgDemo,
+            // imgDemo,
+            imgRed,
             rootImg => {
-                // todo: 待结算
-                rootImg.scaleToHeight(500);
+                // todo: 待计算 适配高度500 还是 宽度800
+                rootImg.scaleToHeight(BoxConfigs.height);
+
                 rootCanvas.add(rootImg);
 
                 const {
@@ -53,7 +61,7 @@ const FabricJSCanvas = () => {
     const handleDownload = () => {
         const ext = 'jpeg';
         const base64 = rootCollections?.rootCanvas?.toDataURL({
-
+            quality: 1,
             format: 'jpeg',
             enableRetinaScaling: true
         }) || '';
@@ -76,7 +84,13 @@ const FabricJSCanvas = () => {
                 />
             )}
 
-            <div className="wrap-canvas" >
+            <div
+                className="wrap-canvas"
+                style={{
+                    width: BoxConfigs.width,
+                    height: BoxConfigs.height
+                }}
+            >
                 <div className="self-canvas">
                     <canvas ref={canvasEl} />
                 </div>

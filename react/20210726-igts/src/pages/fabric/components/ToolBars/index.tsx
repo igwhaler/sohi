@@ -3,6 +3,7 @@ import {fabric} from 'fabric';
 import {addText, setBgColor} from '../../utils/text';
 import {setGroupAlign, AlignConfigs, alignType} from '../../utils/group-align';
 import React, {useEffect, useState} from 'react';
+import {BoxConfigs} from '../../index';
 
 const {Option} = Select;
 const {TabPane} = Tabs;
@@ -18,6 +19,11 @@ const ToolBars = ({rootCollections, clips}: {
 }) => {
     const [clipCanvas, setCropCanvas] = useState<fabric.Canvas>();
     const [activeKey, setActiveKey] = useState('3');
+    const defaultCilpRatio = {
+        w: rootCollections.rootImg.width || 1,
+        h: rootCollections.rootImg.height || 1
+    };
+    const [clipRatio, setClipRatio] = useState<{w: number, h: number}>(defaultCilpRatio);
 
     // 添加文本
     const handleAddText = () => {
@@ -51,10 +57,10 @@ const ToolBars = ({rootCollections, clips}: {
 
         // 添加蒙层
         const maskRect = new fabric.Rect({
-            top: -2,
-            left: -2,
-            width: canvasWidth + 4,
-            height: canvasHeight + 4,
+            top: -1,
+            left: -1,
+            width: canvasWidth + 1,
+            height: canvasHeight + 1,
             fill: 'rgba(51, 51, 51, 0.5)',
             evented: false,
             hasControls: false,
@@ -114,6 +120,11 @@ const ToolBars = ({rootCollections, clips}: {
         clipCanvas.on(
             'object:moving',
             event => {
+                const {rootCanvas} = rootCollections;
+                const {
+                    width: canvasWidth = 0,
+                    height: canvasHeight = 0,
+                } = rootCanvas;
                 const {
                     top = 0,
                     left = 0,
@@ -166,6 +177,11 @@ const ToolBars = ({rootCollections, clips}: {
         clipCanvas.on(
             'object:scaling',
             event => {
+                const {rootCanvas} = rootCollections;
+                const {
+                    width: canvasWidth = 0,
+                    height: canvasHeight = 0,
+                } = rootCanvas;
                 const {
                     top = 0,
                     left = 0,
@@ -177,6 +193,11 @@ const ToolBars = ({rootCollections, clips}: {
                 const {
                     corner
                 } = event.transform || {};
+
+                setClipRatio({
+                    w: clipInitData.scaleX,
+                    h: clipInitData.scaleY
+                });
 
                 // ◰ + ◳ 溢出顶部
                 if (top <= 0) {
@@ -223,12 +244,27 @@ const ToolBars = ({rootCollections, clips}: {
         );
     };
 
+    const getFlexBox = (
+        width: number,
+        height: number,
+        ratio: { w: number, h: number }
+    ) => {
+        const result = {width: 0, height: 0, flex: 'h'};
+
+        if (width / ratio.w * ratio.h >= height) {
+            result.width = height / ratio.h * ratio.w;
+            result.height = height;
+        } else {
+            result.width = width;
+            result.height = width / ratio.w * ratio.h;
+            result.flex = 'w';
+        }
+
+        return result;
+    };
+
     // 完成裁剪
     const handleClipImg = () => {
-        const {
-            width: canvasWidth = 0,
-            height: canvasHeight = 0
-        } = rootCollections.rootCanvas;
         let {
             top: clipTop = 0,
             left: clipLeft = 0,
@@ -237,13 +273,15 @@ const ToolBars = ({rootCollections, clips}: {
             scaleX: clipScaleX = 0,
             scaleY: clipScaleY = 0
         } = clipCanvas?._activeObject || {};
+        const clipResBoxData = getFlexBox(BoxConfigs.width, BoxConfigs.height, clipRatio);
 
+        // 裁剪框的真实宽高
         clipWidth = clipWidth * clipScaleX;
         clipHeight = clipHeight * clipScaleY;
 
-        // 计算裁裁剪后的缩放
-        const scaleWidth = clipWidth / canvasWidth;
-        const scaleHeight = clipHeight / canvasHeight;
+        // 计算裁裁剪后的 裁剪框 相对于 背景图 的缩放比
+        const scaleWidth = clipWidth / clipResBoxData.width;
+        const scaleHeight = clipHeight / clipResBoxData.height;
 
         // 一、裁剪后居中铺满，全裁剪，背景图+添加的元素；全裁剪有bug，新元素因为放大坐标不对导致选中异常。
         /* rootCollections.rootCanvas._objects.forEach(klass => {
@@ -274,60 +312,97 @@ const ToolBars = ({rootCollections, clips}: {
             scaleX = 0,
             scaleY = 0,
         } = kclassImg;
-
         kclassImg.set({
             top: (top - clipTop) / scaleHeight,
-            // top: top / scaleHeight,
-            left: (left - clipLeft) / scaleWidth,
-            // left: left / scaleWidth,
+            left: (left - clipLeft) / scaleWidth - 0.5,
             scaleX: scaleX / scaleWidth,
             scaleY: scaleY / scaleHeight,
-            // width: width / scaleWidth,
-            // height: height / scaleHeight
         });
+
+        // 图片裁剪后，重新渲染canvas 宽高
+        rootCollections.rootCanvas.setWidth(clipResBoxData.width);
+        rootCollections.rootCanvas.setHeight(clipResBoxData.height);
         rootCollections.rootCanvas.renderAll();
 
         // 重置裁剪位置和大小
-        clipCanvas?._activeObject.set({
-            top: 0,
-            left: 0,
-            width: canvasWidth,
-            height: canvasHeight,
-            scaleX: 1,
-            scaleY: 1
+        clipCanvas?._objects.forEach(kclass => {
+            kclass.set({
+                top: -1 * (window.devicePixelRatio || 1),
+                left: -1 * (window.devicePixelRatio || 1),
+                width: clipResBoxData.width + 1,
+                height: clipResBoxData.height + 1,
+                scaleX: 1,
+                scaleY: 1
+            });
         });
+        clipCanvas?.setWidth(clipResBoxData.width);
+        clipCanvas?.setHeight(clipResBoxData.height);
         clipCanvas?.renderAll();
     };
 
-    // 设置裁剪比例
-    const setClipRatio = () => {
-        const {
-            width: canvasWidth = 0,
-            height: canvasHeight = 0
-        } = rootCollections.rootCanvas;
-        const ratio = {
-            w: 1,
-            h: 1
-        };
-        const selfClipData = {
-            top: 0,
-            left: 0,
-            width: canvasWidth,
-            height: canvasHeight,
-            scaleX: 1,
-            scaleY: 1
-        };
+    // 设置裁剪比例，调整裁剪框的大小；裁剪框的大小 由图片大小 + 裁剪比例共同决定
+    const selectClipRatio = (ratio: {w: number, h: number}) => {
+        return () => {
+            if (!ratio.w) {
+                clipCanvas?._activeObject.set({
+                    lockScalingFlip: false,
+                }).setControlsVisibility({
+                    ml: true,
+                    mb: true,
+                    mr: true,
+                    mt: true,
+                });
 
-        if (canvasWidth < canvasHeight) {
-            selfClipData.top = (canvasHeight - canvasWidth) / 2;
-            selfClipData.height = canvasWidth;
-        } else {
-            selfClipData.width = canvasHeight;
-            selfClipData.left = (canvasWidth - canvasHeight) / 2;
-        }
+                clipCanvas?.renderAll();
+                return;
+            } else {
+                clipCanvas?._activeObject.set({
+                    lockScalingFlip: true,
+                }).setControlsVisibility({
+                    ml: false,
+                    mb: false,
+                    mr: false,
+                    mt: false,
+                });
+            }
 
-        clipCanvas?._activeObject.set(selfClipData);
-        clipCanvas?.renderAll();
+            setClipRatio(ratio);
+
+            const {
+                width: canvasWidth = 0,
+                height: canvasHeight = 0
+            } = rootCollections.rootCanvas;
+            const selfClipData = {
+                top: 0,
+                left: 0,
+                width: canvasWidth,
+                height: canvasHeight,
+                scaleX: 1,
+                scaleY: 1
+            };
+
+            /* if (canvasWidth / ratio.w * ratio.h >= canvasHeight) {
+                selfClipData.width = canvasHeight / ratio.h * ratio.w;
+                selfClipData.height = canvasHeight;
+                selfClipData.left = (canvasWidth - selfClipData.width) / 2;
+            } else {
+                selfClipData.width = canvasWidth;
+                selfClipData.height = canvasWidth / ratio.w * ratio.h;
+                selfClipData.top = (canvasHeight - selfClipData.height) / 2;
+            } */
+            const {width, height, flex} = getFlexBox(canvasWidth, canvasHeight, ratio);
+            selfClipData.width = width;
+            selfClipData.height = height;
+            if (flex === 'w') {
+                selfClipData.top = (canvasHeight - height) / 2;
+            }
+            if (flex === 'h') {
+                selfClipData.left = (canvasWidth - width) / 2;
+            }
+
+            clipCanvas?._activeObject.set(selfClipData);
+            clipCanvas?.renderAll();
+        };
     };
 
     useEffect(() => {
@@ -359,10 +434,15 @@ const ToolBars = ({rootCollections, clips}: {
                 <TabPane tab="模板" key="1">模板列表</TabPane>
 
                 <TabPane tab="裁剪" key="2">
-                    <Button>原图比例</Button>
-                    <Button onClick={setClipRatio}>1:1</Button>
-                    <Button>4:3</Button>
-                    <Button>16:9</Button>
+                    <Button onClick={selectClipRatio(defaultCilpRatio)}>原图比例</Button>
+                    <Button onClick={selectClipRatio({w: 1, h: 1})}>1:1</Button>
+                    <Button onClick={selectClipRatio({w: 3, h: 4})}>3:4</Button>
+                    <Button onClick={selectClipRatio({w: 4, h: 3})}>4:3</Button>
+                    <Button onClick={selectClipRatio({w: 2, h: 3})}>2:3</Button>
+                    <Button onClick={selectClipRatio({w: 3, h: 2})}>3:2</Button>
+                    <Button onClick={selectClipRatio({w: 9, h: 16})}>9:16</Button>
+                    <Button onClick={selectClipRatio({w: 16, h: 9})}>16:9</Button>
+                    <Button onClick={selectClipRatio({w: 0, h: 0})}>自定义</Button>
                     <Button type="primary" onClick={handleClipImg}>完成裁剪</Button>
                 </TabPane>
 
