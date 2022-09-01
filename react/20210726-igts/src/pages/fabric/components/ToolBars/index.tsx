@@ -195,13 +195,13 @@ const ToolBars = ({rootCollections, clips}: {
                 } = event.transform || {};
 
                 setClipRatio({
-                    w: clipInitData.scaleX,
-                    h: clipInitData.scaleY
+                    w: width * clipInitData.scaleX,
+                    h: height * clipInitData.scaleY
                 });
 
                 // ◰ + ◳ 溢出顶部
                 if (top <= 0) {
-                    if (corner === 'tl' || corner === 'tr') {
+                    if (corner === 'tl' || corner === 'tr' || corner === 'mt') {
                         clipRect.set(clipInitData);
                         return;
                     }
@@ -209,7 +209,7 @@ const ToolBars = ({rootCollections, clips}: {
 
                 //  ◰ + ◱ 溢出左侧
                 if (left < 0) {
-                    if (corner === 'tl' || corner === 'bl') {
+                    if (corner === 'tl' || corner === 'bl' || corner === 'ml') {
                         clipRect.set(clipInitData);
                         return;
                     }
@@ -218,7 +218,7 @@ const ToolBars = ({rootCollections, clips}: {
                 // ◱ + ◲ 溢出底部
                 const maxTop = canvasHeight - height * scaleY -1;
                 if (top >= maxTop) {
-                    if (corner === 'bl' || corner === 'br') {
+                    if (corner === 'bl' || corner === 'br' || corner === 'mb') {
                         clipRect.set(clipInitData);
                         return;
                     }
@@ -227,12 +227,11 @@ const ToolBars = ({rootCollections, clips}: {
                 // ◳ + ◲ 溢出右侧
                 const maxLeft = canvasWidth - width * scaleX - 1;
                 if (left >= maxLeft) {
-                    if (corner === 'tr' || corner === 'br') {
+                    if (corner === 'tr' || corner === 'br' || corner === 'mr') {
                         clipRect.set(clipInitData);
                         return;
                     }
                 }
-
 
                 clipInitData = {
                     scaleX,
