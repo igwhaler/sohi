@@ -2,57 +2,58 @@
     margin: 0;
 }
 
-.editor {
+.pic-editor {
     padding: 20px;
-}
 
-.wrap-btns {
-    display: flex;
-    justify-content: space-between;
-}
+    .edit-toolbars {}
 
-.wrap-canvas {
-    margin: 10px 0;
-    position: relative;
-    background-color: #333333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .wrap-canvas {
+        margin: 10px 0;
+        position: relative;
+        background-color: #333333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    &::after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 666px;
-        height: 500px;
-        border-right: 1px solid red;
-        border-left: 1px solid red;
-        z-index: 10;
-        user-select: none;
-        pointer-events: none;
+        &::after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 666px;
+            height: 500px;
+            border-right: 1px solid red;
+            border-left: 1px solid red;
+            z-index: 10;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        /* &::before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 11;
+            user-select: none;
+            pointer-events: none;
+            background-color: rgb(0 0 0 / 50%);
+        } */
+
+        .self-canvas {}
+
+        .clip-canvas {
+            position: absolute;
+        }
+        .canvas-container {
+            z-index: 10;
+        }
     }
 
-    /* &::before {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 11;
-        user-select: none;
-        pointer-events: none;
-        background-color: rgb(0 0 0 / 50%);
-    } */
-
-    .self-canvas {}
-
-    .clip-canvas {
-        position: absolute;
-    }
-    .canvas-container {
-        z-index: 10;
-    }
+    .edit-btns {}
 }
+
+

@@ -1,27 +1,22 @@
 import {useEffect, useRef, useState} from 'react';
-import {Button} from 'antd';
 import {fabric} from 'fabric';
 import ToolBars from './components/ToolBars';
+import EditOpterators from './components/Operators';
 import './index.scss';
-import imgDemo from './big.jpeg';
-import imgRed from './red.jpeg';
+import imgDemo from './assets/big.jpeg';
+import imgRed from './assets/red.jpeg';
+import {BoxConfigs} from './const';
+import {RootCollectionsType} from './types';
 
-export const BoxConfigs = {
-    width: 800,
-    height: 500
-};
 
 const FabricJSCanvas = () => {
-    const canvasEl = useRef(null);
+    const rootCanvasEl = useRef(null);
     const clipCanvasEl = useRef(null);
-    const [rootCollections, setRootCollections] = useState<{
-        rootCanvas: fabric.Canvas;
-        rootImg: fabric.Image;
-    }>();
+    const [rootCollections, setRootCollections] = useState<RootCollectionsType>();
 
     useEffect(() => {
         // init
-        const rootCanvas = new fabric.Canvas(canvasEl.current);
+        const rootCanvas = new fabric.Canvas(rootCanvasEl.current);
 
         // load img
         fabric.Image.fromURL(
@@ -58,29 +53,12 @@ const FabricJSCanvas = () => {
         };
     }, []);
 
-    const handleDownload = () => {
-        const ext = 'jpeg';
-        const base64 = rootCollections?.rootCanvas?.toDataURL({
-            quality: 1,
-            format: 'jpeg',
-            enableRetinaScaling: true
-        }) || '';
-        const link = document.createElement("a");
-
-        link.href = base64;
-        link.download = `hehe.${ext}`;
-        link.click();
-    };
-
     return (
-        <div className="editor">
+        <div className="pic-editor">
             {rootCollections && (
                 <ToolBars
                     rootCollections={rootCollections}
-                    clips={{
-                        clipCanvasEl: clipCanvasEl,
-                        // onClipImg: handleClipImg
-                    }}
+                    clipCanvasEl={clipCanvasEl}
                 />
             )}
 
@@ -92,7 +70,7 @@ const FabricJSCanvas = () => {
                 }}
             >
                 <div className="self-canvas">
-                    <canvas ref={canvasEl} />
+                    <canvas ref={rootCanvasEl} />
                 </div>
 
                 <div className="clip-canvas">
@@ -103,20 +81,11 @@ const FabricJSCanvas = () => {
                 </div>
             </div>
 
-            <div className="wrap-btns">
-                <div className="history">
-                    <Button>上一步</Button>
-                    <Button>下一步</Button>
-
-                    <Button type="primary" ghost>旋转</Button>
-                    <Button type="primary" ghost>左右翻转</Button>
-                    <Button type="primary" ghost>上下翻转</Button>
-
-                    <Button type="primary" danger ghost>长按对比</Button>
-
-                    <Button onClick={handleDownload} type="primary">下载</Button>
-                </div>
-            </div>
+            {rootCollections && (
+                <EditOpterators
+                    rootCollections={rootCollections}
+                />
+            )}
         </div>
     );
 };
