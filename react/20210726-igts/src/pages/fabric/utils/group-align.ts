@@ -21,77 +21,69 @@ export const AlignConfigs = [
         value: '左对齐'
     },
     {
-        type: 'v-center',
+        type: 'x-center',
         value: '水平居中'
     },
     {
-        type: 'h-center',
+        type: 'y-center',
         value: '垂直居中'
     },
 ];
 
-const computers: [number, alignType[]][] = [
-    [
-        -1,
-        ['top', 'left']
-    ],
-    [
-        1,
-        ['bottom', 'right'],
-    ],
-    [
-        0,
-        ['v-center', 'h-center']
-    ]
-];
-
-const getPosition = (
-    align: alignType,
-    {
-        wrapWidth = 0,
-        wrapHeight = 0,
-        selfWidth = 0,
-        selfHeight = 0
-    }
-) => {
-    const activeItem = computers.find(item => item[1].includes(align)) || [];
-    const factor = activeItem[0] || 0;
-
-    switch (align) {
-        case 'top':
-        case 'bottom':
-        case 'v-center':
-            return {
-                top: factor * (wrapHeight - selfHeight) / 2
-            };
-
-        case 'right':
-        case 'left':
-        case 'h-center':
-            return {
-                left: factor * (wrapWidth - selfWidth) / 2
-            };
-    }
-};
-
+// 框选后，基于框中心点未坐标原点
 export const setGroupAlign = (instance: fabric.Canvas, align: string) => {
     const activeGroup = instance._activeObject;
     const selectList = _.get(activeGroup, '_objects', []);
-
-    // console.log(activeGroup, selectList);
 
     if (selectList.length <= 1) {
         console.warn('setGroupAlign: 未选中元素');
         return;
     }
 
-    selectList.forEach((item: any) => {
-        item.set(getPosition(align, {
-            wrapWidth: activeGroup.width,
-            wrapHeight: activeGroup.height,
-            selfWidth: item.width,
-            selfHeight: item.height
-        }));
+    const {
+        width: wrapWidth = 0,
+        height: wrapHeight = 0
+    } = activeGroup;
+
+    selectList.forEach((kclass: any) => {
+        const {
+            width = 0,
+            height = 0
+        } = kclass;
+
+        switch (align) {
+            case 'left':
+                kclass.set({
+                    left: - wrapWidth / 2,
+                });
+                break;
+            case 'top':
+                kclass.set({
+                    top: - wrapHeight / 2,
+                });
+                break;
+            case 'right':
+                kclass.set({
+                    left: wrapWidth / 2 - width,
+                });
+                break;
+            case 'bottom':
+                kclass.set({
+                    top: wrapHeight / 2 - height,
+                });
+                break;
+            case 'x-center':
+                kclass.set({
+                    left: - width / 2
+                });
+                break;
+
+            case 'y-center':
+                kclass.set({
+                    top: - height / 2,
+                });
+                break;
+        }
     });
 
     instance.renderAll();

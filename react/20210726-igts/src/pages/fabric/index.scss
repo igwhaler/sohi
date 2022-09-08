@@ -15,7 +15,7 @@
         justify-content: center;
         align-items: center;
 
-        &::after {
+        /* &::after {
             content: " ";
             position: absolute;
             top: 0;
@@ -28,7 +28,7 @@
             z-index: 10;
             user-select: none;
             pointer-events: none;
-        }
+        } */
 
         /* &::before {
             content: " ";
@@ -43,10 +43,52 @@
             background-color: rgb(0 0 0 / 50%);
         } */
 
-        .self-canvas {}
+        &::after {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            border-right: 1px dashed tan;
+            border-left: 1px dashed tan;
+            z-index: 10;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        &::before {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            border-top: 1px dashed tan;
+            border-bottom: 1px dashed tan;
+            z-index: 11;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .self-canvas {
+            position: relative;
+        }
 
         .clip-canvas {
             position: absolute;
+            #fixLine {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-right: 1px solid green;
+                border-left: 1px solid green;
+                z-index: 10;
+                user-select: none;
+                pointer-events: none;
+            }
         }
         .canvas-container {
             z-index: 10;

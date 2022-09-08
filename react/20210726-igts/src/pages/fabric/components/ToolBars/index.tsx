@@ -18,12 +18,13 @@ const ToolBars = ({
     clipCanvasEl: React.MutableRefObject<null>
 }) => {
     const [clipCanvas, setCropCanvas] = useState<fabric.Canvas>();
-    const [activeKey, setActiveKey] = useState('3');
+    const [activeKey, setActiveKey] = useState('2');
     const defaultCilpRatio = {
         w: rootCollections.rootCanvas.width || 1,
         h: rootCollections.rootCanvas.height || 1
     };
-    const clipRatioData = useRef(defaultCilpRatio);
+    // const clipRatioData = useRef(defaultCilpRatio);
+    const clipRatioData = useRef({w: 16, h: 9});
 
     // 添加文本
     const handleAddText = () => {
@@ -40,9 +41,30 @@ const ToolBars = ({
         setBgColor(rootCollections.rootCanvas, color);
     };
 
+    // 删除
+    const handleDelete = () => {
+        const activeObjects = rootCollections.rootCanvas.getActiveObjects();
+
+        activeObjects.forEach(kclass => {
+            rootCollections.rootCanvas.remove(kclass);
+        });
+
+        rootCollections.rootCanvas.discardActiveObject();
+        rootCollections.rootCanvas.renderAll();
+    };
+
     useEffect(() => {
-        handleAddText();
-        // initClip();
+        // handleAddText();
+        // console.log(clipRatioData);
+
+        initClip(
+            {
+                rootCollections,
+                clipCanvasEl,
+                clipRatioData
+            },
+            setCropCanvas
+        );
     }, []);
 
     const handleChangTab = (key: string) => {
@@ -73,7 +95,9 @@ const ToolBars = ({
     return (
         <div className="edit-toolbars">
             <Tabs activeKey={activeKey} onChange={handleChangTab}>
-                <TabPane tab="模板" key="1">模板列表</TabPane>
+                <TabPane tab="模板" key="1">
+                    <Button>模板列表</Button>
+                </TabPane>
 
                 <TabPane tab="裁剪" key="2">
                     {clipCanvas && (
@@ -104,11 +128,17 @@ const ToolBars = ({
                         <Option value="green">绿色</Option>
                         <Option value="red">红色</Option>
                     </Select>
+
+                    <Button onClick={handleDelete}>删除</Button>
                 </TabPane>
 
-                <TabPane tab="贴纸" key="4">贴纸列表</TabPane>
+                <TabPane tab="贴纸" key="4">
+                    <Button>贴纸列表</Button>
+                </TabPane>
 
-                <TabPane tab="滤镜" key="5">滤镜列表</TabPane>
+                <TabPane tab="滤镜" key="5">
+                    <Button>滤镜列表</Button>
+                </TabPane>
             </Tabs>
         </div>
     );

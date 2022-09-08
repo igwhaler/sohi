@@ -37,29 +37,8 @@ const ClipTools = (
         const scaleWidth = clipWidth / clipResBoxData.width;
         const scaleHeight = clipHeight / clipResBoxData.height;
 
-        // 一、裁剪后居中铺满，全裁剪，背景图+添加的元素；全裁剪有bug，新元素因为放大坐标不对导致选中异常。
-        /* rootCollections.rootCanvas._objects.forEach(klass => {
-            const {
-                top = 0,
-                left = 0,
-                scaleX = 0,
-                scaleY = 0,
-            } = klass;
-
-            klass.set({
-                top: (top - clipTop) / scaleHeight,
-                // top: top / scaleHeight,
-                left: (left - clipLeft) / scaleWidth,
-                // left: left / scaleWidth,
-                scaleX: scaleX / scaleWidth,
-                scaleY: scaleY / scaleHeight,
-                // width: width / scaleWidth,
-                // height: height / scaleHeight
-            });
-        }); */
-
-        // 二、裁剪后居中铺满，只裁背景图，其它元素不变
-        const kclassImg = rootCollections.rootCanvas._objects[0];
+        // 裁剪后居中缩放居中铺满
+        const [kclassImg, ...otherKclasses] = rootCollections.rootCanvas._objects;
         const {
             top = 0,
             left = 0,
@@ -73,9 +52,28 @@ const ClipTools = (
             scaleY: scaleY / scaleHeight,
         });
 
+        // 其它元素等比缩放
+        otherKclasses.forEach(klass => {
+            const {
+                top = 0,
+                left = 0,
+                scaleX = 0,
+                scaleY = 0,
+            } = klass;
+
+            klass.set({
+                top: (top - clipTop) / scaleWidth,
+                left: (left - clipLeft) / scaleHeight,
+                scaleX: scaleX / scaleWidth,
+                scaleY: scaleY / scaleHeight,
+            });
+        });
+
         // 图片裁剪后，重新渲染canvas 宽高
         rootCollections.rootCanvas.setWidth(clipResBoxData.width);
         rootCollections.rootCanvas.setHeight(clipResBoxData.height);
+        // canvas变化后重置坐标原点
+        rootCollections.rootCanvas.relativePan(new fabric.Point(0, 0));
         rootCollections.rootCanvas.renderAll();
 
         // 重置裁剪位置和大小

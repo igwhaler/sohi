@@ -1,5 +1,7 @@
 import {fabric} from 'fabric';
 import {RootCollectionsType, ClipRatioType} from "../types";
+import {BoxConfigs} from '../const';
+
 
 // 西索-伸缩自在的愛：输入宽高+裁剪比，返回自适应宽高
 export function getFlexData(
@@ -19,6 +21,26 @@ export function getFlexData(
     }
 
     return result;
+};
+
+// 设置4:3辅助线
+const setFixLine = (clipRect: fabric.Rect) => {
+    const {left = 0, top = 0, width = 0, height = 0} = clipRect;
+    const clipResBoxData = getFlexData(width, height, {w: 4, h: 3});
+    const fixLine = document.getElementById('fixLine');
+
+    const styles: { [key: string]: string } = {
+        left: (left + (width - clipResBoxData.width) / 2) + 'px',
+        top: (top + (height - clipResBoxData.height) / 2) + 'px',
+        width: clipResBoxData.width + 'px',
+        height: clipResBoxData.height + 'px'
+    };
+
+    if (fixLine) {
+        Object.keys(styles).forEach((key) => {
+            fixLine.style.setProperty(key, styles[key]);
+        });
+    }
 };
 
 // 初始化裁剪 = 蒙层 + 裁剪框；裁剪是一个独立的canvas
@@ -49,8 +71,8 @@ export const initClip = (
 
     // 添加蒙层
     const maskRect = new fabric.Rect({
-        top: -1,
         left: -1,
+        top: -1,
         width: canvasWidth + 2,
         height: canvasHeight + 2,
         fill: 'rgba(51, 51, 51, 0.5)',
@@ -60,16 +82,20 @@ export const initClip = (
     });
 
     // 添加裁剪框
+    const clipResBoxData = getFlexData(canvasWidth, canvasHeight, clipRatioData.current);
     const clipRect = new fabric.Rect({
-        top: 0,
         left: 0,
-        width: canvasWidth,
-        height: canvasHeight,
-        stroke: 'tan',
+        top: 0,
+        // width: canvasWidth,
+        // height: canvasHeight,
+        width: clipResBoxData.width - 2,
+        height: clipResBoxData.height - 2,
+        stroke: 'red',
         strokeWidth: 0,
+        borderColor: 'red',
         padding: 0,
         hasBorders: true,
-        cornerColor: 'tan',
+        cornerColor: 'purple',
         cornerSize: 30,
         transparentCorners: false,
         cornerStrokeColor: 'transparent',
@@ -77,6 +103,11 @@ export const initClip = (
         selectable: true,
         lockScalingFlip: true,
         globalCompositeOperation: 'destination-out',
+    });
+    // 裁剪框居中显示
+    clipRect.set({
+        left: ((maskRect.width || 0) - (clipRect.width || 0)) / 2 - 1,
+        top: ((maskRect.height || 0) - (clipRect.height || 0)) / 2 - 1
     });
 
     // 隐藏无关控制区域
@@ -92,12 +123,15 @@ export const initClip = (
     clipCanvas.add(maskRect, clipRect);
     clipCanvas.setActiveObject(clipRect).renderAll();
 
+    // 添加辅助线
+    setFixLine(clipRect);
+
     // 缩放+拖拽裁剪框 不能溢出图片区域，记录初始值。
     let clipInitData = {
         scaleX: 1,
         scaleY: 1,
+        left: 0,
         top: 0,
-        left: 0
     };
 
     // 始终选中裁剪框
@@ -118,8 +152,8 @@ export const initClip = (
                 height: canvasHeight = 0,
             } = rootCanvas;
             const {
-                top = 0,
                 left = 0,
+                top = 0,
                 width = 0,
                 height = 0,
                 scaleX = 0,
@@ -159,9 +193,11 @@ export const initClip = (
             clipInitData = {
                 scaleX,
                 scaleY,
+                left,
                 top,
-                left
             };
+
+            event.target && setFixLine(event.target);
         }
     );
 
@@ -175,8 +211,8 @@ export const initClip = (
                 height: canvasHeight = 0,
             } = rootCanvas;
             const {
-                top = 0,
                 left = 0,
+                top = 0,
                 width = 0,
                 height = 0,
                 scaleX = 0,
@@ -190,6 +226,8 @@ export const initClip = (
                 w: width * clipInitData.scaleX,
                 h: height * clipInitData.scaleY
             };
+
+            event.target && setFixLine(event.target);
 
             // ◰ + ◳ 溢出顶部
             if (top <= 0) {
@@ -228,8 +266,8 @@ export const initClip = (
             clipInitData = {
                 scaleX,
                 scaleY,
+                left,
                 top,
-                left
             };
         }
     );

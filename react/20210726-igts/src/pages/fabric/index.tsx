@@ -8,7 +8,6 @@ import imgRed from './assets/red.jpeg';
 import {BoxConfigs} from './const';
 import {RootCollectionsType} from './types';
 
-
 const FabricJSCanvas = () => {
     const rootCanvasEl = useRef(null);
     const clipCanvasEl = useRef(null);
@@ -20,8 +19,8 @@ const FabricJSCanvas = () => {
 
         // load img
         fabric.Image.fromURL(
-            // imgDemo,
-            imgRed,
+            imgDemo,
+            // imgRed,
             rootImg => {
                 // todo: 待计算 适配高度500 还是 宽度800
                 rootImg.scaleToHeight(BoxConfigs.height);
@@ -78,6 +77,7 @@ const FabricJSCanvas = () => {
                         className="clip-canvas"
                         ref={clipCanvasEl}
                     />
+                    <div id="fixLine" />
                 </div>
             </div>
 
