@@ -23,23 +23,29 @@ export function getFlexData(
     return result;
 };
 
-// 设置4:3辅助线
-const setFixLine = (clipRect: fabric.Rect) => {
-    const {left = 0, top = 0, width = 0, height = 0} = clipRect;
-    const clipResBoxData = getFlexData(width, height, {w: 4, h: 3});
-    const fixLine = document.getElementById('fixLine');
+// 辅助线逻辑
+export const ClipFixLine = {
+    getLine() {
+        return document.getElementById('fixLine');
+    },
 
-    const styles: { [key: string]: string } = {
-        left: (left + (width - clipResBoxData.width) / 2) + 'px',
-        top: (top + (height - clipResBoxData.height) / 2) + 'px',
-        width: clipResBoxData.width + 'px',
-        height: clipResBoxData.height + 'px'
-    };
+    set({left, top, width, height}: {[key: string]: number}, ratio = {w: 4, h: 3}) {
+        const clipResBoxData = getFlexData(width, height, ratio);
+        const styles: { [key: string]: string } = {
+            display: 'block',
+            left: (left + (width - clipResBoxData.width) / 2) + 'px',
+            top: (top + (height - clipResBoxData.height) / 2) + 'px',
+            width: clipResBoxData.width + 'px',
+            height: clipResBoxData.height + 'px'
+        };
 
-    if (fixLine) {
         Object.keys(styles).forEach((key) => {
-            fixLine.style.setProperty(key, styles[key]);
+            ClipFixLine.getLine()?.style.setProperty(key, styles[key]);
         });
+    },
+
+    destroy() {
+        ClipFixLine.getLine()?.style.setProperty('display', 'none');
     }
 };
 
@@ -124,7 +130,12 @@ export const initClip = (
     clipCanvas.setActiveObject(clipRect).renderAll();
 
     // 添加辅助线
-    setFixLine(clipRect);
+    ClipFixLine.set({
+        left: clipRect.left || 0,
+        top: clipRect.top || 0,
+        width: clipRect.width || 0,
+        height: clipRect.height || 0
+    });
 
     // 缩放+拖拽裁剪框 不能溢出图片区域，记录初始值。
     let clipInitData = {
@@ -197,7 +208,12 @@ export const initClip = (
                 top,
             };
 
-            event.target && setFixLine(event.target);
+            ClipFixLine.set({
+                left: clipRect.left || 0,
+                top: clipRect.top || 0,
+                width: (clipRect.width || 0) * (clipRect.scaleX || 0),
+                height: (clipRect.height || 0) * (clipRect.scaleY || 0)
+            });
         }
     );
 
@@ -221,13 +237,19 @@ export const initClip = (
             const {
                 corner
             } = event.transform || {};
-
+            const w = width * clipInitData.scaleX;
+            const h = height * clipInitData.scaleY;
             clipRatioData.current = {
-                w: width * clipInitData.scaleX,
-                h: height * clipInitData.scaleY
+                w,
+                h
             };
 
-            event.target && setFixLine(event.target);
+            ClipFixLine.set({
+                left,
+                top,
+                width: w,
+                height: h
+            });
 
             // ◰ + ◳ 溢出顶部
             if (top <= 0) {

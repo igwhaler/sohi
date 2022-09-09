@@ -1,6 +1,6 @@
 import {fabric} from 'fabric';
 import {Button} from 'antd';
-import {getFlexData} from "../../../utils/clip";
+import {getFlexData, ClipFixLine} from "../../../utils/clip";
 import {BoxConfigs, ClipRatioList} from "../../../const";
 import {RootCollectionsType, ClipRatioType} from "../../../types";
 
@@ -145,6 +145,17 @@ const ClipTools = (
 
             clipCanvas?._activeObject.set(selfClipData);
             clipCanvas?.renderAll();
+
+            if (ratio.w / ratio.h === 16 / 9) {
+                ClipFixLine.set({
+                    left: selfClipData.left,
+                    top: selfClipData.top,
+                    width: selfClipData.width,
+                    height: selfClipData.height,
+                });
+            } else {
+                ClipFixLine.destroy();
+            }
         };
     };
 

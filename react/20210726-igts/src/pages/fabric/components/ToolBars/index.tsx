@@ -5,7 +5,7 @@ import {addText, setBgColor} from '../../utils/text';
 import {setGroupAlign, AlignConfigs, alignType} from '../../utils/group-align';
 import ClipTools from './ClipTools';
 import {RootCollectionsType} from '../../types';
-import {initClip} from '../../utils/clip';
+import {initClip, ClipFixLine} from '../../utils/clip';
 
 const {Option} = Select;
 const {TabPane} = Tabs;
@@ -71,6 +71,7 @@ const ToolBars = ({
         if (activeKey === '2') {
             if (['1', '3', '4', '5'].includes(key)) {
                 clipCanvas?.dispose();
+                ClipFixLine.destroy();
             }
         }
 
