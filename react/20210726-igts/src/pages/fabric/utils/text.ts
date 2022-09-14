@@ -15,8 +15,8 @@ export const addText = (instance: fabric.Canvas, text: string, options = {}) => 
 
     // 添加文本居中
     oText.set({
-        left: ((instance?.width || 0) - (oText.width || 0)) / 2,
-        top: ((instance?.height || 0) - (oText.height || 0)) / 2,
+        left: (instance.width! - oText.width!) / 2,
+        top: (instance.height! - oText.height!) / 2,
     });
 
     // instance.renderAll();
@@ -27,8 +27,8 @@ export const addText = (instance: fabric.Canvas, text: string, options = {}) => 
 
     instance.add(oText);
 
-    // const boxWidth = (oText.width || 0) + 20;
-    // const boxHeight = (oText.height || 0) + 20;
+    // const boxWidth = oText.width! + 20;
+    // const boxHeight = oText.height! + 20;
 
     // const textContainer = new fabric.Rect({
     //     name: 'container',
@@ -45,8 +45,8 @@ export const addText = (instance: fabric.Canvas, text: string, options = {}) => 
     //     name: 'textBox',
     //     originX: 'center',
     //     originY: 'center',
-    //     left: (instance.width || 0) / 2,
-    //     top: (instance.height || 0) / 2,
+    //     left: instance.width! / 2,
+    //     top: instance.height! / 2,
     //     width: boxWidth,
     //     height: boxHeight,
     //     padding: 10,

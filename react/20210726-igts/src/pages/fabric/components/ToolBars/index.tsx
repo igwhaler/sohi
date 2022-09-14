@@ -23,8 +23,8 @@ const ToolBars = ({
         w: rootCollections.rootCanvas.width || 1,
         h: rootCollections.rootCanvas.height || 1
     };
-    // const clipRatioData = useRef(defaultCilpRatio);
-    const clipRatioData = useRef({w: 16, h: 9});
+    const clipRatioData = useRef(defaultCilpRatio);
+    // const clipRatioData = useRef({w: 16, h: 9});
 
     // 添加文本
     const handleAddText = () => {
@@ -130,7 +130,7 @@ const ToolBars = ({
                         <Option value="red">红色</Option>
                     </Select>
 
-                    <Button onClick={handleDelete}>删除</Button>
+                    <Button onClick={handleDelete} type="primary" danger ghost>删除</Button>
                 </TabPane>
 
                 <TabPane tab="贴纸" key="4">

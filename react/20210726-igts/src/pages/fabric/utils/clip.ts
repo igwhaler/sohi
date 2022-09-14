@@ -1,7 +1,5 @@
 import {fabric} from 'fabric';
 import {RootCollectionsType, ClipRatioType} from "../types";
-import {BoxConfigs} from '../const';
-
 
 // 西索-伸缩自在的愛：输入宽高+裁剪比，返回自适应宽高
 export function getFlexData(
@@ -26,26 +24,35 @@ export function getFlexData(
 // 辅助线逻辑
 export const ClipFixLine = {
     getLine() {
-        return document.getElementById('fixLine');
+        return document.getElementById('fixLine')!;
     },
 
-    set({left, top, width, height}: {[key: string]: number}, ratio = {w: 4, h: 3}) {
-        const clipResBoxData = getFlexData(width, height, ratio);
+    set(clipRect: fabric.Rect) {
+        const width = clipRect.width! * clipRect.scaleX!;
+        const height = clipRect.height! * clipRect.scaleY!;
+
+        if (width / height !== 16 / 9) {
+            this.destroy();
+            return;
+        }
+
+        const {left, top} = clipRect;
+        const clipResBoxData = getFlexData(width, height, {w: 4, h: 3});
         const styles: { [key: string]: string } = {
             display: 'block',
-            left: (left + (width - clipResBoxData.width) / 2) + 'px',
-            top: (top + (height - clipResBoxData.height) / 2) + 'px',
+            left: (left! + (width - clipResBoxData.width) / 2) + 'px',
+            top: (top! + (height - clipResBoxData.height) / 2 + 1) + 'px',
             width: clipResBoxData.width + 'px',
             height: clipResBoxData.height + 'px'
         };
 
         Object.keys(styles).forEach((key) => {
-            ClipFixLine.getLine()?.style.setProperty(key, styles[key]);
+            this.getLine().style.setProperty(key, styles[key]);
         });
     },
 
     destroy() {
-        ClipFixLine.getLine()?.style.setProperty('display', 'none');
+        this.getLine().style.setProperty('display', 'none');
     }
 };
 
@@ -54,11 +61,11 @@ export const initClip = (
     {
         rootCollections,
         clipCanvasEl,
-        clipRatioData
+        clipRatioData,
     }: {
         rootCollections: RootCollectionsType,
         clipCanvasEl: React.MutableRefObject<null>,
-        clipRatioData: React.MutableRefObject<ClipRatioType>
+        clipRatioData: React.MutableRefObject<ClipRatioType>,
     },
     setCropCanvas: (clipCanvas: fabric.Canvas) => void
 ) => {
@@ -94,8 +101,8 @@ export const initClip = (
         top: 0,
         // width: canvasWidth,
         // height: canvasHeight,
-        width: clipResBoxData.width - 2,
-        height: clipResBoxData.height - 2,
+        width: clipResBoxData.width - 3,
+        height: clipResBoxData.height - 3,
         stroke: 'red',
         strokeWidth: 0,
         borderColor: 'red',
@@ -112,8 +119,8 @@ export const initClip = (
     });
     // 裁剪框居中显示
     clipRect.set({
-        left: ((maskRect.width || 0) - (clipRect.width || 0)) / 2 - 1,
-        top: ((maskRect.height || 0) - (clipRect.height || 0)) / 2 - 1
+        left: (maskRect.width! - clipRect.width!) / 2 - 1,
+        top: (maskRect.height! - clipRect.height!) / 2 - 1
     });
 
     // 隐藏无关控制区域
@@ -130,12 +137,7 @@ export const initClip = (
     clipCanvas.setActiveObject(clipRect).renderAll();
 
     // 添加辅助线
-    ClipFixLine.set({
-        left: clipRect.left || 0,
-        top: clipRect.top || 0,
-        width: clipRect.width || 0,
-        height: clipRect.height || 0
-    });
+    ClipFixLine.set(clipRect);
 
     // 缩放+拖拽裁剪框 不能溢出图片区域，记录初始值。
     let clipInitData = {
@@ -169,19 +171,19 @@ export const initClip = (
                 height = 0,
                 scaleX = 0,
                 scaleY = 0,
-            } = event.target || {};
+            } = event.target!;
 
             // 挪出顶部
             if (top <= 0) {
                 clipRect.set({
-                    top: 0
+                    top: 1
                 });
             }
 
             // 挪出左侧
             if (left < 0) {
                 clipRect.set({
-                    left: 0
+                    left: 1
                 });
             }
 
@@ -208,12 +210,7 @@ export const initClip = (
                 top,
             };
 
-            ClipFixLine.set({
-                left: clipRect.left || 0,
-                top: clipRect.top || 0,
-                width: (clipRect.width || 0) * (clipRect.scaleX || 0),
-                height: (clipRect.height || 0) * (clipRect.scaleY || 0)
-            });
+            ClipFixLine.set(clipRect);
         }
     );
 
@@ -233,23 +230,10 @@ export const initClip = (
                 height = 0,
                 scaleX = 0,
                 scaleY = 0,
-            } = event.target || {};
+            } = event.target!;
             const {
                 corner
-            } = event.transform || {};
-            const w = width * clipInitData.scaleX;
-            const h = height * clipInitData.scaleY;
-            clipRatioData.current = {
-                w,
-                h
-            };
-
-            ClipFixLine.set({
-                left,
-                top,
-                width: w,
-                height: h
-            });
+            } = event.transform!;
 
             // ◰ + ◳ 溢出顶部
             if (top <= 0) {
@@ -293,4 +277,14 @@ export const initClip = (
             };
         }
     );
+
+    // 缩放设置辅助线
+    clipRect.on('scaling', event => {
+        clipRatioData.current = {
+            w: clipRect.width! * clipRect.scaleX!,
+            h: clipRect.height! * clipRect.scaleY!
+        };
+
+        ClipFixLine.set(clipRect);
+    });
 };

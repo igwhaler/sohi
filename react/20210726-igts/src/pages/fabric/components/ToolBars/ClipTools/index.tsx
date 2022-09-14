@@ -90,6 +90,8 @@ const ClipTools = (
         clipCanvas?.setWidth(clipResBoxData.width);
         clipCanvas?.setHeight(clipResBoxData.height);
         clipCanvas?.renderAll();
+
+        ClipFixLine.set(clipCanvas?._activeObject);
     };
 
     // 设置裁剪比例，调整裁剪框的大小；裁剪框的大小 由图片大小 + 裁剪比例共同决定
@@ -125,10 +127,10 @@ const ClipTools = (
                 height: canvasHeight = 0
             } = rootCollections.rootCanvas;
             const selfClipData = {
-                top: 0,
-                left: 0,
-                width: canvasWidth,
-                height: canvasHeight,
+                top: 1,
+                left: 1,
+                width: canvasWidth - 3,
+                height: canvasHeight - 3,
                 scaleX: 1,
                 scaleY: 1
             };
@@ -137,22 +139,17 @@ const ClipTools = (
             selfClipData.width = width;
             selfClipData.height = height;
             if (flex === 'w') {
-                selfClipData.top = (canvasHeight - height) / 2;
+                selfClipData.top = (canvasHeight - height) / 2 + 0;
             }
             if (flex === 'h') {
-                selfClipData.left = (canvasWidth - width) / 2;
+                selfClipData.left = (canvasWidth - width) / 2 + 0;
             }
 
             clipCanvas?._activeObject.set(selfClipData);
             clipCanvas?.renderAll();
 
             if (ratio.w / ratio.h === 16 / 9) {
-                ClipFixLine.set({
-                    left: selfClipData.left,
-                    top: selfClipData.top,
-                    width: selfClipData.width,
-                    height: selfClipData.height,
-                });
+                ClipFixLine.set(clipCanvas?._activeObject);
             } else {
                 ClipFixLine.destroy();
             }
