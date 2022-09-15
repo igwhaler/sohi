@@ -17,8 +17,6 @@
         "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
         "lint": "eslint \"src/**/*.{ts,tsx}\"",
         "eslint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
-        "stylelint": "stylelint \"src/**/*.less\"",
-        "stylelint:fix": "stylelint --fix \"src/**/*.less\"",
         "test": "umi-test",
         "test:coverage": "umi-test --coverage"
     },
@@ -56,9 +54,6 @@
         "*.ts?(x)": [
             "prettier --parser=typescript --write",
             "npm lint"
-        ],
-        "*.{css,less}": [
-            "npm stylelint"
         ]
     }
 }
